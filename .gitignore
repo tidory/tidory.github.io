@@ -10,5 +10,5 @@ npm-debug.log
 # Nuxt generate
 dist
 
-# Docs
-docs
+# Meta
+meta
