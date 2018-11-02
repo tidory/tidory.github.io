@@ -1,0 +1,35 @@
+{
+  "name": "tidory",
+  "version": "1.0.0",
+  "description": "tidory.com",
+  "author": "Mansu Jeong<pronist@naver.com>",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "deploy": "npm run generate && node ./docs/scripts/deploy.js",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "nuxt": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "copy": "^0.3.2",
+    "del": "^3.0.0",
+    "eslint": "^4.15.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-vue": "^4.0.0",
+    "gh-pages": "^1.2.0",
+    "less": "^3.8.1",
+    "less-loader": "^4.1.0",
+    "pug": "^2.0.3",
+    "pug-loader": "^2.4.0",
+    "push-dir": "^0.4.1"
+  }
+}
