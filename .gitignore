@@ -12,3 +12,9 @@ dist
 
 # Meta
 meta
+
+# Composer
+composer.json
+composer.lock
+vendor
+deploy.php
