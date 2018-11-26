@@ -13,7 +13,7 @@
         | 컴포넌트에서 에셋을 포함하려면 <b>속성 바인딩</b> 기능을 포함하거나, 정적파일을 포함하듯 포함시키면 됩니다. 다만, 컴포넌트에서 정적파일 또는 에셋을 불러오는 경우 자바스크립트를 통한 포함이므로 스킨 내부에서 별도로 <b>경로 변환을 하지 않습니다.</b> 따라서 따로 <b>PUBLIC PATH</b> 설정을 해줄 필요가 있습니다.
       div.paragraph      
         pre
-          code(class="language-vue")
+          code(class="language-html")
             | {{ vue }}
     article.box
       h2(id="CSS 프레임워크") CSS 프레임워크
@@ -40,11 +40,11 @@ img(src="./images/favicon.png")
 img(src=require("~/assets/images/favicon.png"))`,
         vue: `*.vue
 
-<template lang="pug">
+<template>
   //- PUBLIC_PATH/favicon.png
-  img(src="./images/favicon.png")
+  <img src="./images/favicon.png">
   //- PUBLIC_PATH/__WEBPACK_CHANGED__.png
-  img(:src='require("~/assets/images/favicon.png")')
+  <img v-bind:src='require("~/assets/images/favicon.png")'>
 </template>`,
         config: `webpack.base.conf.js
       

@@ -22,7 +22,7 @@
       h2(id="뷰") 뷰(Vue.js)
       div.paragraph      
         pre
-          code(class="language-vue")
+          code(class="language-html")
             | {{ component }}
       div.paragraph      
         pre

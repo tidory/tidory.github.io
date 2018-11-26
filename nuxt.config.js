@@ -1,10 +1,12 @@
+const nodeExternals = require('webpack-node-externals');
+
 module.exports = {
   css: [
     '~assets/css/nomalize.css',
 	  '~assets/css/prism.css'
   ],
   plugins: [
-	  '~plugins/prism'
+    { src: '~plugins/prism', ssr: false }
   ],
   /*
   ** Headers of the page
@@ -43,5 +45,5 @@ module.exports = {
   */
   build: {
     publicPath: 'https://tidory.com/'
-  }
+  },
 }
