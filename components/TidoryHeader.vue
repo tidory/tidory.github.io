@@ -57,7 +57,7 @@
 header#tidory-header-wrapper.fixed {
   position: fixed;
   top: 0;
-  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
   width: 100%;
   .tidory-header-inner {
     overflow: hidden;
@@ -72,13 +72,14 @@ header#tidory-header-wrapper {
     box-sizing: border-box;
     div.logo {
       a {
-        margin: 10.5px 0;
+        margin-right: 15px;
         float: left;
+        position: relative;
+        top: 15px;
         text-align: center;
-        background: url('~assets/images/logo.png');
-        width: 29px;
-        height: 29px;
-        background-size: 29px 60px;
+        background: url('/images/logo.png');
+        width: 24px;
+        height: 24px;
       }
     }
   }

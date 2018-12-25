@@ -35,7 +35,7 @@
           padding-right: 0;
         }
         a {
-          color: rgba(0,0,0, 0.7) !important;
+          color: black !important;
           font-weight: 400 !important;
           &:hover {
             color: #ed5207 !important;
@@ -44,7 +44,7 @@
       }
     }
     div.tidory-nav-inner {
-      line-height: 50px;
+      line-height: 55px;
       width: 1170px;
       margin:0 auto;
       > ul.nav {

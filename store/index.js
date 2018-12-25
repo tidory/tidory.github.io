@@ -100,7 +100,7 @@ const store = () => new Vuex.Store({
 				label: '티도리 모듈'
 			},
 			tistorySkinGuide: {
-				path: 'http://www.tistory.com/guide/skin/step0',
+				path: 'https://tistory.github.io/document-tistory-skin/',
 				label: '티스토리 가이드'
 			},
 		}
