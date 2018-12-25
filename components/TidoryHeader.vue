@@ -75,7 +75,6 @@ header#tidory-header-wrapper {
         margin-right: 15px;
         float: left;
         position: relative;
-        top: 15px;
         text-align: center;
         background: url('/images/logo.png');
         width: 24px;
@@ -90,6 +89,11 @@ header#tidory-header-wrapper {
     top: 10px;
     .tidory-header-inner {
       padding: 0 15px;
+      div.logo {
+        a {
+          top: 14px;
+        }
+      }
     }
   }
 }
@@ -101,6 +105,11 @@ header#tidory-header-wrapper {
       width: 1170px;
       margin: 0 auto;
       padding: 5px 0;
+      div.logo {
+        a {
+          top: 17px;
+        }
+      }
     }
   }
 }
