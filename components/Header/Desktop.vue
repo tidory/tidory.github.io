@@ -11,7 +11,6 @@
 </template>
 <script>
   export default {
-    name: 'tidory-nav',
     data() {
       return {
         nav: [

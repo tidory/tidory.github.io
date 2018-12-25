@@ -18,8 +18,8 @@
 </template>
 <script>
   import $ from "jquery"
+  
   export default {
-    name: 'tidory-docs-nav',
     data() {
       return {
         projectTemplate: []

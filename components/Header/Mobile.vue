@@ -27,8 +27,8 @@
 </template>
 <script>
   import $ from "jquery"
+  
   export default {
-    name: 'tidory-res-header',
     methods: {
       openMenu(event) {
         let _self = $(event.target).parent();

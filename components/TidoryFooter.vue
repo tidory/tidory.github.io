@@ -15,7 +15,6 @@
   import Navigation from './Footer/Navigation.vue';
 
   export default {
-    name: 'tidory-footer',
     components: {
       Navigation
     }

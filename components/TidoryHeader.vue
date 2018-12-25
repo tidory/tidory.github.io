@@ -2,34 +2,30 @@
   header#tidory-header-wrapper
     div.tidory-header-inner
       div.logo: a(href="/")
-      TidoryNavDesktop
-      TidoryNavMobile
+      Desktop
+      Mobile
 </template>
 <script>
   import $ from 'jquery';
 
-  import TidoryNavDesktop from '~/components/TidoryNavDesktop.vue'
-  import TidoryNavMobile from '~/components/TidoryNavMobile.vue'
+  import Desktop from './Header/Desktop.vue'
+  import Mobile from './Header/Mobile.vue'
+
   export default {
-    name: 'tidory-header',
     mounted() {
       this.onScroll();
     },
     components: {
-      TidoryNavDesktop,
-      TidoryNavMobile
+      Desktop,
+      Mobile
     },
     methods: {
       onScroll() {
         let lastScrollTop = 0;
-        let
-          $header = $('#tidory-header-wrapper')
-        ;
+        let $header = $('#tidory-header-wrapper');
         if($header.length) {
           $(window).scroll(function() {
-            let 
-              $scrollTop = $(window).scrollTop()
-            ;
+            let $scrollTop = $(window).scrollTop();
             if($scrollTop > lastScrollTop) {
               if($scrollTop > $header.height()) {
                 $header.addClass('fixed');
