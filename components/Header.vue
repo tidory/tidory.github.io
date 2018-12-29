@@ -1,7 +1,7 @@
 <template lang="pug">
   header#header(role="header")
     div
-      div#logo: a(href="/")
+      a#logo(href="/")
       Desktop
       Mobile
 </template>
@@ -58,15 +58,14 @@
       overflow: hidden;
       box-sizing: border-box;
       #logo {
-        a {
-          margin-right: 15px;
-          float: left;
-          position: relative;
-          text-align: center;
-          background: url('/images/logo.png');
-          width: 24px;
-          height: 24px;
-        }
+        margin-right: 15px;
+        float: left;
+        position: relative;
+        text-align: center;
+        background: url('/images/logo.png');
+        width: 24px;
+        height: 24px;
+        display: block;
       }
     }
   }
@@ -77,9 +76,7 @@
       > div {
         padding: 0 15px;
         #logo {
-          a {
-            top: 14px;
-          }
+          top: 14px;
         }
       }
     }
@@ -93,9 +90,7 @@
         margin: 0 auto;
         padding: 5px 0;
         #logo {
-          a {
-            top: 17px;
-          }
+          top: 17px;
         }
       }
     }

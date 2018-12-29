@@ -25,7 +25,6 @@
 			overflow: hidden;
 			.box {
 				float: left;
-				color: rgba(0, 0, 0, .9);
 				margin: 0 25px;
 			}
 			.tit {
@@ -34,7 +33,7 @@
 			}
 			.items {
 				.item {
-					color: rgba(0, 0, 0, .7);
+					color: rgba(0, 0, 0, .8);
 					display: block;
 					margin-bottom: 10px;
 					transition-duration: .2s;

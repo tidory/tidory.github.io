@@ -30,7 +30,7 @@
     
     #footer {
       border-top: 1px solid rgba(0, 0, 0, .06);
-      color: rgba(0, 0, 0, .7);
+      color: rgba(0, 0, 0, .8);
       font-size: .95em;
       clear: both;
       padding: 0 60px;
@@ -60,9 +60,6 @@
           top: 5px;
           display: inline-block;
           margin-bottom: 20px;
-      }
-      .copyright a {
-        color: rgba(0, 0, 0, .9) !important;
       }
     }
   }
