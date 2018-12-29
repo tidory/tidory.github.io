@@ -53,6 +53,7 @@
             div.paragraph
               | <b>pug</b> 템플릿 파일이 위치할 폴더입니다. 보통 <b>index.pug</b> 파일의 <b>block TIDORY</b> 부분에서 템플릿파일을 포함시킵니다. 소스구조는 분활해서 구성하는 것이 원칙입니다. <b><a href="/docs/template/split">템플릿 분리</a></b> 부분을 참고하세요. 
 </template>
+
 <script>
   import Page from '~/components/Page.vue';
 

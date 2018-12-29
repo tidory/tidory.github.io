@@ -78,6 +78,7 @@
             div.paragraph
               | 스타일과 스크립트를 <b>style.css</b> 와 <b>script.js</b> 로 분리하지 않고 그대로 두기 위해 사용하던 <b>inline</b> 속성의 이름이 혼동을 야기할 수도 있는 것으로 판단되어 <b>scoped</b> 라는 이름으로 재명명 되었습니다. <b><a href="/docs/template/resources">리소스</a></b> 부분을 참고해주세요.
 </template>
+
 <script>
   import Page from '~/components/Page.vue';
 

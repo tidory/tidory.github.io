@@ -33,7 +33,7 @@
       color: rgba(0, 0, 0, .7);
       font-size: .95em;
       clear: both;
-      margin-top: 35px;
+      margin-top: 55px;
       padding: 0 60px;
       padding-bottom: @paddingBottom;
       padding-top: @PaddingTop;

@@ -55,6 +55,7 @@
           div.paragraph
             | <b>자식 템플릿</b> 의 위치는 절대적인 것은 아니나, <b>부모 템플릿의 이름과 똑같은 폴더</b> 아래에 놓는 것을 원칙으로 합니다.
 </template>
+
 <script>
   import Page from '~/components/Page.vue';
 

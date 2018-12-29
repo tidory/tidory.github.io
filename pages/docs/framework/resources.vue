@@ -30,6 +30,7 @@
               code(class="language-javascript")
                 | {{ config }}
 </template>
+
 <script>
   import Page from '~/components/Page.vue';
 

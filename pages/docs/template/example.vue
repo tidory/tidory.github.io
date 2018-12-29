@@ -72,6 +72,7 @@
                 div.paragraph
                   | CSS는 CleanCSS 모듈을 통해 처리됩니다. 주석을 처리하려면 <b>/*! ... */</b> 형태로 작성해야 합니다. 기존 주석 형태와 다른 점은 시작할 때 <b>/*</b> 가 아닌 <b>/*!</b> 이라는 것이죠.
 </template>
+
 <script>
   import Page from '~/components/Page.vue';
 

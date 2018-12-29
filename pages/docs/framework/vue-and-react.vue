@@ -53,6 +53,7 @@
               code(class="language-javascript")
                 | {{ registerReactComponent }}
 </template>
+
 <script>
   import Page from '~/components/Page.vue';
 

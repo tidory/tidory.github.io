@@ -68,7 +68,7 @@
           }
         }
       }
-      .adswrapper {
+      .adsbygoogle {
         margin: 25px 0;
       }
       #text {

@@ -22,6 +22,7 @@
               code(class="language-pug")
                 | {{ form }}
 </template>
+
 <script>
   import Page from '~/components/Page.vue';
 

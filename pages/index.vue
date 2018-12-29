@@ -72,6 +72,7 @@
             | 추가적으로, 프로젝트 템플릿에는 <b>설정파일(.env)</b> 이 <b>.env.example</b> 이라는 이름으로 되어있습니다. 해당 파일의 이름을 <b>.env</b> 파일로 변경해주세요.
 </template>
 <script>
+
   import Page from '~/components/Page.vue';
 
   export default {

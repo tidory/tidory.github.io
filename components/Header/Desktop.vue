@@ -10,6 +10,7 @@
         li(v-for="(item, index) in $store.state.docs.docs")
           a(v-bind:href="item.path") {{ item.label }}
 </template>
+
 <script>
   import Donation from './Donation.vue'
 

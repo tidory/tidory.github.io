@@ -34,6 +34,7 @@
               code(class="language-pug")
                 | {{ static }}
 </template>
+
 <script>
   import Page from '~/components/Page.vue';
   
