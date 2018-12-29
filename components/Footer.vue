@@ -2,7 +2,7 @@
   footer#footer(role="footer")
     div
       div(style="float: left")
-        a.logo(href="/")
+        a#logo(href="/")
         .tit 티스토리 스킨 프레임워크, #[span(style="color: #FF5544") 티도리(Tidory)]
         .copyright 
             | 티도리(Tidory)에 대한 저작권은 개발자 
@@ -11,6 +11,7 @@
       div(style="float: right")
           Navigation
 </template>
+
 <script>
   import Navigation from './Footer/Navigation.vue';
 
@@ -20,6 +21,7 @@
     }
   }
 </script>
+
 <style lang="less">
   @media screen and (min-width: 1170px) {
     @padding: 80px;
@@ -49,7 +51,7 @@
       .tit {
         margin-bottom: 3px;
       }
-      .logo {
+      #logo {
           background: url(/images/logo.png);
           width: 24px;
           height: 24px;

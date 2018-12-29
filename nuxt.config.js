@@ -6,7 +6,8 @@ module.exports = {
 	  '~assets/css/prism.css'
   ],
   plugins: [
-    { src: '~plugins/prism', ssr: false }
+    { src: '~plugins/prism', ssr: false },
+    { src: '~plugins/vue-google-adsense', ssr: false }
   ],
   /*
   ** Headers of the page
@@ -33,7 +34,8 @@ module.exports = {
       { rel: 'apple-touch-icon', sizes: "152x152", href: '/images/152x152.png' },
       { rel: 'canonical', href: 'https://tidory.com/' },
       { rel: 'alternate', type: 'application/rss+xml', href: 'https://tidory.com/rss'},
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/earlyaccess/notosanskr.css'}
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/earlyaccess/notosanskr.css'},
+      { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.6.3/css/all.css' }
     ]
   },
   /*

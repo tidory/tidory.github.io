@@ -15,7 +15,9 @@
   },
   "dependencies": {
     "jquery": "^3.3.1",
-    "nuxt": "^1.0.0"
+    "nuxt": "^1.0.0",
+    "vue-google-adsense": "^1.2.0",
+    "vue-script2": "^2.0.3"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",
