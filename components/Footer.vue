@@ -9,7 +9,7 @@
             a(href="https://github.com/pronist" style="text-decoration: underline;" target="_blank") 정만수
             | 에게 있습니다.
       div(style="float: right")
-          Navigation
+        Navigation
 </template>
 
 <script>
@@ -33,7 +33,6 @@
       color: rgba(0, 0, 0, .7);
       font-size: .95em;
       clear: both;
-      margin-top: 55px;
       padding: 0 60px;
       padding-bottom: @paddingBottom;
       padding-top: @PaddingTop;
@@ -63,7 +62,7 @@
           margin-bottom: 20px;
       }
       .copyright a {
-        color: rgba(0, 0, 0, .7) !important;
+        color: rgba(0, 0, 0, .9) !important;
       }
     }
   }
