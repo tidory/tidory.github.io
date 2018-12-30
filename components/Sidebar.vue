@@ -15,6 +15,12 @@
       +category('프레임워크', '$store.state.docs.framework')
       +category('빌드 및 배포', '$store.state.docs.distribution')
       +category('외부 패키지', '$store.state.docs.packages')
+      Adsense(
+        data-ad-client="ca-pub-2513331130923231" 
+        data-ad-slot="2231056024"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      )
 </template>
 
 <script>
@@ -45,9 +51,8 @@
     #sidebar {
       float: left;
       width: 250px;
-      border-right: 1px solid #f0f2f1;
+      border-right: 1px solid rgba(0, 0, 0, .06);
       margin-bottom: 15px;
-      box-sizing: border-box;
       h2 {
         padding: 15px 0;
         font-size: 1.0em;
@@ -84,6 +89,9 @@
             }
           }
         }
+      }
+      .adsbygoogle {
+        margin-top: 5px;
       }
     }
   }

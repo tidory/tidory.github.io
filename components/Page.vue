@@ -127,10 +127,13 @@
   }
   @media all and (min-width: 1170px) {
     #document {
-      width: 620px;
+      width: 919px;
       float: left;
-      margin: 0 150px;
       box-sizing: border-box;
+      #content {
+        width: 620px;
+        margin: 0 auto;
+      }
     }
   }
   @media all and (max-width: 1170px) {
