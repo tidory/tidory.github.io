@@ -1,14 +1,12 @@
-const nodeExternals = require('webpack-node-externals');
-
 module.exports = {
   css: [
-    '~assets/css/nomalize.css',
-	  '~assets/css/prism.css'
+    '~assets/main.css'
   ],
-  plugins: [
-    { src: '~plugins/prism', ssr: false },
-    { src: '~plugins/vue-google-adsense', ssr: false }
-  ],
+  transition: {
+    enter(el, done) {
+      Prism.highlightAll();
+    }
+  },
   /*
   ** Headers of the page
   */
@@ -35,7 +33,7 @@ module.exports = {
       { rel: 'canonical', href: 'https://tidory.com/' },
       { rel: 'alternate', type: 'application/rss+xml', href: 'https://tidory.com/rss'},
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/earlyaccess/notosanskr.css'},
-      { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.6.3/css/all.css' }
+      { rel: 'stylesheet', href: '//use.fontawesome.com/releases/v5.7.1/css/all.css' }
     ]
   },
   /*
@@ -46,6 +44,16 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    publicPath: 'https://tidory.com/'
+    babel: {
+      "plugins": [
+        ["prismjs", {
+          "languages": ["css", "markup", "javascript", "bash", "pug"],
+          "plugins": ["toolbar", "show-language", "copy-to-clipboard"],
+          "theme": "tomorrow",
+          "css": true
+        }]
+      ]
+    },
   },
 }
+

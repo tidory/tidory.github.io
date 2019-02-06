@@ -1,106 +1,64 @@
 <template lang="pug">
-  section#document(role="document")
-    h1#title 티도리 시작하기
-    Page   
-      div#jumpMenu(slot="jumpMenu" role="jumpMenu")
-        h1 티도리 시작하기
-        div.headers
-          h2: a(href="#티스토리 스킨 제작 프레임워크") 티스토리 스킨 제작 프레임워크
-          h2: a(href="#시작하기 전에") 시작하기 전에
-          h2: a(href="#참고 사이트") 참고사이트
-          h2: a(href="#설치하기") 설치하기
-          h3: a(href="#티도리 프로젝트 설치") 티도리 프로젝트 설치
-          h2: a(href="#개발서버 시작") 개발서버 시작
-      div#text(slot="text" role="text")
-        article.box
-          h2(id="티스토리 스킨 제작 프레임워크") 티스토리 스킨 제작 프레임워크
-          div.paragraph
-            | <b>티도리</b> 는 <b>티스토리 스킨 제작</b> 을 위해 고안된 <b>프레임워크</b> 입니다. 개발자의 입맛에 맞게 다양한 기능을 사용하여 신속하고 재사용성이 높은 스킨제작을 목적으로 하고 있습니다.
-          div.paragraph
-            | * 프레임워크는 어플리케이션을 빠르게 개발하기 위해 제공되는 '틀' 같은 존재입니다.
-          div.paragraph
-            | 프레임워크 관련 피드백 및 질문사항, 구인관련 사항은 <b>pronist@naver.com</b> 으로 보내주시면 감사하겠습니다.
-        article.box
-          h2(id="시작하기 전에") 시작하기 전에
-          div.paragraph
-            | 티도리 프레임워크를 시작하기 전에 다음과 같은 도구들이 필요합니다.
-          div.txc-textbox(style='border-style: solid; border-width: 1px; border-color: rgb(238, 238, 238); background-color: rgb(238, 238, 238); padding: 10px;')
-            p Programming Language: HTML, CSS, JS
-            p Extension: Pug
-            p
-              | Package Manager: npm
-          div.paragraph
-            | * npm(Node Package Manager): <b>npm</b> 은 자바스크립트 모듈 및 라이브러리가 등록되어있는 저장소를 사용하여 자신 또는 다른 사람이 제작한 패키지를 관리할 수 있도록해주는 도구입니다. 서버에서 사용하는 <b>node.js</b> 와 관련이 깊습니다.
-          div.paragraph  
-            | * Pug: <b>Pug</b> 는 <b>HTML</b> 페이지의 코드 길이를 줄여주고 각종 부가기능을 추가하여 마크업을 빠르게 작성할 수 있도록 해주는 <b>확장언어</b> 입니다.
-        article.box
-          h2(id="참고 사이트") 참고사이트
-          div.txc-textbox(style='border-style: solid; border-width: 1px; border-color: rgb(238, 238, 238); background-color: rgb(238, 238, 238); padding: 10px;')
-            p
-              | Pug: 
-              a.tx-link(href='https://pugjs.org/api/getting-started.html', target='_blank') https://pugjs.org/api/getting-started.html
-            p
-              | Node Package Manager: 
-              a.tx-link(href='https://www.npmjs.com/get-npm', target='_blank') https://www.npmjs.com/get-npm
-        article.box
-          h2(id="설치하기") 설치하기
-          div.paragraph
-            | 먼저 <b>npm</b> 을 통해 모듈을 설치해야 합니다. <b>tidory</b> 모듈은 <b>티도리 프로젝트 템플릿</b> 과 상호작용하여 작동합니다. <b>CLI(Command Line Interface)</b> 상에서 명령을 통해 실행합니다.
-          div.txc-textbox(style='border-style: solid; border-width: 1px; border-color: rgb(238, 238, 238); background-color: rgb(238, 238, 238); padding: 10px;')
-            p(style='clear: none; float: none; text-align: left;') $ npm install -g tidory
-          div.paragraph
-            | * 티도리 모듈에 대한 문서는 npm 패키지에 포함되어 있습니다. <a href="https://www.npmjs.com/package/tidory" target='_blank'>https://www.npmjs.com/package/tidory</a> 를 참고해주시기 바랍니다.
-          div.paragraph
-            | * CLI(Command Line Interface): <b>CLI</b> 는 명령줄을 사용하여 지시를 내릴 수 있는 환경을 말합니다. <b>Windows</b> 에서 사용하는 <b>cmd</b>, <b>powershell</b> 이나 <b>리눅스</b> 의 <b>터미널(Terminal)</b> 정도가 있습니다.
-          div.paragraph
-            h3(id="티도리 프로젝트 설치") 티도리 프로젝트 설치
-            div.paragraph
-              | <b>Tidory</b> 를 설치했다면, 프로젝트 템플릿을 <b>git</b> 저장소로 부터 받아올 수 있습니다. 다음과 같은 명령을 사용하여 템플릿을 받아온 뒤, 해당 폴더로 이동합니다.
-            div.txc-textbox(style='border-style: solid; border-width: 1px; border-color: rgb(238, 238, 238); background-color: rgb(238, 238, 238); padding: 10px;')
-              p
-                | $ tidory new &lt;TISTORY_SKIN_NAME&gt;
-                | $ cd TISTORY_SKIN_NAME
-                | $ npm install
-            div.paragraph
-              | * 기본 프로젝트 템플릿은 티도리 <b>github</b> 페이지에서 찾을 수 있습니다. <a href="https://github.com/pronist/tidory-starter-template" target='_blank'>https://github.com/pronist/tidory-starter-template</a>
-          div.paragraph
-            | 데모로 작성되어있는 앱을 어떻게 실행시키면 될까요? 간단하게 알아보도록 하겠습니다. <b>tidory start</b> 명령을 사용하면 <b>http://localhost:8080</b> 주소로 <b>webpack-dev-server</b> 를 실행시킬 수 있습니다. 템플릿 파일이 수정되면 <b>자동으로 리로드</b> 됩니다.
-          div.txc-textbox(style='border-style: solid; border-width: 1px; border-color: rgb(238, 238, 238); background-color: rgb(238, 238, 238); padding: 10px;')
-            p
-              | $ tidory start
-          div.paragraph
-            | 추가적으로, 프로젝트 템플릿에는 <b>설정파일(.env)</b> 이 <b>.env.example</b> 이라는 이름으로 되어있습니다. 해당 파일의 이름을 <b>.env</b> 파일로 변경해주세요.
+AppPage
+  header.header(role="header" slot="header")
+    div.index 01
+    h1 티도리 프레임워크를 소개합니다
+  main.text(slot="text" role="text")
+    article.paragraph
+      h2 티스토리 스킨 제작 프레임워크
+      p 아직도 티스토리 스킨을 개발할 때 HTML에 생으로 코딩하시나요? #[b 티도리 프레임워크]는 #[b 티스토리 스킨 제작]을 위해 고안된 프레임워크입니다. 개발자의 입맛에 맞게 다양한 기능을 사용하여 신속하고 #[b 재사용성이 높은 스킨]제작을 목적으로 하고 있습니다. 프레임워크는 어플리케이션을 빠르게 개발하기 위해 제공되는 #[b 틀]같은 존재입니다. 프레임워크가 #[b 개발의 시작부터 배포까지 모든 것을 책임]지므로 사용자는 비지니스 로직에 집중하기만 하면 됩니다. 설정만 해두면 명령어 한 번만 입력하면 뚝딱이랍니다.
+    article.paragraph  
+      h2 템플릿 분리
+      p(style="text-align: center;")
+        img(src="~assets/images/webpack.png")
+      p 기존의 스킨개발 방식은 하나의 HTML에 #[b 헤더, 본문, 푸터, 사이드바]를 모두 몰아넣는 방식이었습니다. 티도리 프레임워크에서는 #[b 웹팩(Webpack)]을 번들링도구로 사용합니다. 개발과정부터 하나의 파일에 모두 넣을 필요가 없습니다. 개발단계에서 #[b 기능별로 분리]하여 다른 스킨을 제작할 때 #[b 재사용]할 수 있습니다. 또한 #[b 프론트엔드 템플릿엔진]의 일종인 #[b 퍼그(pug)]를 사용하므로 코드의 길이가 줄어들기 때문에 가독성이 향상됩니다.
+    article.paragraph  
+      h2 싱글 파일 템플릿
+      p 기능별로 분리된 템플릿을 관리할 때 #[b CSS, Javascript]를 별도로 분리하여 관리할 필요가 없습니다. 하나의 템플릿파일에 #[b style, script] 가 포함되어 빌드할 때는 #[b style.css, script.js 파일로 자동으로 분리]됩니다!
+      p 여기에 예시로 작성된 #[b HelloWorld.pug] 템플릿이 있습니다. 이것을 빌드하면 어떻게될까요?
+      pre(data-label="HelloWorld.pug")
+        code.lang-pug {{ index }}
+      p 위의 템플릿은 빌드시 각각 #[b skin.html, styls.css, script.js] 파일로 나뉘게 됩니다. #[b skin.html] 은 티스토리의 메인 스킨파일이고 #[b style.css] 파일은 스킨의 메인스타일을 담당하며 #[b script.js] 파일은 #[b webpack] 번들링으로 생성되는 #[b app.js] 이외에 사용자 정의 스크립트가 담겨있는 파일입니다.
+    article.paragraph  
+      h2 자바스크립트 프레임워크
+      p
+        img(src="~assets/images/vue-react.png" style="width: 100%;")
+      p 대표적 자바스크립트 프레임워크인 #[b 뷰(Vue), 리액트(React), 앵귤러(Angular)]중에서 #[b 뷰와 리액트]를 미리 프로젝트에 설정해두었습니다. 따라서 두 개의 프레임워크를 사용하여 티스토리 스킨을 #[b 어플리케이션] 레벨까지 올릴 수 있습니다. 티스토리 스킨을 #[b SPA(Single Page Application)]로 격상시키세요!
+    article.paragraph  
+      h2 라이브 개발 서버
+      p 티도리 프레임워크는 두 개의 #[b 라이브 서버]를 제공합니다. 하나는 치환자가 해석된 서버, #[b 프리뷰(Preivew)]서버라 칭합니다. 또 하나는 치환자가 해석되지 않은 서버, #[b 개발(Development)]서버입니다. 두 서버는 공통적으로 로컬에 서버를 동작시키고 #[b 자동으로 브라우저를 오픈]시킵니다. 템플릿 파일이 수정되면 브라우저는 자동으로 #[b 새로고침(Reload)]됩니다.
+    article.paragraph
+      h2 빌드 및 배포
+      p 개발을 마치고나면 해야 할 일은 #[b 빌드 및 배포]입니다. #[b 빌드]는 스킨 템플릿을 빌드하고 #[b skin.html], #[b style.css], 그리고 정적 파일이 있는 #[b images] 폴더를 생성합니다. 또한 티스토리 스킨 메타파일인 #[b index.xml, preview*.jpg] 를 복사합니다. #[b 배포]는 빌드된 스킨을 #[b 현재 티스토리 스킨에 적용]하거나, #[b 스킨저장소]에 저장할 수 있습니다.
+  footer.footer(slot="footer" role="footer")
+    div.arrows
+      div.right: nuxt-link(to="/docs/get-started/") 시작하기 #[i.fas.fa-angle-right]
 </template>
+
 <script>
+import AppPage from '~/components/AppPage.vue';
 
-  import Page from '~/components/Page.vue';
-
-  export default {
-    head() {
-      return {
-        script: [
-          {
-            type: 'application/ld+json',
-            innerHTML: `
-              { 
-                "@context" : "http://schema.org",
-                "@type" : "Organization",
-                "name": "티스토리 프레임워크, 티도리(TIDORY)",
-                "url" : "http://www.tidory.com",
-                "sameAs": [
-                  "http://www.tistory.com/",
-                  "https://www.github.com/pronist/tidory",
-                  "https://www.npmjs.com/package/tidory"
-                ]
-              }
-            `
-          }
-        ],
-        __dangerouslyDisableSanitizers: ['script']
-      }
-    },
-    components: {
-      Page
+export default {
+  mounted() {
+    this.$store.commit('activeMenu', 0);
+  },
+  components: {
+    AppPage
+  },
+  data() {
+    return {
+      index: `//- style.css
+style.
+  body {
+    margin: 0px;
+    padding: 0px;
+  }
+//- skin.html
+h1 Hello, World!
+//- script.js
+script.
+  console.log("Hello, World!");`
     }
   }
+}
 </script>

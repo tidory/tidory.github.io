@@ -10,9 +10,6 @@ npm-debug.log
 # Nuxt generate
 dist
 
-# Meta
-meta
-
 # Composer
 composer.json
 composer.lock
