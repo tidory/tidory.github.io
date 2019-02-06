@@ -12,7 +12,7 @@ export default {
   data() {
     return {
       menu: [
-        { label: '티스토리 스킨 가이드', href: 'https://tistory.github.io/document-tistory-apis/'}
+        { label: '티스토리 스킨 가이드', href: 'https://tistory.github.io/document-tistory-skin/'}
       ]
     }
   }
