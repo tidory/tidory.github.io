@@ -53,7 +53,7 @@ AppPage
           code.lang-javascript {{ script }}
   footer.footer(slot="footer" role="footer")
     div.arrows
-      div.left: nuxt-link(to="/docs/directory/") #[i.fas.fa-angle-left] 디렉토리
+      div.left: nuxt-link(to="/docs/template/") #[i.fas.fa-angle-left] 템플릿
       div.right: nuxt-link(to="/docs/framework/") 프레임워크 #[i.fas.fa-angle-right]
 </template>
 
