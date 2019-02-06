@@ -92,7 +92,7 @@ block TIDORY
   //- script.js
   script.
     console.log("Hello, World!")`,
-      blogMenu: `nav#nav(role="navigation)
+      blogMenu: `nav#nav(role="navigation")
   style.
     nav {
       font-size: 0.9em;
@@ -112,13 +112,6 @@ block TIDORY
       </a>
     </h1>
     <nav id="nav" role="navigation">
-      <style>
-        nav {
-          font-size: .9em;
-          color: green;
-          font-weight: 700
-        }
-      </style>
       [##_blog_menu_##]
       \<script\>
         console.log("Hello, World!");
