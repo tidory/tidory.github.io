@@ -17,7 +17,7 @@ AppPage
         | # Overwrite
         | tidory deploy
         | # Store TISTORY SKIN on Skin Storage
-        | tidory store
+        | tidory store TISTORY_SKIN
     article.paragraph
       h2 환경변수
       P 프리뷰 서버와 배포 모드를 위해서는 #[b .env] 파일에 #[b BLOG_URL, TSSESSION] 변수를 필수적으로 설정해야합니다. #[b BLOG_URL] 은 테스트할 티스토리 블로그이고 #[b TSSESSION] 변수는 현재 자신이 로그인한 티스토리에서 사용하고 있는 #[b 세션쿠키]의 값입니다. 티스토리에 로그인하고 개발자 도구를 열고 #[b 쿠키 저장소]를 확인하여 #[b TSSESSION] 값을 넣으십시오!

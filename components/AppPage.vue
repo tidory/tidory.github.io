@@ -14,7 +14,6 @@ export default {
 <style lang="stylus">
 #document
   margin-top 25px
-  margin-bottom 75px
   .version
     font-weight 600
     margin-left 5px
@@ -101,4 +100,10 @@ export default {
         float right
         i
           margin-left 3px
+@media all and (min-width: 1170px)
+  #document
+    margin-bottom 75px
+@media all and (max-width: 1170px)
+  #document
+    margin-bottom 35px
 </style>
