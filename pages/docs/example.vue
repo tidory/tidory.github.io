@@ -38,7 +38,7 @@ AppPage
           code.lang-pug {{ blogMenu }}
     article.paragraph
       h2(id="프로덕션 코드") 프로덕션 코드
-      p 우리가 만든 스킨을 이제 사용자에게 배포하기 위해 #[b 빌드]하면 다음과 같은 코드로 나뉘어집니다. #[b div#__tidory] 는 #[b layouts/default.pug] 에 정의되어 있습니다.
+      p 우리가 만든 스킨을 이제 사용자에게 배포하기 위해 #[b 빌드]하면 다음과 같은 코드로 나뉘어집니다. #[b div#__tidory] 는 #[b app.pug] 에 정의되어 있습니다.
       h3(id="skin") skin.html
       p
         pre(data-label="skin.html")
@@ -69,7 +69,7 @@ export default {
   },
   data() {
     return {
-      index: `extends ./layouts/default
+      index: `extends app
 
 block TIDORY
   //- template

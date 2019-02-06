@@ -6,17 +6,12 @@ AppPage
   main.text(slot="text" role="text")
     article.paragraph
       h2(id="문서 구조") 문서 구조
-      p 템플릿은 크게 #[b app.pug, layouts/*.pug, index.pug, views/*.pug] 로 구성되어 있습니다. 각각이 어떻게 연결되어있는지 살펴보죠!
+      p 템플릿은 크게 #[b app.pug, index.pug, views/*.pug] 로 구성되어 있습니다. 각각이 어떻게 연결되어있는지 살펴보죠!
       h3(id="app.pug") app.pug
-      p #[b app.pug] 템플릿은 #[b HTML]의 기본구조가 정의되어있는 템플릿입니다. #[b head, body] 태그와 같이 구조에 해당되는 태그들이 app.pug 에 마크업되어 있습니다. #[b HTML 문서]의 최상위 템플릿이므로 스킨과는 직접적인 연관이 없는 마크업을 넣는 것이 좋습니다.
+      p #[b app.pug] 템플릿은 #[b HTML]의 기본구조가 정의되어있는 템플릿입니다. #[b head, body] 태그와 같이 구조에 해당되는 태그들이 app.pug 에 마크업되어 있습니다. #[b 문서]의 최상위 템플릿이므로 스킨과는 직접적인 연관이 없는 마크업을 넣는 것이 좋습니다.
       p
         pre(data-label="app.pug")
           code.lang-pug {{ app }}
-      h3(id="layouts/*.pug") layouts/*.pug
-      p 레이아웃 파일은 티스토리 치환자인 #[b &lt;s_t3&gt;] 가 들어가는 #[b 티스토리 스킨]의 최상위 템플릿입니다. 필요에 따라 레이아웃을 변경할 수 있도록 구성할 수 있으며 레이아웃에 정의된 템플릿은 #[b app.pug] 를 상속해야 하고 #[b block TIDORY] 를 가지고 있어야합니다.
-      P 
-        pre(data-label="layouts/*.pug")
-          code.lang-pug {{ layout }}
       h3(id="index.pug") index.pug
       p #[b index.pug] 템플릿은 티스토리 스킨의 헤더, 컨텐츠, 푸터, 사이드바와 같은 부가요소가 포함됩니다. #[b block TIDORY] 아래에 #[b include] 키워드를 사용하여 템플릿 파일을 포함시킵니다.
       p 
@@ -96,15 +91,10 @@ html(lang="ko")
     script(src="https://unpkg.com/tistory")
     
   body(id="[##_body_id_##]")
-    block TISTORY`,
-      layout: `extends ../app
-
-block TISTORY
-  s_t3
-    div#__tidory
-      //- template
-      block TIDORY`,
-      index: `extends ./layouts/default
+    s_t3
+      div#__tidory
+        block TIDORY`,
+      index: `extends app
 
 block TIDORY
   //- template
