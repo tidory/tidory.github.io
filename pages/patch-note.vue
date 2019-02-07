@@ -1,5 +1,5 @@
 <template lang="pug">
-AppPage
+AppPage(index=8)
   header.header(role="header" slot="header")
     div.index 08
     h1 티도리 6.1
@@ -29,9 +29,6 @@ AppPage
 import AppPage from '~/components/AppPage.vue';
 
 export default {
-  mounted() {
-    this.$store.commit('activeMenu', 8);
-  },
   components: {
     AppPage
   },

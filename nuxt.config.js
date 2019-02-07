@@ -1,12 +1,4 @@
 module.exports = {
-  css: [
-    '~assets/main.css'
-  ],
-  transition: {
-    enter(el, done) {
-      Prism.highlightAll();
-    }
-  },
   /*
   ** Headers of the page
   */
@@ -33,7 +25,8 @@ module.exports = {
       { rel: 'canonical', href: 'https://tidory.com/' },
       { rel: 'alternate', type: 'application/rss+xml', href: 'https://tidory.com/rss'},
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/earlyaccess/notosanskr.css'},
-      { rel: 'stylesheet', href: '//use.fontawesome.com/releases/v5.7.1/css/all.css' }
+      { rel: 'stylesheet', href: '//use.fontawesome.com/releases/v5.7.1/css/all.css' },
+      { rel: 'stylesheet', href: '//cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css' }
     ]
   },
   /*

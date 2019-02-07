@@ -1,5 +1,5 @@
 <template lang="pug">
-section#document
+section#document(class="animated fadeIn slow")
   slot(name="header")
   slot(name="text")
   slot(name="footer")
@@ -7,13 +7,17 @@ section#document
 
 <script>
 export default {
-  /** empty */
+  props: ['index'],
+  beforeMount() {
+    this.$store.commit('activeMenu', this.index);
+  },
 }
 </script>
 
 <style lang="stylus">
 #document
   margin-top 25px
+  transform: translateY(30px)
   .version
     font-weight 600
     margin-left 5px

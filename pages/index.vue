@@ -1,5 +1,5 @@
 <template lang="pug">
-AppPage
+AppPage(index=0)
   header.header(role="header" slot="header")
     div.index 01
     h1 티도리 프레임워크를 소개합니다
@@ -32,16 +32,13 @@ AppPage
       p 개발을 마치고나면 해야 할 일은 #[b 빌드 및 배포]입니다. #[b 빌드]는 스킨 템플릿을 빌드하고 #[b skin.html], #[b style.css], 그리고 정적 파일이 있는 #[b images] 폴더를 생성합니다. 또한 티스토리 스킨 메타파일인 #[b index.xml, preview*.jpg] 를 복사합니다. #[b 배포]는 빌드된 스킨을 #[b 현재 티스토리 스킨에 적용]하거나, #[b 스킨저장소]에 저장할 수 있습니다.
   footer.footer(slot="footer" role="footer")
     div.arrows
-      div.right: nuxt-link(to="/docs/get-started/") 시작하기 #[i.fas.fa-angle-right]
+      div.right: a(href="/docs/get-started/") 시작하기 #[i.fas.fa-angle-right]
 </template>
 
 <script>
 import AppPage from '~/components/AppPage.vue';
 
 export default {
-  mounted() {
-    this.$store.commit('activeMenu', 0);
-  },
   components: {
     AppPage
   },

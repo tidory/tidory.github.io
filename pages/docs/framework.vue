@@ -1,5 +1,5 @@
 <template lang="pug">
-AppPage
+AppPage(index=5)
   header.header(role="header" slot="header")
     div.index 06
     h1 프레임워크
@@ -48,17 +48,14 @@ AppPage
           code.lang-javascript {{ webpackBaseConfg }}
   footer.footer(slot="footer" role="footer")
     div.arrows
-      div.left: nuxt-link(to="/docs/example") #[i.fas.fa-angle-left] 티스토리 예제
-      div.right: nuxt-link(to="/docs/distribute/") 빌드 및 배포 #[i.fas.fa-angle-right]
+      div.left: a(href="/docs/example") #[i.fas.fa-angle-left] 티스토리 예제
+      div.right: a(href="/docs/distribute") 빌드 및 배포 #[i.fas.fa-angle-right]
 </template>
 
 <script>
 import AppPage from '~/components/AppPage.vue';
 
 export default {
-  mounted() {
-    this.$store.commit('activeMenu', 5);
-  },
   components: {
     AppPage
   },

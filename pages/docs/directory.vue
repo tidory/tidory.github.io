@@ -1,5 +1,5 @@
 <template lang="pug">
-AppPage
+AppPage(index=2)
   header.header(role="header" slot="header")
     div.index 03
     h1 디렉토리
@@ -28,7 +28,7 @@ AppPage
       h3(id="images") images/*
       p 보통 프레임워크에서 정적파일의 폴더이름은 #[b static] 으로 처리 될 수 있습니다만, 티스토리에서는 #[b images] 폴더로 모든 정적파일 을 관리합니다.
       h3(id="views") views/*.pug
-      p #[b pug 템플릿 파일]이 위치할 폴더입니다. 보통 #[b index.pug] 파일의 #[b block TIDORY] 부분에서 템플릿파일을 포함시킵니다. 소스구조는 분활해서 구성하는 것이 원칙입니다. #[nuxt-link(to="/docs/template#문서 구조") 문서 구조] 부분을 참고하세요. 
+      p #[b pug 템플릿 파일]이 위치할 폴더입니다. 보통 #[b index.pug] 파일의 #[b block TIDORY] 부분에서 템플릿파일을 포함시킵니다. 소스구조는 분활해서 구성하는 것이 원칙입니다. #[a(href="/docs/template#문서 구조") 문서 구조] 부분을 참고하세요. 
       h3(id="env") .env
       p #[b .env] 환경설정 파일은 템플릿 내부 또는 #[b webpack.entry.js] 에서 사용하는 상수 설정 파일입니다. 예를 들어 티스토리에 API에 등록된 앱을 사용하기 위해 다음과 같이 #[b 티스토리 API] 로그인을 위한 상수가 정의되어 있다고 가정해봅시다.
       p
@@ -45,17 +45,14 @@ AppPage
 
   footer.footer(slot="footer" role="footer")
     div.arrows
-      div.left: nuxt-link(to="/docs/get-started") #[i.fas.fa-angle-left] 시작하기 
-      div.right: nuxt-link(to="/docs/template/") 템플릿 #[i.fas.fa-angle-right]
+      div.left: a(href="/docs/get-started") #[i.fas.fa-angle-left] 시작하기 
+      div.right: a(href="/docs/template") 템플릿 #[i.fas.fa-angle-right]
 </template>
 
 <script>
 import AppPage from '~/components/AppPage.vue';
 
 export default {
-  mounted() {
-    this.$store.commit('activeMenu', 2);
-  },
   components: {
     AppPage
   },

@@ -1,12 +1,12 @@
 <template lang="pug">
 nav#nav(role="navigation")
   div.shadow
-    nuxt-link.logo(to="/"): img(src="~assets/images/logo.png")
+    a.logo(href="/"): img(src="~assets/images/logo.png")
     ul.menu
       li(v-for="(item, index) in menu" :class="{ active: index == $store.state.active }")
         div.index {{ "0" + parseInt(index+1) }}
         div.label 
-          nuxt-link(:to="item.href") {{ item.label }}
+          a(:href="item.href") {{ item.label }}
     div.social
       a(href="https://github.com/pronist/tidory-starter-template")
         i.fab.fa-github(style="font-size: 1.3em")
@@ -72,7 +72,7 @@ export default {
             color rgba(0, 0, 0, .3)
           .label > a
             color rgba(0, 0, 0, .3)
-            transition-duration .5s
+            transition-duration unset
           &.active
             font-weight 500
             .index

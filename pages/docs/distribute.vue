@@ -1,5 +1,5 @@
 <template lang="pug">
-AppPage
+AppPage(index=6)
   header.header(role="header" slot="header")
     div.index 07
     h1 빌드 및 배포
@@ -59,16 +59,13 @@ AppPage
       p #[b docs] 폴더에 있던 #[b 티스토리 스킨 설정]파일입니다.
   footer.footer(slot="footer" role="footer")
     div.arrows
-      div.left: nuxt-link(to="/docs/framework") #[i.fas.fa-angle-left] 프레임워크
+      div.left: a(href="/docs/framework") #[i.fas.fa-angle-left] 프레임워크
 </template>
 
 <script>
 import AppPage from '~/components/AppPage.vue';
 
 export default {
-  mounted() {
-    this.$store.commit('activeMenu', 6);
-  },
   components: {
     AppPage
   }

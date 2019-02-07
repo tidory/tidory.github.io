@@ -2,7 +2,7 @@
 aside#aside(role="sidebar")
   ul.menu
     li
-      nuxt-link(to="/patch-note") 패치노트
+      a(href="/patch-note") 패치노트
     li(v-for="(item, index) in menu")
       a(:href="item.href") {{ item.label }}
 </template>

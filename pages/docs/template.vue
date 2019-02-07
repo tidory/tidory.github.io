@@ -1,5 +1,5 @@
 <template lang="pug">
-AppPage
+AppPage(index=3)
   header.header(role="header" slot="header")
     div.index 04
     h1 템플릿
@@ -46,17 +46,14 @@ AppPage
               │     └── Footer.pug
   footer.footer(slot="footer" role="footer")
     div.arrows
-      div.left: nuxt-link(to="/docs/directory/") #[i.fas.fa-angle-left] 디렉토리
-      div.right: nuxt-link(to="/docs/example/") 티스토리 예제 #[i.fas.fa-angle-right]
+      div.left: a(href="/docs/directory") #[i.fas.fa-angle-left] 디렉토리
+      div.right: a(href="/docs/example") 티스토리 예제 #[i.fas.fa-angle-right]
 </template>
 
 <script>
 import AppPage from '~/components/AppPage.vue';
 
 export default {
-  mounted() {
-    this.$store.commit('activeMenu', 3);
-  },
   components: {
     AppPage
   },
