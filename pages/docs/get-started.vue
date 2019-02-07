@@ -64,7 +64,7 @@ AppPage
             | # For Distribute
             | tidory build
             | # Store TISTORY SKIN on Skin Storage
-            | # tidory store
+            | # tidory store TISTORY_SKIN
   footer.footer(slot="footer" role="footer")
     div.arrows
       div.left: nuxt-link(to="/") #[i.fas.fa-angle-left] 티도리 프레임워크 
