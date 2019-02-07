@@ -2,9 +2,9 @@
 aside#aside(role="sidebar")
   ul.menu
     li(v-for="item in $store.state.sidebar")
-      a(:href="item.href") {{ item. label }}
+      a(:href="item.href"): i(:class="item.class")
     li(v-for="(item, index) in menu")
-      a(:href="item.href") {{ item.label }}
+      a(:href="item.href"): i(:class="item.class")
 </template>
 
 <script>
@@ -12,7 +12,7 @@ export default {
   data() {
     return {
       menu: [
-        { label: '티스토리 스킨 가이드', href: 'https://tistory.github.io/document-tistory-skin/' }
+        { class: 'fas fa-book-open', href: 'https://tistory.github.io/document-tistory-skin/' }
       ]
     }
   }
@@ -32,6 +32,11 @@ export default {
         margin 0 10px
         float left
         font-size .9em
+        i
+          transition-duration .8s 
+          color rgba(0, 0, 0, .3)
+          &:hover
+            color rgba(0, 0, 0, .85)
 @media all and (max-width: 1170px)
   #aside
     display none
