@@ -9,7 +9,7 @@ export const state = () => ({
     distribute: { label: '빌드 및 배포', href: '/docs/distribute', page: '07' }
   },
   sidebar: {
-    patchNote: { label: '패치노트', href: '/docs/patch-note', page: '08' }
+    patchNote: { label: '패치노트', href: '/patch-note', page: '08' }
   },
   active: null
 })

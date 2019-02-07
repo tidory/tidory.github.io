@@ -1,5 +1,5 @@
 <template lang="pug">
-AppPage(:active="$store.state.menu.directory.page")
+app-page(:active="$store.state.menu.directory.page")
   header.header(role="header" slot="header")
     div.index {{ $store.state.menu.directory.page }}
     h1 {{ $store.state.menu.directory.label }}
@@ -36,7 +36,11 @@ AppPage(:active="$store.state.menu.directory.page")
 </template>
 
 <script>
+import AppPage from '~/components/AppPage.vue';
+
 export default {
-  /** emtpy */
+  components: {
+    AppPage
+  }
 }
 </script>

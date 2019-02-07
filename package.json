@@ -11,13 +11,13 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "deploy": "npm run generate && push-dir --dir=dist --branch=gh-pages --cleanup",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "serve": "nuxt generate && cd dist && php -S localhost:80"
   },
   "dependencies": {
-    "nuxt": "^2.4.2",
+    "nuxt": "^2.0.0",
     "prismjs": "^1.14.0",
-    "push-dir": "^0.4.1",
-    "terser": "^3.14.1"
+    "push-dir": "^0.4.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",

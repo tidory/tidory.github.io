@@ -1,5 +1,5 @@
 <template lang="pug">
-AppPage(:active="$store.state.menu.framework.page")
+app-page(:active="$store.state.menu.framework.page")
   header.header(role="header" slot="header")
     div.index {{ $store.state.menu.framework.page }}
     h1 {{ $store.state.menu.framework.label }}
@@ -53,7 +53,12 @@ AppPage(:active="$store.state.menu.framework.page")
 </template>
 
 <script>
+import AppPage from '~/components/AppPage.vue';
+
 export default {
+  components: {
+    AppPage
+  },
   data() {
     return {
       vue: `<template>

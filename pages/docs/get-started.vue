@@ -1,5 +1,5 @@
 <template lang="pug">
-AppPage(:active="$store.state.menu.getStarted.page")
+app-page(:active="$store.state.menu.getStarted.page")
   header.header(role="header" slot="header")
     div.index {{ $store.state.menu.getStarted.page }}
     h1 {{ $store.state.menu.getStarted.label }}
@@ -72,7 +72,12 @@ AppPage(:active="$store.state.menu.getStarted.page")
 </template>
 
 <script>
+import AppPage from '~/components/AppPage.vue';
+
 export default {
+  components: {
+    AppPage
+  },
   data() {
     return {
       env: `BLOG_URL=https://appwriter.tistory.com

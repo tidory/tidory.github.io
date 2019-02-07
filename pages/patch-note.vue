@@ -1,5 +1,5 @@
 <template lang="pug">
-AppPage
+app-page
   header.header(role="header" slot="header")
     div.index {{ $store.state.sidebar.patchNote.page }}
     h1 {{ $store.state.sidebar.patchNote.label }}
