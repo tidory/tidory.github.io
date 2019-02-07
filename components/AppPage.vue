@@ -53,6 +53,7 @@ export default {
         margin-right 10px
     h3
       font-weight 500
+      margin-top 25px
       margin-bottom 20px
       font-size 1.2em
     h4

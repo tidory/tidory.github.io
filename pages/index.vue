@@ -16,9 +16,8 @@ app-page(:active="$store.state.menu.home.page")
       h2 싱글 파일 템플릿
       p 기능별로 분리된 템플릿을 관리할 때 #[b CSS, Javascript]를 별도로 분리하여 관리할 필요가 없습니다. 하나의 템플릿파일에 #[b style, script] 가 포함되어 빌드할 때는 #[b style.css, script.js 파일로 자동으로 분리]됩니다!
       p 여기에 예시로 작성된 #[b HelloWorld.pug] 템플릿이 있습니다. 이것을 빌드하면 어떻게될까요?
-      p
-        pre(data-label="HelloWorld.pug")
-          code.lang-pug {{ index }}
+      pre(data-label="HelloWorld.pug")
+        code.lang-pug {{ index }}
       p 위의 템플릿은 빌드시 각각 #[b skin.html, styls.css, script.js] 파일로 나뉘게 됩니다. #[b skin.html] 은 티스토리의 메인 스킨파일이고 #[b style.css] 파일은 스킨의 메인스타일을 담당하며 #[b script.js] 파일은 #[b webpack] 번들링으로 생성되는 #[b app.js] 이외에 사용자 정의 스크립트가 담겨있는 파일입니다.
     article.paragraph  
       h2 자바스크립트 프레임워크
