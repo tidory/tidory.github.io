@@ -6,18 +6,19 @@ section#document(class="animated fadeIn slow")
 </template>
 
 <script>
+import Prism from 'prismjs';
+
 export default {
-  props: ['index'],
-  beforeMount() {
-    this.$store.commit('activeMenu', this.index);
-  },
+  props: ['active'],
+  mounted() {
+    this.$store.commit('activeMenu', this.active);
+  }
 }
 </script>
 
 <style lang="stylus">
 #document
   margin-top 25px
-  transform: translateY(30px)
   .version
     font-weight 600
     margin-left 5px

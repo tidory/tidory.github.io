@@ -1,8 +1,8 @@
 <template lang="pug">
-AppPage(index=3)
+AppPage(:active="$store.state.menu.template.page")
   header.header(role="header" slot="header")
-    div.index 04
-    h1 템플릿
+    div.index {{ $store.state.menu.template.page }}
+    h1 {{ $store.state.menu.template.label }}
   main.text(slot="text" role="text")
     article.paragraph
       h2(id="문서 구조") 문서 구조
@@ -56,17 +56,12 @@ AppPage(index=3)
               │     └── Footer.pug
   footer.footer(slot="footer" role="footer")
     div.arrows
-      div.left: a(href="/docs/directory") #[i.fas.fa-angle-left] 디렉토리
-      div.right: a(href="/docs/example") 티스토리 예제 #[i.fas.fa-angle-right]
+      div.left: a(:href="$store.state.menu.directory.href") #[i.fas.fa-angle-left] {{ $store.state.menu.directory.label }}
+      div.right: a(:href="$store.state.menu.example.href") {{ $store.state.menu.example.label }} #[i.fas.fa-angle-right]
 </template>
 
 <script>
-import AppPage from '~/components/AppPage.vue';
-
 export default {
-  components: {
-    AppPage
-  },
   data() {
     return {
       app: `doctype html

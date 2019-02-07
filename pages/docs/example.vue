@@ -1,8 +1,8 @@
 <template lang="pug">
-AppPage(index=4)
+AppPage(:active="$store.state.menu.example.page")
   header.header(role="header" slot="header")
-    div.index 05
-    h1 티스토리 예제
+    div.index {{ $store.state.menu.example.page }}
+    h1 {{ $store.state.menu.example.label }}
   main.text(slot="text" role="text")
     article.paragraph
       h2(id="템플릿 작성") 템플릿 작성
@@ -53,17 +53,12 @@ AppPage(index=4)
           code.lang-javascript {{ script }}
   footer.footer(slot="footer" role="footer")
     div.arrows
-      div.left: a(href="/docs/template") #[i.fas.fa-angle-left] 템플릿
-      div.right: a(href="/docs/framework") 프레임워크 #[i.fas.fa-angle-right]
+      div.left: a(:href="$store.state.menu.template.href") #[i.fas.fa-angle-left] {{ $store.state.menu.template.label }}
+      div.right: a(:href="$store.state.menu.framework.href") {{ $store.state.menu.framework.label }} #[i.fas.fa-angle-right]
 </template>
 
 <script>
-import AppPage from '~/components/AppPage.vue';
-
 export default {
-  components: {
-    AppPage
-  },
   data() {
     return {
       index: `extends app

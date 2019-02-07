@@ -1,8 +1,8 @@
 <template lang="pug">
 aside#aside(role="sidebar")
   ul.menu
-    li
-      a(href="/patch-note") 패치노트
+    li(v-for="item in $store.state.sidebar")
+      a(:href="item.href") {{ item. label }}
     li(v-for="(item, index) in menu")
       a(:href="item.href") {{ item.label }}
 </template>
@@ -12,7 +12,7 @@ export default {
   data() {
     return {
       menu: [
-        { label: '티스토리 스킨 가이드', href: 'https://tistory.github.io/document-tistory-skin/'}
+        { label: '티스토리 스킨 가이드', href: 'https://tistory.github.io/document-tistory-skin/' }
       ]
     }
   }

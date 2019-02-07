@@ -10,12 +10,10 @@ div#container
 import AppNavigation from '~/components/AppNavigation.vue';
 import AppSidebar from '~/components/AppSidebar.vue';
 
-import Prism from 'prismjs';
-
 export default {
   components: {
     AppNavigation,
-    AppSidebar,
+    AppSidebar
   }
 }
 </script>

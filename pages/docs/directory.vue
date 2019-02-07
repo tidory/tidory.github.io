@@ -1,10 +1,10 @@
 <template lang="pug">
-AppPage(index=2)
+AppPage(:active="$store.state.menu.directory.page")
   header.header(role="header" slot="header")
-    div.index 03
-    h1 디렉토리
+    div.index {{ $store.state.menu.directory.page }}
+    h1 {{ $store.state.menu.directory.label }}
   main.text(slot="text" role="text")
-    article.paragraph  
+    article.paragraph
       p
         div.blockquote-type-3
           pre.
@@ -28,19 +28,15 @@ AppPage(index=2)
       h3(id="images") images/*
       p 보통 프레임워크에서 정적파일의 폴더이름은 #[b static] 으로 처리 될 수 있습니다만, 티스토리에서는 #[b images] 폴더로 모든 정적파일 을 관리합니다.
       h3(id="views") views/*.pug
-      p #[b pug 템플릿 파일]이 위치할 폴더입니다. 보통 #[b index.pug] 파일의 #[b block TIDORY] 부분에서 템플릿파일을 포함시킵니다. 소스구조는 분활해서 구성하는 것이 원칙입니다. #[a(href="/docs/template#문서 구조") 문서 구조] 부분을 참고하세요. 
+      p #[b pug 템플릿 파일]이 위치할 폴더입니다. 보통 #[b index.pug] 파일의 #[b block TIDORY] 부분에서 템플릿파일을 포함시킵니다. 소스구조는 분활해서 구성하는 것이 원칙입니다. #[a(:href="$store.state.menu.template.href+'#문서 구조'") 문서 구조] 부분을 참고하세요. 
   footer.footer(slot="footer" role="footer")
     div.arrows
-      div.left: a(href="/docs/get-started") #[i.fas.fa-angle-left] 시작하기 
-      div.right: a(href="/docs/template") 템플릿 #[i.fas.fa-angle-right]
+      div.left: a(:href="$store.state.menu.getStarted.href") #[i.fas.fa-angle-left] {{ $store.state.menu.getStarted.label }} 
+      div.right: a(:href="$store.state.menu.template.href") {{ $store.state.menu.template.label }} #[i.fas.fa-angle-right]
 </template>
 
 <script>
-import AppPage from '~/components/AppPage.vue';
-
 export default {
-  components: {
-    AppPage
-  },
+  /** emtpy */
 }
 </script>

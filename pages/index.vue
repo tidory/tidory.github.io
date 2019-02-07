@@ -1,8 +1,8 @@
 <template lang="pug">
-AppPage(index=0)
+AppPage(:active="$store.state.menu.home.page")
   header.header(role="header" slot="header")
-    div.index 01
-    h1 티도리 프레임워크를 소개합니다
+    div.index {{ $store.state.menu.home.page }}
+    h1 {{ $store.state.menu.home.label }}
   main.text(slot="text" role="text")
     article.paragraph
       h2 티스토리 스킨 제작 프레임워크
@@ -16,8 +16,9 @@ AppPage(index=0)
       h2 싱글 파일 템플릿
       p 기능별로 분리된 템플릿을 관리할 때 #[b CSS, Javascript]를 별도로 분리하여 관리할 필요가 없습니다. 하나의 템플릿파일에 #[b style, script] 가 포함되어 빌드할 때는 #[b style.css, script.js 파일로 자동으로 분리]됩니다!
       p 여기에 예시로 작성된 #[b HelloWorld.pug] 템플릿이 있습니다. 이것을 빌드하면 어떻게될까요?
-      pre(data-label="HelloWorld.pug")
-        code.lang-pug {{ index }}
+      p
+        pre(data-label="HelloWorld.pug")
+          code.lang-pug {{ index }}
       p 위의 템플릿은 빌드시 각각 #[b skin.html, styls.css, script.js] 파일로 나뉘게 됩니다. #[b skin.html] 은 티스토리의 메인 스킨파일이고 #[b style.css] 파일은 스킨의 메인스타일을 담당하며 #[b script.js] 파일은 #[b webpack] 번들링으로 생성되는 #[b app.js] 이외에 사용자 정의 스크립트가 담겨있는 파일입니다.
     article.paragraph  
       h2 자바스크립트 프레임워크
@@ -32,16 +33,11 @@ AppPage(index=0)
       p 개발을 마치고나면 해야 할 일은 #[b 빌드 및 배포]입니다. #[b 빌드]는 스킨 템플릿을 빌드하고 #[b skin.html], #[b style.css], 그리고 정적 파일이 있는 #[b images] 폴더를 생성합니다. 또한 티스토리 스킨 메타파일인 #[b index.xml, preview*.jpg] 를 복사합니다. #[b 배포]는 빌드된 스킨을 #[b 현재 티스토리 스킨에 적용]하거나, #[b 스킨저장소]에 저장할 수 있습니다.
   footer.footer(slot="footer" role="footer")
     div.arrows
-      div.right: a(href="/docs/get-started/") 시작하기 #[i.fas.fa-angle-right]
+      div.right: a(:href="$store.state.menu.getStarted.href") {{ $store.state.menu.getStarted.label }} #[i.fas.fa-angle-right]
 </template>
 
 <script>
-import AppPage from '~/components/AppPage.vue';
-
 export default {
-  components: {
-    AppPage
-  },
   data() {
     return {
       index: `//- style.css

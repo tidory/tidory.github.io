@@ -1,8 +1,8 @@
 <template lang="pug">
-AppPage(index=1)
+AppPage(:active="$store.state.menu.getStarted.page")
   header.header(role="header" slot="header")
-    div.index 02
-    h1 시작하기
+    div.index {{ $store.state.menu.getStarted.page }}
+    h1 {{ $store.state.menu.getStarted.label }}
   main.text(slot="text" role="text")
     article.paragraph
       h2(id="시작하기 전에") 시작하기 전에
@@ -36,7 +36,7 @@ AppPage(index=1)
         blockquote.blockquote-type-2 기본 프로젝트 템플릿은 #[b 깃허브 저장소] #[a(href="https://github.com/pronist/tidory-starter-template") https://github.com/pronist/tidory-starter-template] 에서 찾을 수 있습니다.
     article.paragraph
       h2(id="환경설정") 환경설정
-      p 프로젝트 설치가 끝나고 나면 해야할 것이 바로 #[b 환경설정]입니다. 환경설정은 #[b .env] 파일에서 합니다. 환경설정이 무엇인지 알고싶다면 #[a(href="/docs/template#env") 환경설정]을 참고해주세요. 자신이 가지고 있는 어떤 블로그를 프리뷰하고 배포할 지 설정을 해주어야 합니다. 다른 것들은 상황에 따라 넣어도 되고 삭제해도 되지만, 필수적으로 있어야 하는 것은 #[b BLOG_URL, TSSESSION] 변수입니다.
+      p 프로젝트 설치가 끝나고 나면 해야할 것이 바로 #[b 환경설정]입니다. 환경설정은 #[b .env] 파일에서 합니다. 환경설정이 무엇인지 알고싶다면 #[a(:href="$store.state.menu.template.href+'#env'") 환경설정]을 참고해주세요. 자신이 가지고 있는 어떤 블로그를 프리뷰하고 배포할 지 설정을 해주어야 합니다. 다른 것들은 상황에 따라 넣어도 되고 삭제해도 되지만, 필수적으로 있어야 하는 것은 #[b BLOG_URL, TSSESSION] 변수입니다.
       p
         pre(data-label=".env")
           code.lang-none {{ env }}
@@ -57,7 +57,7 @@ AppPage(index=1)
             | # tidory preview
     article.paragraph
       h2(id="빌드 및 배포") 빌드 및 배포
-      p #[b 빌드 및 배포]는 기본적으로 #[b tidory build] 명령과 #[b tidory store] 가 있습니다. 빌드와 배포를 하는 방법에는 몇가지 있지만, 시작하기 단계에서는 자세한 설명없이 넘어가도록 하겠습니다. 자세한 내용은 #[a(href="/docs/distribute") 빌드 및 배포] 문서를 참고해 주시기 바랍니다.
+      p #[b 빌드 및 배포]는 기본적으로 #[b tidory build] 명령과 #[b tidory store] 가 있습니다. 빌드와 배포를 하는 방법에는 몇가지 있지만, 시작하기 단계에서는 자세한 설명없이 넘어가도록 하겠습니다. 자세한 내용은 #[a(:href="$store.state.menu.distribute.href") 빌드 및 배포] 문서를 참고해 주시기 바랍니다.
       p
         pre
           code.lang-bash
@@ -67,17 +67,12 @@ AppPage(index=1)
             | # tidory store TISTORY_SKIN
   footer.footer(slot="footer" role="footer")
     div.arrows
-      div.left: a(href="/") #[i.fas.fa-angle-left] 티도리 프레임워크 
-      div.right: a(href="/docs/directory") 디렉토리 #[i.fas.fa-angle-right]
+      div.left: a(:href="$store.state.menu.home.href") #[i.fas.fa-angle-left] {{ $store.state.menu.home.label }}
+      div.right: a(:href="$store.state.menu.directory.href") {{ $store.state.menu.directory.label }} #[i.fas.fa-angle-right]
 </template>
 
 <script>
-import AppPage from '~/components/AppPage.vue';
-
 export default {
-  components: {
-    AppPage
-  },
   data() {
     return {
       env: `BLOG_URL=https://appwriter.tistory.com

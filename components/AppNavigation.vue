@@ -3,8 +3,8 @@ nav#nav(role="navigation")
   div.shadow
     a.logo(href="/"): img(src="~assets/images/logo.png")
     ul.menu
-      li(v-for="(item, index) in menu" :class="{ active: index == $store.state.active }")
-        div.index {{ "0" + parseInt(index+1) }}
+      li.item(v-for="item in $store.state.menu" :class="{ active: item.page == $store.state.active }")
+        div.index {{ item.page }}
         div.label 
           a(:href="item.href") {{ item.label }}
     div.social
@@ -16,19 +16,7 @@ nav#nav(role="navigation")
 
 <script>
 export default {
-  data() {
-		return {
-      menu: [
-        { label: '티도리 프레임워크', href: '/'},
-        { label: '시작하기', href: '/docs/get-started'},
-        { label: '디렉토리', href: '/docs/directory'},
-        { label: '템플릿', href: '/docs/template'},
-        { label: '티스토리 예제', href: '/docs/example'},
-        { label: '프레임워크', href: '/docs/framework'},
-        { label: '빌드 및 배포', href: '/docs/distribute'},
-      ],
-		}
-	}
+  /** emtpy */
 }
 </script>
 
@@ -60,7 +48,7 @@ export default {
         left 50px
         box-sizing border-box
         list-style none
-        li
+        .item
           padding 20px 0
           font-weight 400
           &:first-child

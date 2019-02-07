@@ -1,8 +1,8 @@
 <template lang="pug">
-AppPage(index=8)
+AppPage
   header.header(role="header" slot="header")
-    div.index 08
-    h1 티도리 6.1
+    div.index {{ $store.state.sidebar.patchNote.page }}
+    h1 {{ $store.state.sidebar.patchNote.label }}
   main.text(slot="text" role="text")
     article.paragraph
       h2 프리뷰(Preview) 서버

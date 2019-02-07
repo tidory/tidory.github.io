@@ -1,8 +1,8 @@
 <template lang="pug">
-AppPage(index=5)
+AppPage(:active="$store.state.menu.framework.page")
   header.header(role="header" slot="header")
-    div.index 06
-    h1 프레임워크
+    div.index {{ $store.state.menu.framework.page }}
+    h1 {{ $store.state.menu.framework.label }}
   main.text(slot="text" role="text")
     article.paragraph
       h2(id="뷰 & 리액트") 뷰 & 리액트 프레임워크
@@ -48,17 +48,12 @@ AppPage(index=5)
           code.lang-javascript {{ webpackBaseConfg }}
   footer.footer(slot="footer" role="footer")
     div.arrows
-      div.left: a(href="/docs/example") #[i.fas.fa-angle-left] 티스토리 예제
-      div.right: a(href="/docs/distribute") 빌드 및 배포 #[i.fas.fa-angle-right]
+      div.left: a(:href="$store.state.menu.example.href") #[i.fas.fa-angle-left] {{ $store.state.menu.example.label }}
+      div.right: a(:href="$store.state.menu.distribute.href") {{ $store.state.menu.distribute.label }} #[i.fas.fa-angle-right]
 </template>
 
 <script>
-import AppPage from '~/components/AppPage.vue';
-
 export default {
-  components: {
-    AppPage
-  },
   data() {
     return {
       vue: `<template>

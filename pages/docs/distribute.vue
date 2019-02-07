@@ -1,8 +1,8 @@
 <template lang="pug">
-AppPage(index=6)
+AppPage(:active="$store.state.menu.distribute.page")
   header.header(role="header" slot="header")
-    div.index 07
-    h1 빌드 및 배포
+    div.index {{ $store.state.menu.distribute.page }}
+    h1 {{ $store.state.menu.distribute.label }}
   main.text(slot="text" role="text")
     article.paragraph
       h2(id="빌드") 빌드(Build)
@@ -59,15 +59,11 @@ AppPage(index=6)
       p #[b docs] 폴더에 있던 #[b 티스토리 스킨 설정]파일입니다.
   footer.footer(slot="footer" role="footer")
     div.arrows
-      div.left: a(href="/docs/framework") #[i.fas.fa-angle-left] 프레임워크
+      div.left: a(:href="$store.state.menu.framework.href") #[i.fas.fa-angle-left] {{ $store.state.menu.framework.label }} 
 </template>
 
 <script>
-import AppPage from '~/components/AppPage.vue';
-
 export default {
-  components: {
-    AppPage
-  }
+  /** empty */
 }
 </script>
