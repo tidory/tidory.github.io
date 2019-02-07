@@ -20,7 +20,7 @@ AppPage(index=5)
       p
         pre(data-label="HelloWorld.pug")
           code.lang-pug {{ vueTemplate }}
-      p #[b 뷰 컴포넌트]를 템플릿에서 사용하려면 #[b webpack.entry.js]에 컴포넌트를 등록해야 인식합니다. #[b Vue.component]메서드를 이용하여 컴포넌트를 전역적으로 등록하시기 바랍니다.
+      p #[b webpack.entry.js] 는 #[b 웹팩(Webpack)]의 시작점이 되는 파일입니다. #[b 뷰 컴포넌트]를 템플릿에서 사용하려면 #[b webpack.entry.js] 에 컴포넌트를 등록해야 인식합니다. #[b Vue.component] 메서드를 이용하여 컴포넌트를 전역적으로 등록하시기 바랍니다.
       p
         pre(data-label="webpack.entry.js")
           code.lang-javascript {{ vueEntry }}
@@ -42,7 +42,7 @@ AppPage(index=5)
         pre(data-label="HelloWorld.vue")
           code.lang-html {{ resource }}
       h3(id="PUBLIC PATH") PUBLIC PATH
-      P #[b webpack.base.conf.js] 에서 #[b publicPath] 부분을 설정하는 것으로 #[b 컴포넌트에 포함된 에셋도 티스토리 스킨에서 불러올 수 있습니다.] 해당 주소는 블로그 마다 다를 수 있으며, 개발자 도구 등을 통해 사용하고자 하는 블로그의 #[b PUBLIC PATH] 를 알아야 합니다. 사용자 배포용으로 개발하는 경우에는 곤란할 수도 있으므로 #[b CDN(Content Delivery Network)] 으로 에셋을 불러오시기 바랍니다.
+      P #[b webpack.base.conf.js] 은 #[b 웹팩(Wepback)]의 베이스 설정을 위한 파일입니다. 여기에서 #[b publicPath] 부분을 설정하는 것으로 #[b 컴포넌트에 포함된 에셋도 티스토리 스킨에서 불러올 수 있습니다.] 해당 주소는 블로그 마다 다를 수 있으며, 개발자 도구 등을 통해 사용하고자 하는 블로그의 #[b PUBLIC PATH] 를 알아야 합니다. 사용자 배포용으로 개발하는 경우에는 곤란할 수도 있으므로 #[b CDN(Content Delivery Network)] 으로 에셋을 불러오시기 바랍니다.
       p
         pre(data-label="webpack.base.conf.js")
           code.lang-javascript {{ webpackBaseConfg }}

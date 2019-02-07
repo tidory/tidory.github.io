@@ -36,7 +36,7 @@ AppPage(index=1)
         blockquote.blockquote-type-2 기본 프로젝트 템플릿은 #[b 깃허브 저장소] #[a(href="https://github.com/pronist/tidory-starter-template") https://github.com/pronist/tidory-starter-template] 에서 찾을 수 있습니다.
     article.paragraph
       h2(id="환경설정") 환경설정
-      p 프로젝트 설치가 끝나고 나면 해야할 것이 바로 #[b 환경설정]입니다. 환경설정은 #[b .env] 파일에서 합니다. 환경설정이 무엇인지 알고싶다면 #[a(href="/docs/directory#env") 환경설정]을 참고해주세요. 자신이 가지고 있는 어떤 블로그를 프리뷰하고 배포할 지 설정을 해주어야 합니다. 다른 것들은 상황에 따라 넣어도 되고 삭제해도 되지만, 필수적으로 있어야 하는 것은 #[b BLOG_URL, TSSESSION] 변수입니다.
+      p 프로젝트 설치가 끝나고 나면 해야할 것이 바로 #[b 환경설정]입니다. 환경설정은 #[b .env] 파일에서 합니다. 환경설정이 무엇인지 알고싶다면 #[a(href="/docs/template#env") 환경설정]을 참고해주세요. 자신이 가지고 있는 어떤 블로그를 프리뷰하고 배포할 지 설정을 해주어야 합니다. 다른 것들은 상황에 따라 넣어도 되고 삭제해도 되지만, 필수적으로 있어야 하는 것은 #[b BLOG_URL, TSSESSION] 변수입니다.
       p
         pre(data-label=".env")
           code.lang-none {{ env }}

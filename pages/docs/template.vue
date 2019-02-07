@@ -18,6 +18,16 @@ AppPage(index=3)
         pre(data-label="index.pug")
           code.lang-pug {{ index }}
       article.paragraph
+        h2(id="env") .env
+        p #[b .env] 환경설정 파일은 템플릿 내부 또는 #[b webpack.entry.js] 에서 사용하는 상수 설정 파일입니다. 예를 들어 티스토리에 API에 등록된 앱을 사용하기 위해 다음과 같이 #[b 티스토리 API] 로그인을 위한 상수가 정의되어 있다고 가정해봅시다.
+        p
+          pre
+            code.lang-none {{ env }}
+        p 이제 이렇게 정의된 환경변수는 #[b 템플릿 내부]와 #[b 웹팩 설정], 그리고 #[b 컴포넌트]에서 사용할 수 있습니다. 환경변수는 #[b 컴파일타임]에 #[b process.env] 객체 아래에 정의됩니다. 다음과 같이 말이죠!
+        p
+          pre
+            code.lang-pug {{ form }}
+      article.paragraph
         h2(id="코드 분할") 코드 분할
         p 우리가 템플릿을 분리해야하는 가장 중요한 이유는 #[b 재활용] 입니다. 템플릿 하나에는 #[b 스타일, 마크업, 스크립트]가 통째로 들어가기 때문에 다른 스킨을 제작할 때 포함시키기만 하면 다시 작성하지 않아도 됩니다.
         h3(id="부모와 자식 템플릿")
@@ -95,7 +105,18 @@ html(lang="ko")
 
 block TIDORY
   //- template
-  include views/HelloWorld`
+  include views/HelloWorld`,
+      env: `TISTORY_CLIENT_ID=dc08305218d22fb1af479b044d4707d0
+TISTORY_CALLBACK=http://localhost:8080`,
+      form: `form(method="GET" action="https://www.tistory.com/oauth/authorize/")
+  input(type="hidden" 
+        name="client_id" 
+        value=\`\${process.env.TISTORY_CLIENT_ID}\`)
+  input(type="hidden" 
+        name="redirect_uri" 
+        value=\`\${process.env.TISTORY_CALLBACK}\`)
+  input(type="hidden" name="response_type" value="token")
+  button(type="submit") 로그인`
     }
   }
 }
