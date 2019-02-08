@@ -1,24 +1,31 @@
 <template lang="pug">
-section#document(class="animated fadeIn slow")
+section#document
   slot(name="header")
   slot(name="text")
   slot(name="footer")
 </template>
 
 <script>
-import Prism from 'prismjs';
-
 export default {
   props: ['active'],
-  mounted() {
+  beforeMount() {
     this.$store.commit('activeMenu', this.active);
   }
 }
 </script>
 
 <style lang="stylus">
+@keyframes fadeInUp
+  from
+    transform TranslateY(30px)
+    opacity 0
+  to 
+    transform TranslateX(0)
+    opacity 1
 #document
-  margin-top 25px
+  animation-duration: .8s;
+  animation-name: fadeInUp;
+  padding-top 25px
   .version
     font-weight 600
     margin-left 5px
@@ -108,8 +115,8 @@ export default {
           margin-left 3px
 @media all and (min-width: 1170px)
   #document
-    margin-bottom 75px
+    padding-bottom 75px
 @media all and (max-width: 1170px)
   #document
-    margin-bottom 35px
+    padding-bottom 35px
 </style>

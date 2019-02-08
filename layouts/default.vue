@@ -10,6 +10,8 @@ div#container
 import AppNavigation from '~/components/AppNavigation.vue';
 import AppSidebar from '~/components/AppSidebar.vue';
 
+import Prism from 'prismjs';
+
 export default {
   components: {
     AppNavigation,
@@ -36,7 +38,7 @@ a
     position relative
     left 420px
     top 100px
-    overflow hidden
+    // overflow hidden
 @media all and (max-width: 1170px)
   #main
     width 100%

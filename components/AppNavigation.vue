@@ -9,9 +9,9 @@ nav#nav(role="navigation")
           a(:href="item.href") {{ item.label }}
     div.social
       a(href="https://github.com/pronist/tidory-starter-template")
-        i.fab.fa-github(style="font-size: 1.2em")
+        i.fab.fa-github(style="font-size: 1.3em")
       a(href="https://www.npmjs.com/package/tidory")
-        i.fab.fa-npm(style="font-size: 1.5em;position:relative;top:2px")
+        i.fab.fa-npm(style="font-size: 1.6em;position:relative;top:2px")
 </template>
 
 <script>
