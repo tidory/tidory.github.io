@@ -43,14 +43,19 @@ app-page(:active="$store.state.menu.getStarted.page")
       p 데모로 작성되어있는 앱을 어떻게 실행시키면 될까요? 간단하게 알아보도록 하겠습니다. #[b tidory start] 명령을 사용하면 #[b http://localhost:8080] 주소로 #[b webpack-dev-server] 를 실행시킬 수 있습니다. 프리뷰 서버는 #[b tidory preview] 로 시작할 수 있으며 #[b http://localhost:3000] 에서 시작합니다.
       h3(id="개발 서버") 개발(Development) 서버
       p #[b 개발(Development)]서버는 #[b 치환자가 동작하지 않은 모습 그대로]를 보여줍니다. 해석 이전에 스킨자체의 모습을 볼 때 주로 사용합니다. 또한 치환자를 직접넣기 전에 더미데이터로 디자인을 구성할 때 사용하는 것도 좋습니다. 즉 개발서버로 개발하다가 스킨의 완성이 가까워지면 프리뷰서버로 넘어가는 것이죠.
-      h3(id="프리뷰 서버") 프리뷰(Preview) 서버 #[span.version 티도리 6.1]
-      p #[b 프리뷰(Preview)]서버는 티스토리에 직접 요청을 보내고 #[b 치환자가 해석된 모습]을 렌더링합니다. 홈, 글, 카테고리 등 #[b 프리뷰 모드(Mode)]를 지정하여 티스토리 서버에 올라갔을 때의 모습을 볼 수 있습니다.
       pre
         code.lang-bash
           | # Development Server
           | tidory start
+      h3(id="프리뷰 서버") 프리뷰(Preview) 서버 #[span.version 티도리 6.1]
+      p #[b 프리뷰(Preview)]서버는 티스토리에 직접 요청을 보내고 #[b 치환자가 해석된 모습]을 렌더링합니다. 홈, 글, 카테고리 등 #[b 프리뷰 모드(Mode)]를 지정하여 티스토리 서버에 올라갔을 때의 모습을 볼 수 있습니다.
+      pre
+        code.lang-bash
           | # Preview Server
-          | # tidory preview
+          | tidory preview
+      p 프리뷰를 할 때는 #[b 모드(Mode)]를 선택할 수 있는데, 모드는 #[b .env] 파일에서 #[b MODE] 변수를 통해 지정할 수 있습니다.
+      pre(data-label=".env")
+        code.lang-none {{ mode }}
     article.paragraph
       h2(id="빌드 및 배포") 빌드 및 배포
       p #[b 빌드 및 배포]는 기본적으로 #[b tidory build] 명령과 #[b tidory store] 가 있습니다. 빌드와 배포를 하는 방법에는 몇가지 있지만, 시작하기 단계에서는 자세한 설명없이 넘어가도록 하겠습니다. 자세한 내용은 #[a(:href="$store.state.menu.distribute.href") 빌드 및 배포] 문서를 참고해 주시기 바랍니다.
@@ -59,7 +64,7 @@ app-page(:active="$store.state.menu.getStarted.page")
           | # For Distribute
           | tidory build
           | # Store TISTORY SKIN on Skin Storage
-          | # tidory store TISTORY_SKIN
+          | tidory store TISTORY_SKIN
   footer.footer(slot="footer" role="footer")
     div.arrows
       div.left: a(:href="$store.state.menu.home.href") #[i.fas.fa-angle-left] {{ $store.state.menu.home.label }}
@@ -76,7 +81,18 @@ export default {
   data() {
     return {
       env: `BLOG_URL=https://appwriter.tistory.com
-TSSESSION=`
+TSSESSION=`,
+      mode: `## Mode
+
+## 홈 => index 
+## 글 => entry 
+## 카테고리 => category 
+## 태그 => tag,
+## 위치로그 => location
+## 미디어로그 => media,
+## 방명록 => guestbook
+
+MODE=index`
     }
   }
 }
