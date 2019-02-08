@@ -53,7 +53,17 @@ app-page(:active="$store.state.menu.getStarted.page")
         code.lang-bash
           | # Preview Server
           | tidory preview
-      p 프리뷰를 할 때는 #[b 모드(Mode)]를 선택할 수 있는데, 모드는 #[b .env] 파일에서 #[b MODE] 변수를 통해 지정할 수 있습니다.
+      p 프리뷰를 할 때는 홈, 글, 카테고리와 같은 #[b 모드(Mode)]를 선택할 수 있는데, 모드는 #[b .env] 파일에서 #[b MODE] 변수를 통해 지정할 수 있습니다.
+      p 
+        blockquote.blockquote-type-1
+          pre
+            | 홈: index
+            | 글: entry
+            | 카테고리: category
+            | 태그: tag
+            | 위치로그: location
+            | 미디어로그: media
+            | 방명록: guestbook
       pre(data-label=".env")
         code.lang-none {{ mode }}
     article.paragraph
@@ -82,17 +92,7 @@ export default {
     return {
       env: `BLOG_URL=https://appwriter.tistory.com
 TSSESSION=`,
-      mode: `## Mode
-
-## 홈 => index 
-## 글 => entry 
-## 카테고리 => category 
-## 태그 => tag,
-## 위치로그 => location
-## 미디어로그 => media,
-## 방명록 => guestbook
-
-MODE=index`
+      mode: `MODE=index`
     }
   }
 }

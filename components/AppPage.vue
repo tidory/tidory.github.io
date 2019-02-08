@@ -78,10 +78,14 @@ export default {
       text-decoration underline
     pre
       border-radius 5px
+    .blockquote-type-1,
+    .blockquote-type-3
+      pre
+        font-family 'Noto Sans KR', sans-serif !important
+        color rgba(0, 0, 0, .85)
     .blockquote-type-1
       border 1px solid rgba(0, 0, 0, .1)
-      color rgba(0, 0, 0, .85)
-      padding 0 25px
+      padding 15px
     .blockquote-type-2
       border-color #acacac
       border-width 0 0 0 2px
@@ -98,9 +102,6 @@ export default {
       background-color rgb(238, 238, 238);
       padding 10px
       font-weight 300
-      pre
-        font-family 'Noto Sans KR', sans-serif !important
-        color rgba(0, 0, 0, .85)
   .footer
     .arrows
       overflow hidden

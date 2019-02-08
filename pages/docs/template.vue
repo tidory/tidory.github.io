@@ -23,6 +23,8 @@ app-page(:active="$store.state.menu.template.page")
       p 이제 이렇게 정의된 환경변수는 #[b 템플릿 내부]와 #[b 웹팩 설정], 그리고 #[b 컴포넌트]에서 사용할 수 있습니다. 환경변수는 #[b 컴파일타임]에 #[b process.env] 객체 아래에 정의됩니다. 다음과 같이 말이죠!
       pre
         code.lang-pug {{ form }}
+      p
+        blockquote.blockquote-type-2 환경설정 파일은 #[b 세션쿠키]와 같은 민감한 정보가 저장되는 곳이기도 하므로 #[b github] 와 같은 #[b 원격 저장소]에 저장할 때 포함시키지 않는 것이 좋습니다. #[b tidory new] 를 통해 다운받은 프로젝트의 #[b .gitignore] 에는 #[b .env] 파일이 등록되어 있지 않으니 별도로 등록해야 합니다.
     article.paragraph
       h2(id="코드 분할") 코드 분할
       p 우리가 템플릿을 분리해야하는 가장 중요한 이유는 #[b 재활용] 입니다. 템플릿 하나에는 #[b 스타일, 마크업, 스크립트]가 통째로 들어가기 때문에 다른 스킨을 제작할 때 포함시키기만 하면 다시 작성하지 않아도 됩니다.
@@ -112,7 +114,7 @@ TISTORY_CALLBACK=http://localhost:8080`,
         name="redirect_uri" 
         value=\`\${process.env.TISTORY_CALLBACK}\`)
   input(type="hidden" name="response_type" value="token")
-  button(type="submit") 로그인`
+  button(type="submit") Sign in with TISTORY`
     }
   }
 }

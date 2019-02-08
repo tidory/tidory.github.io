@@ -38,7 +38,6 @@ a
     position relative
     left 420px
     top 100px
-    // overflow hidden
 @media all and (max-width: 1170px)
   #main
     width 100%
