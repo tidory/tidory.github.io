@@ -29,10 +29,11 @@ app-page(:active="$store.state.menu.example.page")
       pre(data-label="views/Header/BlogTitle.pug")
         code.lang-pug {{ blogTitle }}
       h3(id="blogMenu") views/Header/blogMenu.pug
-      p #[b 블로그 메뉴]의 #[b style, script] 태그에 #[b scoped] 옵션이 쓰인 것을 볼 수 있습니다. 이 옵션을 쓰면, 해당 태그에 각각 파일로 분리되지 않고 제자리에 남게됩니다.
+      p #[b 블로그 메뉴]의 #[b style, script] 태그에 #[b scoped] 옵션이 쓰인 것을 볼 수 있습니다. 이 옵션을 쓰면, 해당 태그가 각각 파일로 분리되지 않고 제자리에 남게됩니다. 그 말은 즉, #[b skin.html] 파일에 남는다는 얘기가 됩니다.
       pre(data-label="views/Header/BlogMenu.pug")
         code.lang-pug {{ blogMenu }}
-      p 우리가 #[b 뷰 컴포넌트]를 사용할 때 붙이는 #[b scoped] 는 효력의 범위가 컴포넌트 내부로 한정됩니다. 하지만 티도리 프레임워크의 #[b 퍼그 템플릿] 내부에서 쓰인 #[b scoped] 는 해당 코드가 특정 범위에 들어와야 실행이 되며 #[b 실행효력]이 #[b 전역적]입니다.
+      p 
+        blockquote.blockquote-type-2 우리가 #[b 뷰 컴포넌트]를 사용할 때 붙이는 #[b scoped] 는 효력의 범위가 컴포넌트 내부로 한정됩니다. 하지만 티도리 프레임워크의 #[b 퍼그 템플릿] 내부에서 쓰인 #[b scoped] 는 해당 코드가 특정 범위에 들어와야 실행이 되며 #[b 실행효력]이 #[b 전역적]입니다.
     article.paragraph
       h2(id="프로덕션 코드") 프로덕션 코드
       p 우리가 만든 스킨을 이제 사용자에게 배포하기 위해 #[b 빌드]하면 다음과 같은 코드로 나뉘어집니다. #[b div#__tidory] 는 #[b app.pug] 에 정의되어 있습니다.
