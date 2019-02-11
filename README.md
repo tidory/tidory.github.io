@@ -1,23 +1,10 @@
-# tidory.com
+# Tidory
 
-> tidory.com
+Tidory Framework for Tistory Skin \
+<http://www.tidory.com>
 
-## Build Setup
+# License
 
-``` bash
-# install dependencies
-$ npm install # Or yarn install
+MIT <br />
 
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
-
+Copyright (c) Mansu Jeong. All rights reserved
