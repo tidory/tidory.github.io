@@ -18,6 +18,8 @@ app-page(:active="$store.state.menu.framework.page")
         code.lang-html {{ vue }}
       pre(data-label="HelloWorld.pug")
         code.lang-pug {{ vueTemplate }}
+      p
+        blockquote.blockquote-type-2 컴포넌트 #[b 내부]에서 치환자를 쓰면 안 되지만, 컴포넌트 내부로 치환된 값을 넘길 수는 있습니다! 프레임워크가 #[b DOM(Document Object Model)]를 형성하기 전에, 티스토리의 치환이 먼저 발생하기 때문입니다. 이렇게 사용하면 컴포넌트와 치환자가 종속관계를 맺지 않고 컴포넌트는 그저 들어온 값을 활용하는 형태가 됩니다.
       p #[b webpack.entry.js] 는 #[b 웹팩(Webpack)]의 시작점이 되는 파일입니다. #[b 뷰 컴포넌트]를 템플릿에서 사용하려면 #[b webpack.entry.js] 에 컴포넌트를 등록해야 인식합니다. #[b Vue.component] 메서드를 이용하여 컴포넌트를 전역적으로 등록하시기 바랍니다.
       pre(data-label="webpack.entry.js")
         code.lang-javascript {{ vueEntry }}
@@ -54,16 +56,16 @@ export default {
   data() {
     return {
       vue: `<template>
-  <h1>Tistory skin framework, Tidory</h1>
+  <h1>{{ title }}</h1>
 </template>
 \<script\>
   export default {
-    /** empty */
+    props: ['title']
   }
 \<\/script\>`,
       vueTemplate: `div#app
   //- Using Vue Component
-  hello-world`,
+  hello-world(title="[##_title_##]"]`,
       vueEntry: `import Vue from 'vue'
 
 Vue.component(
