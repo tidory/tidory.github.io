@@ -58,6 +58,7 @@ export default {
       vue: `<template>
   <h1>{{ title }}</h1>
 </template>
+
 \<script\>
   export default {
     props: ['title']
@@ -65,7 +66,7 @@ export default {
 \<\/script\>`,
       vueTemplate: `div#app
   //- Using Vue Component
-  hello-world(title="[##_title_##]"]`,
+  hello-world(title="[##_title_##]")`,
       vueEntry: `import Vue from 'vue'
 
 Vue.component(
