@@ -7,11 +7,6 @@ nav#nav(role="navigation")
         div.index {{ item.page }}
         div.label 
           a(:href="item.href") {{ item.label }}
-    div.social
-      a(href="https://github.com/pronist/tidory-starter-template")
-        i.fab.fa-github(style="font-size: 1.3em")
-      a(href="https://www.npmjs.com/package/tidory")
-        i.fab.fa-npm(style="font-size: 1.6em;position:relative;top:2px")
 </template>
 
 <script>
@@ -30,7 +25,6 @@ export default {
     box-sizing border-box
     z-index: 9999;
     overflow hidden
-    padding-bottom 25px
     > .shadow
       overflow-x: hidden;
       overflow-y: scroll;
@@ -48,6 +42,7 @@ export default {
         left 50px
         box-sizing border-box
         list-style none
+        padding-bottom 25px
         .item
           padding 20px 0
           font-weight 400
@@ -67,17 +62,6 @@ export default {
               color #ed5207
             .label > a
               color rgba(0, 0, 0, .85)
-      .social
-        position absolute
-        top 850px
-        left 50px
-        padding-bottom 25px
-        a
-          transition-duration .8s
-          margin-right 12px
-          color rgba(0, 0, 0, .3)
-          &:hover
-            color rgba(0, 0, 0, .85)
 @media all and (max-width: 1170px)
   #nav
     display none

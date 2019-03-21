@@ -32,40 +32,21 @@ app-page(:active="$store.state.menu.getStarted.page")
           | npm install
       p 
         blockquote.blockquote-type-2 기본 프로젝트 템플릿은 #[b 깃허브 저장소] #[a(href="https://github.com/pronist/tidory-starter-template") https://github.com/pronist/tidory-starter-template] 에서 찾을 수 있습니다.
-    article.paragraph
-      h2(id="환경설정") 환경설정
-      p 프로젝트 설치가 끝나고 나면 해야할 것이 바로 #[b 환경설정]입니다. 환경설정은 #[b .env] 파일에서 합니다. 환경설정이 무엇인지 알고싶다면 #[a(:href="$store.state.menu.template.href+'#env'") 환경설정]을 참고해주세요. 자신이 가지고 있는 어떤 블로그를 프리뷰하고 배포할 지 설정을 해주어야 합니다. 다른 것들은 상황에 따라 넣어도 되고 삭제해도 되지만, 필수적으로 있어야 하는 것은 #[b BLOG_URL, TSSESSION] 변수입니다.
-      pre(data-label=".env")
-        code.lang-none {{ env }}
-      p 여기서 #[b TSSESSION] 변수는 브라우저에서 제공하는 #[b 개발자도구(F12)]를 열고 #[b 쿠키 저장소]에서 #[b TSSESSION] 값을 넣어주시면 됩니다. #[b 세션]쿠키는 중요한 정보이므로 절대 외부에 노출되어서는 안됩니다. 또한 세션이기 때문에 로그인하고 로그아웃하고 재 로그인하면 값이 변경되므로 주의하십시오.
     article.paragraph  
       h2(id="라이브 서버") 라이브(Live) 서버
       p 데모로 작성되어있는 앱을 어떻게 실행시키면 될까요? 간단하게 알아보도록 하겠습니다. #[b tidory start] 명령을 사용하면 #[b http://localhost:8080] 주소로 #[b webpack-dev-server] 를 실행시킬 수 있습니다. 프리뷰 서버는 #[b tidory preview] 로 시작할 수 있으며 #[b http://localhost:3000] 에서 시작합니다.
       h3(id="개발 서버") 개발(Development) 서버
-      p #[b 개발(Development)]서버는 #[b 치환자가 동작하지 않은 모습 그대로]를 보여줍니다. 해석 이전에 스킨자체의 모습을 볼 때 주로 사용합니다. 또한 치환자를 직접넣기 전에 더미데이터로 디자인을 구성할 때 사용하는 것도 좋습니다. 즉 개발서버로 개발하다가 스킨의 완성이 가까워지면 프리뷰서버로 넘어가는 것이죠.
+      p #[b 개발(Development)]서버는 #[b 치환자가 동작하지 않은 모습 그대로]를 보여줍니다. 해석 이전에 스킨자체의 모습을 볼 때 주로 사용합니다. 또한 치환자를 직접넣기 전에 더미데이터로 디자인을 구성할 때 사용하는 것도 좋습니다.
       pre
         code.lang-bash
           | # Development Server
           | tidory start
       h3(id="프리뷰 서버") 프리뷰(Preview) 서버 #[span.version 티도리 6.1]
-      p #[b 프리뷰(Preview)]서버는 티스토리에 직접 요청을 보내고 #[b 치환자가 해석된 모습]을 렌더링합니다. 홈, 글, 카테고리 등 #[b 프리뷰 모드(Mode)]를 지정하여 티스토리 서버에 올라갔을 때의 모습을 볼 수 있습니다.
+      p #[b 프리뷰(Preview)]서버는 티스토리에 직접 요청을 보내고 #[b 치환자가 해석된 모습]을 렌더링합니다. 홈, 글, 카테고리 등 #[b 프리뷰 모드(Mode)]를 지정하여 티스토리 서버에 올라갔을 때의 모습을 볼 수 있습니다. 프리뷰 서버를 실행하려면 #[a(:href="$store.state.menu.configuration.href") 환경설정]에서 #[b ts_session, url, mode] 가 설정되어 있어야 합니다.
       pre
         code.lang-bash
           | # Preview Server
           | tidory preview
-      p 프리뷰를 할 때는 홈, 글, 카테고리와 같은 #[b 모드(Mode)]를 선택할 수 있는데, 모드는 #[b .env] 파일에서 #[b MODE] 변수를 통해 지정할 수 있습니다.
-      p 
-        blockquote.blockquote-type-1
-          pre
-            | 홈: index
-            | 글: entry
-            | 카테고리: category
-            | 태그: tag
-            | 위치로그: location
-            | 미디어로그: media
-            | 방명록: guestbook
-      pre(data-label=".env")
-        code.lang-none {{ mode }}
     article.paragraph
       h2(id="빌드 및 배포") 빌드 및 배포
       p #[b 빌드 및 배포]는 기본적으로 #[b tidory build] 명령과 #[b tidory store] 가 있습니다. 빌드와 배포를 하는 방법에는 몇가지 있지만, 시작하기 단계에서는 자세한 설명없이 넘어가도록 하겠습니다. 자세한 내용은 #[a(:href="$store.state.menu.distribute.href") 빌드 및 배포] 문서를 참고해 주시기 바랍니다.
@@ -87,13 +68,6 @@ import AppPage from '~/components/AppPage.vue';
 export default {
   components: {
     AppPage
-  },
-  data() {
-    return {
-      env: `BLOG_URL=https://appwriter.tistory.com
-TSSESSION=`,
-      mode: `MODE=index`
-    }
   }
 }
 </script>

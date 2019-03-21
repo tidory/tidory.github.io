@@ -17,7 +17,7 @@ app-page(:active="$store.state.menu.distribute.page")
         code.lang-bash tidory build --compress
     article.paragraph
       h2(id="배포") 배포(Distribution) #[span.version 티도리 6.1]
-      p #[b 배포]는 #[b 현재 사용 중인 스킨을 덮어쓰는 모드]가 있고, #[b 스킨저장소에 저장하는 모드]가 있습니다. 추가적으로 배포를 사용하려면 환경설정에 #[b BLOG_URL, TSSESSION] 변수가 정상적으로 등록되어 있어야합니다. 
+      p #[b 배포]는 #[b 현재 사용 중인 스킨을 덮어쓰는 모드]가 있고, #[b 스킨저장소에 저장하는 모드]가 있습니다. 추가적으로 배포를 사용하려면 #[a(:href="$store.state.menu.configuration.href") 환경설정]에 #[b ts_session, url] 항목이 정상적으로 등록되어 있어야합니다. 
       p 
         blockquote.blockquote-type-2 배포를 하기 전에 먼저 빌드해야 합니다. #[b dist] 디렉토리를 대상으로 배포하기 때문이죠.
       h3(id="덮어쓰기") 덮어쓰기
@@ -44,7 +44,7 @@ app-page(:active="$store.state.menu.distribute.page")
             ├── skin.html
             └── style.css
       h3(id="images") images/*
-      p #[b images] 폴더는 템플릿 또는 컴포넌트에 포함된 리소스들이 모여있는 파일이며, 추가적으로 템플릿 내부에서 작성한 #[b scoped] 속성이 사용되지 않은 #[b script] 태그의 집합인 #[b script.js], webpack.entry.js 에서 포함한 에셋들의 집합인 #[b app.js] 가 있습니다.
+      p #[b images] 폴더는 템플릿 또는 컴포넌트에 포함된 리소스들이 모여있는 파일이며, 추가적으로 템플릿 내부에서 작성한 #[b scoped] 속성이 사용되지 않은 #[b script] 태그의 집합인 #[b script.js], app.js 에서 포함한 에셋들의 집합인 #[b app.js] 가 있습니다.
       h3(id="skin") skin.html
       p 티스토리 스킨으로 업로드할 최종 #[b html] 파일입니다.
       h3(id="style") style.css

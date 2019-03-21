@@ -20,16 +20,16 @@ app-page(:active="$store.state.menu.framework.page")
         code.lang-pug {{ vueTemplate }}
       p
         blockquote.blockquote-type-2 컴포넌트 #[b 내부]에서 치환자를 쓰면 안 되지만, 컴포넌트 내부로 치환된 값을 넘길 수는 있습니다! 프레임워크가 #[b DOM(Document Object Model)]를 형성하기 전에, 티스토리의 치환이 먼저 발생하기 때문입니다. 이렇게 사용하면 컴포넌트와 치환자가 종속관계를 맺지 않고 컴포넌트는 그저 들어온 값을 활용하는 형태가 됩니다.
-      p #[b webpack.entry.js] 는 #[b 웹팩(Webpack)]의 시작점이 되는 파일입니다. #[b 뷰 컴포넌트]를 템플릿에서 사용하려면 #[b webpack.entry.js] 에 컴포넌트를 등록해야 인식합니다. #[b Vue.component] 메서드를 이용하여 컴포넌트를 전역적으로 등록하시기 바랍니다.
-      pre(data-label="webpack.entry.js")
+      p #[b assets/app.js] 는 #[b 웹팩(Webpack)]의 시작점이 되는 파일입니다. #[b 뷰 컴포넌트]를 템플릿에서 사용하려면 #[b app.js] 에 컴포넌트를 등록해야 인식합니다. #[b Vue.component] 메서드를 이용하여 컴포넌트를 전역적으로 등록하시기 바랍니다.
+      pre(data-label="app.js")
         code.lang-javascript {{ vueEntry }}
       h3(id="react") 리액트(React)
       pre(data-label="HelloWorld.js")
         code.lang-javascript {{ react }}
       pre(data-label="HelloWorld.pug")
         code.lang-pug {{ reactTemplate }}
-      p #[b 리액트 컴포넌트]를 템플릿에서 사용하려면 #[b ReactDOM]을 사용하여 #[b webpack.entry.js] 에서 컴포넌트를 #[b #app]에 바인딩하세요.
-      pre(data-label="webpack.entry.js")
+      p #[b 리액트 컴포넌트]를 템플릿에서 사용하려면 #[b ReactDOM]을 사용하여 #[b app.js] 에서 컴포넌트를 #[b #app]에 바인딩하세요.
+      pre(data-label="app.js")
         code.lang-javascript {{ reactEntry }}
     article.paragraph
       h2(id="리소스") 리소스
@@ -37,13 +37,13 @@ app-page(:active="$store.state.menu.framework.page")
       pre(data-label="HelloWorld.vue")
         code.lang-html {{ resource }}
       h3(id="PUBLIC PATH") PUBLIC PATH
-      P #[b webpack.base.conf.js] 은 #[b 웹팩(Wepback)]의 베이스 설정을 위한 파일입니다. 여기에서 #[b publicPath] 부분을 설정하는 것으로 #[b 컴포넌트에 포함된 에셋도 티스토리 스킨에서 불러올 수 있습니다.] 해당 주소는 블로그 마다 다를 수 있으며, 개발자 도구 등을 통해 사용하고자 하는 블로그의 #[b PUBLIC PATH] 를 알아야 합니다. 사용자 배포용으로 개발하는 경우에는 곤란할 수도 있으므로 #[b CDN(Content Delivery Network)] 으로 에셋을 불러오시기 바랍니다.
-      pre(data-label="webpack.base.conf.js")
-        code.lang-javascript {{ webpackBaseConfg }}
+      P #[a(:href="$store.state.menu.configuration.href") 환경설정]에서 #[b build.public_path] 부분을 설정하는 것으로 #[b 컴포넌트에 포함된 에셋도 티스토리 스킨에서 불러올 수 있습니다.] 해당 주소는 블로그 마다 다를 수 있으며, 개발자 도구 등을 통해 사용하고자 하는 블로그의 #[b PUBLIC PATH] 를 알아야 합니다.
+      pre(data-label="tidory.config.js")
+        code.lang-javascript {{ publicPath }}
   footer.footer(slot="footer" role="footer")
     div.arrows
       div.left: a(:href="$store.state.menu.example.href") #[i.fas.fa-angle-left] {{ $store.state.menu.example.label }}
-      div.right: a(:href="$store.state.menu.distribute.href") {{ $store.state.menu.distribute.label }} #[i.fas.fa-angle-right]
+      div.right: a(:href="$store.state.menu.configuration.href") {{ $store.state.menu.configuration.label }} #[i.fas.fa-angle-right]
 </template>
 
 <script>
@@ -103,27 +103,16 @@ ReactDOM.render(<HelloWorld />, rootElement);`,
   //- PUBLIC_PATH/__WEBPACK_CHANGED__.png
   <img v-bind:src='require("~/assets/images/favicon.png")'>
 </template>`,
-      webpackBaseConfg: `{
-  test: /.(png|jpe?g|gif|svg)(?.*)?$/,
-  loader: 'file-loader',
-  options: {
-    publicPath: 'https://tistory2.daumcdn.net/tistory/2710108/skin/images/'
-  }
-},
-{
-  test: /.(mp4|webm|ogg|mp3|wav|flac|aac)(?.*)?$/,
-  loader: 'file-loader',
-  options: {
-    publicPath: 'https://tistory2.daumcdn.net/tistory/2710108/skin/images/'
-  }
-},
-{
-  test: /.(woff2?|eot|ttf|otf)(?.*)?$/,
-  loader: 'file-loader',
-  options: {
-    publicPath: 'https://tistory2.daumcdn.net/tistory/2710108/skin/images/'
-  }
-}`
+      publicPath: `/**
+ * Build
+ */
+build: {
+  /**
+   * Assets public path
+   * 'https://tistory2.daumcdn.net/tistory/2710108/skin/images/'
+   */
+  public_path: null
+},`
     }
   }
 }

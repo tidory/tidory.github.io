@@ -4,18 +4,21 @@ div#container
   app-navigation
   main#main(role="main")
     nuxt
+  app-footer
 </template>
 
 <script>
 import AppNavigation from '~/components/AppNavigation.vue';
 import AppSidebar from '~/components/AppSidebar.vue';
+import AppFooter from '~/components/AppFooter.vue';
 
 import Prism from 'prismjs';
 
 export default {
   components: {
     AppNavigation,
-    AppSidebar
+    AppSidebar,
+    AppFooter
   }
 }
 </script>
