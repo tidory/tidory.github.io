@@ -15,6 +15,9 @@ app-page
     article.paragraph
       h2 webpack.entry.js
       p #[b webpack.entry.js] 파일은 #[b assets/app.js] 파일로 이동되었습니다.
+  footer.footer(slot="footer" role="footer")
+    div.arrows
+      div.right: a(:href="$store.state.menu.home.href") {{ $store.state.menu.home.label }} #[i.fas.fa-angle-right]
 </template>
 
 <script>

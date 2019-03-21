@@ -2,7 +2,7 @@
 aside#aside(role="sidebar")
   div.notice
     i(class="fas fa-volume-up")
-    a.text(:href="$store.state.patchNote.href") 티도리 7.0 이 업데이트 되었습니다.
+    a.text(:href="$store.state.patchNote.href") 티도리 7.0 버전이 공개되었습니다.
   ul.menu
     li(v-for="(item, index) in menu")
       a(:href="item.href"): i(:class="item.class")

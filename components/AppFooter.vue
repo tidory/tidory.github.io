@@ -22,7 +22,7 @@ export default {
       right 35px
       a
         transition-duration .8s
-        margin-right 13px
+        margin-right 14px
         color rgba(0, 0, 0, .3)
         &:hover
           color rgba(0, 0, 0, .85)
