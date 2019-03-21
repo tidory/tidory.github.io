@@ -26,7 +26,7 @@ app-page(:active="$store.state.menu.configuration.page")
       p #[b .env] 환경설정 파일은 템플릿 내부 또는 #[b app.js] 에서 사용하는 상수 설정 파일입니다. 프레임워크에서 직접 사용하는 것이 아닌 템플릿에서 사용된다는 점에서 #[b tidory.config.js] 와 구별됩니다. 예를 들어 티스토리에 API에 등록된 앱을 사용하기 위해 다음과 같이 #[b 티스토리 API] 로그인을 위한 상수가 정의되어 있다고 가정해봅시다.
       pre
         code.lang-none {{ env }}
-      p 이제 이렇게 정의된 환경변수는 #[b 템플릿 내부]와 #[b 웹팩 설정], 그리고 #[b 컴포넌트]에서 사용할 수 있습니다. 환경변수는 #[b 컴파일타임]에 #[b process.env] 객체 아래에 정의됩니다. 다음과 같이 말이죠!
+      p 이제 이렇게 정의된 환경변수는 #[b 템플릿 내부]와 #[b 컴포넌트]에서 사용할 수 있습니다. 환경변수는 #[b 컴파일타임]에 #[b process.env] 객체 아래에 정의됩니다. 다음과 같이 말이죠!
       pre
         code.lang-pug {{ form }}
   footer.footer(slot="footer" role="footer")
