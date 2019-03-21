@@ -18,7 +18,7 @@ export default {
   #footer
     .social
       position fixed
-      bottom 50px
+      bottom 25px
       right 35px
       a
         transition-duration .8s
