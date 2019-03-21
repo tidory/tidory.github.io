@@ -51,6 +51,8 @@ export default {
           color rgba(0, 0, 0, .3)
           &:hover
             color rgba(0, 0, 0, .85)
+        &:last-child
+          margin-right 0
 @media all and (max-width: 1170px)
   #aside
     display none
