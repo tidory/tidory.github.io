@@ -6,7 +6,10 @@ app-page
   main.text(slot="text" role="text")
     article.paragraph
       h2 tidory store
-      p #[b tidory store]의 사용법이 일부 변경되었습니다. 이제 스킨의 이름을 옵션으로 받지 않으며 #[b tidory.config.js] 에 설정된 #[b name] 속성으로 결정됩니다. #[b tidory] 는 #[b new] 명령어를 제외한 모든 명령어에서 #[a(href="https://github.com/pronist/tidory-starter-template") tidory-starter-template] 와 종속성을 갖습니다.
+      p #[b tidory store] 의 사용법이 일부 변경되었습니다. 이제 스킨의 이름을 옵션으로 받지 않으며 #[b tidory.config.js] 에 설정된 #[b name] 속성으로 결정됩니다. #[b tidory] 는 #[b new] 명령어를 제외한 모든 명령어에서 #[a(href="https://github.com/pronist/tidory-starter-template") tidory-starter-template] 와 종속성을 갖습니다.
+    article.paragraph
+      h2 tidory new
+      p 기존의 #[b tidory new] 명령어는 #[b tidory-starter-template] 의 #[b master] 브랜치에서 가져왔었습니다. 그래서 과거 버전에서도 템플릿은 늘 최신으로 설치되었지만, 이제는 티도리 버전에 맞는 템플릿이 설치됩니다.
     article.paragraph
       h2 tidory.config.js
       p #[b name, alias] 속성이 추가되었습니다. #[b name] 속성은 스킨을 #[b 저장(store)]할 때 사용되는 옵션입니다. #[b alias] 속성은 템플릿에서 에셋을 불러올 때 사용하는 별칭입니다. 아참, 그리고 웹팩 별칭은 별도입니다.
