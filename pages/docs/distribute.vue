@@ -63,7 +63,8 @@ app-page(:active="$store.state.menu.distribute.page")
       p #[b docs] 폴더에 있던 #[b 티스토리 스킨 설정]파일입니다.
   footer.footer(slot="footer" role="footer")
     div.arrows
-      div.left: a(:href="$store.state.menu.framework.href") #[i.fas.fa-angle-left] {{ $store.state.menu.framework.label }} 
+      div.left: a(:href="$store.state.menu.framework.href") #[i.fas.fa-angle-left] {{ $store.state.menu.framework.label }}
+      div.right: a(:href="$store.state.menu.package.href") {{ $store.state.menu.package.label }} #[i.fas.fa-angle-right]
 </template>
 
 <script>
