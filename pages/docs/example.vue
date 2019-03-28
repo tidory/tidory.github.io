@@ -67,41 +67,57 @@ block TIDORY
   //- template
   include views/Header`,
       header: `header#header(role="header")
-  //- Tistory Blog Title
-  include Header/BlogTitle
-  //- Tistory Blog Menu
-  include Header/BlogMenu`,
+  style.
+    html, body, #header {
+      width: 100%;
+      height: 100%;
+    }
+    #header {
+      display: table;
+    }
+    #header > div {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+    }
+  div
+    //- Tistory Blog Title
+    include Header/BlogTitle
+    //- Tistory Blog Menu
+    include Header/BlogMenu`,
       blogTitle: `h1
   style.
+    h1 {
+      margin-bottom: 25px;
+    }
     h1 > a {
-      color: orange;
       text-decoration: none;
+      font-size: 1.6em;
     }
   //- skin.html
-  a(href="[##_blog_link_##]") 
-    img(src="./images/logo.png")
+  a(href="[##_blog_link_##]")
     | [##_title_##]
   //- script.js
   script.
     console.log("Hello, World!")`,
       blogMenu: `nav#nav(role="navigation")
   style.
-    nav {
-      font-size: 0.9em;
-      color: green;
-      font-weight: bold;
+    #nav li {
+      margin: 0 15px;
+      display: inline-block;
+    }
+    #nav li a {
+      font-size: 1.05em;
+      font-weight: 300;
     }
   //- skin.html
   | [##_blog_menu_##]
   script(scoped).
     console.log("Hello, World!")`,
-      skin: `<div id="__tidory">
-  <header id="header" role="header">
+      skin: `<header id="header" role="header">
+  <div>
     <h1>
-      <a href="[##_blog_link_##]">
-        <img src="./images/logo.png">
-        [##_title_##]
-      </a>
+      <a href="[##_blog_link_##]">[##_title_##]</a>
     </h1>
     <nav id="nav" role="navigation">
       [##_blog_menu_##]
@@ -109,16 +125,36 @@ block TIDORY
         console.log("Hello, World!");
       \<\/script\>
     </nav>
-  </header>
-</div>`,
-      style: `h1 > a {
-  color: orange;
-  text-decoration: none
+  </div>
+</header>`,
+      style: `#header,
+body,
+html {
+  width: 100%;
+  height: 100%
 }
-nav {
-  font-size: 0.9em;
-  color: green;
-  font-weight: bold;
+#header {
+  display: table
+}
+#header > div {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center
+}
+h1 {
+  margin-bottom: 25px
+}
+h1 > a {
+  text-decoration: none;
+  font-size: 1.6em
+}
+#nav li {
+  margin: 0 15px;
+  display: inline-block
+}
+#nav li a {
+  font-size: 1.05em;
+  font-weight: 300
 }`,
       script: `"use strict";
 

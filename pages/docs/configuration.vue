@@ -9,6 +9,8 @@ app-page(:active="$store.state.menu.configuration.page")
       p #[b tidory.config.js] 파일은 티도리 프레임워크를 위한 환경설정 파일입니다. 템플릿에서 쓰이는 변수가 아닌, #[b 오직 프레임워크의 동작]만을 위해 사용되는 환경변수만 선언되는 파일입니다. 예를 들어 빌드 및 배포를 위한 #[b 티스토리 세션] 값이나 프리뷰를 보기위한 모드 설정 등이 해당됩니다.
       pre(data-label="tidory.config.js")
         code.lang-javascript {{ tidoryConfig }}
+      h3(id="name") name #[span.version 티도리 7.1]
+      p 배포할 #[b 티스토리 스킨 이름]입니다. #[b tidory store] 명령어에서 사용됩니다.
       h3(id="ts_session") ts_session
       p #[b 티스토리 세션] 값입니다. 티스토리에 로그인 한 이후 #[b 쿠키 저장소]에 보면 #[b TSSESSION] 이라는 값이 있는데, 그것을 넣으면 됩니다. 해당 변수는 세션값이기에 절대 외부로 노출되어서는 안 되며 해당 프레임워크에는 스킨을 #[b 프리뷰]하거나 #[b 배포]하기 위한 용도로만 사용됩니다.
       h3(id="url") url
@@ -17,6 +19,8 @@ app-page(:active="$store.state.menu.configuration.page")
       p #[b 프리뷰 모드]입니다. #[b 프리뷰 서버]를 사용할 때 어느 페이지를 기점으로 프리뷰 할 지 설정합니다. #[b 홈, 글, 카테고리, 태그, 위치로그, 미디어로그, 방명록] 모드가 있으며 각각 #[b index. entry, category, tag, location, media, guestbook] 에 대응합니다.
       h3(id="build.public_path") build.public_path
       p #[b 컴포넌트 자원 공개경로]를 설정합니다. 컴포넌트와 같이 자바스크립트를 통해 이미지와 같은 리소스를 사용하면 티스토리에 의해 경로가 자동으로 변환되지 않아 올바르게 로드될 수 없습니다. 따라서 #[b 공개 경로(Public Path)]를 설정해주어야 합니다. 해당 주소는 블로그마다 다릅니다.   
+      h3(id="alias") alias #[span.version 티도리 7.1]
+      p #[b 템플릿 별칭]을 설정합니다. 문자열로 지정을 해줄 수도 있고 함수형태로 사용할 수도 있습니다. 함수의 파라매터는 해당 별칭이 사용된 자원의 #[b 파일 이름]입니다.
       h3(id="extends") extends(webpackConfig: Object)
       p #[b 웹팩 설정 확장]입니다. 파라매터로 웹팩 오브젝트가 들어가며 기본 웹팩설정 이외에 확장해서 사용할 수 있습니다. 다음과 같이 사용할 수 있습니다.
       pre(data-label="tidory.config.js")
@@ -44,52 +48,66 @@ export default {
   },
   data() {
     return {
-      tidoryConfig: `/**
- * Tistory session cookie value
- * '195fd2d417429d34ce6ced9a2a460fe55b69f6a3'
- */
-ts_session: null,
-
-/**
- * Tistory blog URL
- * 'https://appwriter.tistory.com'
- */
-url: null,
-
-/** 
- * Preview
- */
-preview: {
+      tidoryConfig: `module.exports = { 
   /**
-   * Preview Mode
-   * 
-   * index 
-   * entry 
-   * category 
-   * tag,
-   * location
-   * media,
-   * guestbook
+   * Tistory skin name
    */
-  mode: 'index'
-},
+  name: 'TIDORY',
 
-/**
- * Build
- */
-build: {
   /**
-   * Assets public path
-   * 'https://tistory2.daumcdn.net/tistory/2710108/skin/images/'
+   * Tistory session cookie value
    */
-  public_path: null
-},
+  ts_session: null,
 
-/**
- * Webpack configuration extends
- */
-extends(webpackConfig) {
-  // ...
+  /**
+   * Tistory blog URL
+   */
+  url: null,
+
+  /** 
+   * Preview
+   */
+  preview: {
+    /**
+     * Preview Mode
+     * 
+     * index 
+     * entry 
+     * category 
+     * tag,
+     * location
+     * media,
+     * guestbook
+     */
+    mode: 'index'
+  },
+
+  /**
+   * Build
+   */
+  build: {
+    /**
+     * Assets public path
+     */
+    public_path: null
+  },
+
+  /**
+   * Template aliases
+   */
+  alias: {
+    // as String
+    '@styl': 'assets/styl',
+    // as Function
+    '@md': fn => fn.replace(/^@md/, 'assets/md')
+  },
+
+  /**
+   * Webpack configuration extends
+   */
+  extends(webpackConfig) {
+    // ...
+  }
 }`,
       webpackConfig: `extends(webpackConfig) {
   webpackConfig.module.rules.push({

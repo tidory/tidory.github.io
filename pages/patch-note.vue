@@ -5,16 +5,28 @@ app-page
     h1 {{ $store.state.patchNote.label }}
   main.text(slot="text" role="text")
     article.paragraph
-      h2 티도리 7.0
-      p #[b 티도리 7.0] 에서 큰 변화는 없습니다. 내부적으로 몇가지 설정의 변화와 복잡성 해소를 위한 템플릿의 몇가지 변화가 있을 뿐이지만, 메인 버전이 바뀐 것은 기존 #[b 티도리 6.1] 버전과는 설정상 호환이 안 되기 때문입니다.
+      h2 tidory store
+      p #[b tidory store]의 사용법이 일부 변경되었습니다. 이제 스킨의 이름을 옵션으로 받지 않으며 #[b tidory.config.js] 에 설정된 #[b name] 속성으로 결정됩니다. #[b tidory] 는 #[b new] 명령어를 제외한 모든 명령어에서 #[a(href="https://github.com/pronist/tidory-starter-template") tidory-starter-template] 와 종속성을 갖습니다.
+    article.paragraph
       h2 tidory.config.js
-      p #[b tidory.config.js] 파일이 새로 추가되었습니다. 해당 파일은 프레임워크에서 사용하기 위한 환경변수 파일입니다. 즉, 템플릿에 사용되는 #[b .env] 파일과는 구별됩니다. 이는 실제로는 템플릿에 사용되지 않으면서 선언되어 있어 자칫 혼동할 여지가 생기는 것으로 구분할 필요성이 생겼습니다. 따로 #[a(:href="$store.state.menu.configuration.href") 환경설정] 가이드가 마련되어 있습니다. 
+      p #[b name, alias] 속성이 추가되었습니다. #[b name] 속성은 스킨을 #[b 저장(store)]할 때 사용되는 옵션입니다. #[b alias] 속성은 템플릿에서 에셋을 불러올 때 사용하는 별칭입니다. 아참, 그리고 웹팩 별칭은 별도입니다.
+      pre(data-label="tidory.config.js")
+        code.lang-javascript {{ tidoryConfig }}
+      p 이렇게 설정한 값은 다음과 같은 형태로 템플릿에서 사용할 수 있습니다. 이제는 #[b ../../../assets/styl/app.styl] 와 같은 형태를 벗어나십시오!
+      pre(data-label="index.pug")
+        code.lang-pug {{ pugAlias }}
     article.paragraph
-      h2 webpack.base.conf.js
-      p #[b webpack.base.conf.js] 파일은 길기만 했던 웹팩 설정 파일이었습니다. 과감하게 삭제하고 환경설정과 결합했으며 이제 복잡한 설정구문을 볼 필요는 없습니다.
+      h2 tidory-starter-template
+      p #[b tidory-starter-template] 는 #[b tidory] 버전이 변경되었을 때 빌드하려면 글로벌로 설치된 #[b tidory] 의 버전을 #[b 템플릿에 맞춰야 하는 문제점]이 있었습니다. 이제 그것이 해결되어 프로젝트 템플릿에 #[b tidory] 가 내장됩니다. 물론 기존처럼 글로벌로 설치된 #[b tidory] 를 사용할 수도 있습니다.
+      pre(data-label="package.json")
+        code.lang-json {{ pkg }}
     article.paragraph
-      h2 webpack.entry.js
-      p #[b webpack.entry.js] 파일은 #[b assets/app.js] 파일로 이동되었습니다.
+      h2 티도리 패키지
+      p 티도리는 #[b 코드 분리]가 가능하다는 장점이 있지만, 정작 개별 패키지를 개발하는 방법은 없었습니다. 하지만 이제부터는 #[b 패키지 개발]이 가능합니다. 티도리 패키지는 #[b NPM 패키지]로 #[b 취급]합니다. 하지만 본질적으로 NPM 패키지는 아니므로 NPM 레지스트리에 저장해서 전역 레지스트리를 오염시키는 것은 좋지 않습니다. 따라서 티도리 패키지는 이름에 제약조건을 걸어둡니다. #[b @tidory] 스코프 아래에만 저장해야 합니다. 또한 NPM 레지스트리에 #[b 공표(Publich)] 하는 일이 없도록 하십시오. 레지스트리는 #[b github] 를 사용하세요. 패키지에 대한 내용은 #[a(href="/docs/package") 패키지]를 참고해주세요.
+    article.paragraph
+      h2 뷰, 리액트 .pug 지원 삭제
+      p #[b 뷰 컴포넌트]와 #[b 리액트 컴포넌트]에서 본래 #[b pug] 를 사용할 수 있도록 지원했었지만, 그런 종속성은 좋지 않은 듯하여 제거하였습니다. #[b pug] 는 템플릿으로써만 사용할 뿐, 선택적으로 사용하는 컴포넌트까지 그런 컨셉에 대한 영향을 줄 필요는 없는듯 합니다.
+  
   footer.footer(slot="footer" role="footer")
     div.arrows
       div.right: a(:href="$store.state.menu.home.href") {{ $store.state.menu.home.label }} #[i.fas.fa-angle-right]
@@ -26,6 +38,35 @@ import AppPage from '~/components/AppPage.vue';
 export default {
   components: {
     AppPage
+  },
+  data() {
+    return {
+      tidoryConfig: `module.exports = {
+  name: 'TIDORY',
+  alias: {
+    // as String
+    '@styl': 'assets/styl',
+    // as Function
+    '@md': fn => fn.replace(/^@md/, 'assets/md')
+  }
+}`,
+      pugAlias: `//- include assets/styl/app.styl
+include:stylus @styl/app.styl
+//- assets/md/index.md
+include:markdown-it @md/index.md
+`,
+      pkg: `"scripts": {
+  "start": "tidory start",
+  "preview": "tidory preview",
+  "build": "tidory build",
+  "build:compress": "tidory build --compress",
+  "deploy": "tidory deploy",
+  "store": "tidory store"
+},
+"dependencies": {
+  "tidory": "^7.1"
+}`
+    }
   }
 }
 </script>

@@ -71,7 +71,7 @@ export default {
 
 Vue.component(
   'hello-world',
-   require('~/assets/components/hello-world.vue').default
+  require('./components/hello-world.vue').default
 );
 
 new Vue({
@@ -93,7 +93,7 @@ div#app`,
       reactEntry: `import React from 'react'
 import ReactDOM from 'react-dom'
 
-const HelloWorld = require('~/assets/components/HelloWorld');
+const HelloWorld = require('./components/HelloWorld');
 
 const rootElement = document.getElementById('app');
 ReactDOM.render(<HelloWorld />, rootElement);`,
@@ -101,7 +101,7 @@ ReactDOM.render(<HelloWorld />, rootElement);`,
   //- PUBLIC_PATH/favicon.png
   <img src="./images/favicon.png">
   //- PUBLIC_PATH/__WEBPACK_CHANGED__.png
-  <img v-bind:src='require("~/assets/images/favicon.png")'>
+  <img v-bind:src='require("../images/favicon.png")'>
 </template>`,
       publicPath: `/**
  * Build

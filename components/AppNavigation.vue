@@ -42,7 +42,7 @@ export default {
         left 50px
         box-sizing border-box
         list-style none
-        padding-bottom 25px
+        padding-bottom 45px
         .item
           padding 20px 0
           font-weight 400

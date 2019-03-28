@@ -10,24 +10,32 @@ app-page(:active="$store.state.menu.distribute.page")
       h3(id="비압축") 비압축(Uncompressed)
       p 빌드는 기본적으로 비압축모드로 진행되며 #[b tidory build] 명령을 내리면 됩니다.
       pre
-        code.lang-bash tidory build
+        code.lang-bash 
+          | # tidory build
+          | npm run build
       h3(id="압축") 압축(Compressed)
       p #[b 개발자가 직접 사용하기 위해 빌드하는 모드] 입니다. 웹페이지 로드속도를 향상시키기 위해 코드를 압축합니다.
       pre
-        code.lang-bash tidory build --compress
+        code.lang-bash 
+          | # tidory build --compress
+          | npm run build:compress
     article.paragraph
       h2(id="배포") 배포(Distribution) #[span.version 티도리 6.1]
       p #[b 배포]는 #[b 현재 사용 중인 스킨을 덮어쓰는 모드]가 있고, #[b 스킨저장소에 저장하는 모드]가 있습니다. 추가적으로 배포를 사용하려면 #[a(:href="$store.state.menu.configuration.href") 환경설정]에 #[b ts_session, url] 항목이 정상적으로 등록되어 있어야합니다. 
       p 
         blockquote.blockquote-type-2 배포를 하기 전에 먼저 빌드해야 합니다. #[b dist] 디렉토리를 대상으로 배포하기 때문이죠.
-      h3(id="덮어쓰기") 덮어쓰기
+      h3(id="덮어쓰기") 덮어쓰기(Overwirte)
       p 현재 사용 중인 스킨에 덮어쓰려면 #[b tidory deploy] 명령으로 할 수 있습니다. 현재 사용 중인 스킨의 코드가 덮어써지고 업로드된 파일이 삭제되고 재업로드 됩니다.
       pre
-        code.lang-bash tidory deploy
-      h3(id="저장소") 저장소
-      p 스킨저장소에 스킨을 저장하려면 다음과 같이 #[b tidory store] 명령어에 #[b 티스토리 스킨 이름]을 지정해주세요.
+        code.lang-bash
+          | # tidory deploy
+          | npm run deploy
+      h3(id="저장소") 저장소(Store)
+      p #[b 스킨저장소]에 저장하려면 #[a(:href="$store.state.menu.configuration.href") 환경설정]에 #[b name] 항목이 정상적으로 등록되어 있어야합니다. 
       pre
-        code.lang-bash tidory store TISTORY_SKIN
+        code.lang-bash
+          | # tidory store
+          | npm run store
     article.paragraph
       h2(id="프로덕션 코드") 프로덕션 코드
       p
