@@ -109,7 +109,6 @@ ReactDOM.render(<HelloWorld />, rootElement);`,
 build: {
   /**
    * Assets public path
-   * 'https://tistory2.daumcdn.net/tistory/2710108/skin/images/'
    */
   public_path: null
 },`
