@@ -17,7 +17,7 @@ module.exports = {
       { content: '티스토리 스킨 프레임워크, 티도리(TIDORY)', property: 'og:title' }
     ],
     link: [
-      { rel: 'shortcut icon', type: 'image/png', href: '/images/favicon.png' },
+      { rel: 'shortcut icon', href: '/images/favicon.ico' },
       { rel: 'apple-touch-icon', sizes: "180x180", href: '/images/180x180.png' },
       { rel: 'apple-touch-icon', sizes: "76x76", href: '/images/76x76.png' },
       { rel: 'apple-touch-icon', sizes: "120x120", href: '/images/120x152.png' },

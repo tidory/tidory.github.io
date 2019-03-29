@@ -1,7 +1,7 @@
 <template lang="pug">
 nav#nav(role="navigation")
   div.shadow
-    a.logo(href="/"): img(src="~assets/images/logo.png")
+    a.logo(href="/"): img(src="/images/logo.png")
     ul.menu
       li.item(v-for="item in $store.state.menu" :class="{ active: item.page == $store.state.active }")
         div.index {{ item.page }}
@@ -38,7 +38,7 @@ export default {
         top 35px
       .menu
         position absolute
-        top 125px
+        top 128px
         left 50px
         box-sizing border-box
         list-style none
