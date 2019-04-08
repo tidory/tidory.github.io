@@ -2,11 +2,10 @@
 aside#aside(role="sidebar")
   div.notice
     i(class="fas fa-volume-up")
-    a.text(:href="$store.state.patchNote.href") 티도리 7.1 버전이 공개되었습니다.
+    a.text(href="https://www.inflearn.com/course/%ed%94%84%eb%a0%88%ec%9e%84%ec%9b%8c%ed%81%ac/") 초심자를 위한 강의가 제작되었습니다!
   ul.menu
     li(v-for="(item, index) in menu")
       a(:href="item.href"): i(:class="item.class")
-
 </template>
 
 <script>
@@ -14,6 +13,7 @@ export default {
   data() {
     return {
       menu: [
+        { class: 'fas fa-bell', href: this.$store.state.patchNote.href },
         { class: 'fas fa-book-open', href: 'https://tistory.github.io/document-tistory-skin/' }
       ]
     }
