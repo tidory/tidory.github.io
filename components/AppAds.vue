@@ -15,7 +15,7 @@ export default {
   #ads
     .banner
       position fixed
-      top 300px
+      top 290px
       left 1120px
       width 280px
       border-radius 5px
