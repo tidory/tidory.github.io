@@ -17,7 +17,7 @@
   "dependencies": {
     "nuxt": "^2.0.0",
     "prismjs": "^1.14.0",
-    "push-dir": "^0.4.1"
+    "vue-script2": "^2.0.3"
   },
   "devDependencies": {
     "babel-eslint": "^10.0.1",
@@ -30,6 +30,7 @@
     "pug-loader": "^2.4.0",
     "pug-plain-loader": "^1.0.0",
     "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.2"
+    "stylus-loader": "^3.0.2",
+    "push-dir": "^0.4.1"
   }
 }

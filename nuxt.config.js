@@ -1,4 +1,7 @@
 module.exports = {
+  plugins: [
+    { src: '~/plugins/vue-script2.js', ssr: false }
+  ],
   /*
   ** Headers of the page
   */

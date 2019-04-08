@@ -1,15 +1,26 @@
 <template lang="pug">
 section#document
   slot(name="header")
+  app-google-adsense(
+    data-ad-slot="6481206507"
+  )
   slot(name="text")
+  app-google-adsense(
+    data-ad-slot="9817816286"
+  )
   slot(name="footer")
 </template>
 
 <script>
+import AppGoogleAdsense from './AppGoogleAdsense.vue';
+
 export default {
   props: ['active'],
   beforeMount() {
     this.$store.commit('activeMenu', this.active);
+  },
+  components: {
+    AppGoogleAdsense
   }
 }
 </script>
