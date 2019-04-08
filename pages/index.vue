@@ -7,13 +7,7 @@ app-page(:active="$store.state.menu.home.page")
     article.paragraph
       h2 티스토리 스킨 제작 프레임워크
       p 아직도 티스토리 스킨을 개발할 때 HTML에 생으로 코딩하시나요? #[b 티도리 프레임워크]는 #[b 티스토리 스킨 제작]을 위해 고안된 프레임워크입니다. 개발자의 입맛에 맞게 다양한 기능을 사용하여 신속하고 #[b 재사용성이 높은 스킨]제작을 목적으로 하고 있습니다. 프레임워크는 어플리케이션을 빠르게 개발하기 위해 제공되는 #[b 틀]같은 존재입니다. 프레임워크가 #[b 개발의 시작부터 배포까지 모든 것을 책임]지므로 사용자는 비지니스 로직에 집중하기만 하면 됩니다. 설정만 해두면 명령어 한 번만 입력하면 뚝딱이랍니다.
-      // iframe(
-        style="width: 620px; height: 350px;" 
-        src="https://player.vimeo.com/video/327902395?autoplay=0&amp;color=ffffff&amp;title=0&amp;byline=0&amp;portrait=0" 
-        webkitallowfullscreen="webkitallowfullscreen" 
-        mozallowfullscreen="mozallowfullscreen" 
-        allowfullscreen="allowfullscreen" 
-        frameborder="0")
+      video(controls src="https://r1---sn-i3b7knl6.c.drive.google.com/videoplayback?expire=1554733012&ei=lB-rXPmgG8LQqgW61LDoDA&ip=183.91.206.101&cp=QVNKVkhfUlBPQ1hOOl9tMWhkVlpBQTJWdXpHcFJpdGM3aGtMR3FFYkttd29nYnBlQUdsUmcxVEg&id=46f79bba3f0cc315&itag=18&source=webdrive&requiressl=yes&mm=30&mn=sn-i3b7knl6&ms=nxu&mv=m&pl=22&ttl=transient&susc=dr&driveid=1OmsfKBZq80s0JmD8mcoRXOxuq01pE3Hk&app=explorer&mime=video/mp4&dur=493.865&lmt=1554718471536933&mt=1554718524&sparams=expire,ei,ip,cp,id,itag,source,requiressl,ttl,susc,driveid,app,mime,dur,lmt&sig=ALgxI2wwRQIhAKcFlSPN19fZWpjVzcDqLvxfB0iDhjzo3X5b65fWnzd0AiApQPjfsFrl_1DUvgJCE_w_403phcxAQUF-lOYyxNvJrw==&lsparams=mm,mn,ms,mv,pl&lsig=AHylml4wRAIgdnvZq-YZoT731JCd9ovB0fU-fOUajuiFfAYT5OoUw7wCIAvZ6mEpDGZ15n4b7sZsu_AIz8amURlVcd2K8BRxGDJZ&cpn=sK6JUCOkLYnhezg8&c=WEB_EMBEDDED_PLAYER&cver=20190403")
     article.paragraph  
       h2 템플릿 분리
       p(style="text-align: center;")
