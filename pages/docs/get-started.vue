@@ -6,7 +6,7 @@ app-page(:active="$store.state.menu.getStarted.page")
   main.text(slot="text" role="text")
     article.paragraph
       h2(id="시작하기 전에") 시작하기 전에
-      p 티도리 프레임워크는 #[b HTML, CSS, Javascript]에 대한 기본적인 지식이 있다고 가정합니다. 따라서 해당 지식이 없다면 프레임워크를 배우기는 어려울 수 있습니다. 또한 템플릿 엔진으로 #[b 퍼그(pug)]를 사용합니다. 퍼그는 HTML의 코드 길이를 줄여주는 것은 물론, 그 외 부가적으로 다양한 기능을 제공하는 템플릿 엔진입니다. 따라서 기본 지식이외에 #[b 퍼그]를 추가적으로 알고있어야 합니다.
+      p 티도리 프레임워크는 #[b HTML, CSS, Javascript] 에 대한 기본적인 지식이 있다고 가정합니다. 따라서 해당 지식이 없다면 프레임워크를 배우기는 어려울 수 있습니다. 또한 템플릿 엔진으로 #[b 퍼그(pug)]를 사용합니다. 퍼그는 HTML의 코드 길이를 줄여주는 것은 물론, 그 외 부가적으로 다양한 기능을 제공하는 템플릿 엔진입니다. 따라서 기본 지식이외에 #[b 퍼그]를 추가적으로 알고있어야 합니다.
     article.paragraph  
       h2(id="티도리") 티도리(Tidory)
       p #[b 티도리(Tidory)]는 티도리 프레임워크와 상호작용하기 위한 #[b CLI(Command Line Interface)] 환경에서 실행하는 #[b NPM(Node Package Manager)] 패키지입니다. 다음과 같은 명령을 통해 티도리를 설치해야합니다.

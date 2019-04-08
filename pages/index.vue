@@ -15,7 +15,7 @@ app-page(:active="$store.state.menu.home.page")
       p 기존의 스킨개발 방식은 하나의 HTML에 #[b 헤더, 본문, 푸터, 사이드바]를 모두 몰아넣는 방식이었습니다. 티도리 프레임워크에서는 #[b 웹팩(Webpack)]을 번들링도구로 사용합니다. 개발과정부터 하나의 파일에 모두 넣을 필요가 없습니다. 개발단계에서 #[b 기능별로 분리]하여 다른 스킨을 제작할 때 #[b 재사용]할 수 있습니다. 또한 #[b 프론트엔드 템플릿엔진]의 일종인 #[b 퍼그(pug)]를 사용하므로 코드의 길이가 줄어들기 때문에 가독성이 향상됩니다.
     article.paragraph  
       h2 싱글 파일 템플릿
-      p 기능별로 분리된 템플릿을 관리할 때 #[b CSS, Javascript]를 별도로 분리하여 관리할 필요가 없습니다. 하나의 템플릿파일에 #[b style, script] 가 포함되어 빌드할 때는 #[b style.css, script.js 파일로 자동으로 분리]됩니다!
+      p 기능별로 분리된 템플릿을 관리할 때 #[b CSS, Javascript] 를 별도로 분리하여 관리할 필요가 없습니다. 하나의 템플릿파일에 #[b style, script] 가 포함되어 빌드할 때는 #[b style.css, script.js 파일로 자동으로 분리]됩니다!
       p 여기에 예시로 작성된 #[b HelloWorld.pug] 템플릿이 있습니다. 이것을 빌드하면 어떻게될까요?
       pre(data-label="HelloWorld.pug")
         code.lang-pug {{ index }}

@@ -28,7 +28,7 @@ app-page(:active="$store.state.menu.framework.page")
         code.lang-javascript {{ react }}
       pre(data-label="HelloWorld.pug")
         code.lang-pug {{ reactTemplate }}
-      p #[b 리액트 컴포넌트]를 템플릿에서 사용하려면 #[b ReactDOM]을 사용하여 #[b app.js] 에서 컴포넌트를 #[b #app]에 바인딩하세요.
+      p #[b 리액트 컴포넌트]를 템플릿에서 사용하려면 #[b ReactDOM] 을 사용하여 #[b app.js] 에서 컴포넌트를 #[b #app]에 바인딩하세요.
       pre(data-label="app.js")
         code.lang-javascript {{ reactEntry }}
     article.paragraph

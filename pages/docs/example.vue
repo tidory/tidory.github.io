@@ -25,7 +25,7 @@ app-page(:active="$store.state.menu.example.page")
       pre(data-label="views/Header.pug")
         code.lang-pug {{ header }}
       h3(id="blogTitle") views/Header/blogTitle.pug
-      p #[b 블로그 제목]의 #[b h1]태그 내부에는 #[b style] 태그가 쓰인 것을 알 수 있습니다. 여기서 #[b style] 태그는 빌드하면 #[b style.css] 파일로, #[b script] 태그를 사용하면 #[b images/script.js] 파일로 분리됩니다!
+      p #[b 블로그 제목]의 #[b h1] 태그 내부에는 #[b style] 태그가 쓰인 것을 알 수 있습니다. 여기서 #[b style] 태그는 빌드하면 #[b style.css] 파일로, #[b script] 태그를 사용하면 #[b images/script.js] 파일로 분리됩니다!
       pre(data-label="views/Header/BlogTitle.pug")
         code.lang-pug {{ blogTitle }}
       h3(id="blogMenu") views/Header/blogMenu.pug

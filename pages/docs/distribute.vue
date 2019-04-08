@@ -14,7 +14,7 @@ app-page(:active="$store.state.menu.distribute.page")
           | # tidory build
           | npm run build
       h3(id="압축") 압축(Compressed)
-      p #[b 개발자가 직접 사용하기 위해 빌드하는 모드] 입니다. 웹페이지 로드속도를 향상시키기 위해 코드를 압축합니다.
+      p #[b 개발자가 직접 사용하기 위해 빌드하는 모드]입니다. 웹페이지 로드속도를 향상시키기 위해 코드를 압축합니다.
       pre
         code.lang-bash 
           | # tidory build --compress
@@ -52,7 +52,7 @@ app-page(:active="$store.state.menu.distribute.page")
             ├── skin.html
             └── style.css
       h3(id="images") images/*
-      p #[b images] 폴더는 템플릿 또는 컴포넌트에 포함된 리소스들이 모여있는 파일이며, 추가적으로 템플릿 내부에서 작성한 #[b scoped] 속성이 사용되지 않은 #[b script] 태그의 집합인 #[b script.js], app.js 에서 포함한 에셋들의 집합인 #[b app.js] 가 있습니다.
+      p #[b images] 폴더는 템플릿 또는 컴포넌트에 포함된 리소스들이 모여있는 파일이며, 추가적으로 템플릿 내부에서 작성한 #[b scoped] 속성이 사용되지 않은 #[b script] 태그의 집합인 #[b script.js], #[b assets/app.js] 에서 포함한 에셋들의 집합인 #[b app.js] 가 있습니다.
       h3(id="skin") skin.html
       p 티스토리 스킨으로 업로드할 최종 #[b html] 파일입니다.
       h3(id="style") style.css
