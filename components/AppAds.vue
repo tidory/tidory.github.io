@@ -33,6 +33,7 @@ export default {
       width 280px
     .banner
       border-radius 5px
+    .banner, .adsense
       margin-bottom 8px
 @media all and (max-width: 1170px)
   #ads
