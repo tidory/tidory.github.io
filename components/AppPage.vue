@@ -1,9 +1,17 @@
 <template lang="pug">
 section#document
   slot(name="header")
-  // app-google-adsense(data-ad-slot="6481206507")
+  // app-google-adsense(
+  //   data-ad-layout="in-article"
+  //   data-ad-format="fluid"
+  //   data-ad-slot="6481206507"
+  // )
   slot(name="text")
-  app-google-adsense(data-ad-slot="9817816286")
+  app-google-adsense(
+    data-ad-layout="in-article"
+    data-ad-format="fluid"
+    data-ad-slot="9817816286"
+  )
   slot(name="footer")
 </template>
 
