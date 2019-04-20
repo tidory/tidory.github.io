@@ -1,7 +1,7 @@
 <template lang="pug">
 div#container
   app-sidebar
-  app-ads
+  // app-ads
   app-navigation
   main#main(role="main")
     nuxt
