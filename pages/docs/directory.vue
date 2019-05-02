@@ -1,8 +1,8 @@
 <template lang="pug">
-app-page(:active="$store.state.menu.directory.page")
+app-page(:active="$store.state.menu.basic.directory.page")
   header.header(role="header" slot="header")
-    div.index {{ $store.state.menu.directory.page }}
-    h1 {{ $store.state.menu.directory.label }}
+    div.index {{ $store.state.menu.basic.directory.page }}
+    h1 {{ $store.state.menu.basic.directory.label }}
   main.text(slot="text" role="text")
     article.paragraph
       p
@@ -28,11 +28,11 @@ app-page(:active="$store.state.menu.directory.page")
       h3(id="images") images/*
       p 보통 프레임워크에서 정적파일의 폴더이름은 #[b static] 으로 처리 될 수 있습니다만, 티스토리에서는 #[b images] 폴더로 모든 정적파일 을 관리합니다.
       h3(id="views") views/*.pug
-      p #[b pug 템플릿 파일]이 위치할 폴더입니다. 보통 #[b index.pug] 파일의 #[b block TIDORY] 부분에서 템플릿파일을 포함시킵니다. 소스구조는 분활해서 구성하는 것이 원칙입니다. #[a(:href="$store.state.menu.template.href+'#문서 구조'") 문서 구조] 부분을 참고하세요. 
+      p #[b pug 템플릿 파일]이 위치할 폴더입니다. 보통 #[b index.pug] 파일의 #[b block TIDORY] 부분에서 템플릿파일을 포함시킵니다. 소스구조는 분활해서 구성하는 것이 원칙입니다. #[a(:href="$store.state.menu.basic.template.href+'#문서 구조'") 문서 구조] 부분을 참고하세요. 
   footer.footer(slot="footer" role="footer")
     div.arrows
-      div.left: a(:href="$store.state.menu.getStarted.href") #[i.fas.fa-angle-left] {{ $store.state.menu.getStarted.label }} 
-      div.right: a(:href="$store.state.menu.template.href") {{ $store.state.menu.template.label }} #[i.fas.fa-angle-right]
+      div.left: a(:href="$store.state.menu.basic.getStarted.href") #[i.fas.fa-angle-left] {{ $store.state.menu.basic.getStarted.label }} 
+      div.right: a(:href="$store.state.menu.basic.template.href") {{ $store.state.menu.basic.template.label }} #[i.fas.fa-angle-right]
 </template>
 
 <script>

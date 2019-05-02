@@ -1,30 +1,15 @@
 <template lang="pug">
 section#document
   slot(name="header")
-  // app-google-adsense(
-  //   data-ad-layout="in-article"
-  //   data-ad-format="fluid"
-  //   data-ad-slot="6481206507"
-  // )
   slot(name="text")
-  // app-google-adsense(
-  //   data-ad-layout="in-article"
-  //   data-ad-format="fluid"
-  //   data-ad-slot="9817816286"
-  // )
   slot(name="footer")
 </template>
 
 <script>
-import AppGoogleAdsense from './AppGoogleAdsense.vue';
-
 export default {
   props: ['active'],
   beforeMount() {
     this.$store.commit('activeMenu', this.active);
-  },
-  components: {
-    AppGoogleAdsense
   }
 }
 </script>
@@ -86,6 +71,13 @@ export default {
       margin 25px 0
       color rgba(0, 0, 0, .85)
       line-height 1.9em
+    ol
+      padding-left 20px
+      li
+        line-height 1.9em
+        padding 10px 0
+        p
+          margin 8px 0
     b
       color #ed5207
       font-weight 500
@@ -101,6 +93,8 @@ export default {
     .blockquote-type-1
       border 1px solid rgba(0, 0, 0, .1)
       padding 15px
+      p
+        margin 10px 0
     .blockquote-type-2
       border-color #acacac
       border-width 0 0 0 2px

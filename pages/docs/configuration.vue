@@ -1,8 +1,8 @@
 <template lang="pug">
-app-page(:active="$store.state.menu.configuration.page")
+app-page(:active="$store.state.menu.basic.configuration.page")
   header.header(role="header" slot="header")
-    div.index {{ $store.state.menu.configuration.page }}
-    h1 {{ $store.state.menu.configuration.label }}
+    div.index {{ $store.state.menu.basic.configuration.page }}
+    h1 {{ $store.state.menu.basic.configuration.label }}
   main.text(slot="text" role="text")
     article.paragraph
       h2(id="tidory.config.js") tidory.config.js #[span.version 티도리 7.0]
@@ -31,7 +31,7 @@ app-page(:active="$store.state.menu.configuration.page")
       pre(data-label="tidory.config.js")
         code.lang-javascript {{ webpackConfig }}
     article.paragraph
-      h2(id="env") .env
+      h2(id="env") .env #[span.version 티도리 5.2]
       p #[b .env] 환경설정 파일은 템플릿 내부 또는 #[b app.js] 에서 사용하는 상수 설정 파일입니다. 프레임워크에서 직접 사용하는 것이 아닌 템플릿에서 사용된다는 점에서 #[b tidory.config.js] 와 구별됩니다. 예를 들어 티스토리에 API에 등록된 앱을 사용하기 위해 다음과 같이 #[b 티스토리 API] 로그인을 위한 상수가 정의되어 있다고 가정해봅시다.
       pre
         code.lang-none {{ env }}
@@ -40,8 +40,8 @@ app-page(:active="$store.state.menu.configuration.page")
         code.lang-pug {{ form }}
   footer.footer(slot="footer" role="footer")
     div.arrows
-      div.left: a(:href="$store.state.menu.framework.href") #[i.fas.fa-angle-left] {{ $store.state.menu.framework.label }} 
-      div.right: a(:href="$store.state.menu.distribute.href") {{ $store.state.menu.distribute.label }} #[i.fas.fa-angle-right]
+      div.left: a(:href="$store.state.menu.basic.example.href") #[i.fas.fa-angle-left] {{ $store.state.menu.basic.example.label }} 
+      div.right: a(:href="$store.state.menu.basic.distribute.href") {{ $store.state.menu.basic.distribute.label }} #[i.fas.fa-angle-right]
 </template>
 
 <script>
@@ -64,12 +64,12 @@ include @styl/app.styl`,
   /**
    * Tistory session cookie value
    */
-  ts_session: null,
+  ts_session: new String(),
 
   /**
    * Tistory blog URL
    */
-  url: null,
+  url: new String(),
 
   /** 
    * Preview
@@ -96,7 +96,7 @@ include @styl/app.styl`,
     /**
      * Assets public path
      */
-    public_path: null
+    public_path: new String()
   },
 
   /**

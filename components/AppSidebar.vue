@@ -13,8 +13,8 @@ export default {
   data() {
     return {
       menu: [
-        { class: 'fas fa-bell', href: this.$store.state.patchNote.href },
-        { class: 'fas fa-book-open', href: 'https://tistory.github.io/document-tistory-skin/' }
+        { class: 'fas fa-bell', href: this.$store.state.menu.meta.patchNote.href },
+        { class: 'fas fa-book-open', href: this.$store.state.menu.meta.tistoryGuidebook.href }
       ]
     }
   }
@@ -29,6 +29,7 @@ export default {
       top 35px
       left 285px
       font-size .85em
+      font-weight 500
       i
         color rgba(0, 0, 0, .5)
         margin-right 10px

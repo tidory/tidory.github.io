@@ -1,12 +1,12 @@
 <template lang="pug">
-app-page(:active="$store.state.menu.template.page")
+app-page(:active="$store.state.menu.basic.template.page")
   header.header(role="header" slot="header")
-    div.index {{ $store.state.menu.template.page }}
-    h1 {{ $store.state.menu.template.label }}
+    div.index {{ $store.state.menu.basic.template.page }}
+    h1 {{ $store.state.menu.basic.template.label }}
   main.text(slot="text" role="text")
     article.paragraph
-      h2(id="문서 구조") 문서 구조
-      p 템플릿은 크게 #[b app.pug, index.pug, views/*.pug] 로 구성되어 있습니다. 각각이 어떻게 연결되어있는지 살펴보죠!
+      h2(id="문서 구조") 문서 구조 #[span.version 티도리 2.0]
+      p 티도리 프레임워크에서 템플릿은 #[a(href="https://pugjs.org/api/getting-started.html") 퍼그(Pug)]를 사용합니다. #[b 퍼그]는 HTML 파트별로 나누고 코드의 길이를 줄여주는 효과적인 템플릿 엔진입니다. #[b 티도리 프로젝트 템플릿]에서는 크게 #[b app.pug, index.pug, views/*.pug] 로 구성되어 있습니다. 각각이 어떻게 연결되어있는지 살펴보죠!
       h3(id="app.pug") app.pug
       p #[b app.pug] 템플릿은 #[b HTML]의 기본구조가 정의되어있는 템플릿입니다. #[b head, body] 태그와 같이 구조에 해당되는 태그들이 app.pug 에 마크업되어 있습니다. #[b 문서]의 최상위 템플릿이므로 스킨과는 직접적인 연관이 없는 마크업을 넣는 것이 좋습니다.
       pre(data-label="app.pug")
@@ -16,8 +16,8 @@ app-page(:active="$store.state.menu.template.page")
       pre(data-label="index.pug")
         code.lang-pug {{ index }}
     article.paragraph
-      h2(id="코드 분할") 코드 분할
-      p 우리가 템플릿을 분리해야하는 가장 중요한 이유는 #[b 재활용] 입니다. 템플릿 하나에는 #[b 스타일, 마크업, 스크립트]가 통째로 들어가기 때문에 다른 스킨을 제작할 때 포함시키기만 하면 다시 작성하지 않아도 됩니다.
+      h2(id="코드 분할") 코드 분할 #[span.version 티도리 1.0]
+      p 우리가 템플릿을 분리해야하는 가장 중요한 이유는 #[b 재활용]입니다. 템플릿 하나에는 #[b 스타일, 마크업, 스크립트]가 통째로 들어가기 때문에 다른 스킨을 제작할 때 포함시키기만 하면 다시 작성하지 않아도 됩니다.
       h3(id="부모와 자식 템플릿")
       p 자, 이제 우리가 다음과 같은 구조로 템플릿을 분리해 놓았다고 생각해봅시다. 이렇게 1차적으로 크게 분리된 것이 #[b 부모 템플릿]입니다. 이제 각 영역에 속할 #[b 자식 템플릿]을 만들어봐야 합니다.
       p
@@ -44,8 +44,8 @@ app-page(:active="$store.state.menu.template.page")
             │     └── Footer.pug
   footer.footer(slot="footer" role="footer")
     div.arrows
-      div.left: a(:href="$store.state.menu.directory.href") #[i.fas.fa-angle-left] {{ $store.state.menu.directory.label }}
-      div.right: a(:href="$store.state.menu.example.href") {{ $store.state.menu.example.label }} #[i.fas.fa-angle-right]
+      div.left: a(:href="$store.state.menu.basic.directory.href") #[i.fas.fa-angle-left] {{ $store.state.menu.basic.directory.label }}
+      div.right: a(:href="$store.state.menu.basic.example.href") {{ $store.state.menu.basic.example.label }} #[i.fas.fa-angle-right]
 </template>
 
 <script>

@@ -1,12 +1,12 @@
 <template lang="pug">
-app-page(:active="$store.state.menu.framework.page")
+app-page(:active="$store.state.menu.advanced.framework.page")
   header.header(role="header" slot="header")
-    div.index {{ $store.state.menu.framework.page }}
-    h1 {{ $store.state.menu.framework.label }}
+    div.index {{ $store.state.menu.advanced.framework.page }}
+    h1 {{ $store.state.menu.advanced.framework.label }}
   main.text(slot="text" role="text")
     article.paragraph
-      h2(id="뷰 & 리액트") 뷰 & 리액트 프레임워크
-      p 티도리 프레임워크에서는 모던 자바스크립트 프레임워크인 #[b 뷰(Vue.js)]와 #[b 리액트(React.js)]를 지원합니다. #[b 컴포넌트(Component)]를 만들고 포함시켜 템플릿에서 사용할 수 있습니다. 컴포넌트는 사용하고 싶을 때 사용하면 되지만 몇 가지 주의사항이 있으니 알아보도록 합시다.
+      h2(id="자바스크립트 프레임워크") 자바스크립트 프레임워크 #[span.version 티도리 5.1]
+      p 티도리 프레임워크에서는 모던 자바스크립트 프레임워크인 #[b 뷰(Vue.js)]와 #[b 리액트(React)]를 지원합니다. #[b 컴포넌트(Component)]를 만들고 포함시켜 템플릿에서 사용할 수 있습니다. 컴포넌트는 사용하고 싶을 때 사용하면 되지만 몇 가지 주의사항이 있으니 알아보도록 합시다.
       h3(id="언제 사용해야 할까?") 언제 사용해야 할까?
       p #[b 사용자에게 커스텀을 허용하지 않는 경우], 컴포넌트는 자바스크립트를 통해 렌더링되고 웹팩을 통해 번들링 되기 때문에 커스텀하기 정말 어렵습니다. 때문에 사용자가 직접 코드를 변경할 필요가 없고 위젯형태로 제공하는 경우라면 컴포넌트가 좋겠네요.
       p #[b 스킨 코드와 완전 무관한 경우], 컴포넌트를 사용하면 #[b DOM(Document Object Model)]이 자바스크립트로 구성되므로 #[b 티스토리가 치환자를 통해 해석하지 못합니다.] 따라서 컴포넌트 내부에 티스토리 치환자를 사용하면 안됩니다. 티스토리가 제공하는 기능이 아닌, 외부에서 제공하는 기능을 넣는 경우에 사용하면 좋습니다.
@@ -37,13 +37,13 @@ app-page(:active="$store.state.menu.framework.page")
       pre(data-label="HelloWorld.vue")
         code.lang-html {{ resource }}
       h3(id="PUBLIC PATH") PUBLIC PATH
-      P #[a(:href="$store.state.menu.configuration.href") 환경설정]에서 #[b build.public_path] 부분을 설정하는 것으로 #[b 컴포넌트에 포함된 에셋도 티스토리 스킨에서 불러올 수 있습니다.] 해당 주소는 블로그 마다 다를 수 있으며, 개발자 도구 등을 통해 사용하고자 하는 블로그의 #[b PUBLIC PATH] 를 알아야 합니다.
+      P #[a(:href="$store.state.menu.basic.configuration.href") 환경설정]에서 #[b build.public_path] 부분을 설정하는 것으로 #[b 컴포넌트에 포함된 에셋도 티스토리 스킨에서 불러올 수 있습니다.] 해당 주소는 블로그 마다 다를 수 있으며, 개발자 도구 등을 통해 사용하고자 하는 블로그의 #[b PUBLIC PATH] 를 알아야 합니다.
       pre(data-label="tidory.config.js")
         code.lang-javascript {{ publicPath }}
   footer.footer(slot="footer" role="footer")
     div.arrows
-      div.left: a(:href="$store.state.menu.example.href") #[i.fas.fa-angle-left] {{ $store.state.menu.example.label }}
-      div.right: a(:href="$store.state.menu.configuration.href") {{ $store.state.menu.configuration.label }} #[i.fas.fa-angle-right]
+      div.left: a(:href="$store.state.menu.basic.distribute.href") #[i.fas.fa-angle-left] {{ $store.state.menu.basic.distribute.label }}
+      div.right: a(:href="$store.state.menu.advanced.package.href") {{ $store.state.menu.advanced.package.label }} #[i.fas.fa-angle-right]
 </template>
 
 <script>

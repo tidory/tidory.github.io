@@ -1,8 +1,8 @@
 <template lang="pug">
-app-page(:active="$store.state.menu.example.page")
+app-page(:active="$store.state.menu.basic.example.page")
   header.header(role="header" slot="header")
-    div.index {{ $store.state.menu.example.page }}
-    h1 {{ $store.state.menu.example.label }}
+    div.index {{ $store.state.menu.basic.example.page }}
+    h1 {{ $store.state.menu.basic.example.label }}
   main.text(slot="text" role="text")
     article.paragraph
       h2(id="템플릿 작성") 템플릿 작성
@@ -51,15 +51,15 @@ app-page(:active="$store.state.menu.example.page")
       p 티도리로 작성한 코드를 별도로 분리해서 #[b 패키지] 형태로 제공할 수도 있습니다. #[a(href="/docs/package") 패키지]에서 그 내용을 확인 하실 수도 있습니다. 하지만, 미리 사용해보죠! 지금 작성한 예제는 패키지로 별도로 작성해두었습니다.
       pre
         code.lang-bash
-          | # https://github.com/pronist/tidory-example
-          | npm install pronist/tidory-example
-      p 이제 #[b index.pug]에 다음과 같이 포함만 시키면 된답니다.
+          | # https://github.com/tidory/example
+          | npm install tidory/example
+      p 이제 #[b index.pug] 에 다음과 같이 포함만 시키면 된답니다.
       pre(data-label="index.pug")
         code.lang-pug {{ pkg }}
   footer.footer(slot="footer" role="footer")
     div.arrows
-      div.left: a(:href="$store.state.menu.template.href") #[i.fas.fa-angle-left] {{ $store.state.menu.template.label }}
-      div.right: a(:href="$store.state.menu.framework.href") {{ $store.state.menu.framework.label }} #[i.fas.fa-angle-right]
+      div.left: a(:href="$store.state.menu.basic.template.href") #[i.fas.fa-angle-left] {{ $store.state.menu.basic.template.label }}
+      div.right: a(:href="$store.state.menu.basic.configuration.href") {{ $store.state.menu.basic.configuration.label }} #[i.fas.fa-angle-right]
 </template>
 
 <script>

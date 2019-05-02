@@ -1,15 +1,15 @@
 <template lang="pug">
 app-page
   header.header(role="header" slot="header")
-    div.index {{ $store.state.patchNote.page }}
-    h1 {{ $store.state.patchNote.label }}
+    div.index #
+    h1 {{ $store.state.menu.meta.patchNote.label }}
   main.text(slot="text" role="text")
     article.paragraph
       h2 tidory store
-      p #[b tidory store] 의 사용법이 일부 변경되었습니다. 이제 스킨의 이름을 옵션으로 받지 않으며 #[b tidory.config.js] 에 설정된 #[b name] 속성으로 결정됩니다. #[b tidory] 는 #[b new] 명령어를 제외한 모든 명령어에서 #[a(href="https://github.com/pronist/tidory-starter-template") tidory-starter-template] 와 종속성을 갖습니다.
+      p #[b tidory store] 의 사용법이 일부 변경되었습니다. 이제 스킨의 이름을 옵션으로 받지 않으며 #[b tidory.config.js] 에 설정된 #[b name] 속성으로 결정됩니다. #[b tidory] 는 #[b new] 명령어를 제외한 모든 명령어에서 #[a(href="https://github.com/tidory/tidory") tidory] 와 종속성을 갖습니다.
     article.paragraph
       h2 tidory new
-      p 기존의 #[b tidory new] 명령어는 #[b tidory-starter-template] 의 #[b master] 브랜치에서 가져왔었습니다. 그래서 과거 버전에서도 템플릿은 늘 최신으로 설치되었지만, 이제는 티도리 버전에 맞는 템플릿이 설치됩니다.
+      p 기존의 #[b tidory new] 명령어는 #[b tidory] 의 #[b master] 브랜치에서 가져왔었습니다. 그래서 과거 버전에서도 템플릿은 늘 최신으로 설치되었지만, 이제는 티도리 버전에 맞는 템플릿이 설치됩니다.
     article.paragraph
       h2 tidory.config.js
       p #[b name, alias] 속성이 추가되었습니다. #[b name] 속성은 스킨을 #[b 저장(store)]할 때 사용되는 옵션입니다. #[b alias] 속성은 템플릿에서 에셋을 불러올 때 사용하는 별칭입니다. 아참, 그리고 웹팩 별칭은 별도입니다.
@@ -20,7 +20,7 @@ app-page
         code.lang-pug {{ pugAlias }}
     article.paragraph
       h2 tidory-starter-template
-      p #[b tidory-starter-template] 는 #[b tidory] 버전이 변경되었을 때 빌드하려면 글로벌로 설치된 #[b tidory] 의 버전을 #[b 템플릿에 맞춰야 하는 문제점]이 있었습니다. 이제 그것이 해결되어 프로젝트 템플릿에 #[b tidory] 가 내장됩니다. 물론 기존처럼 글로벌로 설치된 #[b tidory] 를 사용할 수도 있습니다.
+      p #[b tidory] 는 #[b tidory-cli] 버전이 변경되었을 때 빌드하려면 글로벌로 설치된 #[b tidory] 의 버전을 #[b 템플릿에 맞춰야 하는 문제점]이 있었습니다. 이제 그것이 해결되어 프로젝트 템플릿에 #[b tidory] 가 내장됩니다. 물론 기존처럼 글로벌로 설치된 #[b tidory] 를 사용할 수도 있습니다.
       pre(data-label="package.json")
         code.lang-json {{ pkg }}
     article.paragraph
@@ -29,10 +29,6 @@ app-page
     article.paragraph
       h2 뷰, 리액트 .pug 지원 삭제
       p #[b 뷰 컴포넌트]와 #[b 리액트 컴포넌트]에서 본래 #[b pug] 를 사용할 수 있도록 지원했었지만, 그런 종속성은 좋지 않은 듯하여 제거하였습니다. #[b pug] 는 템플릿으로써만 사용할 뿐, 선택적으로 사용하는 컴포넌트까지 그런 컨셉에 대한 영향을 줄 필요는 없는듯 합니다.
-  
-  footer.footer(slot="footer" role="footer")
-    div.arrows
-      div.right: a(:href="$store.state.menu.home.href") {{ $store.state.menu.home.label }} #[i.fas.fa-angle-right]
 </template>
 
 <script>

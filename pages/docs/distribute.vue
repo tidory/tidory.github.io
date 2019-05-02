@@ -1,8 +1,8 @@
 <template lang="pug">
-app-page(:active="$store.state.menu.distribute.page")
+app-page(:active="$store.state.menu.basic.distribute.page")
   header.header(role="header" slot="header")
-    div.index {{ $store.state.menu.distribute.page }}
-    h1 {{ $store.state.menu.distribute.label }}
+    div.index {{ $store.state.menu.basic.distribute.page }}
+    h1 {{ $store.state.menu.basic.distribute.label }}
   main.text(slot="text" role="text")
     article.paragraph
       h2(id="빌드") 빌드(Build)
@@ -21,7 +21,7 @@ app-page(:active="$store.state.menu.distribute.page")
           | npm run build:compress
     article.paragraph
       h2(id="배포") 배포(Distribution) #[span.version 티도리 6.1]
-      p #[b 배포]는 #[b 현재 사용 중인 스킨을 덮어쓰는 모드]가 있고, #[b 스킨저장소에 저장하는 모드]가 있습니다. 추가적으로 배포를 사용하려면 #[a(:href="$store.state.menu.configuration.href") 환경설정]에 #[b ts_session, url] 항목이 정상적으로 등록되어 있어야합니다. 
+      p #[b 배포]는 #[b 현재 사용 중인 스킨을 덮어쓰는 모드]가 있고, #[b 스킨저장소에 저장하는 모드]가 있습니다. 추가적으로 배포를 사용하려면 #[a(:href="$store.state.menu.basic.configuration.href") 환경설정]에 #[b ts_session, url] 항목이 정상적으로 등록되어 있어야합니다. 
       p 
         blockquote.blockquote-type-2 배포를 하기 전에 먼저 빌드해야 합니다. #[b dist] 디렉토리를 대상으로 배포하기 때문이죠.
       h3(id="덮어쓰기") 덮어쓰기(Overwrite)
@@ -31,7 +31,7 @@ app-page(:active="$store.state.menu.distribute.page")
           | # tidory deploy
           | npm run deploy
       h3(id="저장소") 저장소(Store)
-      p #[b 스킨저장소]에 저장하려면 #[a(:href="$store.state.menu.configuration.href") 환경설정]에 #[b name] 항목이 정상적으로 등록되어 있어야합니다. 
+      p #[b 스킨저장소]에 저장하려면 #[a(:href="$store.state.menu.basic.configuration.href") 환경설정]에 #[b name] 항목이 정상적으로 등록되어 있어야합니다. 
       pre
         code.lang-bash
           | # tidory store
@@ -63,8 +63,8 @@ app-page(:active="$store.state.menu.distribute.page")
       p #[b docs] 폴더에 있던 #[b 티스토리 스킨 설정]파일입니다.
   footer.footer(slot="footer" role="footer")
     div.arrows
-      div.left: a(:href="$store.state.menu.framework.href") #[i.fas.fa-angle-left] {{ $store.state.menu.framework.label }}
-      div.right: a(:href="$store.state.menu.package.href") {{ $store.state.menu.package.label }} #[i.fas.fa-angle-right]
+      div.left: a(:href="$store.state.menu.basic.configuration.href") #[i.fas.fa-angle-left] {{ $store.state.menu.basic.configuration.label }}
+      div.right: a(:href="$store.state.menu.advanced.framework.href") {{ $store.state.menu.advanced.framework.label }} #[i.fas.fa-angle-right]
 </template>
 
 <script>

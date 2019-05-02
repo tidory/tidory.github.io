@@ -1,7 +1,7 @@
 <template lang="pug">
 footer#footer(role="footer")
   div.social
-    a(href="https://github.com/pronist/tidory-starter-template" target="_blank")
+    a(href="https://github.com/tidory" target="_blank")
       i.fab.fa-github(style="font-size: 1.25em")
     a(href="https://www.npmjs.com/package/tidory" target="_blank")
       i.fab.fa-npm(style="font-size: 1.6em;position:relative;top:2px")

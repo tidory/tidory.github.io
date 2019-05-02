@@ -1,7 +1,6 @@
 <template lang="pug">
 div#container
   app-sidebar
-  // app-ads
   app-navigation
   main#main(role="main")
     nuxt
@@ -9,19 +8,17 @@ div#container
 </template>
 
 <script>
-import AppNavigation from '~/components/AppNavigation.vue';
-import AppAds from '~/components/AppAds.vue';
 import AppSidebar from '~/components/AppSidebar.vue';
 import AppFooter from '~/components/AppFooter.vue';
+import AppNavigation from '~/components/AppNavigation.vue';
 
 import Prism from 'prismjs';
 
 export default {
   components: {
-    AppNavigation,
-    AppAds,
     AppSidebar,
-    AppFooter
+    AppFooter,
+    AppNavigation
   }
 }
 </script>
