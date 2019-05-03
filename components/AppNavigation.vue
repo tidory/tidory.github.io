@@ -18,7 +18,7 @@ nav#nav(role="navigation")
         div.index {{ item.page }}
         div.label 
           a(:href="item.href") {{ item.label }}
-      li.classified 라이브러리
+      li.classified 티스토리 API
       li.item.notDocs(v-for="item in $store.state.menu.libraries")
         div.label 
           a(:href="item.href" target="_blank") {{ item.label }}

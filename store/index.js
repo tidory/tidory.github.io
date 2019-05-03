@@ -17,9 +17,11 @@ export const state = () => ({
     },
     libraries: {
       tistory: { label: 'Tistory for Javascript', href: 'https://github.com/tidory/tistory' },
-      tistorySkin: { label: 'Tistory Skin', href: 'https://github.com/tidory/tistory-skin' }
+      phpTistory: { label: 'Tistory for PHP', href: 'https://github.com/tidory/php-tistory' },
+      tistorySkin: { label: '(Unofficial) Tistory Skin ', href: 'https://github.com/tidory/tistory-skin' },
     },
     meta: {
+      tistoryAPI: { label: '티스토리 API', href: 'https://tistory.github.io/document-tistory-apis/' },
       tistoryGuidebook: { label: '티스토리 스킨 가이드', href: 'https://tistory.github.io/document-tistory-skin/' },
       patchNote: { label: '패치노트', href: '/patch-note' },
       lectures: { label: '티도리 프레임워크 강좌', href: 'https://www.inflearn.com/course/%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/#' },
