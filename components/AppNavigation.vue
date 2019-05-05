@@ -48,7 +48,7 @@ export default {
       overflow-x hidden
       overflow-y scroll
       height 100%
-      width 290px
+      width 300px
       position absolute
       z-index 9998
       .logo

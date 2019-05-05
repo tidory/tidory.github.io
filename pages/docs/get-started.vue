@@ -26,13 +26,13 @@ app-page(:active="$store.state.menu.basic.getStarted.page")
       h2(id="라이브 서버") 라이브(Live) 서버
       p 데모로 작성되어있는 앱을 어떻게 실행시키면 될까요? 간단하게 알아보도록 하겠습니다. #[b tidory start] 명령을 사용하면 #[b http://localhost:8080] 주소로 #[b webpack-dev-server] 를 실행시킬 수 있습니다. 프리뷰 서버는 #[b tidory preview] 로 시작할 수 있으며 #[b http://localhost:3000] 에서 시작합니다.
       h3(id="개발 서버") 개발(Development) 서버
-      p #[b 개발(Development)]서버는 #[b 치환자가 동작하지 않은 모습 그대로]를 보여줍니다. 해석 이전에 스킨자체의 모습을 볼 때 주로 사용합니다. 또한 치환자를 직접넣기 전에 더미데이터로 디자인을 구성할 때 사용하는 것도 좋습니다.
+      p #[b 개발(Development)] 서버는 #[b 치환자가 동작하지 않은 모습 그대로]를 보여줍니다. 해석 이전에 스킨자체의 모습을 볼 때 주로 사용합니다. 또한 치환자를 직접넣기 전에 더미데이터로 디자인을 구성할 때 사용하는 것도 좋습니다.
       pre
         code.lang-bash
           | # Development Server
           | npm start # tidory start
       h3(id="프리뷰 서버") 프리뷰(Preview) 서버 #[span.version 티도리 6.1]
-      p #[b 프리뷰(Preview)]서버는 티스토리에 직접 요청을 보내고 #[b 치환자가 해석된 모습]을 렌더링합니다. 홈, 글, 카테고리 등 #[b 프리뷰 모드(Mode)]를 지정하여 티스토리 서버에 올라갔을 때의 모습을 볼 수 있습니다. 프리뷰 서버를 실행하려면 #[a(:href="$store.state.menu.basic.configuration.href") 환경설정]에서 #[b ts_session, url, mode] 가 설정되어 있어야 합니다.
+      p #[b 프리뷰(Preview)] 서버는 티스토리에 직접 요청을 보내고 #[b 치환자가 해석된 모습]을 렌더링합니다. 홈, 글, 카테고리 등 #[b 프리뷰 모드(Mode)]를 지정하여 티스토리 서버에 올라갔을 때의 모습을 볼 수 있습니다. 프리뷰 서버를 실행하려면 #[a(:href="$store.state.menu.basic.configuration.href") 환경설정]에서 #[b ts_session, url, mode] 가 설정되어 있어야 합니다.
       pre
         code.lang-bash
           | # Preview Server

@@ -6,9 +6,9 @@ app-page(:active="$store.state.menu.basic.template.page")
   main.text(slot="text" role="text")
     article.paragraph
       h2(id="문서 구조") 문서 구조 #[span.version 티도리 2.0]
-      p 티도리 프레임워크에서 템플릿은 #[a(href="https://pugjs.org/api/getting-started.html") 퍼그(Pug)]를 사용합니다. #[b 퍼그]는 HTML 파트별로 나누고 코드의 길이를 줄여주는 효과적인 템플릿 엔진입니다. #[b 티도리 프로젝트 템플릿]에서는 크게 #[b app.pug, index.pug, views/*.pug] 로 구성되어 있습니다. 각각이 어떻게 연결되어있는지 살펴보죠!
+      p 티도리 프레임워크에서 템플릿은 #[a(href="https://pugjs.org/api/getting-started.html" target="_blank") 퍼그(Pug)]를 사용합니다. #[b 퍼그]는 HTML 파트별로 나누고 코드의 길이를 줄여주는 효과적인 템플릿 엔진입니다. #[b 티도리 프로젝트 템플릿]에서는 크게 #[b app.pug, index.pug, views/*.pug] 로 구성되어 있습니다. 각각이 어떻게 연결되어있는지 살펴보죠!
       h3(id="app.pug") app.pug
-      p #[b app.pug] 템플릿은 #[b HTML]의 기본구조가 정의되어있는 템플릿입니다. #[b head, body] 태그와 같이 구조에 해당되는 태그들이 app.pug 에 마크업되어 있습니다. #[b 문서]의 최상위 템플릿이므로 스킨과는 직접적인 연관이 없는 마크업을 넣는 것이 좋습니다.
+      p #[b app.pug] 템플릿은 #[b HTML]의 기본구조가 정의되어있는 템플릿입니다. #[b head, body] 태그와 같이 구조에 해당되는 태그들이 마크업되어 있습니다. #[b 문서]의 최상위 템플릿이므로 스킨과는 직접적인 연관이 없는 마크업을 넣는 것이 좋습니다.
       pre(data-label="app.pug")
         code.lang-pug {{ app }}
       h3(id="index.pug") index.pug

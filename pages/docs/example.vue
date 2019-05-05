@@ -17,24 +17,23 @@ app-page(:active="$store.state.menu.basic.example.page")
             │           └── BlogMenu.pug
             └── index.pug
       h3(id="index") index.pug
-      p 현재 #[b views/Header] 파일이 포함되어 있습니다. 여기서 #[b views/Header] 템플릿은 #[b 부모 템플릿]이 됩니다.
+      p 현재 #[b views/Header] 파일이 포함되어 있습니다. 해당 템플릿은 #[b 부모 템플릿]이 됩니다.
       pre(data-label="index.pug")
         code.lang-pug {{ index }}
       h3(id="header") views/Header.pug
       p 이번에는 #[b Header/BlogTitle] 과 #[b Header/BlogMenu] 를 포함하고 있습니다. 각각 #[b 블로그 제목] 과 #[b 블로그 메뉴]입니다. 이 둘은 #[b 자식 템플릿]입니다. #[b style] 태그는 빌드하면 #[b style.css] 파일로, #[b script] 태그를 사용하면 #[b images/script.js] 파일로 분리됩니다!
       pre(data-label="views/Header.pug")
         code.lang-pug {{ header }}
-      p 여기서 #[b script] 태그에 #[b scoped] 가 쓰인 것을 볼 수 있는데, #[b style, script] 태그에 #[b scoped] 속성을 부여하면 해당 태그는 #[b style.css, images/script.js] 로 분리되지 않습니다.
+      p 여기서 #[b script] 태그에 #[b scoped] 가 쓰인 것을 볼 수 있는데, #[b style, script] 태그에 #[b scoped] 속성을 부여하면 해당 태그는 #[b style.css, images/script.js] 로 분리되지 않습니다. 그 말은 즉, #[b skin.html] 에 남는다는 이야기가 됩니다.
       p 
         blockquote.blockquote-type-2 우리가 #[b 뷰 컴포넌트]를 사용할 때 붙이는 #[b scoped] 는 효력의 범위가 컴포넌트 내부로 한정됩니다. 하지만 티도리 프레임워크의 #[b 퍼그 템플릿] 내부에서 쓰인 #[b scoped] 는 해당 코드가 특정 범위에 들어와야 실행이 되며 #[b 실행효력]이 #[b 전역적]입니다.
       h3(id="blogTitle") views/Header/BlogTitle.pug
       pre(data-label="views/Header/BlogTitle.pug")
         code.lang-pug {{ blogTitle }}
       h3(id="blogMenu") views/Header/BlogMenu.pug
-      p #[b 블로그 메뉴]의 #[b style, script] 태그에 #[b scoped] 옵션이 쓰인 것을 볼 수 있습니다. 이 옵션을 쓰면, 해당 태그가 각각 파일로 분리되지 않고 제자리에 남게됩니다. 그 말은 즉, #[b skin.html] 파일에 남는다는 얘기가 됩니다.
       pre(data-label="views/Header/BlogMenu.pug")
         code.lang-pug {{ blogMenu }}
-      p 스킨 코드에 보이지 않는 #[b li, a] 태그에 스타일을 준 이유는 무엇일까요? #[b 티스토리 스킨 치환자]인 #[b 메뉴 치환자]는 티스토리 스킨에 적용되면 #[b li, a] 태그를 포함하기 때문입니다.
+      p 마크업에 보이지 않는 #[b li, a] 태그에 스타일을 준 이유는 무엇일까요? #[b 티스토리 스킨 치환자]인 #[b 메뉴 치환자]는 티스토리 스킨에 적용되면 #[b li, a] 태그를 포함하기 때문입니다.
     article.paragraph
       h2(id="프로덕션 코드") 프로덕션 코드
       p 우리가 만든 스킨을 이제 #[b 사용자에게 배포]하거나 #[b 자신의 블로그에 적용]하기 위해 #[a(:href="$store.state.menu.basic.distribute.href") 빌드 및 배포]를 하면 다음과 같은 코드로 나뉘어집니다.
