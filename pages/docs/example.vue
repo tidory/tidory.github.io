@@ -103,6 +103,7 @@ block TIDORY
       font-size: 2.8em;
       font-weight: 200;
       display: inline-block;
+      margin: 0px;
     }
   //- skin.html
   a(href="[##_blog_link_##]")
@@ -113,11 +114,15 @@ block TIDORY
     #example #blogMenu {
       margin-top: 35px;
     }
-    #example #blogMenu li {
+    #example #blogMenu ul li {
+      margin: 0px;
+      padding: 0px;
+    }
+    #example #blogMenu ul li {
       margin: 0 15px;
       display: inline-block;
     }
-    #example #blogMenu li a {
+    #example #blogMenu ul li a {
       font-size: 1.05em;
       font-weight: 300;
     }
@@ -149,16 +154,21 @@ block TIDORY
   color: #525252;
   font-size: 2.8em;
   font-weight: 200;
-  display: inline-block
+  display: inline-block;
+  margin: 0px;
 }
 #example #blogMenu {
-  margin-top: 35px
+  margin-top: 35px;
 }
-#example #blogMenu li {
+#example #blogMenu ul li {
+  margin: 0px;
+  padding: 0px;
+}
+#example #blogMenu ul li {
   margin: 0 15px;
-  display: inline-block
+  display: inline-block;
 }
-#example #blogMenu li a {
+#example #blogMenu ul li a {
   font-size: 1.05em;
   font-weight: 300;
 }`
