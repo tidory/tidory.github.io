@@ -17,7 +17,7 @@ export const state = () => ({
     },
     libraries: {
       tistory: { label: 'Tistory for Javascript', href: 'https://github.com/tidory/tistory' },
-      phpTistory: { label: 'Tistory for PHP', href: 'https://github.com/tidory/tistory-php' },
+      phpTistory: { label: 'Tistory for PHP', href: 'https://github.com/pronist/tistory' },
       tistorySkin: { label: '(Unofficial) Tistory Skin ', href: 'https://github.com/tidory/tistory-skin' },
     },
     meta: {
