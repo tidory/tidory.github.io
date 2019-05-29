@@ -24,7 +24,11 @@ export const state = () => ({
       tistoryAPI: { label: '티스토리 API', href: 'https://tistory.github.io/document-tistory-apis/' },
       tistoryGuidebook: { label: '티스토리 스킨 가이드', href: 'https://tistory.github.io/document-tistory-skin/' },
       patchNote: { label: '패치노트', href: '/patch-note' },
-      lectures: { label: '티도리 프레임워크 강좌', href: 'https://www.inflearn.com/course/%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/#' },
+      lecture: { label: '티도리 프레임워크 강좌', href: 'https://www.inflearn.com/course/%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/#' },
+    },
+    community: {
+      npm: { href: "https://www.npmjs.com/package/tidory" },
+      github: { href: "https://github.com/tidory" }
     }
   },
   active: null

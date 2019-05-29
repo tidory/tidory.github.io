@@ -2,7 +2,7 @@
 aside#aside(role="sidebar")
   div.notice
     i(class="fas fa-volume-up")
-    a.text(href="https://www.inflearn.com/course/%ed%94%84%eb%a0%88%ec%9e%84%ec%9b%8c%ed%81%ac/" target="_blank") 티도리 프레임워크 강좌가 제작되었습니다.
+    a.text(:href="$store.state.menu.meta.lecture.href" target="_blank") 티도리 프레임워크 강좌가 제작되었습니다.
   ul.menu
     li(v-for="(item, index) in menu")
       a(:href="item.href" target="_blank"): i(:class="item.class")

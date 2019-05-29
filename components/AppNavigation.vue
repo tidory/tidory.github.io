@@ -3,34 +3,30 @@ nav#nav(role="navigation")
   div.shadow
     a.logo(href="/"): img(src="/images/logo.png")
     ul.menu
-      li.classified 프롤로그
-      li.item(v-for="item in $store.state.menu.prologue" :class="{ active: item.page == $store.state.active }")
-        div.index {{ item.page }}
-        div.label 
-          a(:href="item.href") {{ item.label }}
-      li.classified 튜토리얼
-      li.item(v-for="item in $store.state.menu.basic" :class="{ active: item.page == $store.state.active }")
-        div.index {{ item.page }}
-        div.label 
-          a(:href="item.href") {{ item.label }}
-      li.classified 스케일링 업
-      li.item(v-for="item in $store.state.menu.advanced" :class="{ active: item.page == $store.state.active }")
-        div.index {{ item.page }}
-        div.label 
-          a(:href="item.href") {{ item.label }}
-      li.classified 티스토리 API
-      li.item.notDocs(v-for="item in $store.state.menu.libraries")
-        div.label 
-          a(:href="item.href" target="_blank") {{ item.label }}
-      li.classified 메타
-      li.item.notDocs(v-for="item in $store.state.menu.meta")
-        div.label 
-          a(:href="item.href" target="_blank") {{ item.label }}
+      div.box(v-for="menuItem in menu")
+        li.classified {{ menuItem.label }}
+        li.item(v-for="item in menuItem.items" :class=`{ 
+          active: item.page == $store.state.active, 
+          notDocs: !menuItem.docs 
+        }`)
+          div.index(v-if="menuItem.docs") {{ item.page }}
+          div.label 
+            a(:href="item.href") {{ item.label }}
 </template>
 
 <script>
 export default {
-  /** emtpy */
+  data() {
+    return {
+      menu: [
+        { label: "프롤로그", items: this.$store.state.menu.prologue, docs: true },
+        { label: "튜토리얼", items: this.$store.state.menu.basic, docs: true },
+        { label: "스케일링 업", items: this.$store.state.menu.advanced, docs: true },
+        { label: "티스토리 API", items: this.$store.state.menu.libraries, docs: false },
+        { label: "메타", items: this.$store.state.menu.meta, docs: false }
+      ]
+    }
+  }
 }
 </script>
 
@@ -75,8 +71,6 @@ export default {
             font-size .95em
           &:first-child
             padding-top 0
-          &:last-child
-            padding-bottom 0
           .index
             margin-bottom 10px
             color rgba(0, 0, 0, .3)
