@@ -108,14 +108,16 @@ export default {
       pushDir: `"scripts": {
   "deploy:github": "tidory build --compress && push-dir --dir=dist --branch=tistory-skin --cleanup && tidory deploy"
 }`,
-      deployer: `/**
+      deployer: `const TistorySkin = require('tistory-skin');
+      
+/**
  * Deploy Tistory Skin
  *
  * @param {String} blogURL 
  * @param {String} tsSession
  * @param {String} dist 
  */
-async function deploy (blogURL, tsSession, dist) {
+async function deploy(blogURL, tsSession, dist) {
   /**
    * Create TistorySkin instance
    */
