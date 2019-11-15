@@ -13,7 +13,6 @@ export default {
   data() {
     return {
       menu: [
-        { class: 'fas fa-bell', href: this.$store.state.menu.meta.patchNote.href },
         { class: 'fas fa-book-open', href: this.$store.state.menu.meta.tistoryGuidebook.href }
       ]
     }
