@@ -9,9 +9,11 @@ app-page(:active="$store.state.menu.basic.getStarted.page")
       p #[b Tidory CLI] 는 티도리 프레임워크와 상호작용하기 위한 #[b CLI(Command Line Interface)] 환경에서 실행하는 #[b NPM(Node Package Manager)] 패키지입니다. 다음과 같은 명령을 사용하여 템플릿을 받아온 뒤, 프로젝트 구동을 위한 #[b NPM] 패키지들을 설치하십시오.
       pre
         code.lang-bash
-          | # Download TIDORY project
-          | npx tidory new MyApp
-          | # Move into project folder
+          | # Installation
+          | npm install -g tidory
+          | # Download project template
+          | tidory new MyApp
+          | # Move into the folder
           | cd MyApp
           | # Install NPM Packages
           | npm install

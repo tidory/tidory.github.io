@@ -69,7 +69,7 @@ app-page(:active="$store.state.menu.basic.distribute.page")
       p #[b push-dir] 은 코드 저장소에 특정 디렉토리를 특정 브랜치에 푸쉬할 수 있도록 해주는 패키지입니다. 해당 패키지가 있으면 스킨을 빌드하면 나오는 #[b dist] 디렉토리만을 독립적으로 다른 브랜치에 올릴 수 있습니다.
       pre
         code.lang-bash
-          | npm install push-dir
+          | npm install --save-dev push-dir
       h3(id="package.json") package.json
       p #[a(href="https://github.com/tidory/tidory") 티도리 프레임워크 프로젝트 템플릿]에 있는 #[b package.json] 에 보면 아래와 같이 나와있는 것을 볼 수 있습니다. #[b npm run deploy] 명령어는 빌드된 티스토리 스킨을 현재 스킨에 적용시키는 명령어입니다. 
       pre
