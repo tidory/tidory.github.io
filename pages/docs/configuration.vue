@@ -22,6 +22,9 @@ app-page(:active="$store.state.menu.basic.configuration.page")
       pre
         code.lang-plain
           | https://tistory1.daumcdn.net/tistory/2710108/skin/images
+      p #[b 공개 경로]를 찾기위해서는, 적용시키려는 티스토리 블로그에 접속하여 브라우저에 내장된 #[b 개발자 도구]를 열고 직접 경로를 알아내야 합니다. #[b script, link] 태그에 쓰여있는 #[b 경로(src, href)]를 주의깊게 살펴보십시오. 
+      p 
+        blockquote.blockquote-type-2 티스토리 스킨의 공개 경로에는 #[b tistory_admin] 가 포함되어 있지 않습니다.
       h3(id="alias") alias #[span.version 티도리 7.1]
       p #[b 템플릿 별칭]을 설정합니다. 문자열로 지정을 해줄 수도 있고 함수형태로 사용할 수도 있습니다. 함수의 파라매터는 해당 별칭이 사용된 자원의 #[b 파일 이름]입니다. 템플릿에서는 다음과 같이 적용됩니다.
       pre(data-label="index.pug")

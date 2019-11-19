@@ -71,7 +71,7 @@ app-page(:active="$store.state.menu.basic.distribute.page")
         code.lang-bash
           | npm install --save-dev push-dir
       h3(id="package.json") package.json
-      p #[a(href="https://github.com/tidory/tidory") 티도리 프레임워크 프로젝트 템플릿]에 있는 #[b package.json] 에 보면 아래와 같이 나와있는 것을 볼 수 있습니다. #[b npm run deploy] 명령어는 빌드된 티스토리 스킨을 현재 스킨에 적용시키는 명령어입니다. 
+      p #[a(href="https://github.com/tidory/tidory") 티도리 프로젝트 템플릿]에 있는 #[b package.json] 에 보면 아래와 같이 나와있는 것을 볼 수 있습니다. #[b npm run deploy] 명령어는 빌드된 티스토리 스킨을 현재 스킨에 적용시키는 명령어입니다. 
       pre
         code.lang-javascript
           | {{ deploy }}
