@@ -2,7 +2,6 @@
   "name": "tidory.com",
   "version": "1.0.0",
   "description": "tidory.com",
-  "author": "Mansu Jeong <pronist@naver.com>",
   "private": true,
   "scripts": {
     "dev": "nuxt",
