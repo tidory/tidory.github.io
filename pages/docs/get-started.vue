@@ -7,14 +7,13 @@ app-page(:active="$store.state.menu.basic.getStarted.page")
     article.paragraph
       h2(id="tidory-cli") Tidory CLI #[span.version 티도리 2.0]
       p #[b Tidory CLI] 는 티도리 프레임워크와 상호작용하기 위한 #[b CLI(Command Line Interface)] 환경에서 실행하는 #[b NPM(Node Package Manager)] 패키지입니다. 다음과 같은 명령을 사용하여 템플릿을 받아온 뒤, 프로젝트 구동을 위한 #[b NPM] 패키지들을 설치하십시오.
+      p #[b Tidory 7.1] 을 사용한다면 #[b tidory new my-app] 의 형태로 프로젝트를 다운 받을 수 있습니다. #[b Tidory 7.2] 부터 #[b Tidory CLI] 에 프로젝트를 생성하는 명령어였던 #[b tidory new] 명령어가 사라졌고 #[b create-tidory-app] 으로 별도 분리되었습니다.
       pre
         code.lang-bash
-          | # Installation
-          | npm install -g tidory
-          | # Download project template
-          | tidory new MyApp
+          | # Tidory 7.2 ~
+          | npx create-tidory-app my-app
           | # Move into the folder
-          | cd MyApp
+          | cd my-app
           | # Install NPM Packages
           | npm install
       p
@@ -22,9 +21,9 @@ app-page(:active="$store.state.menu.basic.getStarted.page")
           | * CLI(Command Line Interface): 명령줄 인터페이스를 의미합니다. 이것을 지원하는 환경에는 윈도우의 cmd, powershell 그리고 리눅스의 terminal 이 있습니다.
           br
           | * NPM(Node Package Manager): 자바스크립트 런타임 환경인 node.js 용 패키지 관리자입니다. 프론트엔드과 백엔드 구분없이 다양한 패키지를 이용할 수 있습니다.
-      p 
+      p
         blockquote.blockquote-type-2 기본 프로젝트 템플릿은 #[a(href="https://github.com/tidory/tidory") 깃허브]에서 찾을 수 있습니다.
-    article.paragraph  
+    article.paragraph
       h2(id="라이브 서버") 라이브(Live) 서버
       p 데모로 작성되어있는 앱을 어떻게 실행시키면 될까요? 간단하게 알아보도록 하겠습니다. #[b tidory start] 명령을 사용하면 #[b http://localhost:8080] 주소로 #[b webpack-dev-server] 를 실행시킬 수 있습니다. 프리뷰 서버는 #[b tidory preview] 로 시작할 수 있으며 #[b http://localhost:3000] 에서 시작합니다.
       h3(id="개발 서버") 개발(Development) 서버
