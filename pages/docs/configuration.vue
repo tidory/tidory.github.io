@@ -9,8 +9,6 @@ app-page(:active="$store.state.menu.basic.configuration.page")
       p #[b tidory.config.js] 파일은 티도리 프레임워크를 위한 환경설정 파일입니다. 템플릿에서 쓰이는 변수가 아닌, #[b 오직 프레임워크의 동작]만을 위해 사용되는 환경변수만 선언되는 파일입니다. 예를 들어 빌드 및 배포를 위한 #[b 티스토리 세션] 값이나 프리뷰를 보기위한 모드 설정 등이 해당됩니다.
       pre(data-label="tidory.config.js")
         code.lang-javascript {{ tidoryConfig }}
-      h3(id="name") name #[span.version 티도리 7.1]
-      p 배포할 #[b 티스토리 스킨 이름]입니다. #[b tidory store] 명령어에서 사용됩니다.
       h3(id="ts_session") ts_session
       p #[b 티스토리 세션] 값입니다. 티스토리에 로그인 한 이후 #[b 쿠키 저장소]에 보면 #[b TSSESSION] 이라는 값이 있는데, 그것을 넣으면 됩니다. 해당 변수는 세션값이기에 절대 외부로 노출되어서는 안 되며 해당 프레임워크에는 스킨을 #[b 프리뷰]하거나 #[b 배포]하기 위한 용도로만 사용됩니다.
       h3(id="url") url
@@ -22,9 +20,11 @@ app-page(:active="$store.state.menu.basic.configuration.page")
       pre
         code.lang-plain
           | https://tistory1.daumcdn.net/tistory/2710108/skin/images
-      p #[b 공개 경로]를 찾기위해서는, 적용시키려는 티스토리 블로그에 접속하여 브라우저에 내장된 #[b 개발자 도구]를 열고 직접 경로를 알아내야 합니다. #[b script, link] 태그에 쓰여있는 #[b 경로(src, href)]를 주의깊게 살펴보십시오. 
-      p 
-        blockquote.blockquote-type-2 티스토리 스킨의 공개 경로에는 #[b tistory_admin] 가 포함되어 있지 않습니다.
+      p #[b 공개 경로]를 찾기위해서는, 적용시키려는 티스토리 블로그에 접속하여 브라우저에 내장된 #[b 개발자 도구]를 열고 직접 경로를 알아내야 합니다. #[b script, link] 태그에 쓰여있는 #[b 경로(src, href)]를 주의깊게 살펴보십시오.
+      p
+        blockquote.blockquote-type-2 #[b 티도리 7.2.1] 부터는 공개 경로가 빌드시 기본적으로 #[b 자동 주입]됩니다. 따라서 특별한 경우가 아니라면 직접 설정할 필요는 없습니다.
+      p
+        blockquote.blockquote-type-2 티스토리 스킨의 공개 경로에는 #[b tistory_admin] 이 포함되어 있지 않습니다.
       h3(id="alias") alias #[span.version 티도리 7.1]
       p #[b 템플릿 별칭]을 설정합니다. 문자열로 지정을 해줄 수도 있고 함수형태로 사용할 수도 있습니다. 함수의 파라매터는 해당 별칭이 사용된 자원의 #[b 파일 이름]입니다. 템플릿에서는 다음과 같이 적용됩니다.
       pre(data-label="index.pug")
@@ -43,7 +43,7 @@ app-page(:active="$store.state.menu.basic.configuration.page")
         code.lang-pug {{ form }}
   footer.footer(slot="footer" role="footer")
     div.arrows
-      div.left: a(:href="$store.state.menu.basic.example.href") #[i.fas.fa-angle-left] {{ $store.state.menu.basic.example.label }} 
+      div.left: a(:href="$store.state.menu.basic.example.href") #[i.fas.fa-angle-left] {{ $store.state.menu.basic.example.label }}
       div.right: a(:href="$store.state.menu.basic.distribute.href") {{ $store.state.menu.basic.distribute.label }} #[i.fas.fa-angle-right]
 </template>
 
@@ -58,32 +58,27 @@ export default {
     return {
       alias: `//- assets/styl/app.styl
 include @styl/app.styl`,
-      tidoryConfig: `module.exports = { 
-  /**
-   * Tistory skin name
-   */
-  name: 'TIDORY',
-
+      tidoryConfig: `module.exports = {
   /**
    * Tistory session cookie value
    */
-  ts_session: new String(),
+  ts_session: null,
 
   /**
    * Tistory blog URL
    */
-  url: new String(),
+  url: null,
 
-  /** 
+  /**
    * Preview
    */
   preview: {
     /**
      * Preview Mode
-     * 
-     * index 
-     * entry 
-     * category 
+     *
+     * index
+     * entry
+     * category
      * tag,
      * location
      * media,
@@ -99,7 +94,7 @@ include @styl/app.styl`,
     /**
      * Assets public path
      */
-    public_path: new String()
+    public_path: null
   },
 
   /**
@@ -132,11 +127,11 @@ include @styl/app.styl`,
       env: `TISTORY_CLIENT_ID=dc08305218d22fb1af479b044d4707d0
 TISTORY_CALLBACK=http://localhost:8080`,
       form: `form(method="GET" action="https://www.tistory.com/oauth/authorize/")
-  input(type="hidden" 
+  input(type="hidden"
     name="client_id"
     value=\`\${process.env.TISTORY_CLIENT_ID}\`)
-  input(type="hidden" 
-    name="redirect_uri" 
+  input(type="hidden"
+    name="redirect_uri"
     value=\`\${process.env.TISTORY_CALLBACK}\`)
   input(type="hidden" name="response_type" value="token")
   button(type="submit") Sign in with TISTORY`

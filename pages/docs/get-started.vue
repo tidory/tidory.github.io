@@ -27,7 +27,9 @@ app-page(:active="$store.state.menu.basic.getStarted.page")
           | # Development Server
           | npm start # tidory start
       h3(id="프리뷰 서버") 프리뷰(Preview) 서버 #[span.version 티도리 6.1]
-      p #[b 프리뷰(Preview)] 서버는 티스토리에 직접 요청을 보내고 #[b 치환자가 해석된 모습]을 렌더링합니다. 홈, 글, 카테고리 등 #[b 프리뷰 모드(Mode)]를 지정하여 티스토리 서버에 올라갔을 때의 모습을 볼 수 있습니다. 프리뷰 서버를 실행하려면 #[a(:href="$store.state.menu.basic.configuration.href") 환경설정]에서 #[b ts_session, url, mode] 가 설정되어 있어야 합니다.
+      p #[b 프리뷰(Preview)] 서버는 티스토리에 직접 요청을 보내고 #[b 치환자가 해석된 모습]을 렌더링합니다. 홈, 글, 카테고리 등 #[b 프리뷰 모드(Mode)]를 지정하여 티스토리 서버에 올라갔을 때의 모습을 볼 수 있습니다.
+      p
+        blockquote.blockquote-type-2 프리뷰 서버를 실행하려면 #[a(:href="$store.state.menu.basic.configuration.href") 환경설정]에서 #[b ts_session, url, mode] 가 설정되어 있어야 합니다.
       pre
         code.lang-bash
           | # Preview Server
@@ -35,6 +37,8 @@ app-page(:active="$store.state.menu.basic.getStarted.page")
     article.paragraph
       h2(id="빌드 및 배포") 빌드 및 배포
       p #[b 빌드 및 배포]는 기본적으로 #[b tidory build] 명령과 #[b tidory store] 가 있습니다. 빌드와 배포를 하는 방법에는 몇가지 있지만, 시작하기 단계에서는 자세한 설명없이 넘어가도록 하겠습니다. 자세한 내용은 #[a(:href="$store.state.menu.basic.distribute.href") 빌드 및 배포] 문서를 참고해 주시기 바랍니다.
+      p
+        blockquote.blockquote-type-2 #[b 티도리 7.2.1] 버전부터 빌드를 실행하려면 #[a(:href="$store.state.menu.basic.configuration.href") 환경설정]에서 #[b ts_session, url, mode] 가 설정되어 있어야 합니다.
       pre
         code.lang-bash
           | # Build
