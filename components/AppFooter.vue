@@ -7,7 +7,7 @@ footer#footer(role="footer")
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       menu: [
         { class: 'fab fa-github', href: this.$store.state.menu.community.github.href },
@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@media all and (min-width: 1170px)
+@media all and (min-width: 1200px)
   #footer
     .social
       position fixed
@@ -40,7 +40,7 @@ export default {
             font-size 1.6em
             position relative
             top:2px
-@media all and (max-width: 1170px)
+@media all and (max-width: 1200px)
   #footer
     display none
 </style>

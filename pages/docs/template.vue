@@ -5,20 +5,20 @@ app-page(:active="$store.state.menu.basic.template.page")
     h1 {{ $store.state.menu.basic.template.label }}
   main.text(slot="text" role="text")
     article.paragraph
-      h2(id="문서 구조") 문서 구조 #[span.version 티도리 2.0]
+      h2 문서 구조
       p 티도리 프레임워크에서 템플릿은 #[a(href="https://pugjs.org/api/getting-started.html" target="_blank") 퍼그(Pug)]를 사용합니다. #[b 퍼그]는 HTML 파트별로 나누고 코드의 길이를 줄여주는 효과적인 템플릿 엔진입니다. #[b 티도리 프로젝트 템플릿]에서는 크게 #[b app.pug, index.pug, views/*.pug] 로 구성되어 있습니다. 각각이 어떻게 연결되어있는지 살펴보죠!
-      h3(id="app.pug") app.pug
+      h3 app.pug
       p #[b app.pug] 템플릿은 #[b HTML]의 기본구조가 정의되어있는 템플릿입니다. #[b head, body] 태그와 같이 구조에 해당되는 태그들이 마크업되어 있습니다. #[b 문서]의 최상위 템플릿이므로 스킨과는 직접적인 연관이 없는 마크업을 넣는 것이 좋습니다.
-      pre(data-label="app.pug")
-        code.lang-pug {{ app }}
-      h3(id="index.pug") index.pug
+      pre
+        code.pug {{ app }}
+      h3 index.pug
       p #[b index.pug] 템플릿은 티스토리 스킨의 헤더, 컨텐츠, 푸터, 사이드바와 같은 부가요소가 포함됩니다. #[b block TIDORY] 아래에 #[b include] 키워드를 사용하여 템플릿 파일을 포함시킵니다.
-      pre(data-label="index.pug")
-        code.lang-pug {{ index }}
+      pre
+        code.pug {{ index }}
     article.paragraph
-      h2(id="코드 분할") 코드 분할 #[span.version 티도리 1.0]
+      h2 코드 분할
       p 우리가 템플릿을 분리해야하는 가장 중요한 이유는 #[b 재활용]입니다. 템플릿 하나에는 #[b 스타일, 마크업, 스크립트]가 통째로 들어가기 때문에 다른 스킨을 제작할 때 포함시키기만 하면 다시 작성하지 않아도 됩니다.
-      h3(id="부모와 자식 템플릿")
+      h3
       p 자, 이제 우리가 다음과 같은 구조로 템플릿을 분리해 놓았다고 생각해봅시다. 이렇게 1차적으로 크게 분리된 것이 #[b 부모 템플릿]입니다. 이제 각 영역에 속할 #[b 자식 템플릿]을 만들어봐야 합니다.
       p
         blockquote.blockquote-type-3
@@ -49,51 +49,31 @@ app-page(:active="$store.state.menu.basic.template.page")
 </template>
 
 <script>
-import AppPage from '~/components/AppPage.vue';
+import AppPage from '~/components/AppPage.vue'
 
 export default {
   components: {
     AppPage
   },
-  data() {
+  data () {
     return {
       app: `doctype html
 
 html(lang="ko")
   head
+    meta(charset="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+
     title [##_page_title_##]
 
-    //- TISTORY RSS
-    link(rel="alternate", type="application/rss+xml", 
-      title="[##_title_##]", 
-      href="[##_rss_url_##]")
-
-    //- meta
-    meta(charset="utf-8")
-    meta(name="viewport", content="user-scalable=no, 
-      initial-scale=1.0, 
-      maximum-scale=1.0, 
-      minimum-scale=1.0, 
-      width=device-width")
-    
-    //- scripts
-    <!--[if lt IE 9]>
-    script(src="//code.jquery.com/jquery-1.12.4.min.js")
-    <![endif]-->
-    <!--[if gte IE 9]><!-->
-    script(src="//code.jquery.com/jquery-3.3.1.min.js")
-    <!--<![endif]-->
-    script(src="https://unpkg.com/tistory")
-    
   body(id="[##_body_id_##]")
-    s_t3
-      div#__tidory
-        block TIDORY`,
+    block TIDORY`,
       index: `extends app
 
 block TIDORY
-  //- template
-  include views/HelloWorld`,
+  s_t3
+    div#__tidory
+      include views/HelloWorld`
     }
   }
 }

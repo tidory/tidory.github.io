@@ -8,11 +8,9 @@ div#container
 </template>
 
 <script>
-import AppSidebar from '~/components/AppSidebar.vue';
-import AppFooter from '~/components/AppFooter.vue';
-import AppNavigation from '~/components/AppNavigation.vue';
-
-import Prism from 'prismjs';
+import AppSidebar from '~/components/AppSidebar.vue'
+import AppFooter from '~/components/AppFooter.vue'
+import AppNavigation from '~/components/AppNavigation.vue'
 
 export default {
   components: {
@@ -27,21 +25,19 @@ export default {
 *:not(i), *:not(i)::before, *:not(i)::after
   margin 0px
   padding 0px
+  font-family 'Noto Sans KR', sans-serif !important
 a
   text-decoration none
   color rgba(0, 0, 0, .85)
-  transition-duration .5s
+  transition-duration .2s
   &:hover
     color #ed5207
-#container
-  font-family: 'Noto Sans KR', sans-serif;
-@media all and (min-width: 1170px)
+@media all and (min-width: 1200px)
   #main
     width 620px
-    position relative
-    left 420px
-    top 100px
-@media all and (max-width: 1170px)
+    margin 0 auto
+    padding-top 125px
+@media all and (max-width: 1200px)
   #main
     width 100%
     padding 0 25px

@@ -1,15 +1,22 @@
 <template lang="pug">
 section#document
+  ScrollSpy(context="#document")
   slot(name="header")
   slot(name="text")
   slot(name="footer")
 </template>
 
 <script>
+import ScrollSpy from './AppScrollSpy'
+
 export default {
   props: ['active'],
-  beforeMount() {
-    this.$store.commit('activeMenu', this.active);
+  beforeMount () {
+    this.$store.commit('activeMenu', this.active)
+    hljs.initHighlightingOnLoad()
+  },
+  components: {
+    ScrollSpy
   }
 }
 </script>
@@ -17,15 +24,16 @@ export default {
 <style lang="stylus">
 @keyframes fadeInUp
   from
-    transform TranslateY(30px)
+    transform translateY(30px)
     opacity 0
-  to 
-    transform TranslateX(0)
+  to
+    transform translateX(0)
     opacity 1
 #document
   animation-duration: .8s;
   animation-name: fadeInUp;
   padding-top 25px
+  color rgba(0, 0, 0, .85)
   .version
     font-weight 600
     margin-left 5px
@@ -37,9 +45,8 @@ export default {
       margin-right 5px
   .header
     text-align center
-    margin-bottom 75px
+    margin-bottom 50px
     h1
-      color rgba(0, 0, 0, .85)
       font-weight 500
       font-size 2.1em
     .index
@@ -49,6 +56,8 @@ export default {
       font-size 1.1em
   .paragraph
     margin 35px 0
+    *
+      word-break break-all
     h2
       font-weight 400
       margin-bottom 35px
@@ -69,7 +78,6 @@ export default {
       font-size 1.1em
     p
       margin 25px 0
-      color rgba(0, 0, 0, .85)
       line-height 1.9em
     ol
       padding-left 20px
@@ -85,11 +93,15 @@ export default {
       text-decoration underline
     pre
       border-radius 5px
-    .blockquote-type-1,
-    .blockquote-type-3
-      pre
-        font-family 'Noto Sans KR', sans-serif !important
-        color rgba(0, 0, 0, .85)
+      background none
+      border none
+      > code
+        background-color #f8f8f8
+        padding 15px
+    blockquote
+      line-height inherit
+      font-size inherit
+      font-style inherit
     .blockquote-type-1
       border 1px solid rgba(0, 0, 0, .1)
       padding 15px
@@ -105,11 +117,8 @@ export default {
       text-align left
       font-size 0.9em
     .blockquote-type-3
-      border-style solid
-      border-width 1px
-      border-color rgb(238, 238, 238)
-      background-color rgb(238, 238, 238);
-      padding 10px
+      background-color #f8f8f8
+      padding 15px
       font-weight 300
   .footer
     .arrows
@@ -123,10 +132,10 @@ export default {
         float right
         i
           margin-left 3px
-@media all and (min-width: 1170px)
+@media all and (min-width: 1200px)
   #document
     padding-bottom 75px
-@media all and (max-width: 1170px)
+@media all and (max-width: 1200px)
   #document
     padding-bottom 35px
 </style>

@@ -5,25 +5,25 @@ nav#nav(role="navigation")
     ul.menu
       div.box(v-for="menuItem in menu")
         li.classified {{ menuItem.label }}
-        li.item(v-for="item in menuItem.items" :class=`{ 
-          active: item.page == $store.state.active, 
-          notDocs: !menuItem.docs 
+        li.item(v-for="item in menuItem.items" :class=`{
+          active: item.page == $store.state.active,
+          notDocs: !menuItem.docs
         }`)
           div.index(v-if="menuItem.docs") {{ item.page }}
-          div.label 
+          div.label
             a(:href="item.href") {{ item.label }}
 </template>
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       menu: [
-        { label: "프롤로그", items: this.$store.state.menu.prologue, docs: true },
-        { label: "튜토리얼", items: this.$store.state.menu.basic, docs: true },
-        { label: "스케일링 업", items: this.$store.state.menu.advanced, docs: true },
-        { label: "티스토리 API", items: this.$store.state.menu.libraries, docs: false },
-        { label: "메타", items: this.$store.state.menu.meta, docs: false }
+        { label: '프롤로그', items: this.$store.state.menu.prologue, docs: true },
+        { label: '튜토리얼', items: this.$store.state.menu.basic, docs: true },
+        { label: '스케일링 업', items: this.$store.state.menu.advanced, docs: true },
+        { label: '티스토리 API', items: this.$store.state.menu.libraries, docs: false },
+        { label: '메타', items: this.$store.state.menu.meta, docs: false }
       ]
     }
   }
@@ -31,7 +31,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@media all and (min-width: 1170px)
+@media all and (min-width: 1200px)
   #nav
     position fixed
     width 260px
@@ -83,7 +83,9 @@ export default {
               color #ed5207
             .label > a
               color rgba(0, 0, 0, .85)
-@media all and (max-width: 1170px)
+          a
+            text-decoration none
+@media all and (max-width: 1200px)
   #nav
     display none
 </style>

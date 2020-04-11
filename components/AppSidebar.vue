@@ -10,7 +10,7 @@ aside#aside(role="sidebar")
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       menu: [
         { class: 'fas fa-book-open', href: this.$store.state.menu.meta.tistoryGuidebook.href }
@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@media all and (min-width: 1170px)
+@media all and (min-width: 1200px)
   #aside
     .notice
       position absolute
@@ -47,13 +47,13 @@ export default {
         float left
         font-size .9em
         i
-          transition-duration .8s 
+          transition-duration .8s
           color rgba(0, 0, 0, .3)
           &:hover
             color rgba(0, 0, 0, .85)
         &:last-child
           margin-right 0
-@media all and (max-width: 1170px)
+@media all and (max-width: 1200px)
   #aside
     display none
 </style>
