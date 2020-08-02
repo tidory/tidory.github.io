@@ -124,6 +124,8 @@ export default {
     .arrows
       overflow hidden
       margin-top 50px
+      a
+        text-decoration none !important
       .left
         float left
         i

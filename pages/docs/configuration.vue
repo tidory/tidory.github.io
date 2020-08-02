@@ -15,6 +15,12 @@ app-page(:active="$store.state.menu.basic.configuration.page")
       p #[b 티스토리 블로그 주소]입니다. 세션과 마찬가지로 #[b 프리뷰]하거나 #[b 빌드 및 배포]하기 위해 사용됩니다. 자신이 가지고 있는 블로그여야 합니다.
       h3 preview.mode: string
       p #[b 프리뷰 모드]입니다. #[b 프리뷰 서버]를 사용할 때 어느 페이지를 기점으로 프리뷰 할 지 설정합니다. #[b 홈, 글, 카테고리, 태그, 위치로그, 미디어로그, 방명록] 모드가 있으며 각각 #[b index. entry, category, tag, location, media, guestbook] 에 대응합니다.
+      h3 preview.homeType: string
+      p #[b 홈 타입]은 #[a(href='https://tistory.github.io/document-tistory-skin/common/cover.html' target='_blank') 홈 커버]를 개발할 때 주로 씁니다. #[b NONE] 은 최신 글이며, 커버를 개발할 때는 #[b COVER] 로 설정하여 사용합니다.
+      h3 preview.coverSettings: array[object]
+      p #[b index.xml] 에 정의된 #[b 홈 커버]를 시뮬레이션할 때 사용합니다. #[b 스킨 편집]에서 커버를 세팅할 필요 없이, 커버의 컨텐츠, 인덱스, 제목 등을 지정하여 프리뷰할 수 있습니다.
+      pre
+        code.xml {{ cover }}
       h3 preview.variableSettings: object
       p #[b index.xml] 에 정의된 #[b 스킨 옵션]에 해당하는 값을 시뮬레이션할 때 사용합니다. 예를들어 다음과 같이 스킨의 옵션이 설정되어 있는 경우입니다.
       pre
@@ -90,9 +96,49 @@ include @styl/app.styl`,
     mode: 'index',
 
     /**
+     * Home Type
+     *
+     * NONE
+     * COVER
+     */
+    homeType: 'NONE',
+
+    /**
+     * Cover Settings
+     */
+    coverSettings: [
+      {
+        {
+          description: '',
+          index: 0,
+          name: 'list',
+          title: '',
+          dataType: 'RECENT',
+          data: {
+            category: 'ALL',
+            size: '5'
+          }
+        }
+      },
+      {
+        description: '',
+        index: 0,
+        name: 'gallery',
+        title: '',
+        dataType: 'CUSTOM',
+        data: {
+          title: '',
+          summary: '',
+          url: 'https://www.tistory.com',
+          thumbnail: 'https://www.tistory.com/sample.png'
+        }
+      },
+    ],
+
+    /**
      * Variables
      */
-    VariableSettings: {
+    variableSettings: {
       tidory: 'a Web Framework for Tistory Skin'
     }
   },
@@ -143,11 +189,26 @@ TISTORY_CALLBACK=http://localhost:8080`,
     value=\`\${process.env.TISTORY_CALLBACK}\`)
   input(type="hidden" name="response_type" value="token")
   button(type="submit") Sign in with TISTORY`,
+      cover: `<cover>
+  <item>
+    <name>list</name>
+    <label><![CDATA[ 리스트 ]]></label>
+    <description><![CDATA[ 글 리스트를 표시합니다. ]]></description>
+  </item>
+  <item>
+    <name>gallery</name>
+    <label><![CDATA[ 갤러리 ]]></label>
+    <description><![CDATA[ 글 갤러리를 표시합니다. ]]></description>
+  </item>
+</cover>`,
       variableSettings: `<variables>
   <variablegroup>
     <variable>
       <name>tidory</name>
-      <!-- ... -->
+      <label><![CDATA[ TIDORY ]]></label>
+      <default><![CDATA[ TIDORY ]]></default>
+      <type>STRING</type>
+      <description><![CDATA[ 티스토리 스킨 프레임워크, 티도리 ]]></description>
     </variable>
   </variablegroup>
 </variables>`
