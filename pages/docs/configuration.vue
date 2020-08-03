@@ -108,16 +108,14 @@ include @styl/app.styl`,
      */
     coverSettings: [
       {
-        {
-          description: '',
-          index: 0,
-          name: 'list',
-          title: '',
-          dataType: 'RECENT',
-          data: {
-            category: 'ALL',
-            size: '5'
-          }
+        description: '',
+        index: 0,
+        name: 'list',
+        title: '',
+        dataType: 'RECENT',
+        data: {
+          category: 'ALL',
+          size: '5'
         }
       },
       {
