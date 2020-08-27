@@ -16,9 +16,9 @@ export const state = () => ({
       package: { label: '패키지', href: '/docs/package', page: '09' }
     },
     libraries: {
-      tistory: { label: 'Tistory for Javascript', href: 'https://github.com/tidory/tistory' },
-      phpTistory: { label: 'Tistory for PHP', href: 'https://github.com/pronist/tistory' },
-      tistorySkin: { label: '(Unofficial) Tistory Skin ', href: 'https://github.com/tidory/tistory-skin' }
+      tistory: { label: 'Tistory for Javascript', href: 'https://github.com/pronist/tistory.js' },
+      phpTistory: { label: 'Tistory for PHP', href: 'https://github.com/pronist/tistory.php' },
+      tistorySkin: { label: '(Unofficial) Tistory Skin ', href: 'https://github.com/pronist/tistory-skin' }
     },
     meta: {
       tistoryGuidebook: { label: '티스토리 스킨 가이드', href: 'https://tistory.github.io/document-tistory-skin/' },

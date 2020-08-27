@@ -12,7 +12,7 @@ app-page(:active="$store.state.menu.advanced.package.page")
       p 본질적으로 티도리 패키지는 #[b NPM 패키지]라고 보기에는 무리가 있습니다. 따라서 패키지에는 이름에 제약을 걸어둡니다. 티도리 패키지는 #[b @tidory] 스코프 아래에 두는 것을 원칙으로 합니다. 또한 NPM 공식 레지스트리에 #[b 공표(Publish)] 하는 일이 없도록 하십시오.
       pre
         code.json {{ pkg }}
-      p #[b 티도리 프로젝트 템플릿]에는 #[b env, tidory.config.js] 등 개발을 위한 파일이 포함되어 있는데, 실질적으로 어플리케이션에서 포함할 때는 의미가 없으므로 #[b files] 배열에 포함시킬 필요가 없습니다. 위의 설정이 필수적인 것은 아니며, 필요에 따라 변경할 수 있습니다.
+      p #[b 티도리 프로젝트 템플릿]에는 #[b env, tidory.config.js] 등 개발을 위한 파일이 포함되어 있는데, 실질적으로 어플리케이션에서 포함할 때는 의미가 없으므로 #[b files] 배열에 포함시킬 필요가 없습니다. 위의 설정이 필수적인 것은 아니며, 필요에 따라 변경할 수 있습니다. 예를 들면 리액트, 뷰 컴포넌트가 있는 경우 해당 폴더를 포함시킬 수도 있겠죠.
     article.paragraph
       h2 패키지 사용하기
       p 만들어진 패키지를 사용하려면 어떻게 하면 좋을까요? 예를 들면 패키지의 이름이 #[b example] 이고, 패키지를 코드 저장소에 올렸다면, 프로젝트에서는 다음과 같이 포함될 수 있습니다.
@@ -58,12 +58,12 @@ export default {
     return {
       pkg: `{
   "name": "@tidory/example",
-  "main": "assets/app.js",
+  "main": "assets/app.js"
   "version": "1.0.0",
   "files": [
     "assets",
     "views",
-    "app.pug"
+    "app.pug",
     "index.pug",
     "LICENSE",
     "README.md"
