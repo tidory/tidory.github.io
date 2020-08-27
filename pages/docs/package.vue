@@ -58,15 +58,11 @@ export default {
     return {
       pkg: `{
   "name": "@tidory/example",
-  "main": "assets/app.js"
   "version": "1.0.0",
+  "main": "assets/app.js",
   "files": [
     "assets",
-    "views",
-    "app.pug",
-    "index.pug",
-    "LICENSE",
-    "README.md"
+    "index.pug"
   ]
 }`,
       pkg2: `"dependencies": {
