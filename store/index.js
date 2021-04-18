@@ -30,11 +30,9 @@ export const state = () => ({
       github: { href: 'https://github.com/tidory' }
     }
   },
-  active: null
+  active: -1
 })
 
 export const mutations = {
-  activeMenu (state, active) {
-    state.active = active
-  }
+  activeMenu (state, active) { state.active = active }
 }

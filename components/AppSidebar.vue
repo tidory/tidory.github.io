@@ -1,11 +1,11 @@
 <template lang="pug">
-aside#aside(role="sidebar")
-  div.notice
+aside#aside
+  .notice
     i(class="fas fa-volume-up")
     a.text(:href="$store.state.menu.meta.lecture.href" target="_blank") 티도리 프레임워크 강좌가 제작되었습니다.
   ul.menu
     li(v-for="(item, index) in menu")
-      a(:href="item.href" target="_blank"): i(:class="item.class")
+      NuxtLink(:to="item.href" target="_blank"): i(:class="item.class")
 </template>
 
 <script>
@@ -47,7 +47,6 @@ export default {
         float left
         font-size .9em
         i
-          transition-duration .8s
           color rgba(0, 0, 0, .3)
           &:hover
             color rgba(0, 0, 0, .85)

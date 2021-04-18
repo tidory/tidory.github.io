@@ -1,16 +1,21 @@
 <template lang="pug">
-nav#nav(role="navigation")
-  div.shadow
-    a.logo(href="/"): img(src="/images/logo.png")
+nav#nav
+  .shadow
+    NuxtLink.logo(to="/")
+      img(src="/images/logo.png" alg="logo" width="24" height="24")
     ul.menu
-      div.box(v-for="menuItem in menu")
+      .box(v-for="menuItem in menu")
         li.classified {{ menuItem.label }}
         li.item(v-for="item in menuItem.items" :class=`{
           active: item.page == $store.state.active,
-          notDocs: !menuItem.docs
         }`)
-          div.index(v-if="menuItem.docs") {{ item.page }}
-          div.label
+          .index {{ item.page }}
+          .label
+            NuxtLink(:to="item.href") {{ item.label }}
+      .box(v-for="menuItem in metaLink")
+        li.classified {{ menuItem.label }}
+        li.item.notDocs(v-for="item in menuItem.items")
+          .label
             a(:href="item.href") {{ item.label }}
 </template>
 
@@ -19,11 +24,13 @@ export default {
   data () {
     return {
       menu: [
-        { label: '프롤로그', items: this.$store.state.menu.prologue, docs: true },
-        { label: '튜토리얼', items: this.$store.state.menu.basic, docs: true },
-        { label: '스케일링 업', items: this.$store.state.menu.advanced, docs: true },
-        { label: '티스토리 API', items: this.$store.state.menu.libraries, docs: false },
-        { label: '메타', items: this.$store.state.menu.meta, docs: false }
+        { label: '프롤로그', items: this.$store.state.menu.prologue },
+        { label: '튜토리얼', items: this.$store.state.menu.basic },
+        { label: '스케일링 업', items: this.$store.state.menu.advanced }
+      ],
+      metaLink: [
+        { label: '티스토리 API', items: this.$store.state.menu.libraries },
+        { label: '메타', items: this.$store.state.menu.meta }
       ]
     }
   }

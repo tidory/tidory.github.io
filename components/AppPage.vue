@@ -1,19 +1,24 @@
 <template lang="pug">
-section#document
-  ScrollSpy(context="#document")
-  slot(name="header")
-  slot(name="text")
-  slot(name="footer")
+#page
+  section#document(ref="document")
+    slot(name="header")
+    slot(name="text")
+    slot(name="footer")
+  ScrollSpy
 </template>
 
 <script>
 import ScrollSpy from './AppScrollSpy'
 
 export default {
-  props: ['active'],
-  beforeMount () {
+  props: ['active', 'title'],
+  head () {
+    return {
+      title: '티스토리 스킨 프레임워크, 티도리(TIDORY) ― ' + this.title
+    }
+  },
+  mounted () {
     this.$store.commit('activeMenu', this.active)
-    hljs.initHighlightingOnLoad()
   },
   components: {
     ScrollSpy
@@ -22,16 +27,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@keyframes fadeInUp
-  from
-    transform translateY(30px)
-    opacity 0
-  to
-    transform translateX(0)
-    opacity 1
 #document
-  animation-duration: .8s;
-  animation-name: fadeInUp;
   padding-top 25px
   color rgba(0, 0, 0, .85)
   .version
@@ -58,6 +54,9 @@ export default {
     margin 35px 0
     *
       word-break break-all
+    h2, h3
+      > a
+        text-decoration none
     h2
       font-weight 400
       margin-bottom 35px

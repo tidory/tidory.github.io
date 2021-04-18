@@ -1,5 +1,11 @@
 module.exports = {
   /**
+   * Plugins
+   */
+  plugins: [
+    '~/plugins/highlight.client.js',
+  ],
+  /**
    * Headers of the page
    */
   head: {
@@ -8,7 +14,7 @@ module.exports = {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'description', content: '오직 티스토리 스킨만을 위한 프레임워크' },
-      { name: 'author', content: '정만수' },
+      { name: 'author', content: '정상우' },
       { name: 'keywords', content: '티스토리, 티스토리 스킨, 티스토리 스킨 제작, 티스토리 프레임워크, 티도리, TISTORY, TIDORY' },
       { content: '/images/og.png', property: 'og:image' },
       { content: '오직 티스토리 스킨만을 위한 프레임워크', property: 'og:description' },
@@ -23,7 +29,6 @@ module.exports = {
       { rel: 'apple-touch-icon', sizes: '120x120', href: '/images/120x152.png' },
       { rel: 'apple-touch-icon', sizes: '152x152', href: '/images/152x152.png' },
       { rel: 'canonical', href: 'https://tidory.com/' },
-      { rel: 'stylesheet', href: '//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/xcode.min.css' },
       { rel: 'stylesheet', href: '//fonts.googleapis.com/earlyaccess/notosanskr.css' },
       { rel: 'stylesheet', href: '//cdn.jsdelivr.net/npm/uikit@3.4.0/dist/css/uikit.min.css' }
     ]

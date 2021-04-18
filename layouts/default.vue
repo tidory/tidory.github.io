@@ -1,8 +1,8 @@
 <template lang="pug">
-div#container
+#container
   app-sidebar
   app-navigation
-  main#main(role="main")
+  main#main
     nuxt
   app-footer
 </template>
