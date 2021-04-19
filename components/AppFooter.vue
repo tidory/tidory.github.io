@@ -1,10 +1,12 @@
 <template lang="pug">
 footer#footer(class='uk-navbar-container uk-navbar-transparent' uk-navbar)
   div(class='uk-navbar-left')
-    a(v-for="(item, index) in menu" :href="item.href" target="_blank")
+    a(v-for="(item, index) in menu" :href="item.href" target='_blank' rel='noreferrer')
+      | {{ item.label }}
       i(:class="item.class")
   div(class='uk-navbar-right')
-    a#toTop(href='#' uk-scroll='target: #__TIDORY')
+    a#toTop(href='#' uk-scroll='target: #__TIDORY' target='_blank' rel='noreferrer')
+      | 제일 위로
       i(class='fa fa-chevron-up')
 </template>
 
@@ -13,8 +15,8 @@ export default {
   data () {
     return {
       menu: [
-        { class: 'fab fa-github', href: this.$store.state.menu.community.github.href },
-        { class: 'fab fa-npm', href: this.$store.state.menu.community.npm.href }
+        { class: 'fab fa-github', href: this.$store.state.menu.community.github.href, label: this.$store.state.menu.community.github.label },
+        { class: 'fab fa-npm', href: this.$store.state.menu.community.npm.href, label: this.$store.state.menu.community.npm.label }
       ]
     }
   }
@@ -49,7 +51,10 @@ $SIDEBAR_WIDTH = 260px
       line-height $BUTTON_SIZE
       text-align center
       border-radius 50%
-      font-size .9rem
+      font-size 0
+      i
+        font-size .9rem
+        line-height $BUTTON_SIZE
       &:hover
         background-color alpha(black, .9)
         color alpha(white, .9)
@@ -60,15 +65,16 @@ $SIDEBAR_WIDTH = 260px
       transition-duration .1s
       margin-right 10px
       color alpha(black, .3)
+      font-size 0
       &:hover
         color alpha(black, .85)
       &:last-child
         margin-right 0
       i
         &.fa-github
-          font-size 1.25em
+          font-size 1.25rem
         &.fa-npm
-          font-size 1.6em
+          font-size 1.6rem
           position relative
           top:2px
   @media screen and (max-width: 1200px)

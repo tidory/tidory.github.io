@@ -3,7 +3,7 @@ app-page(:active="$store.state.menu.basic.configuration.page" :title="$store.sta
   header.header(slot="header")
     .index {{ $store.state.menu.basic.configuration.page }}
     h1 {{ $store.state.menu.basic.configuration.label }}
-  main.text(slot="text" role="text")
+  main.text(slot="text")
     article.paragraph
       h2 tidory.config.js
       p #[b tidory.config.js] 파일은 티도리 프레임워크를 위한 환경설정 파일입니다. 템플릿에서 쓰이는 변수가 아닌, #[b 오직 프레임워크의 동작]만을 위해 사용되는 환경변수만 선언되는 파일입니다. 예를 들어 빌드 및 배포를 위한 #[b 티스토리 세션] 값이나 프리뷰를 보기위한 모드 설정 등이 해당됩니다.
@@ -16,7 +16,7 @@ app-page(:active="$store.state.menu.basic.configuration.page" :title="$store.sta
       h3 preview.mode: string
       p #[b 프리뷰 모드]입니다. #[b 프리뷰 서버]를 사용할 때 어느 페이지를 기점으로 프리뷰 할 지 설정합니다. #[b 홈, 글, 카테고리, 태그, 위치로그, 미디어로그, 방명록] 모드가 있으며 각각 #[b index. entry, category, tag, location, media, guestbook] 에 대응합니다.
       h3 preview.homeType: string
-      p #[b 홈 타입]은 #[a(href='https://tistory.github.io/document-tistory-skin/common/cover.html' target='_blank') 홈 커버]를 개발할 때 주로 씁니다. #[b NONE] 은 최신 글이며, 커버를 개발할 때는 #[b COVER] 로 설정하여 사용합니다.
+      p #[b 홈 타입]은 #[a(href='https://tistory.github.io/document-tistory-skin/common/cover.html' target='_blank' rel='noreferrer') 홈 커버]를 개발할 때 주로 씁니다. #[b NONE] 은 최신 글이며, 커버를 개발할 때는 #[b COVER] 로 설정하여 사용합니다.
       h3 preview.coverSettings: array[object]
       p #[b index.xml] 에 정의된 #[b 홈 커버]를 시뮬레이션할 때 사용합니다. #[b 스킨 편집]에서 커버를 세팅할 필요 없이, 커버의 컨텐츠, 인덱스, 제목 등을 지정하여 프리뷰할 수 있습니다.
       highlight-code(lang='xml')
@@ -49,7 +49,7 @@ app-page(:active="$store.state.menu.basic.configuration.page" :title="$store.sta
       p 이제 이렇게 정의된 환경변수는 #[b 템플릿 내부]와 #[b 컴포넌트]에서 사용할 수 있습니다. 환경변수는 #[b 컴파일 타임]에 #[b process.env] 객체 아래에 정의됩니다. 다음과 같이 말이죠!
       highlight-code(lang='less')
         | {{ form }}
-  footer.footer(slot="footer" role="footer")
+  footer.footer(slot="footer")
     .arrows
       .left: NuxtLink(:to="$store.state.menu.basic.example.href") #[i.fas.fa-angle-left] {{ $store.state.menu.basic.example.label }}
       .right: NuxtLink(:to="$store.state.menu.basic.distribute.href") {{ $store.state.menu.basic.distribute.label }} #[i.fas.fa-angle-right]

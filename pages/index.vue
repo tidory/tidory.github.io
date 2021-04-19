@@ -3,7 +3,7 @@ app-page(:active="$store.state.menu.prologue.intro.page" :title="$store.state.me
   header.header(slot="header")
     .index {{ $store.state.menu.prologue.intro.page }}
     h1 {{ $store.state.menu.prologue.intro.label }}
-  main.text(slot="text" role="text")
+  main.text(slot="text")
     article.paragraph
       h2 티스토리 스킨 제작 프레임워크
       p #[b 티도리 프레임워크]는 티스토리 스킨을 제작하기 위한 전용 프레임워크입니다. 티스토리 스킨을 개발하기 위해 #[b 프레임워크]까지 배워야 할까요? 우리가 기본적으로 티스토리 스킨을 개발할 때는 #[b 개발단계], #[b 테스트 단계], #[b 스킨적용 및 배포 단계]의 3단계를 거치게됩니다. 프레임워크는 각 단계에서 발생하는 여러가지 불편사항을 해결하기 위해 개발됩니다. 단계별로 발생하는 문제와 프레임워크에서의 해결 방법을 알아보겠습니다.
@@ -36,7 +36,7 @@ app-page(:active="$store.state.menu.prologue.intro.page" :title="$store.state.me
             | 스킨을 적용하려면 #[b 스킨편집]에 직접 들어가서 코드를 복사 붙여넣기하고 파일을 업로드해야하거나 #[b 스킨저장소]에 수동으로 업로드해야 합니다.
             p
               NuxtLink(:to="$store.state.menu.basic.distribute.href") 빌드 및 배포 - 자동화
-  footer.footer(slot="footer" role="footer")
+  footer.footer(slot="footer")
     .arrows
       .right: NuxtLink(:to="$store.state.menu.basic.getStarted.href") {{ $store.state.menu.basic.getStarted.label }} #[i.fas.fa-angle-right]
 </template>

@@ -3,7 +3,7 @@ app-page(:active="$store.state.menu.advanced.framework.page" :title="$store.stat
   header.header(slot="header")
     .index {{ $store.state.menu.advanced.framework.page }}
     h1 {{ $store.state.menu.advanced.framework.label }}
-  main.text(slot="text" role="text")
+  main.text(slot="text")
     article.paragraph
       h2 자바스크립트 프레임워크
       p 티도리 프레임워크에서는 모던 자바스크립트 프레임워크인 #[b 뷰(Vue.js)]와 #[b 리액트(React)]를 지원합니다. #[b 컴포넌트(Component)]를 만들고 포함시켜 템플릿에서 사용할 수 있습니다. 컴포넌트는 사용하고 싶을 때 사용하면 되지만 몇 가지 주의사항이 있으니 알아보도록 합시다.
@@ -38,7 +38,7 @@ app-page(:active="$store.state.menu.advanced.framework.page" :title="$store.stat
         | {{ resource }}
       p
         blockquote.blockquote-type-2 #[b public_path] 설정은 #[NuxtLink(:to="$store.state.menu.basic.configuration.href") 환경설정]에서 알아볼 수 있습니다.
-  footer.footer(slot="footer" role="footer")
+  footer.footer(slot="footer")
     .arrows
       .left: NuxtLink(:to="$store.state.menu.basic.distribute.href") #[i.fas.fa-angle-left] {{ $store.state.menu.basic.distribute.label }}
       .right: NuxtLink(:to="$store.state.menu.advanced.package.href") {{ $store.state.menu.advanced.package.label }} #[i.fas.fa-angle-right]

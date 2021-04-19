@@ -16,9 +16,9 @@ export const state = () => ({
       package: { label: '패키지', href: '/docs/package', page: '09' }
     },
     libraries: {
-      tistory: { label: 'Tistory for Javascript', href: 'https://github.com/pronist/tistory.js' },
-      phpTistory: { label: 'Tistory for PHP', href: 'https://github.com/pronist/tistory.php' },
-      tistorySkin: { label: '(Unofficial) Tistory Skin ', href: 'https://github.com/pronist/tistory-skin' }
+      tistory: { label: 'Tistory for Javascript', href: 'https://github.com/tistory-project/tistory.js' },
+      phpTistory: { label: 'Tistory for PHP', href: 'https://github.com/tistory-project/tistory.php' },
+      tistorySkin: { label: '(Unofficial) Tistory Skin ', href: 'https://github.com/tistory-project/tistory-skin' }
     },
     meta: {
       tistoryGuidebook: { label: '티스토리 스킨 가이드', href: 'https://tistory.github.io/document-tistory-skin/' },
@@ -26,8 +26,8 @@ export const state = () => ({
       lecture: { label: '티도리 프레임워크 강좌', href: 'https://www.inflearn.com/course/%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/#' }
     },
     community: {
-      npm: { href: 'https://www.npmjs.com/package/tidory' },
-      github: { href: 'https://github.com/tidory' }
+      npm: { label: 'NPM', href: 'https://www.npmjs.com/package/tidory' },
+      github: { label: 'Github', href: 'https://github.com/tidory' }
     }
   },
   active: -1

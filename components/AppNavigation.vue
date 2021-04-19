@@ -2,9 +2,10 @@
 nav#nav
   .shadow
     NuxtLink.logo(to="/")
-      img(src="/images/logo.png" alg="logo" width="24" height="24")
-    ul.menu
-      .box(v-for="menuItem in menu")
+      | 홈
+      img(src="/images/logo.png" alt="티스토리 로고" width="24" height="24")
+    .menu
+      ul.box(v-for="menuItem in menu")
         li.classified {{ menuItem.label }}
         li.item(v-for="item in menuItem.items" :class=`{
           active: item.page == $store.state.active,
@@ -12,11 +13,11 @@ nav#nav
           .index {{ item.page }}
           .label
             NuxtLink(:to="item.href") {{ item.label }}
-      .box(v-for="menuItem in metaLink")
+      ul.box(v-for="menuItem in metaLink")
         li.classified {{ menuItem.label }}
         li.item.notDocs(v-for="item in menuItem.items")
           .label
-            a(:href="item.href") {{ item.label }}
+            a(:href="item.href" target='_blank' rel='noreferrer') {{ item.label }}
 </template>
 
 <script>
@@ -43,7 +44,7 @@ export default {
     position fixed
     width 260px
     height 100%
-    border-right 1px solid rgba(0, 0, 0, .06)
+    border-right 1px solid rgba(0, 0, 0, .1)
     box-sizing border-box
     z-index 9999
     overflow hidden
@@ -58,6 +59,7 @@ export default {
         position absolute
         left 50px
         top 35px
+        font-size 0 !important
       .menu
         position absolute
         top 110px
@@ -87,7 +89,7 @@ export default {
           &.active
             font-weight 500
             .index
-              color #ed5207
+              color #f0506e
             .label > a
               color rgba(0, 0, 0, .85)
           a

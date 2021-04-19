@@ -31,7 +31,9 @@ a
   color rgba(0, 0, 0, .85)
   transition-duration .2s
   &:hover
-    color #ed5207
+    color #f0506e
+ul
+  list-style none
 @media all and (min-width: 1200px)
   #main
     width 620px

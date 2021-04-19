@@ -28,8 +28,9 @@ module.exports = {
       { rel: 'apple-touch-icon', sizes: '76x76', href: '/images/76x76.png' },
       { rel: 'apple-touch-icon', sizes: '120x120', href: '/images/120x152.png' },
       { rel: 'apple-touch-icon', sizes: '152x152', href: '/images/152x152.png' },
-      { rel: 'canonical', href: 'https://tidory.com/' },
-      { rel: 'stylesheet', href: '//fonts.googleapis.com/earlyaccess/notosanskr.css' },
+      { rel: 'preconnect', href: '//fonts.gstatic.com' },
+      { rel: 'preconnect', href: '//ka-f.fontawesome.com' },
+      { rel: 'stylesheet', href: '//fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap' },
       { rel: 'stylesheet', href: '//cdn.jsdelivr.net/npm/uikit@3.4.0/dist/css/uikit.min.css' }
     ]
   },

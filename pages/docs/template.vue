@@ -3,7 +3,7 @@ app-page(:active="$store.state.menu.basic.template.page" :title="$store.state.me
   header.header(slot="header")
     .index {{ $store.state.menu.basic.template.page }}
     h1 {{ $store.state.menu.basic.template.label }}
-  main.text(slot="text" role="text")
+  main.text(slot="text")
     article.paragraph
       h2 문서 구조
       p 티도리 프레임워크에서 템플릿은 #[a(href="https://pugjs.org/api/getting-started.html" target="_blank") 퍼그(Pug)]를 사용합니다. #[b 퍼그]는 HTML 파트별로 나누고 코드의 길이를 줄여주는 효과적인 템플릿 엔진입니다. #[b 티도리 프로젝트 템플릿]에서는 크게 #[b app.pug, index.pug, views/*.pug] 로 구성되어 있습니다. 각각이 어떻게 연결되어있는지 살펴보죠!
@@ -42,7 +42,7 @@ app-page(:active="$store.state.menu.basic.template.page" :title="$store.state.me
             │           └── Entry.pug
             │     ├── Sidebar.pug
             │     └── Footer.pug
-  footer.footer(slot="footer" role="footer")
+  footer.footer(slot="footer")
     .arrows
       .left: NuxtLink(:to="$store.state.menu.basic.directory.href") #[i.fas.fa-angle-left] {{ $store.state.menu.basic.directory.label }}
       .right: NuxtLink(:to="$store.state.menu.basic.example.href") {{ $store.state.menu.basic.example.label }} #[i.fas.fa-angle-right]

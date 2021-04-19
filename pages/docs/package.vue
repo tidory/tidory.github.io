@@ -3,10 +3,10 @@ app-page(:active="$store.state.menu.advanced.package.page" :title="$store.state.
   header.header(slot="header")
     .index {{ $store.state.menu.advanced.package.page }}
     h1 {{ $store.state.menu.advanced.package.label }}
-  main.text(slot="text" role="text")
+  main.text(slot="text")
     article.paragraph
       h2 티도리 패키지
-      p 프레임워크의 또 하나의 특징은, #[b 다른 사람이 작성한 코드]를 프로젝트에 포함 시킬 수 있다는 점입니다. 티도리 프레임워크 또한 패키지를 작성하는 것으로 #[b 다른 사람에게 자신의 코드를 제공]할 수 있습니다. #[a(href="https://github.com/tidory/example") tidory/example] 패키지를 참고하면 도움이 될 수 있습니다.
+      p 프레임워크의 또 하나의 특징은, #[b 다른 사람이 작성한 코드]를 프로젝트에 포함 시킬 수 있다는 점입니다. 티도리 프레임워크 또한 패키지를 작성하는 것으로 #[b 다른 사람에게 자신의 코드를 제공]할 수 있습니다. #[a(href="https://github.com/tidory/example" target='_blank' rel='noreferrer') tidory/example] 패키지를 참고하면 도움이 될 수 있습니다.
       p 티도리 패키지의 #[b 기본 폴더구조는 티도리 프로젝트 템플릿]과 동일합니다. 하지만 #[b 취급]을 #[b NPM 패키지]로 취급하기 때문에 #[b package.json] 의 내용이 조금은 다릅니다.
       h3 package.json
       p 본질적으로 티도리 패키지는 #[b NPM 패키지]라고 보기에는 무리가 있습니다. 따라서 패키지에는 이름에 제약을 걸어둡니다. 티도리 패키지는 #[b @tidory] 스코프 아래에 두는 것을 원칙으로 합니다. 또한 NPM 공식 레지스트리에 #[b 공표(Publish)] 하는 일이 없도록 하십시오.
@@ -18,7 +18,7 @@ app-page(:active="$store.state.menu.advanced.package.page" :title="$store.state.
       p 만들어진 패키지를 사용하려면 어떻게 하면 좋을까요? 예를 들면 패키지의 이름이 #[b example] 이고, 패키지를 코드 저장소에 올렸다면, 프로젝트에서는 다음과 같이 포함될 수 있습니다.
       highlight-code(lang='json')
         | {{ pkg2 }}
-      p 위와 같이 수동으로 추가하지 않고, #[b npm install] 명령으로 추가하고 싶다면, 아래와 같은 명령을 작성하면 프로젝트의 #[b package.json] 에 자동으로 추가됩니다. 아래의 명령은 깃허브의 #[a(href="https://github.com/tidory/example") https://github.com/tidory/example] 레포지토리를 다운로드 하라는 의미입니다.
+      p 위와 같이 수동으로 추가하지 않고, #[b npm install] 명령으로 추가하고 싶다면, 아래와 같은 명령을 작성하면 프로젝트의 #[b package.json] 에 자동으로 추가됩니다. 아래의 명령은 깃허브의 #[a(href="https://github.com/tidory/example" target='_blank' rel='noreferrer') https://github.com/tidory/example] 레포지토리를 다운로드 하라는 의미입니다.
       highlight-code(lang='bash')
         | npm install tidory/example
       h3 자식 패키지
@@ -39,7 +39,7 @@ app-page(:active="$store.state.menu.advanced.package.page" :title="$store.state.
         | {{ template }}
       p
         blockquote.blockquote-type-2 #[b 다른 티도리 패키지]를 사용하는 패키지 개발 시 #[b @tidory] 별칭을 사용하여 포함시킬 수 있습니다.
-  footer.footer(slot="footer" role="footer")
+  footer.footer(slot="footer")
     .arrows
       .left: NuxtLink(:to="$store.state.menu.advanced.framework.href") #[i.fas.fa-angle-left] {{ $store.state.menu.advanced.framework.label }}
 </template>

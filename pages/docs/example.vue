@@ -3,7 +3,7 @@ app-page(:active="$store.state.menu.basic.example.page" :title="$store.state.men
   header.header(slot="header")
     .index {{ $store.state.menu.basic.example.page }}
     h1 {{ $store.state.menu.basic.example.label }}
-  main.text(slot="text" role="text")
+  main.text(slot="text")
     article.paragraph
       h2 템플릿 작성
       p 티스토리 예제로 템플릿 작성의 기초를 알아보겠습니다. 간단하게 #[b 블로그의 제목과 메뉴]를 출력하는 것을 해보죠. 우리가 작성할 예제의 폴더구조는 다음과 같습니다.
@@ -43,14 +43,14 @@ app-page(:active="$store.state.menu.basic.example.page" :title="$store.state.men
         | {{ style }}
     article.paragraph
       h2 티스토리 예제 패키지
-      p 티도리로 작성한 코드를 별도로 분리해서 #[b 패키지] 형태로 제공할 수도 있습니다. #[a(href="/docs/package") 패키지]에서 그 내용을 확인 하실 수도 있습니다. 하지만, 미리 사용해보죠! 지금 작성한 예제는 패키지로 별도로 작성해두었습니다.
+      p 티도리로 작성한 코드를 별도로 분리해서 #[b 패키지] 형태로 제공할 수도 있습니다. #[NuxtLink(:to="$store.state.menu.advanced.package.href") 패키지]에서 그 내용을 확인 하실 수도 있습니다. 하지만, 미리 사용해보죠! 지금 작성한 예제는 패키지로 별도로 작성해두었습니다.
       highlight-code(lang='bash')
         | # https://github.com/tidory/example
         | npm install tidory/example
       p 이제 #[b views/Header] 대신에 #[b index.pug] 에 다음과 같이 포함만 시키면 된답니다.
       highlight-code(lang='less')
         | {{ pkg }}
-  footer.footer(slot="footer" role="footer")
+  footer.footer(slot="footer")
     .arrows
       .left: NuxtLink(:to="$store.state.menu.basic.template.href") #[i.fas.fa-angle-left] {{ $store.state.menu.basic.template.label }}
       .right: NuxtLink(:to="$store.state.menu.basic.configuration.href") {{ $store.state.menu.basic.configuration.label }} #[i.fas.fa-angle-right]
@@ -125,7 +125,7 @@ style.
   }`,
       skin: `<div id="example">
   <h1 id="blogTitle"><a href="[##_blog_link_##]">[##_title_##]</a></h1>
-  <nav id="blogMenu" role="navigation">[##_blog_menu_##]</nav>
+  <nav id="blogMenu">[##_blog_menu_##]</nav>
 </div>`,
       style: `#example #blogTitle {
   color: #525252;

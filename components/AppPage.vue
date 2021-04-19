@@ -27,6 +27,8 @@ export default {
 </script>
 
 <style lang="stylus">
+$THEME_COLOR = #f0506e
+
 #document
   padding-top 25px
   color rgba(0, 0, 0, .85)
@@ -34,10 +36,10 @@ export default {
     font-weight 600
     margin-left 5px
     font-size 14px
-    color #ed5207
+    color $THEME_COLOR
     &::before
       content "#"
-      color #ed5207
+      color $THEME_COLOR
       margin-right 5px
   .header
     text-align center
@@ -47,7 +49,7 @@ export default {
       font-size 2.1em
     .index
       margin-bottom 15px
-      color #ed5207
+      color $THEME_COLOR
       font-weight 500
       font-size 1.1em
   .paragraph
@@ -63,7 +65,7 @@ export default {
       font-size 1.5em
       &::before
         content "#"
-        color #ed5207
+        color $THEME_COLOR
         font-weight 400
         margin-right 10px
     h3
@@ -86,7 +88,7 @@ export default {
         p
           margin 8px 0
     b
-      color #ed5207
+      color $THEME_COLOR
       font-weight 500
     a
       text-decoration underline
@@ -118,7 +120,7 @@ export default {
     .blockquote-type-3
       background-color #f8f8f8
       padding 15px
-      font-weight 300
+      font-weight 400
   .footer
     .arrows
       overflow hidden
