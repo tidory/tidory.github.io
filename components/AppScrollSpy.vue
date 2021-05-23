@@ -1,6 +1,7 @@
 <template lang="pug">
-  aside#spy(ref="spy")
-    ul(class="uk-nav uk-nav-default")
+#spy
+  #spy__shadow(ref="spy" uk-sticky="offset: 35")
+    ul(class="uk-nav uk-nav-default" uk-scrollspy-nav="closest: li; offset: 35")
       li(v-for="spy in spies" :class="spy.cls"): a(:href="spy.href") {{ spy.label }}
 </template>
 
@@ -29,11 +30,6 @@ export default {
 
       $ul.appendChild($li)
     })
-
-    this.$refs.spy.style.top = $context.offsetTop + $context.querySelector('header').offsetHeight + 'px'
-    this.$refs.spy.style.height = $context.offsetHeight - 75 - 25 + 'px'
-
-    UIkit.scrollspyNav('#spy', { closest: 'li', offset: 0 })
   },
   methods: {
     setAnchorHeadings ($context, headings) {
@@ -63,28 +59,29 @@ $WIDTH = 180px
 
 #spy
   position absolute
+  top 0
   width $WIDTH
   list-style none
   text-align left
   font-weight 400
   z-index 0
-  margin-left calc(620px + 110px)
+  margin-left calc(620px + 110px) !important
   ul
-    position sticky
     border-left 1px dashed alpha(black, .2)
     box-sizing border-box
     top 50px
+    width $WIDTH
     li
       padding-left 20px
       box-sizing border-box
       max-width $WIDTH
       a
         font-size .82rem
-  .uk-active
-    a
-      transition-duration .5s
-      color alpha(black, .9)
-      font-weight 500
+      &.uk-active
+        a
+          transition-duration .5s
+          color alpha(black, .9)
+          font-weight 500
   a[data-tag=h3]
     padding-left 15px
   @media screen and (max-width: 1200px)

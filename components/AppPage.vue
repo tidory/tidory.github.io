@@ -4,7 +4,7 @@
     slot(name="header")
     slot(name="text")
     slot(name="footer")
-  ScrollSpy
+    ScrollSpy
 </template>
 
 <script>
@@ -30,8 +30,9 @@ export default {
 $THEME_COLOR = #f0506e
 
 #document
-  padding-top 25px
+  margin-top 25px
   color rgba(0, 0, 0, .85)
+  position relative
   .version
     font-weight 600
     margin-left 5px
@@ -59,6 +60,7 @@ $THEME_COLOR = #f0506e
     h2, h3
       > a
         text-decoration none
+        color black
     h2
       font-weight 400
       margin-bottom 35px
