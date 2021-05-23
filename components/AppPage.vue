@@ -18,6 +18,7 @@ export default {
     }
   },
   mounted () {
+    hljs.initHighlighting()
     this.$store.commit('activeMenu', this.active)
   },
   components: {

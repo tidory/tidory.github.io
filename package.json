@@ -10,8 +10,7 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "deploy": "npm run generate && push-dir --dir=dist --branch=gh-pages --cleanup",
-    "precommit": "npm run lint",
-    "serve": "nuxt generate && cd dist && php -S localhost:80"
+    "precommit": "npm run lint"
   },
   "dependencies": {
     "highlight.js": "^10.7.2",

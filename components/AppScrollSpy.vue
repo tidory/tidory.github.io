@@ -1,7 +1,7 @@
 <template lang="pug">
 #spy
-  #spy__shadow(ref="spy" uk-sticky="offset: 35")
-    ul(class="uk-nav uk-nav-default" uk-scrollspy-nav="closest: li; offset: 35")
+  #spy__shadow(ref="spy")
+    ul(class="uk-nav uk-nav-default")
       li(v-for="spy in spies" :class="spy.cls"): a(:href="spy.href") {{ spy.label }}
 </template>
 
@@ -30,6 +30,9 @@ export default {
 
       $ul.appendChild($li)
     })
+
+    UIkit.sticky('#spy > #spy__shadow', { offset: 35 })
+    UIkit.scrollspyNav('#spy ul', { closest: 'li', offset: 35 })
   },
   methods: {
     setAnchorHeadings ($context, headings) {

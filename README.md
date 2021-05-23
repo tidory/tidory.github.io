@@ -1,6 +1,6 @@
 # tidory.com
 
-**tidory.com** 은 [티도리 프레임워크](http://www.tidory.com)의 공식문서입니다.
+[티도리 프레임워크](http://www.tidory.com)의 공식문서입니다.
 
 ## License
 
