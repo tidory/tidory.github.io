@@ -1,7 +1,7 @@
 <template lang="pug">
 nav#nav
   .shadow
-    NuxtLink.logo(to="/")
+    a.logo(href="/")
       | 홈
       img(src="/images/logo.png" alt="티스토리 로고" width="24" height="24")
     .menu
@@ -12,7 +12,7 @@ nav#nav
         }`)
           .index {{ item.page }}
           .label
-            NuxtLink(:to="item.href") {{ item.label }}
+            a(:href="item.href") {{ item.label }}
       ul.box(v-for="menuItem in metaLink")
         li.classified {{ menuItem.label }}
         li.item.notDocs(v-for="item in menuItem.items")

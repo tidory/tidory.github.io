@@ -7,6 +7,7 @@ app-page(:active="$store.state.menu.basic.configuration.page" :title="$store.sta
     article.paragraph
       h2 tidory.config.js
       p #[b tidory.config.js] 파일은 티도리 프레임워크를 위한 환경설정 파일입니다. 템플릿에서 쓰이는 변수가 아닌, #[b 오직 프레임워크의 동작]만을 위해 사용되는 환경변수만 선언되는 파일입니다. 예를 들어 빌드 및 배포를 위한 #[b 티스토리 세션] 값이나 프리뷰를 보기위한 모드 설정 등이 해당됩니다.
+      p 또한 티도리로 만든 프로젝트를 오픈소스로 공개할 때 #[code ts_session, url] 등의 민감한 정보가 포함되면 곤란한 경우가 있으므로 만약 #[b tidory.config.js] 가 존재하지 않는 경우, #[b tidory.config.example.js] 가 포함됩니다. 이렇게 하면 소스를 오픈하여 배포할 때에도 민감한 정보를 보호할 수 있습니다.
       highlight-code(lang='javascript')
         | {{ tidoryConfig }}
       h3 ts_session: string
@@ -51,8 +52,8 @@ app-page(:active="$store.state.menu.basic.configuration.page" :title="$store.sta
         | {{ form }}
   footer.footer(slot="footer")
     .arrows
-      .left: NuxtLink(:to="$store.state.menu.basic.example.href") #[i.fas.fa-angle-left] {{ $store.state.menu.basic.example.label }}
-      .right: NuxtLink(:to="$store.state.menu.basic.distribute.href") {{ $store.state.menu.basic.distribute.label }} #[i.fas.fa-angle-right]
+      .left: a(:href="$store.state.menu.basic.example.href") #[i.fas.fa-angle-left] {{ $store.state.menu.basic.example.label }}
+      .right: a(:href="$store.state.menu.basic.distribute.href") {{ $store.state.menu.basic.distribute.label }} #[i.fas.fa-angle-right]
 </template>
 
 <script>

@@ -8,11 +8,11 @@ app-page(:active="$store.state.menu.basic.template.page" :title="$store.state.me
       h2 문서 구조
       p 티도리 프레임워크에서 템플릿은 #[a(href="https://pugjs.org/api/getting-started.html" target="_blank") 퍼그(Pug)]를 사용합니다. #[b 퍼그]는 HTML 파트별로 나누고 코드의 길이를 줄여주는 효과적인 템플릿 엔진입니다. #[b 티도리 프로젝트 템플릿]에서는 크게 #[b app.pug, index.pug, views/*.pug] 로 구성되어 있습니다. 각각이 어떻게 연결되어있는지 살펴보죠!
       h3 app.pug
-      p #[b app.pug] 템플릿은 #[b HTML]의 기본구조가 정의되어있는 템플릿입니다. #[b head, body] 태그와 같이 구조에 해당되는 태그들이 마크업되어 있습니다. #[b 문서]의 최상위 템플릿이므로 스킨과는 직접적인 연관이 없는 마크업을 넣는 것이 좋습니다.
+      p #[b app.pug] 템플릿은 #[b 문서]의 기본구조가 정의되어있는 템플릿입니다. #[code head, body] 태그와 같이 구조에 해당되는 태그들이 마크업되어 있습니다. #[b 문서]의 최상위 템플릿이므로 스킨과는 직접적인 연관이 없는 마크업을 넣는 것이 좋습니다.
       highlight-code(lang='less')
         | {{ app }}
       h3 index.pug
-      p #[b index.pug] 템플릿은 티스토리 스킨의 헤더, 컨텐츠, 푸터, 사이드바와 같은 부가요소가 포함됩니다. #[b block TIDORY] 아래에 #[b include] 키워드를 사용하여 템플릿 파일을 포함시킵니다.
+      p #[b index.pug] 템플릿은 티스토리 스킨의 헤더, 컨텐츠, 푸터, 사이드바와 같은 부가요소가 포함됩니다. #[code block TIDORY] 아래에 #[code include] 키워드를 사용하여 템플릿 파일을 포함시킵니다.
       highlight-code(lang='less')
         | {{ index }}
     article.paragraph
@@ -28,7 +28,7 @@ app-page(:active="$store.state.menu.basic.template.page" :title="$store.state.me
             │     ├── Content.pug
             │     ├── Sidebar.pug
             │     └── Footer.pug
-      p 이렇게 나뉘어 있는 것을 #[b 티스토리 스킨 가이드]를 참고하여 분리해보겠습니다. 자식 템플릿 의 위치는 절대적인 것은 아니나, 부모 템플릿의 이름과 똑같은 폴더 아래에 놓는 것을 원칙으로 합니다.
+      p 이렇게 나뉘어 있는 것을 조금 더 세부적으로 분리해보겠습니다. 자식 템플릿의 위치는 절대적인 것은 아니나, 부모 템플릿의 이름과 똑같은 폴더 아래에 놓는 것을 원칙으로 합니다.
       p
         blockquote.blockquote-type-3
           pre.
@@ -44,8 +44,8 @@ app-page(:active="$store.state.menu.basic.template.page" :title="$store.state.me
             │     └── Footer.pug
   footer.footer(slot="footer")
     .arrows
-      .left: NuxtLink(:to="$store.state.menu.basic.directory.href") #[i.fas.fa-angle-left] {{ $store.state.menu.basic.directory.label }}
-      .right: NuxtLink(:to="$store.state.menu.basic.example.href") {{ $store.state.menu.basic.example.label }} #[i.fas.fa-angle-right]
+      .left: a(:href="$store.state.menu.basic.directory.href") #[i.fas.fa-angle-left] {{ $store.state.menu.basic.directory.label }}
+      .right: a(:href="$store.state.menu.basic.example.href") {{ $store.state.menu.basic.example.label }} #[i.fas.fa-angle-right]
 </template>
 
 <script>

@@ -1,7 +1,7 @@
 <template lang="pug">
   aside#spy(ref="spy")
     ul(class="uk-nav uk-nav-default")
-      li(v-for="spy in spies" :class="spy.cls"): NuxtLink(:to="spy.href") {{ spy.label }}
+      li(v-for="spy in spies" :class="spy.cls"): a(:href="spy.href") {{ spy.label }}
 </template>
 
 <script>

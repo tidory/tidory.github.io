@@ -13,32 +13,32 @@ app-page(:active="$store.state.menu.prologue.intro.page" :title="$store.state.me
           li
             | 다양한 기능을 제공하는 #[b 확장 HTML, CSS 템플릿 엔진]은 수동으로 컴파일해서 사용해야 하며, #[b skin.html, style.css] 에 티스토리 스킨에서 사용할 #[b 모든 기능(Header, Content, Sidebar, Footer 등)]을 모두 몰아넣어 작성해야합니다.
             p
-              NuxtLink(:to="$store.state.menu.basic.template.href") 템플릿 - 템플릿과 코드 분할
+              a(:href="$store.state.menu.basic.template.href") 템플릿 - 템플릿과 코드 분할
           li
-            | #[b SPA(Single Page Application) 프레임워크]와 #[b npm] 사용에 제약이 많습니다.
+            | 뷰, 리액트 등 #[b SPA(Single Page Application) 프레임워크]와 #[b npm] 사용에 제약이 많고 개발방식이 #[b bower] 와 같은 과거에만 머물러있어 효과적인 개발방식을 취할 수 없습니다.
             p
-              NuxtLink(:to="$store.state.menu.advanced.framework.href") 프레임워크 - 뷰 & 리액트
+              a(:href="$store.state.menu.advanced.framework.href") 프레임워크 - 뷰 & 리액트
           li
             | #[b 템플릿과 컴포넌트]를 따로 분리하여 필요할 때 #[b 재활용]하거나 #[b 다른 사람이 작성한 코드]를 포함시키기 어렵습니다.
             p
-              NuxtLink(:to="$store.state.menu.advanced.package.href") 패키지 - 템플릿과 컴포넌트 재활용
+              a(:href="$store.state.menu.advanced.package.href") 패키지 - 템플릿과 컴포넌트 재활용
       h3 테스트
       blockquote.blockquote-type-1
         ol(type="1")
           li
             | 적용된 스킨의 모습을 확인하려면 #[b 스킨편집]에 들어가서 코드를 복사 붙여넣기 하고, #[b 정적 리소스 파일(.js, .png 등)]을 업로드 해야합니다. 소스코드에 #[b 변경사항]이 있을 경우에는 파일을 다시 업로드 해야합니다.
             p
-              NuxtLink(:to="$store.state.menu.basic.getStarted.href") 시작하기 - 개발 서버와 프리뷰 서버
+              a(:href="$store.state.menu.basic.getStarted.href") 시작하기 - 개발 서버와 프리뷰 서버
       h3 빌드 및 배포
       blockquote.blockquote-type-1
         ol(type="1")
           li
             | 스킨을 적용하려면 #[b 스킨편집]에 직접 들어가서 코드를 복사 붙여넣기하고 파일을 업로드해야하거나 #[b 스킨저장소]에 수동으로 업로드해야 합니다.
             p
-              NuxtLink(:to="$store.state.menu.basic.distribute.href") 빌드 및 배포 - 자동화
+              a(:href="$store.state.menu.basic.distribute.href") 빌드 및 배포 - 자동화
   footer.footer(slot="footer")
     .arrows
-      .right: NuxtLink(:to="$store.state.menu.basic.getStarted.href") {{ $store.state.menu.basic.getStarted.label }} #[i.fas.fa-angle-right]
+      .right: a(:href="$store.state.menu.basic.getStarted.href") {{ $store.state.menu.basic.getStarted.label }} #[i.fas.fa-angle-right]
 </template>
 
 <script>

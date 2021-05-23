@@ -6,29 +6,22 @@ app-page(:active="$store.state.menu.basic.distribute.page" :title="$store.state.
   main.text(slot="text")
     article.paragraph
       h2 빌드(Build)
-      p 빌드는 #[b 두 가지의 모드]가 존재하는데, #[b 압축(Compressed)]과 #[b 비압축(Uncompressed)]입니다. 압축버전은 일반적으로 개발자가 자신의 스킨을 적용할 때 사용하며, 그렇지 않은 버전은 유저에게 배포하기 위한 것입니다. 빌드를 사용하려면 #[NuxtLink(:to="$store.state.menu.basic.configuration.href") 환경설정]에 #[b ts_session, url] 항목이 정상적으로 등록되어 있어야합니다.
-      h3 tidory build
-      p #[b 개발자가 직접 사용하기 위해 빌드하는 모드]입니다. 웹페이지 로드속도를 향상시키기 위해 #[b 코드를 압축]합니다.
-      highlight-code(lang='bash')
-        | # tidory build
-        | npm run build
-      h3 tidory production
-      p #[b 유저에게 배포하기 위한 모드]입니다. #[b 코드가 보기 좋은 형태]로 나타납니다.
+      p #[b 빌드]는 티도리 프로젝트를 티스토리 또는 유저에게 배포하기 위해 #[b 배포 파일을 만드는 과정]입니다. 소스코드가 #[b skin.html, style.css] 로 분리되며 #[b app.js, script.js] 가 생성됩니다. 또한 #[b docs] 의 내부와 #[b images] 가 복사됩니다.
       highlight-code(lang='bash')
         | # tidory production
         | npm run production
     article.paragraph
       h2 배포(Distribution)
-      p #[b 배포]는 #[b 현재 사용 중인 스킨을 덮어쓰는 모드]가 있고, #[b 스킨저장소에 저장하는 모드]가 있습니다. 배포를 사용하려면 #[NuxtLink(:to="$store.state.menu.basic.configuration.href") 환경설정]에 #[b ts_session, url] 항목이 정상적으로 등록되어 있어야합니다.
+      p #[b 배포]는 #[b 현재 사용 중인 스킨을 덮어쓰는 모드]가 있고, #[b 스킨저장소에 저장하는 모드]가 있습니다. 배포를 사용하려면 #[a(:href="$store.state.menu.basic.configuration.href") 환경설정]에 #[code ts_session, url] 항목이 정상적으로 등록되어 있어야합니다.
       p
         blockquote.blockquote-type-2 배포를 하기 전에 먼저 빌드해야 합니다. #[b dist] 디렉토리를 대상으로 배포하기 때문이죠.
       h3 tidory store
-      p 스킨의 #[b 이름]은 #[b index.xml] 에 있는 #[b name] 값에 따라 자동적으로 주입됩니다.
+      p 스킨의 #[b 이름]은 #[b index.xml] 에 있는 #[code name] 값에 따라 자동적으로 주입됩니다.
       highlight-code(lang='bash')
         | # tidory store
         | npm run store
       h3 tidory deploy
-      p 현재 사용 중인 #[b skin.html, style.css, index.xml] 코드가 #[b 갱신되며, 업로드된 파일이 삭제됨과 동시에 images 폴더가 재업로드] 됩니다.
+      p 현재 환경설정에 #[code url] 에 지정된 블로그에 #[b skin.html, style.css, index.xml] 파일을 적용시키고 업로드 되어 있는 모든 파일을 삭제하고 #[b images] 폴더에 있는 파일을 다시 업로드합니다. 주로 유저에게 배포하기 전에 블로그에 미리 적용시켜보기 위해 사용합니다.
       highlight-code(lang='bash')
         | # tidory deploy
         | npm run deploy
@@ -69,20 +62,20 @@ app-page(:active="$store.state.menu.basic.distribute.page" :title="$store.state.
       p #[a(href="https://github.com/tidory/tidory" target='_blank' rel='noreferrer') 티도리 프로젝트 템플릿]에 있는 #[b package.json] 에 보면 아래와 같이 나와있는 것을 볼 수 있습니다. #[b npm run deploy] 명령어는 빌드된 티스토리 스킨을 현재 스킨에 적용시키는 명령어입니다.
       highlight-code(lang='javascript')
         | {{ deploy }}
-      p #[b npm run deploy:github] 명령을 따로 만들고, 배포 순서에 따라 빌드를 하고, #[b push-dir] 을 먼저 하는 것으로 코드 저장소에 푸쉬한 다음, 스킨에 적용시키도록 바꿔주면 코드 저장소와 스킨 코드를 동일하게 만들 수 있습니다. 티스토리에서 제공하는 #[b 스킨 편집]은 없다고 여기십시오.
+      p #[b npm run dist] 명령을 따로 만들고, 배포 순서에 따라 빌드를 하고, #[b push-dir] 을 먼저 하는 것으로 코드 저장소에 푸쉬한 다음, 스킨에 적용시키도록 바꿔주면 코드 저장소와 스킨 코드를 동일하게 만들 수 있습니다. 티스토리에서 제공하는 #[b 스킨 편집]은 없다고 여기십시오.
       highlight-code(lang='javascript')
         | {{ pushDir }}
       p
-        blockquote.blockquote-type-2 위와 같이 명령어를 구성하면 #[b 빌드(Build) - 코드 저장소 배포(Push) - 스킨 적용(Deploy)]의 순서로 배포를 자동화할 수 있습니다. 코드 저장소에 #[b tistory-skin] 브랜치가 별도로 생성되어 개발코드가 아닌, 오직 스킨의 코드만 푸쉬됩니다. #[b 테스트용 스킨 프로젝트]인 #[a(href="https://github.com/pronist/tistory-skin") https://github.com/pronist/tistory-skin] 을 참고하십시오.
+        blockquote.blockquote-type-2 위와 같이 명령어를 구성하면 #[b 빌드(Build) - 코드 저장소 배포(Push) - 스킨 적용(Deploy)]의 순서로 배포를 자동화할 수 있습니다. 코드 저장소에 #[b tistory-skin] 브랜치가 별도로 생성되어 개발코드가 아닌, 오직 스킨의 코드만 푸쉬됩니다.
       h2 티스토리 스킨 API
       p 티도리 프레임워크가 아닌 #[b 다른 프로젝트]에 자신의 스킨 프로젝트를 직접 연동할 수 있도록 만들어 보고 싶을 수도 있습니다. 티도리 프레임워크에서 #[b 티스토리 서버와 통신]하는 부분(프리뷰, 배포, 저장)에는 필자가 작성한 #[b API(Application Programming Interface)]가 사용됩니다.
-      p #[a(href="https://github.com/tidory/tistory-skin" target='_blank' rel='noreferrer') (Unofficial) Tistory Skin] 을 사용하면, #[b 티스토리 스킨 저장소]를 조작을 할 수 있습니다. #[b 스킨 편집]에 있는 대부분의 기능(파일 및 스킨 추가, 삭제, 프리뷰, 스킨코드 변경 등)을 프로그래밍이 가능한 형태로 제공합니다.
+      p #[a(href="https://github.com/tistory-project/tistory-skin" target='_blank' rel='noreferrer') (Unofficial) Tistory Skin] 을 사용하면, #[b 티스토리 스킨 저장소]를 조작을 할 수 있습니다. #[b 스킨 편집]에 있는 대부분의 기능(파일 및 스킨 추가, 삭제, 프리뷰, 스킨코드 변경 등)을 프로그래밍이 가능한 형태로 제공합니다.
       highlight-code(lang='javascript')
         | {{ deployer }}
   footer.footer(slot="footer")
     .arrows
-      .left: NuxtLink(:to="$store.state.menu.basic.configuration.href") #[i.fas.fa-angle-left] {{ $store.state.menu.basic.configuration.label }}
-      .right: NuxtLink(:to="$store.state.menu.advanced.framework.href") {{ $store.state.menu.advanced.framework.label }} #[i.fas.fa-angle-right]
+      .left: a(:href="$store.state.menu.basic.configuration.href") #[i.fas.fa-angle-left] {{ $store.state.menu.basic.configuration.label }}
+      .right: a(:href="$store.state.menu.advanced.framework.href") {{ $store.state.menu.advanced.framework.label }} #[i.fas.fa-angle-right]
 </template>
 
 <script>
@@ -98,7 +91,7 @@ export default {
   "deploy": "tidory deploy"
 }`,
       pushDir: `"scripts": {
-  "deploy:github": "tidory build && push-dir --dir=dist --branch=tistory-skin --cleanup && tidory deploy"
+  "dist": "tidory production && push-dir --dir=dist --branch=tistory-skin --cleanup && tidory deploy"
 }`,
       deployer: `const TistorySkin = require('tistory-skin');
 
@@ -121,7 +114,7 @@ async function deploy(blogURL, tsSession, dist) {
   await skin.deploy(dist);
 }
 
-deploy("https://appwriter.tistory.com",
+deploy("https://pronist.tistory.com",
        "efd0c5228b2b6c8a2db76275873bdf5a291626d0",
        "./dist");`
     }
