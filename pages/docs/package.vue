@@ -20,7 +20,7 @@ app-page(:active="$store.state.menu.advanced.package.page" :title="$store.state.
         | {{ pkg2 }}
       p 위와 같이 수동으로 추가하지 않고, #[b npm install] 명령으로 추가하고 싶다면, 아래와 같은 명령을 작성하면 프로젝트의 #[b package.json] 에 자동으로 추가됩니다. 깃허브의 레포지토리를 다운로드 하라는 의미입니다.
       pre: code(class='bash')
-        | $ npm install tidory/example
+        | npm install tidory/example
       h3 자식 패키지
       p 자바스크립트 프레임워크 컴포넌트를 포함한 각종 #[b 자식 패키지]가 포함된 티도리 패키지를 사용하고 싶다면, 일반 NPM 패키지처럼 #[b app.js] 에서 포함할 수 있습니다.
       pre: code(class='javascript')

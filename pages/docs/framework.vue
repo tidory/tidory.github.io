@@ -12,25 +12,50 @@ app-page(:active="$store.state.menu.advanced.framework.page" :title="$store.stat
       p #[b 스킨 코드와 완전 무관한 경우], 컴포넌트를 사용하면 #[b DOM(Document Object Model)]이 자바스크립트로 구성되므로 #[b 티스토리가 치환자를 통해 해석하지 못합니다.] 따라서 컴포넌트 내부에 티스토리 치환자를 사용하면 안됩니다. 티스토리가 제공하는 기능이 아닌, 외부에서 제공하는 기능을 넣는 경우에 사용하면 좋습니다.
     article.paragraph
       h2 컴포넌트
-      p 뷰 또는 리액트 #[b 컴포넌트(Component)]를 사용하면 티스토리 스킨을 #[b 어플리케이션(Application)]레벨까지 올릴 수 있습니다. #[b npm] 이 가진 방대한 레포지토리를 사용하여 라우팅과 데이터베이스 모듈을 사용할 수도 있습니다. 두 프레임워크 중 하나라도 사용하면 #[b SPA(Single Page Application)]을 만들기 위한 준비는 완료 된 것입니다.
-      h3 뷰(Vue.js)
+      p 뷰 또는 리액트, 스벨트 #[b 컴포넌트(Component)]를 사용하면 티스토리 스킨을 #[b 어플리케이션(Application)] 레벨까지 올릴 수 있습니다. #[b npm] 이 가진 방대한 레포지토리를 사용하여 라우팅과 데이터베이스 모듈을 사용할 수도 있습니다. SPA 프레임워크 중 하나라도 사용하면 #[b SPA(Single Page Application)]을 만들기 위한 준비는 완료 된 것입니다.
+      h3 뷰(Vue)
+      pre: code(class='bash')
+        | npm install vue@3
+      h4 components/App.vue
       pre: code(class='xml')
           | {{ vue }}
+      h4 *.pug
       pre: code(class='less')
           | {{ vueTemplate }}
       p
         blockquote.blockquote-type-2 컴포넌트 #[b 내부]에서 치환자를 쓰면 안 되지만, 컴포넌트 내부로 치환된 값을 넘길 수는 있습니다! 프레임워크가 #[b DOM(Document Object Model)]를 형성하기 전에, 티스토리의 치환이 먼저 발생하기 때문입니다. 이렇게 사용하면 컴포넌트와 치환자가 종속관계를 맺지 않고 컴포넌트는 그저 들어온 값을 활용하는 형태가 됩니다.
-      p #[b assets/app.js] 는 #[b 웹팩(Webpack)]의 시작점이 되는 파일입니다. #[b 뷰 컴포넌트]를 템플릿에서 사용하려면 #[b app.js] 에 컴포넌트를 등록해야 인식합니다. #[b Vue.component] 메서드를 이용하여 컴포넌트를 전역적으로 등록하시기 바랍니다.
+      p #[b assets/app.js] 는 #[b 웹팩(Webpack)]의 시작점이 되는 파일입니다. #[b 뷰 컴포넌트]를 템플릿에서 사용하려면 #[b app.js] 에 컴포넌트를 등록해야 인식합니다. #[b .component] 메서드를 이용하여 컴포넌트를 전역적으로 등록하시기 바랍니다.
+      h4 assets/app.js
       pre: code(class='javascript')
         | {{ vueEntry }}
       h3 리액트(React)
+      pre: code(class='bash')
+        | npm install react@17 react-dom@17
+      h4 components/App.js
       pre: code(class='javascript')
         | {{ react }}
+      h4 *.pug
       pre: code(class='less')
         | {{ reactTemplate }}
       p #[b 리액트 컴포넌트]를 템플릿에서 사용하려면 #[b ReactDOM] 을 사용하여 #[b app.js] 에서 컴포넌트를 #[b #app] 에 바인딩하세요.
+      h4 assets/app.js
       pre: code(class='javascript')
         | {{ reactEntry }}
+      h3 스벨트(Svelte)
+      pre: code(class='bash')
+        | npm install svelte@3
+      p
+        blockquote.blockquote-type-2 티도리 8.0.0 이상부터 #[b Svelte 3] 를 지원합니다.
+      h4 components/App.svelte
+      pre: code(class='xml')
+        | {{ svelte }}
+      h4 *.pug
+      pre: code(class='less')
+        | {{ svelteTemplate }}
+      h4 assets/app.js
+      pre: code(class='javascript')
+        | {{ svelteEntry }}
+      h4
     article.paragraph
       h2 리소스
       p #[b 컴포넌트]에서 에셋을 포함하려면 #[b 속성 바인딩] 기능을 사용하거나, 정적파일처럼 포함시키면 됩니다. 우리가 일반적으로 #[b skin.html] 에 #[b ./images/logo.png] 와 같은 형식으로 포함하면 티스토리는 자동으로 에셋의 경로를 #[b CDN(Content Delivery Network)]으로 변경합니다.
@@ -63,39 +88,44 @@ export default {
     props: ['title']
   }
 \<\/script\>`,
-      vueTemplate: `div#app
+      vueTemplate: `#app
   //- Using Vue Component
-  hello-world(title="[##_title_##]")`,
-      vueEntry: `import Vue from 'vue'
+  app(title="[##_title_##]")`,
+      vueEntry: `import { createApp } from 'vue'
+import App from './components/app.vue'
 
-Vue.component(
-  'hello-world',
-  require('./components/hello-world.vue').default
-);
-
-new Vue({
-  el: '#app',
-});`,
+app.component('app', App)
+app.mount('#app')`,
       react: `import React from 'react'
 
-class HelloWorld extends React.Component {
-  render() {
+export default class HelloWorld extends React.Component {
+  render () {
     return (
-      <h1>Tistory skin framework, Tidory</h1>
+      <h1>Hello, world!</h1>
     )
   }
-}
-
-module.exports = HelloWorld;`,
+}`,
       reactTemplate: `//- Rendering React Component
-div#app`,
+#app`,
       reactEntry: `import React from 'react'
 import ReactDOM from 'react-dom'
 
-const HelloWorld = require('./components/HelloWorld');
+import App from './components/App'
 
 const rootElement = document.getElementById('app');
-ReactDOM.render(<HelloWorld />, rootElement);`,
+ReactDOM.render(<App />, rootElement);`,
+      svelteTemplate: `//- Rendering Svelte
+#app`,
+      svelteEntry: `import App from './components/app.svelte'
+
+const app = new App({
+  target: document.getElementById('app')
+})`,
+      svelte: `\<script\>
+ let name = 'world'
+\<\/script\>
+
+<h1>Hello, {name}!</h1>`,
       resource: `<template>
   //- PUBLIC_PATH/favicon.png
   <img src="./images/favicon.png">

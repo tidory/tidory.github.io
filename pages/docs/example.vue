@@ -82,8 +82,7 @@ block TIDORY
     <nav>[##_blog_menu_##]</nav>
   </header>
 </div>`,
-      style: `
-#__tidory {
+      style: `#__tidory {
   height: 100vh;
   align-items: center;
   display: flex;

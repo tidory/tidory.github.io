@@ -78,7 +78,8 @@ $THEME_COLOR = #f0506e
       font-size 1.2em
     h4
       font-weight 500
-      margin-bottom 5px
+      margin-top 25px
+      margin-bottom 20px
       font-size 1.1em
     p
       margin 25px 0
