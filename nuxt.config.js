@@ -31,7 +31,7 @@ module.exports = {
       { rel: 'stylesheet', href: '//fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap' },
       { rel: 'stylesheet', href: '//cdn.jsdelivr.net/npm/uikit@3.4.0/dist/css/uikit.min.css' },
       { rel: 'stylesheet', href: '//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/xcode.min.css' },
-      { rel: 'stylesheet', href: '//cdn.jsdelivr.net/gh/wan2land/d2coding/d2coding-ligature-full.css', media: 'print', onload: 'this.media="all"'}
+      { rel: 'stylesheet', href: '//cdn.jsdelivr.net/gh/wan2land/d2coding/d2coding-ligature-full.css', media: 'print', onload: 'this.media="all"' }
     ]
   },
 
