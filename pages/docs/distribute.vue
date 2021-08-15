@@ -69,7 +69,7 @@ app-page(:active="$store.state.menu.basic.distribute.page" :title="$store.state.
         blockquote.blockquote-type-2 위와 같이 명령어를 구성하면 #[b 빌드(Build) - 코드 저장소 배포(Push) - 스킨 적용(Deploy)]의 순서로 배포를 자동화할 수 있습니다. 코드 저장소에 #[b tistory-skin] 브랜치가 별도로 생성되어 개발코드가 아닌, 오직 스킨의 코드만 푸쉬됩니다.
       h2 티스토리 스킨 API
       p 티도리 프레임워크가 아닌 #[b 다른 프로젝트]에 자신의 스킨 프로젝트를 직접 연동할 수 있도록 만들어 보고 싶을 수도 있습니다. 티도리 프레임워크에서 #[b 티스토리 서버와 통신]하는 부분(프리뷰, 배포, 저장)에는 필자가 작성한 #[b API(Application Programming Interface)]가 사용됩니다.
-      p #[a(href="https://github.com/tistory-project/tistory-skin" target='_blank' rel='noreferrer') (Unofficial) Tistory Skin] 을 사용하면, #[b 티스토리 스킨 저장소]를 조작을 할 수 있습니다. #[b 스킨 편집]에 있는 대부분의 기능(파일 및 스킨 추가, 삭제, 프리뷰, 스킨코드 변경 등)을 프로그래밍이 가능한 형태로 제공합니다.
+      p #[a(href="https://github.com/tidory/tistory-skin" target='_blank' rel='noreferrer') (Unofficial) Tistory Skin] 을 사용하면, #[b 티스토리 스킨 저장소]를 조작을 할 수 있습니다. #[b 스킨 편집]에 있는 대부분의 기능(파일 및 스킨 추가, 삭제, 프리뷰, 스킨코드 변경 등)을 프로그래밍이 가능한 형태로 제공합니다.
       pre: code(class='javascript')
         | {{ deployer }}
   footer.footer(slot="footer")
