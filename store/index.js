@@ -1,38 +1,28 @@
 export const state = () => ({
-  menu: {
-    prologue: {
-      intro: { label: '티도리 프레임워크', href: '/', page: '01' }
+  pages: [
+    {
+      category: '프롤로그',
+      items: [
+        { title: '티도리 프레임워크', path: '/' }
+      ]
     },
-    basic: {
-      getStarted: { label: '시작하기', href: '/docs/get-started', page: '02' },
-      directory: { label: '디렉토리', href: '/docs/directory', page: '03' },
-      template: { label: '템플릿', href: '/docs/template', page: '04' },
-      example: { label: '티스토리 예제', href: '/docs/example', page: '05' },
-      configuration: { label: '환경설정', href: '/docs/configuration', page: '06' },
-      distribute: { label: '빌드 및 배포', href: '/docs/distribute', page: '07' }
+    {
+      category: '튜토리얼',
+      items: [
+        { title: '시작하기', path: '/docs/get-started' },
+        { title: '디렉터리', path: '/docs/directory' },
+        { title: '템플릿', path: '/docs/template' },
+        { title: '티스토리 예제', path: '/docs/example' },
+        { title: '환경설정', path: '/docs/configuration' },
+        { title: '빌드 및 배포', path: '/docs/deployment' }
+      ]
     },
-    advanced: {
-      framework: { label: '프레임워크 - 뷰 & 리액트', href: '/docs/framework', page: '08' },
-      package: { label: '패키지', href: '/docs/package', page: '09' }
-    },
-    libraries: {
-      tistory: { label: 'Tistory for Javascript', href: 'https://github.com/tidory/tistory.js' },
-      phpTistory: { label: 'Tistory for PHP', href: 'https://github.com/tidory/tistory.php' },
-      tistorySkin: { label: '(Unofficial) Tistory Skin ', href: 'https://github.com/tidory/tistory-skin' }
-    },
-    meta: {
-      tistoryGuidebook: { label: '티스토리 스킨 가이드', href: 'https://tistory.github.io/document-tistory-skin/' },
-      tistoryAPI: { label: '티스토리 API', href: 'https://tistory.github.io/document-tistory-apis/' },
-      lecture: { label: '티도리 프레임워크 강좌', href: 'https://www.inflearn.com/course/%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/#' }
-    },
-    community: {
-      npm: { label: 'NPM', href: 'https://www.npmjs.com/package/tidory' },
-      github: { label: 'Github', href: 'https://github.com/tidory' }
+    {
+      category: '스케일링 업',
+      items: [
+        { title: '프레임워크 - 뷰 & 리액트', path: '/docs/framework' },
+        { title: '패키지', path: '/docs/package' }
+      ]
     }
-  },
-  active: -1
+  ]
 })
-
-export const mutations = {
-  activeMenu (state, active) { state.active = active }
-}

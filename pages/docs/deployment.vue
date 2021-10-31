@@ -8,7 +8,7 @@ export default {
     Document
   },
   async asyncData ({ $content }) {
-    const page = await $content('docs/template').fetch()
+    const page = await $content('docs/deployment').fetch()
 
     return {
       page

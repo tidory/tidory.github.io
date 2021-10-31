@@ -1,39 +1,31 @@
 {
   "name": "tidory.com",
   "version": "1.0.0",
-  "description": "tidory.com",
   "private": true,
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "deploy": "npm run generate && push-dir --dir=dist --branch=gh-pages --cleanup",
-    "precommit": "npm run lint"
+    "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
+    "lint": "npm run lint:js"
   },
   "dependencies": {
-    "highlight.js": "^10.7.2",
-    "nuxt": "^2.12.2",
-    "vue-highlight.js": "^4.0.1-beta"
+    "@nuxt/content": "^1.14.0",
+    "core-js": "^3.15.1",
+    "nuxt": "^2.15.7",
+    "prism-themes": "^1.9.0"
   },
   "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "babel-plugin-prismjs": "^1.1.1",
-    "eslint": "^4.19.1",
-    "eslint-config-standard": "^14.1.1",
-    "eslint-friendly-formatter": "^4.0.1",
-    "eslint-loader": "^2.2.1",
-    "eslint-plugin-import": "^2.20.2",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
-    "eslint-plugin-vue": "^4.0.0",
-    "pug": "^2.0.4",
-    "pug-loader": "^2.4.0",
-    "pug-plain-loader": "^1.0.0",
-    "push-dir": "^0.4.1",
-    "stylus": "^0.54.7",
-    "stylus-loader": "^3.0.2"
+    "@babel/eslint-parser": "^7.14.7",
+    "@nuxtjs/eslint-config": "^6.0.1",
+    "@nuxtjs/eslint-module": "^3.0.2",
+    "eslint": "^7.29.0",
+    "eslint-plugin-nuxt": "^2.0.0",
+    "eslint-plugin-vue": "^7.12.1",
+    "pug": "^3.0.2",
+    "pug-plain-loader": "^1.1.0",
+    "stylus": "^0.55.0",
+    "stylus-loader": "^4.3.3"
   }
 }

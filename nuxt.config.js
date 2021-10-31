@@ -1,15 +1,16 @@
-module.exports = {
-  /**
-   * Plugins
-   */
-  plugins: [],
-  /**
-   * Headers of the page
-   */
+export default {
+  // Target: https://go.nuxtjs.dev/config-target
+  target: 'static',
+
+  // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: '티스토리 스킨 프레임워크, 티도리(TIDORY)',
+    title: 'tidory.com',
+    htmlAttrs: {
+      lang: 'ko'
+    },
     meta: [
       { charset: 'utf-8' },
+      { name: 'format-detection', content: 'telephone=no' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'description', content: '오직 티스토리 스킨만을 위한 프레임워크' },
       { name: 'author', content: '정상우' },
@@ -29,25 +30,44 @@ module.exports = {
       { rel: 'preconnect', href: '//fonts.gstatic.com' },
       { rel: 'preconnect', href: '//ka-f.fontawesome.com' },
       { rel: 'stylesheet', href: '//fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap' },
-      { rel: 'stylesheet', href: '//cdn.jsdelivr.net/npm/uikit@3.4.0/dist/css/uikit.min.css' },
-      { rel: 'stylesheet', href: '//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/xcode.min.css' },
       { rel: 'stylesheet', href: '//cdn.jsdelivr.net/gh/wan2land/d2coding/d2coding-ligature-full.css', media: 'print', onload: 'this.media="all"' }
     ]
   },
 
-  /**
-   * Build configuration
-   */
-  build: {
-    extend (config, ctx) {
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
+  // Global CSS: https://go.nuxtjs.dev/config-css
+  css: [
+  ],
+
+  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
+  plugins: [
+  ],
+
+  // Auto import components: https://go.nuxtjs.dev/config-components
+  components: true,
+
+  // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
+  buildModules: [
+    // https://go.nuxtjs.dev/eslint
+    '@nuxtjs/eslint-module'
+  ],
+
+  // Modules: https://go.nuxtjs.dev/config-modules
+  modules: [
+    // https://go.nuxtjs.dev/content
+    '@nuxt/content'
+  ],
+
+  // Content module configuration: https://go.nuxtjs.dev/config-content
+  content: {
+    markdown: {
+      prism: {
+        theme: 'prism-themes/themes/prism-vsc-dark-plus.css'
       }
-    }
+    },
+    liveEdit: false
+  },
+
+  // Build Configuration: https://go.nuxtjs.dev/config-build
+  build: {
   }
 }

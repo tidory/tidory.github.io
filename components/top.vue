@@ -1,21 +1,21 @@
 <template lang="pug">
-aside#aside
+#top
   .notice
     i(class="fas fa-volume-up")
-    a.text(:href="$store.state.menu.meta.lecture.href" target='_blank' rel='noreferrer') 티도리 프레임워크 강좌가 제작되었습니다.
+    a.text(href="https://www.inflearn.com/course/%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/#" target='_blank' rel='noreferrer') 티도리 프레임워크 강좌가 제작되었습니다.
   ul.menu
-    li(v-for="(item, index) in menu")
-      a(:href="item.href" target='_blank' rel='noreferrer')
-        | {{ item.label }}
-        i(:class="item.class")
+    li(v-for="icon in icons")
+      a(:href="icon.href" target='_blank' rel='noreferrer')
+        | {{ icon.title }}
+        i(:class="icon.class")
 </template>
 
 <script>
 export default {
   data () {
     return {
-      menu: [
-        { class: 'fas fa-book-open', href: this.$store.state.menu.meta.tistoryGuidebook.href, label: this.$store.state.menu.meta.tistoryGuidebook.label }
+      icons: [
+        { class: 'fas fa-book-open', href: 'https://tistory.github.io/document-tistory-skin/', title: '티스토리 스킨 가이드' }
       ]
     }
   }
@@ -24,7 +24,7 @@ export default {
 
 <style lang="stylus">
 @media all and (min-width: 1200px)
-  #aside
+  #top
     .notice
       position absolute
       top 35px
@@ -56,6 +56,15 @@ export default {
         &:last-child
           margin-right 0
 @media all and (max-width: 1200px)
-  #aside
+  #top
     display none
+</style>
+
+<style lang="stylus">
+#container[data-theme="1"]
+  #top
+    i, a
+      color rgba(255, 255, 255, .85)
+      &:hover
+        color white
 </style>
