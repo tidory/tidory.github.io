@@ -1,7 +1,7 @@
 <template lang="pug">
 aside#sidebar
   .__
-    a.logo(href="/")
+    nuxt-link.logo(to="/")
       | 홈
       img(src="/images/logo.png" alt="티스토리 로고" width="24" height="24")
     nav
@@ -77,13 +77,11 @@ export default {
         padding 12px 0
         font-weight 400
         font-size .96em
-        &:first-child
-          padding-top 0
         .title > a
           color rgba(0, 0, 0, .3)
           transition-duration unset
           text-decoration none
-          &.nuxt-link-exact-active
+          &.nuxt-link-active
             color rgba(0, 0, 0, .85)
             font-weight 500
           &:hover
@@ -106,7 +104,7 @@ export default {
       .item
         a
           color rgba(255, 255, 255, 0.85)
-          &.nuxt-link-exact-active
+          &.nuxt-link-active
             color white
           &:hover
             color white
