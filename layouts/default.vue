@@ -1,22 +1,30 @@
 <template lang="pug">
-#container
-  app-sidebar
-  app-navigation
-  main#main
+#container(:data-theme="theme")
+  top
+  sidebar
+  main
     nuxt
-  app-footer
+  bottom
 </template>
 
 <script>
-import AppSidebar from '~/components/AppSidebar.vue'
-import AppFooter from '~/components/AppFooter.vue'
-import AppNavigation from '~/components/AppNavigation.vue'
+import Top from '~/components/top'
+import Sidebar from '~/components/sidebar'
+import Bottom from '~/components/bottom'
 
 export default {
   components: {
-    AppSidebar,
-    AppFooter,
-    AppNavigation
+    Top,
+    Sidebar,
+    Bottom
+  },
+  data () {
+    return {
+      theme: -1 // LIGHT
+    }
+  },
+  mounted () {
+    this.theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 1 : -1
   }
 }
 </script>
@@ -34,16 +42,26 @@ a
     color #f0506e
 ul
   list-style none
+</style>
+
+<style lang="stylus">
+main
+  padding-top 25px
 @media all and (min-width: 1200px)
-  #main
+  main
     width 620px
     margin 0 auto
     padding-top 125px
+    padding-bottom 75px
 @media all and (max-width: 1200px)
-  #main
+  main
     width 100%
-    padding 0 25px
+    padding 25px
+    padding-bottom 20px
     box-sizing border-box
-    img
-      width 100%
+</style>
+
+<style lang="stylus">
+#container[data-theme="1"]
+  background-color #1e1f21
 </style>
