@@ -9,11 +9,11 @@ section#document
   footer
     .pagination
       .prev(v-if="index > 0")
-        a(:href="pages[index - 1].path")
+        nuxt-link(:to="pages[index - 1].path")
           i.fas.fa-angle-left
           | {{ pages[index - 1].title }}
       .next(v-if="index < pages.length - 1")
-        a(:href="pages[index + 1].path")
+        nuxt-link(:to="pages[index + 1].path")
           | {{ pages[index + 1].title }}
           i.fas.fa-angle-right
 </template>

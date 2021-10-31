@@ -139,4 +139,4 @@ const app = new App({
 </template>
 ```
 
-> **public_path** 설정은 [환경설정](/configuration)에서 알아볼 수 있습니다.
+> **public_path** 설정은 [환경설정](/docs/configuration)에서 알아볼 수 있습니다.

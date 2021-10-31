@@ -4,7 +4,7 @@
     li(
       v-for="link of toc"
       :key="link.id"
-      :class="{ 'toc2': link.depth === 2, 'toc3': link.depth === 3 }"
+      :class="{ 'h2': link.depth === 2, 'h3': link.depth === 3 }"
     )
       a(:href="`#${(link.id)}`") {{ link.text }}
 </template>
@@ -36,7 +36,7 @@ $WIDTH = 180px
       max-width $WIDTH
       a
         font-size .82rem
-      &.toc3
+      &.h3
         padding-left 35px
 @media screen and (max-width: 1200px)
   #spy

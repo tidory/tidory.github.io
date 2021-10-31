@@ -52,7 +52,7 @@ require("@tidory/example")
 include node_modules/@tidory/example/index
 ```
 
-> 템플릿 별칭은 [환경설정](/configuration)에서 알아볼 수 있습니다.
+> 템플릿 별칭은 [환경설정](/docs/configuration)에서 알아볼 수 있습니다.
 
 ### @tidory
 
