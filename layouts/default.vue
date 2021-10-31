@@ -20,7 +20,7 @@ export default {
   },
   data () {
     return {
-      theme: -1 // LIGHT
+      theme: -1 // 1: DARK, -1: LIGHT
     }
   },
   mounted () {
@@ -64,4 +64,8 @@ main
 <style lang="stylus">
 #container[data-theme="1"]
   background-color #1e1f21
+  a
+    color rgba(255, 255, 255, .85)
+    &:hover
+      color white
 </style>

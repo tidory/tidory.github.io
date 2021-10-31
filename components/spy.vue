@@ -48,7 +48,4 @@ $WIDTH = 180px
   #spy
     ul
       border-color rgba(255, 255, 255, .5)
-      li
-        a
-          color rgba(255, 255, 255, .8)
 </style>

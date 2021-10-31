@@ -1,7 +1,7 @@
 <template lang="pug">
 section#document
   aside
-    scrollspy(:toc="document.toc")
+    spy(:toc="document.toc")
   header
     h1 {{ document.title }}
   article
@@ -19,11 +19,11 @@ section#document
 </template>
 
 <script>
-import Scrollspy from '~/components/scrollspy'
+import Spy from '~/components/spy'
 
 export default {
   components: {
-    Scrollspy
+    Spy
   },
   props: {
     document: {
