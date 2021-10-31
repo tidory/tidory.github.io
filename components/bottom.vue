@@ -15,8 +15,8 @@ export default {
   data () {
     return {
       communities: [
-        { title: 'NPM', path: 'https://www.npmjs.com/package/tidory', class: 'fab fa-github' },
-        { title: 'Github', path: 'https://github.com/tidory', class: 'fab fa-npm' }
+        { title: 'NPM', path: 'https://www.npmjs.com/package/tidory', class: 'fab fa-npm' },
+        { title: 'Github', path: 'https://github.com/tidory', class: 'fab fa-github' }
       ]
     }
   }
@@ -53,14 +53,13 @@ $BUTTON_SIZE = 35px
       border-radius 50%
       font-size 0
       display inline-block
+      margin-left 12px
       i
         font-size .9rem
         line-height $BUTTON_SIZE
       &:hover
         background-color rgba(0, 0, 0, .9)
         color rgba(255, 255, 255, .9)
-    #toTop
-      margin-left 12px
   .left
     a
       transition-duration .1s
