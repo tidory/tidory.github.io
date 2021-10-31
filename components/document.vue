@@ -3,7 +3,7 @@ section#document
   aside
     scrollspy(:toc="document.toc")
   header
-    h1 {{ pages[index].title }}
+    h1 {{ document.title }}
   article
     nuxt-content(:document="document")
   footer
@@ -32,7 +32,7 @@ export default {
   },
   head () {
     return {
-      title: '티스토리 스킨 프레임워크, 티도리(TIDORY) ― ' + this.pages[this.index].title
+      title: '티스토리 스킨 프레임워크, 티도리(TIDORY) ― ' + this.document.title
     }
   },
   computed: {

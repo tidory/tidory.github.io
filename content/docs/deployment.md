@@ -1,3 +1,7 @@
+---
+title: 빌드 및 배포
+---
+
 ## 빌드(Build)
 
 **빌드**는 티도리 프로젝트를 티스토리 또는 유저에게 배포하기 위해 **배포 파일을 만드는 과정**입니다. 소스코드가 **skin.html, style.css** 로 분리되며 **images/app.js, images/script.js** 가 생성됩니다. 또한 **docs** 의 내부와 **images** 가 복사됩니다.
