@@ -8,13 +8,13 @@ section#document
     nuxt-content(:document="document")
   footer
     .pagination
-      .prev(v-if="index > 0")
-        nuxt-link(:to="pages[index - 1].path")
+      .prev(v-if="document.i > 0")
+        nuxt-link(:to="pages[document.i - 1].path")
           i.fas.fa-angle-left
-          | {{ pages[index - 1].title }}
-      .next(v-if="index < pages.length - 1")
-        nuxt-link(:to="pages[index + 1].path")
-          | {{ pages[index + 1].title }}
+          | {{ pages[document.i - 1].title }}
+      .next(v-if="document.i < pages.length - 1")
+        nuxt-link(:to="pages[document.i + 1].path")
+          | {{ pages[document.i + 1].title }}
           i.fas.fa-angle-right
 </template>
 
@@ -38,9 +38,6 @@ export default {
   computed: {
     pages () {
       return this.$store.state.pages.flatMap(page => page.items)
-    },
-    index () {
-      return this.pages.findIndex(page => page.path === this.$route.path)
     }
   }
 }
