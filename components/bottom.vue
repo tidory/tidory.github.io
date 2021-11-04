@@ -83,7 +83,7 @@ $BUTTON_SIZE = 35px
 </style>
 
 <style lang="stylus">
-#container[data-theme="1"]
+#TIDORY[data-theme="1"]
   #bottom
     #toTop
       background-color #353638

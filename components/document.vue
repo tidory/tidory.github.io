@@ -162,7 +162,7 @@ export default {
 </style>
 
 <style lang="stylus">
-#container[data-theme="1"]
+#TIDORY[data-theme="1"]
   header
     h1
       color white
@@ -173,8 +173,9 @@ export default {
       color white
     a, b, strong
       color #5db0d7
-    h2::before
-      color #5db0d7
+    h2
+      &::before
+        color #5db0d7
     pre[class*=language-]
       background-color #292a2d
     p, blockquote, b, strong

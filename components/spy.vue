@@ -44,7 +44,7 @@ $WIDTH = 180px
 </style>
 
 <style lang="stylus">
-#container[data-theme="1"]
+#TIDORY[data-theme="1"]
   #spy
     ul
       border-color rgba(255, 255, 255, .5)

@@ -5,6 +5,12 @@
     {{ HEAD }}
 
     <script async src="//kit.fontawesome.com/65f7e05682.js"></script>
+    <script>
+      document.getElementById('TIDORY').setAttribute(
+        'data-theme',
+        window.matchMedia('(prefers-color-scheme: dark)').matches ? 1 : -1
+      )
+    </script>
   </head>
   <body {{ BODY_ATTRS }}>
     {{ APP }}

@@ -1,5 +1,5 @@
 <template lang="pug">
-#container(:data-theme="theme")
+#container
   top
   sidebar
   main
@@ -17,14 +17,6 @@ export default {
     Top,
     Sidebar,
     Bottom
-  },
-  data () {
-    return {
-      theme: -1 // 1: DARK, -1: LIGHT
-    }
-  },
-  mounted () {
-    this.theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 1 : -1
   }
 }
 </script>
@@ -62,8 +54,9 @@ main
 </style>
 
 <style lang="stylus">
-#container[data-theme="1"]
-  background-color #1e1f21
+#TIDORY[data-theme="1"]
+  &, body
+    background-color #1e1f21
   a
     color rgba(255, 255, 255, .85)
     &:hover

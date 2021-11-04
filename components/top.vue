@@ -2,7 +2,12 @@
 #top
   .notice
     i(class="fas fa-volume-up")
-    a.text(href="https://www.inflearn.com/course/%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/#" target='_blank' rel='noreferrer') 티도리 프레임워크 강좌가 제작되었습니다.
+    a.text(
+      href="https://www.inflearn.com/course/%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/#"
+      target='_blank'
+      rel='noreferrer'
+    )
+      | 티도리 프레임워크 강좌가 제작되었습니다.
   ul.menu
     li(v-for="icon in icons")
       a(:href="icon.href" target='_blank' rel='noreferrer')
@@ -61,7 +66,7 @@ export default {
 </style>
 
 <style lang="stylus">
-#container[data-theme="1"]
+#TIDORY[data-theme="1"]
   #top
     i, a
       color rgba(255, 255, 255, .85)

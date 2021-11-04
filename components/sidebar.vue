@@ -9,8 +9,10 @@ aside#sidebar
         li.category {{ menuItem.category }}
         li.item(v-for="item in menuItem.items")
           .title
-            nuxt-link(:to="item.path" v-if="item.path.startsWith('/')") {{ item.title }}
-            a(:href="item.path" target='_blank' rel='noreferrer' v-else) {{ item.title }}
+            nuxt-link(:to="item.path" v-if="item.path.startsWith('/')")
+              | {{ item.title }}
+            a(:href="item.path" target='_blank' rel='noreferrer' v-else)
+              | {{ item.title }}
 </template>
 
 <script>
@@ -92,7 +94,7 @@ export default {
 </style>
 
 <style lang="stylus">
-#container[data-theme="1"]
+#TIDORY[data-theme="1"]
   #sidebar
     background-color #292a2d
     .logo

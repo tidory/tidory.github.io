@@ -2,7 +2,7 @@
 
 [티도리 프레임워크](http://www.tidory.com) 공식 문서입니다.
 
-## License
+## 저작권
 
 [MIT](https://github.com/tidory/tidory.com/blob/master/LICENSE)
 
