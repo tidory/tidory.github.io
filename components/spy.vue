@@ -1,11 +1,7 @@
 <template lang="pug">
-#spy
+aside#spy
   ul
-    li(
-      v-for="link of toc"
-      :key="link.id"
-      :class="{ 'h2': link.depth === 2, 'h3': link.depth === 3 }"
-    )
+    li(v-for="link of toc" :key="link.id" :class="{ 'h2': link.depth === 2, 'h3': link.depth === 3 }")
       a(:href="`#${(link.id)}`") {{ link.text }}
 </template>
 
@@ -23,9 +19,17 @@ export default {
 $WIDTH = 180px
 
 #spy
-  position sticky
-  top 35px
+  position absolute
+  top 0
+  list-style none
+  text-align left
+  font-weight 400
+  z-index 0
+  margin-left calc(620px + 110px) !important
+  height 100%
   ul
+    position sticky
+    top 35px
     border-left 1px dashed rgba(0, 0, 0, .2)
     box-sizing border-box
     width $WIDTH

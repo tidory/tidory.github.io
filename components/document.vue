@@ -1,20 +1,17 @@
 <template lang="pug">
-section#document
-  aside
-    spy(:toc="document.toc")
-  header
-    h1 {{ document.title }}
+#document
+  spy(:toc="document.toc")
   article
+    h1 {{ document.title }}
     nuxt-content(:document="document")
-  footer
     .pagination
-      .prev(v-if="document.i > 0")
-        nuxt-link(:to="pages[document.i - 1].path")
+      .prev(v-if="prev")
+        nuxt-link(:to="{ params: { slug: prev.slug } }")
           i.fas.fa-angle-left
-          | {{ pages[document.i - 1].title }}
-      .next(v-if="document.i < pages.length - 1")
-        nuxt-link(:to="pages[document.i + 1].path")
-          | {{ pages[document.i + 1].title }}
+          | {{ prev.title }}
+      .next(v-if="next")
+        nuxt-link(:to="{ params: { slug: next.slug } }")
+          | {{ next.title }}
           i.fas.fa-angle-right
 </template>
 
@@ -27,17 +24,21 @@ export default {
   },
   props: {
     document: {
-      type: Object, required: true
+      type: Object,
+      required: true
+    },
+    prev: {
+      type: Object,
+      default: () => null
+    },
+    next: {
+      type: Object,
+      default: () => null
     }
   },
   head () {
     return {
       title: '티스토리 스킨 프레임워크, 티도리(TIDORY) ― ' + this.document.title
-    }
-  },
-  computed: {
-    pages () {
-      return this.$store.state.pages.flatMap(page => page.items)
     }
   }
 }
@@ -51,30 +52,12 @@ export default {
 
 <style lang="stylus">
 #document
-  aside
-    position absolute
-    top 0
-    list-style none
-    text-align left
-    font-weight 400
-    z-index 0
-    margin-left calc(620px + 110px) !important
-    height 100%
-</style>
-
-<style lang="stylus">
-#document
-  header
-    text-align center
-    margin-bottom 50px
+  article
     h1
+      text-align center
+      margin-bottom 50px
       font-weight 500
       font-size 2.1em
-</style>
-
-<style lang="stylus">
-#document
-  article
     *
       word-break break-all
     h2, h3
@@ -86,11 +69,13 @@ export default {
       margin-top 25px
       margin-bottom 20px
       font-size 1.5em
-      &::before
-        content "#"
-        color #f0506e
-        font-weight 400
-        margin-right 10px
+      .icon.icon-link
+        background-image url('~/assets/svg/icon-hashtag.svg')
+        display inline-block
+        width 20px
+        height 20px
+        background-size 20px 20px
+        margin-right 3px
     h3
       font-weight 500
       margin-top 25px
@@ -145,27 +130,23 @@ export default {
 
 <style lang="stylus">
 #document
-  footer
-    .pagination
-      margin-top 50px
-      overflow hidden
-      a
-        text-decoration none !important
-      .prev
-        float left
-        i
-          margin-right 8px
-      .next
-        float right
-        i
-          margin-left 8px
+  .pagination
+    margin-top 50px
+    overflow hidden
+    a
+      text-decoration none !important
+    .prev
+      float left
+      i
+        margin-right 8px
+    .next
+      float right
+      i
+        margin-left 8px
 </style>
 
 <style lang="stylus">
 #TIDORY[data-theme="1"]
-  header
-    h1
-      color white
   article
     p,
     h1, h2, h3, h4,
@@ -174,15 +155,15 @@ export default {
     a, b, strong
       color #5db0d7
     h2
-      &::before
-        color #5db0d7
+      .icon.icon-link
+        filter invert()
     pre[class*=language-]
       background-color #292a2d
     p, blockquote, b, strong
       code
         background-color #292a2d
         color white
-  footer
+  .pagination
     a
       color white
 </style>

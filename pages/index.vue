@@ -1,4 +1,8 @@
-<template lang="pug">Document(:document="page")</template>
+<template lang="pug">
+  document(
+    :document="article"
+  )
+</template>
 
 <script>
 import Document from '~/components/document'
@@ -8,10 +12,10 @@ export default {
     Document
   },
   async asyncData ({ $content }) {
-    const page = await $content('index').fetch()
+    const article = await $content('index').fetch()
 
     return {
-      page
+      article
     }
   }
 }
