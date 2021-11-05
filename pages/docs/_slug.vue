@@ -18,7 +18,7 @@ export default {
 
     const [prev, next] = await $content('docs')
       .only(['title', 'slug'])
-      .sortBy('createdAt', 'asc')
+      .sortBy('index', 'asc')
       .surround(params.slug)
       .fetch()
 
