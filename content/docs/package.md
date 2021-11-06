@@ -1,6 +1,5 @@
 ---
 index: 8
-
 category: 스케일링 업
 title: 티도리 패키지
 ---

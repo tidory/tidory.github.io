@@ -1,6 +1,5 @@
 ---
 index: 7
-
 category: 스케일링 업
 title: 자바스크립트 프레임워크
 ---
