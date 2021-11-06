@@ -47,7 +47,7 @@ main
 @media all and (max-width: 1200px)
   main
     width 100%
-    padding 25px
-    padding-bottom 20px
+    padding 20px
+    padding-bottom 40px
     box-sizing border-box
 </style>
