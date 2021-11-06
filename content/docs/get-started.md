@@ -1,5 +1,7 @@
 ---
 index: 1
+
+category: 튜토리얼
 title: 시작하기
 ---
 

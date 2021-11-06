@@ -1,5 +1,7 @@
 ---
 index: 4
+
+category: 튜토리얼
 title: 티스토리 예제
 ---
 

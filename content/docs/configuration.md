@@ -1,5 +1,7 @@
 ---
 index: 5
+
+category: 튜토리얼
 title: 환경설정
 ---
 

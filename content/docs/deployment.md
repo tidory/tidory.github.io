@@ -1,5 +1,7 @@
 ---
 index: 6
+
+category: 튜토리얼
 title: 빌드 및 배포
 ---
 

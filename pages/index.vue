@@ -1,7 +1,7 @@
 <template lang="pug">
-  document(
-    :document="article"
-  )
+document(
+  :document="article"
+)
 </template>
 
 <script>

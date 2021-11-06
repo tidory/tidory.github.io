@@ -21,41 +21,60 @@ export default {
     return {
       menuItems: [
         {
-          category: '튜토리얼',
-          items: [
-            { title: '시작하기', path: '/docs/get-started' },
-            { title: '디렉터리', path: '/docs/directory' },
-            { title: '템플릿', path: '/docs/template' },
-            { title: '티스토리 예제', path: '/docs/example' },
-            { title: '환경설정', path: '/docs/configuration' },
-            { title: '빌드 및 배포', path: '/docs/deployment' }
-          ]
-        },
-        {
-          category: '스케일링 업',
-          items: [
-            { title: '프레임워크 - 뷰 & 리액트', path: '/docs/framework' },
-            { title: '패키지', path: '/docs/package' }
-          ]
-        },
-        {
           category: '티스토리 API',
           items: [
-            { title: 'Tistory for Javascript', path: 'https://github.com/tidory/tistory.js' },
-            { title: 'Tistory for PHP', path: 'https://github.com/tidory/tistory.php' },
-            { title: '(Unofficial) Tistory Skin ', path: 'https://github.com/tidory/tistory-skin' }
+            {
+              title: 'Tistory for Javascript',
+              path: 'https://github.com/tidory/tistory.js'
+            },
+            {
+              title: 'Tistory for PHP',
+              path: 'https://github.com/tidory/tistory.php'
+            },
+            {
+              title: '(Unofficial) Tistory Skin ',
+              path: 'https://github.com/tidory/tistory-skin'
+            }
           ]
         },
         {
           category: '메타',
           items: [
-            { title: '티스토리 스킨 가이드', path: 'https://tistory.github.io/document-tistory-skin' },
-            { title: '패치노트', path: 'https://github.com/tidory/cli/blob/master/CHANGELOG.md' },
-            { title: '티도리 프레임워크 강좌', path: 'https://www.inflearn.com/course/%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/#' }
+            {
+              title: '티스토리 스킨 가이드',
+              path: 'https://tistory.github.io/document-tistory-skin'
+            },
+            {
+              title: '패치노트',
+              path: 'https://github.com/tidory/cli/blob/master/CHANGELOG.md'
+            },
+            {
+              title: '티도리 프레임워크 강좌',
+              path: 'https://www.inflearn.com/course/%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/#'
+            }
           ]
         }
       ]
     }
+  },
+  async created () {
+    const docs = await this.$content('docs')
+      .only(['category', 'title', 'path'])
+      .sortBy('index', 'asc')
+      .fetch()
+
+    const categories = [
+      '스케일링 업',
+      '튜토리얼'
+    ]
+    categories.forEach((category) => {
+      const items = docs.filter(doc => doc.category === category)
+
+      this.menuItems.unshift({
+        category,
+        items
+      })
+    })
   }
 }
 </script>

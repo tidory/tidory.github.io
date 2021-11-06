@@ -1,5 +1,7 @@
 ---
 index: 2
+
+category: 튜토리얼
 title: 디렉터리
 ---
 

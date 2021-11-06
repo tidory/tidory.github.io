@@ -1,6 +1,8 @@
 ---
 index: 8
-title: 패키지
+
+category: 스케일링 업
+title: 티도리 패키지
 ---
 
 ## 티도리 패키지

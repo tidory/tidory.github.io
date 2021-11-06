@@ -1,9 +1,9 @@
 <template lang="pug">
-  document(
-    :document="article"
-    :next="next"
-    :prev="prev"
-  )
+document(
+  :document="article"
+  :next="next"
+  :prev="prev"
+)
 </template>
 
 <script>
