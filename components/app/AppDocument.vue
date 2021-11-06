@@ -1,27 +1,14 @@
 <template lang="pug">
-#document
-  spy(:toc="document.toc")
-  article
-    h1 {{ document.title }}
-    nuxt-content(:document="document")
-    .pagination
-      .prev(v-if="prev")
-        nuxt-link(:to="{ params: { slug: prev.slug } }")
-          i.fas.fa-angle-left
-          | {{ prev.title }}
-      .next(v-if="next")
-        nuxt-link(:to="{ params: { slug: next.slug } }")
-          | {{ next.title }}
-          i.fas.fa-angle-right
+  #document
+    app-spy(:toc="document.toc")
+    article
+      h1 {{ document.title }}
+      nuxt-content(:document="document")
+    app-pagination(:prev="prev" :next="next")
 </template>
 
 <script>
-import Spy from '~/components/spy'
-
 export default {
-  components: {
-    Spy
-  },
   props: {
     document: {
       type: Object,
@@ -38,7 +25,7 @@ export default {
   },
   head () {
     return {
-      title: '티스토리 스킨 프레임워크, 티도리(TIDORY) ― ' + this.document.title
+      title: this.document.title
     }
   }
 }
@@ -46,12 +33,8 @@ export default {
 
 <style lang="stylus">
 #document
-  color rgba(0, 0, 0, .85)
+  color var(--document-color)
   position relative
-</style>
-
-<style lang="stylus">
-#document
   article
     h1
       text-align center
@@ -63,7 +46,6 @@ export default {
     h2, h3
       > a
         text-decoration none
-        color black
     h2
       font-weight 400
       margin-top 25px
@@ -76,6 +58,7 @@ export default {
         height 20px
         background-size 20px 20px
         margin-right 3px
+        filter var(--document-icon-link-filter-invert)
     h3
       font-weight 500
       margin-top 25px
@@ -98,20 +81,21 @@ export default {
         p
           margin 8px 0
     strong, b
-      color #f0506e
+      color var(--document-strong-color)
       font-weight 500
     a
       text-decoration underline
     pre[class*=language-]
       border-radius 5px
       border none
+      background-color var(--document-code-block-background-color)
       > code
         line-height 1.8em
     b, strong, p, blockquote
       > code
         border-radius 5px
-        background-color #f8f8f8
-        color #f0506e
+        color var(--document-code-color)
+        background-color var(--document-code-background-color)
         padding 2px 8px
         font-size .92rem
     blockquote
@@ -119,51 +103,30 @@ export default {
       border-width 0 0 0 2px
       border-style solid
       padding 1px 0 0 12px
-      color #666
+      color var(--document-blockquote-color)
       line-height 1.8em
       text-align left
       font-size 0.9em
       margin-top 25px
       p
         margin 0
-</style>
 
-<style lang="stylus">
-#document
-  .pagination
-    margin-top 50px
-    overflow hidden
-    a
-      text-decoration none !important
-    .prev
-      float left
-      i
-        margin-right 8px
-    .next
-      float right
-      i
-        margin-left 8px
-</style>
-
-<style lang="stylus">
-#TIDORY[data-theme="1"]
-  article
-    p,
-    h1, h2, h3, h4,
-    ol, ul
-      color white
-    a, b, strong
-      color #5db0d7
-    h2
-      .icon.icon-link
-        filter invert()
-    pre[class*=language-]
-      background-color #292a2d
-    p, blockquote, b, strong
-      code
-        background-color #292a2d
-        color white
-  .pagination
-    a
-      color white
+@media (prefers-color-scheme: light)
+  :root
+    --document-color rgba(0, 0, 0, .9)
+    --document-icon-link-filter-invert invert(0)
+    --document-code-color #f0506e
+    --document-code-background-color #f8f8f8
+    --document-code-block-background-color #292a2d
+    --document-strong-color #f0506e
+    --document-blockquote-color #666
+@media (prefers-color-scheme: dark)
+  :root
+    --document-color white
+    --document-icon-link-filter-invert invert(1)
+    --document-code-color white
+    --document-code-background-color #292a2d
+    --document-code-block-background-color #292a2d
+    --document-strong-color #5db0d7
+    --document-blockquote-color white
 </style>

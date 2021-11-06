@@ -1,18 +1,9 @@
 <template lang="pug">
-document(
-  :document="article"
-  :next="next"
-  :prev="prev"
-)
+  app-document(:document="article" :next="next" :prev="prev")
 </template>
 
 <script>
-import Document from '~/components/document'
-
 export default {
-  components: {
-    Document
-  },
   async asyncData ({ $content, params }) {
     const article = await $content('docs', params.slug).fetch()
 

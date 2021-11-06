@@ -1,39 +1,38 @@
 <template lang="pug">
-#container
-  top
-  sidebar
-  main
-    nuxt
-  bottom
+  #container
+    app-top
+    app-sidebar
+    main
+      nuxt
+    app-bottom
 </template>
 
-<script>
-import Top from '~/components/top'
-import Sidebar from '~/components/sidebar'
-import Bottom from '~/components/bottom'
-
-export default {
-  components: {
-    Top,
-    Sidebar,
-    Bottom
-  }
-}
-</script>
-
 <style lang="stylus">
+html
+  background-color var(--html-background-color)
 *:not(i), *:not(i)::before, *:not(i)::after
   margin 0px
   padding 0px
   font-family 'Noto Sans KR', sans-serif !important
 a
   text-decoration none
-  color rgba(0, 0, 0, .85)
+  color var(--html-anchor-color)
   transition-duration .2s
   &:hover
-    color #f0506e
+    color var(--html-anchor-hover-color)
 ul
   list-style none
+
+@media (prefers-color-scheme: light)
+  :root
+    --html-background-color white
+    --html-anchor-color rgba(0, 0, 0, .6)
+    --html-anchor-hover-color black
+@media (prefers-color-scheme: dark)
+  :root
+    --html-background-color #1e1f21
+    --html-anchor-color rgba(255, 255, 255, .85)
+    --html-anchor-hover-color white
 </style>
 
 <style lang="stylus">
@@ -51,14 +50,4 @@ main
     padding 25px
     padding-bottom 20px
     box-sizing border-box
-</style>
-
-<style lang="stylus">
-#TIDORY[data-theme="1"]
-  &, body
-    background-color #1e1f21
-  a
-    color rgba(255, 255, 255, .85)
-    &:hover
-      color white
 </style>

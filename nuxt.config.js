@@ -1,10 +1,12 @@
 export default {
+  ssr: false,
+
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'tidory.com',
+    titleTemplate: '티스토리 스킨 프레임워크, 티도리(TIDORY) ― %s',
     htmlAttrs: {
       lang: 'ko'
     },
@@ -30,7 +32,10 @@ export default {
       { rel: 'preconnect', href: '//fonts.gstatic.com' },
       { rel: 'preconnect', href: '//ka-f.fontawesome.com' },
       { rel: 'stylesheet', href: '//fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap' },
-      { rel: 'stylesheet', href: '//cdn.jsdelivr.net/gh/wan2land/d2coding/d2coding-ligature-full.css', media: 'print', onload: 'this.media="all"' }
+      { rel: 'stylesheet', href: '//cdn.jsdelivr.net/gh/wan2land/d2coding/d2coding-ligature-full.css' }
+    ],
+    script: [
+      { src: '//kit.fontawesome.com/65f7e05682.js', async: true }
     ]
   },
 

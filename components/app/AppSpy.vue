@@ -1,8 +1,8 @@
 <template lang="pug">
-aside#spy
-  ul
-    li(v-for="link of toc" :key="link.id" :class="{ 'h2': link.depth === 2, 'h3': link.depth === 3 }")
-      a(:href="`#${(link.id)}`") {{ link.text }}
+  aside#spy
+    ul
+      li(v-for="link of toc" :key="link.id" :class="{ 'h2': link.depth === 2, 'h3': link.depth === 3 }")
+        a(:href="`#${(link.id)}`") {{ link.text }}
 </template>
 
 <script>
@@ -30,7 +30,8 @@ $WIDTH = 180px
   ul
     position sticky
     top 35px
-    border-left 1px dashed rgba(0, 0, 0, .2)
+    border-left 1px dashed
+    border-left-color var(--spy-border-color)
     box-sizing border-box
     width $WIDTH
     li
@@ -45,11 +46,11 @@ $WIDTH = 180px
 @media screen and (max-width: 1200px)
   #spy
     display none !important
-</style>
 
-<style lang="stylus">
-#TIDORY[data-theme="1"]
-  #spy
-    ul
-      border-color rgba(255, 255, 255, .5)
+@media (prefers-color-scheme: light)
+  :root
+    --spy-border-color rgba(0, 0, 0, .2)
+@media (prefers-color-scheme: dark)
+  :root
+    --spy-border-color rgba(255, 255, 255, .5)
 </style>
