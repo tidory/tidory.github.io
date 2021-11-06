@@ -1,6 +1,6 @@
 # tidory.com
 
-[티도리 프레임워크](http://www.tidory.com) 공식 문서입니다.
+[티도리 프레임워크](http://www.tidory.com) 문서입니다.
 
 ## 저작권
 

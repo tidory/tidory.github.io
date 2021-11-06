@@ -97,8 +97,6 @@ ReactDOM.render(<App />, rootElement)
 
 ### 스벨트(Svelte)
 
-티도리 8.0.0 이상부터 **Svelte** 를 지원합니다.
-
 ```bash
 npm install svelte@3
 ```

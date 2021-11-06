@@ -37,9 +37,9 @@ npm start # tidory start
 npm run preview # tidory preview
 ```
 
-> 프리뷰 서버를 실행하려면 [환경설정](docs/configuration)에서 `ts_session, url, mode` 가 설정되어 있어야 합니다.
+> 프리뷰 서버를 실행하려면 [환경설정](/docs/configuration)에서 `ts_session, url, mode` 가 설정되어 있어야 합니다.
 
 
 ## 빌드 및 배포
 
-**빌드 및 배포**는 기본적으로 `tidory production` 명령과 `tidory store` 가 있습니다. 빌드와 배포를 하는 여러 방법이 있지만, 시작하기 단계에서는 자세한 설명없이 넘어가도록 하겠습니다. 자세한 내용은 [빌드 및 배포](docs/deployment) 를 참고해 주시기 바랍니다.
+**빌드 및 배포**는 기본적으로 `tidory production` 명령과 `tidory store` 가 있습니다. 빌드와 배포를 하는 여러 방법이 있지만, 시작하기 단계에서는 자세한 설명없이 넘어가도록 하겠습니다. 자세한 내용은 [빌드 및 배포](/docs/deployment) 를 참고해 주시기 바랍니다.
