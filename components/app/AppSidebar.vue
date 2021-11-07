@@ -66,7 +66,7 @@ export default {
   box-sizing border-box
   z-index 9999
   overflow hidden
-  background-color var(--sidebar-background-color)
+  background-color var(--color-sidebar-background)
   > .__
     overflow-x hidden
     overflow-y scroll
@@ -79,7 +79,7 @@ export default {
     left 50px
     top 35px
     font-size 0 !important
-    filter var(--sidebar-logo-filter-invert)
+    filter var(--color-filter-invert)
   nav
     position absolute
     top 110px
@@ -89,39 +89,22 @@ export default {
     padding-bottom 45px
     .category
       font-weight 600
-      color var(--sidebar-category-color)
+      color var(--color)
       padding 25px 0
     .item
       padding 12px 0
       font-weight 400
-      font-size .96em
+      font-size .96rem
       a
-        color var(--sidebar-anchor-color)
+        color var(--color-blur)
         transition-duration unset
         text-decoration none
         &.nuxt-link-active
-          color var(--sidebar-nuxt-link-active-color)
+          color var(--color)
           font-weight 500
         &:hover
-          color var(--sidebar-nuxt-link-active-hover-color)
+          color var(--color)
 @media all and (max-width: 1200px)
   #sidebar
     display none
-
-@media (prefers-color-scheme: light)
-  :root
-    --sidebar-background-color white
-    --sidebar-category-color rgba(0, 0, 0, .9)
-    --sidebar-anchor-color rgba(0, 0, 0, .3)
-    --sidebar-nuxt-link-active-color rgba(0, 0, 0, .85)
-    --sidebar-nuxt-link-active-hover-color rgba(0, 0, 0, .85)
-    --sidebar-logo-filter-invert invert(0)
-@media (prefers-color-scheme: dark)
-  :root
-    --sidebar-background-color #292a2d
-    --sidebar-category-color white
-    --sidebar-anchor-color rgba(255, 255, 255, 0.85)
-    --sidebar-nuxt-link-active-color white
-    --sidebar-nuxt-link-active-hover-color white
-    --sidebar-logo-filter-invert invert(1)
 </style>

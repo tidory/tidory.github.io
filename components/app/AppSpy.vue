@@ -8,9 +8,7 @@
 <script>
 export default {
   props: {
-    toc: {
-      type: Array, required: true
-    }
+    toc: { type: Array, required: true }
   }
 }
 </script>
@@ -31,7 +29,7 @@ $WIDTH = 180px
     position sticky
     top 35px
     border-left 1px dashed
-    border-left-color var(--spy-border-color)
+    border-left-color var(--color-border)
     box-sizing border-box
     width $WIDTH
     li
@@ -46,11 +44,4 @@ $WIDTH = 180px
 @media screen and (max-width: 1200px)
   #spy
     display none !important
-
-@media (prefers-color-scheme: light)
-  :root
-    --spy-border-color rgba(0, 0, 0, .2)
-@media (prefers-color-scheme: dark)
-  :root
-    --spy-border-color rgba(255, 255, 255, .5)
 </style>

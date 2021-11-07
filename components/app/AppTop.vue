@@ -30,9 +30,9 @@ export default {
 <style lang="stylus">
 #top
   i, a
-    color var(--top-icon-color)
+    color var(--color-blur)
     &:hover
-      color var(--top-icon-hover-color)
+      color var(--color)
   .notice
     position absolute
     top 35px
@@ -58,13 +58,4 @@ export default {
 @media all and (max-width: 1200px)
   #top
     display none
-
-@media (prefers-color-scheme: light)
-  :root
-    --top-icon-color rgba(0, 0, 0, .5)
-    --top-icon-hover-color rgba(0, 0, 0, .9)
-@media (prefers-color-scheme: dark)
-  :root
-    --top-icon-color rgba(255, 255, 255, .85)
-    --top-icon-hover-color white
 </style>

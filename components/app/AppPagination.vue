@@ -13,14 +13,8 @@
 <script>
 export default {
   props: {
-    prev: {
-      type: Object,
-      default: () => null
-    },
-    next: {
-      type: Object,
-      default: () => null
-    }
+    prev: { type: Object, default: () => null },
+    next: { type: Object, default: () => null }
   }
 }
 </script>
@@ -31,7 +25,7 @@ export default {
   overflow hidden
   a
     text-decoration none !important
-    color var(--pagination-anchor-color)
+    color var(--color)
   .prev
     float left
     i
@@ -40,11 +34,4 @@ export default {
     float right
     i
       margin-left 8px
-
-@media (prefers-color-scheme: light)
-  :root
-    --pagination-anchor-color rgba(0, 0, 0, .85)
-@media (prefers-color-scheme: dark)
-  :root
-    --pagination-anchor-color white
 </style>
