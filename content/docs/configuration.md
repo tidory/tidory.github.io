@@ -12,15 +12,8 @@ title: 환경설정
 
 ```js
 module.exports = {
-  /**
-   * Tistory session cookie value
-   */
-  ts_session: null,
-
-  /**
-   * Tistory blog URL
-   */
-  url: null,
+  ts_session: '', // Tistory session cookie value
+  url: '', // Tistory blog URL
 
   /**
    * Preview
@@ -78,6 +71,21 @@ module.exports = {
     ],
 
     /**
+     * Skin Settings
+     */ 
+    skinSettings: {
+      entriesOnPage: "5",
+      entriesOnList: "5",
+      entriesOnPage: "5",
+      expandComment: "0",
+      liststyle: "list",
+      showListLock: "0",
+      showListOnCategory: "1",
+      showListOnHome: "1",
+      tagpageAlign: "1"
+    },
+
+    /**
      * Variables
      */
     variableSettings: {
@@ -107,6 +115,8 @@ module.exports = {
 
   /**
    * Webpack configuration extends
+   * 
+   * @param {object} webpackConfig
    */
   extends (webpackConfig) {
     webpackConfig.module.rules = [
@@ -156,6 +166,10 @@ module.exports = {
   </item>
 </cover>
 ```
+
+### preview.skinSettings: object
+
+스킨 **기본 설정**을 변경하여 프리뷰할 수 있습니다.
 
 ### preview.variableSettings: object
 
