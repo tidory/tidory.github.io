@@ -52,7 +52,12 @@ npm install vue@3
 import { createApp } from 'vue'
 import App from './components/app.vue'
 
-app.component('app', App)
+const app = createApp({
+  components: {
+    App
+  }
+})
+
 app.mount('#app')
 ```
 
