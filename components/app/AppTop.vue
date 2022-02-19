@@ -3,11 +3,11 @@
     .notice
       i(class="fas fa-volume-up")
       a.text(
-        href="https://www.inflearn.com/course/%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/#"
+        href="https://pronist.tistory.com/5"
         target='_blank'
         rel='noreferrer'
       )
-        | 티도리 프레임워크 강좌가 제작되었습니다.
+        | hELLO 티스토리 스킨을 소개합니다.
     ul.menu
       li(v-for="icon in icons")
         a(:href="icon.href" target='_blank' rel='noreferrer')

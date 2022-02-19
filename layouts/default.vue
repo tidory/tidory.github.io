@@ -10,32 +10,18 @@
 <!-- Color Palette -->
 <style lang="stylus">
 :root
-  --color-background white // background
-  --color-sidebar-background var(--color-background) // sidebar
-  --color rgba(0, 0, 0, .9) // text, icon, :hover
-  --color-blur rgba(0, 0, 0, .4) // icon, a:nav
-  --color-highlight #f0506e // b, strong, a:article
-  --color-code-text var(--color-highlight) // code
-  --color-code-background #f8f8f8 // pre[class*=language-]
-  --color-blockquote-background var(--color-blur) // blockquote
-  --color-border rgba(0, 0, 0, .2) // border
-  --color-button-background var(--color-background) // button
-  --color-button-hover-background var(--color) // button:hover
-  --color-filter-invert invert(0) // logo, .icon-link
-@media (prefers-color-scheme: dark)
-  :root
-    --color-background #1e1f21
-    --color-sidebar-background #292a2d
-    --color rgba(255, 255, 255, .9)
-    --color-blur rgba(255, 255, 255, .6)
-    --color-highlight #5db0d7
-    --color-code-text var(--color)
-    --color-code-background #292a2d
-    --color-blockquote-background var(--color)
-    --color-border rgba(255, 255, 255, .5)
-    --color-button-background #353638
-    --color-button-hover-background #53575c
-    --color-filter-invert invert(1)
+  --color-background #1e1f21 // background
+  --color-sidebar-background #292a2d // sidebar
+  --color rgba(255, 255, 255, .9) // text, icon, :hover
+  --color-blur rgba(255, 255, 255, .6) // icon, a:nav
+  --color-highlight #5db0d7 // b, strong, a:article
+  --color-code-text var(--color) // code
+  --color-code-background #292a2d // pre[class*=language-]
+  --color-blockquote-background var(--color) // blockquote
+  --color-border rgba(255, 255, 255, .5) // border
+  --color-button-background #353638 // button
+  --color-button-hover-background #53575c
+  --color-filter-invert invert(1) // logo, .icon-link
 </style>
 
 <style lang="stylus">
