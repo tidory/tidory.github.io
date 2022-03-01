@@ -39,17 +39,15 @@ export default {
       {
         category: '티스토리 API',
         items: [
-          { title: 'Tistory for Javascript', path: 'https://github.com/tidory/tistory.js' },
-          { title: 'Tistory for PHP', path: 'https://github.com/tidory/tistory.php' },
-          { title: '(Unofficial) Tistory Skin ', path: 'https://github.com/tidory/tistory-skin' }
+          { title: 'Open API', path: 'https://github.com/search?q=user%3Apronist+tistory-api&type=public' },
+          { title: 'Tistory Skin API', path: 'https://github.com/tidory/tistory-skin' }
         ]
       },
       {
         category: '메타',
         items: [
-          { title: '티스토리 스킨 가이드', path: 'https://tistory.github.io/document-tistory-skin' },
           { title: '패치노트', path: 'https://github.com/tidory/cli/blob/master/CHANGELOG.md' },
-          { title: '티도리 프레임워크 강좌', path: 'https://www.inflearn.com/course/%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC/#' }
+          { title: '티스토리 스킨 가이드', path: 'https://tistory.github.io/document-tistory-skin' }
         ]
       }
     )
