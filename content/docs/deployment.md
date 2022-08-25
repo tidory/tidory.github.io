@@ -9,7 +9,6 @@ title: 빌드 및 배포
 **빌드**는 티도리 프로젝트를 티스토리 또는 유저에게 배포하기 위해 **배포 파일을 만드는 과정**입니다. 소스코드가 **skin.html, style.css** 로 분리되며 **images/app.js, images/script.js** 가 생성됩니다. 또한 **docs** 의 내부와 **images** 가 복사됩니다.
 
 ```bash
-# tidory production
 npm run production
 ```
 
@@ -24,7 +23,6 @@ npm run production
 빌드 결과를 티스토리 스킨 저장소에 저장합니다. 스킨의 **이름**은 **index.xml** 에 있는 `name` 값에 따라 자동적으로 주입됩니다.
 
 ```bash
-# tidory store
 npm run store
 ```
 
@@ -33,7 +31,6 @@ npm run store
 현재 환경설정에 `url` 에 지정된 블로그에 **skin.html, style.css, index.xml** 파일을 적용시키고 업로드 되어 있는 모든 파일을 삭제하고 **images** 폴더에 있는 파일을 다시 업로드합니다. 주로 유저에게 배포하기 전에 블로그에 미리 적용시켜보기 위해 사용합니다.
 
 ```bash
-# tidory deploy
 npm run deploy
 ```
 
