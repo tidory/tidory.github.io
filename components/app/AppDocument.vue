@@ -32,14 +32,14 @@ export default {
     }
 
     h2 {
-      @apply text-2xl;
+      @apply text-xl;
       .icon.icon-link {
-        @apply bg-[url('~/assets/svg/icon-hashtag.svg')] bg-[length:20px_20px] inline-block w-5 h-5 mr-1.5 invert
+        @apply bg-[url('~/assets/images/icon-hashtag.png')] bg-[length:20px_20px] inline-block w-5 h-5 mr-1.5
       }
     }
 
     h3 {
-      @apply text-lg
+      @apply text-lg my-6
     }
 
     h4 {

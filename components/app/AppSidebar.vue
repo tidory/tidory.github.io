@@ -1,9 +1,9 @@
 <template lang="pug">
   aside#sidebar(class="fixed w-64 h-full box-border z-10 overflow-hidden bg-gray-300 hidden xl:block")
     div(class="overflow-x-hidden overflow-y-scroll h-full w-80 absolute z-10")
-      nuxt-link.logo(to="/" class="absolute left-12 top-9 text-[0] invert")
+      nuxt-link.logo(to="/" class="absolute left-12 top-9 text-[0]")
         | 홈
-        img(src="/images/logo.png" alt="티스토리 로고" width="24" height="24")
+        img(src="~/assets/images/logo.png" alt="티스토리 로고" width="24" height="24")
       nav(class="absolute top-28 left-12 list-none box-border pb-12")
         ul(v-for="menuItem in menuItems")
           li.category(class="font-semibold text-gray-50 py-6")  {{ menuItem.category }}
