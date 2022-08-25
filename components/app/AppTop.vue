@@ -1,18 +1,18 @@
 <template lang="pug">
   #top
-    .notice
-      i(class="fas fa-volume-up")
+    .notice(class="absolute top-9 left-72 text-sm text-normal hidden xl:block")
+      i(class="fas fa-volume-up mr-2.5")
       a.text(
         href="https://pronist.tistory.com/5"
         target='_blank'
         rel='noreferrer'
       )
         | hELLO 티스토리 스킨을 소개합니다.
-    ul.menu
-      li(v-for="icon in icons")
+    ul.menu(class="overflow-hidden list-none absolute top-9 right-9")
+      li(v-for="icon in icons" class="mx-2.5 float-left text-[0] last:mr-0")
         a(:href="icon.href" target='_blank' rel='noreferrer')
           | {{ icon.title }}
-          i(:class="icon.class")
+          i(:class="icon.class" class="text-sm")
 </template>
 
 <script>
@@ -26,36 +26,3 @@ export default {
   }
 }
 </script>
-
-<style lang="stylus">
-#top
-  i, a
-    color var(--color-blur)
-    &:hover
-      color var(--color)
-  .notice
-    position absolute
-    top 35px
-    left 285px
-    font-size .85rem
-    font-weight 500
-    i
-      margin-right 10px
-  .menu
-    overflow hidden
-    list-style none
-    position absolute
-    top 35px
-    right 35px
-    li
-      margin 0 10px
-      float left
-      font-size 0
-      i
-        font-size .9rem
-      &:last-child
-        margin-right 0
-@media all and (max-width: 1200px)
-  #top
-    display none
-</style>

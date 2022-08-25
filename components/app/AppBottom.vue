@@ -1,13 +1,13 @@
 <template lang="pug">
-  #bottom
-    .left
-      a(v-for="community in communities" :href="community.path" target='_blank' rel='noreferrer')
+  #bottom(class='w-[calc(100%-260px)] px-5 box-border fixed right-0 bottom-5 text-base z-10 justify-between hidden xl:flex')
+    div
+      a(v-for="community in communities" :href="community.path" target='_blank' rel='noreferrer' class="duration-100 mr-2.5 text-[0] last:mr-0")
         | {{ community.title }}
         i(:class="community.class")
-    .right
-      a#toTop(href='#__nuxt')
+    div
+      a(href='#__nuxt' class="bg-gray-300 text-gray-50 rounded-full border-0 cursor-pointer duration-100 w-9 h-9 text-center text-[0] inline-block ml-3 hover:bg-gray-200")
         | 제일 위로
-        i(class='fa fa-chevron-up')
+        i(class='fa fa-chevron-up text-sm leading-9')
 </template>
 
 <script>
@@ -23,61 +23,16 @@ export default {
 }
 </script>
 
-<style lang="stylus">
-$BUTTON_SIZE = 35px
+<style>
+#bottom {
+  i {
+    &.fa-github {
+      @apply text-xl
+    }
 
-#bottom
-  width 'calc(100% - %s)' % 260px
-  padding 0 20px
-  box-sizing border-box
-  position fixed
-  right 0
-  bottom 20px
-  font-size .92rem
-  z-index 9996
-  display flex
-  justify-content space-between
-  .right
-    #toTop
-      background-color var(--color-button-background)
-      color var(--color)
-      box-shadow 0 0 0 1px rgba(0, 0, 0, .1), 0 2px 5px rgba(0, 0, 0, .1)
-      border-radius 25px
-      border none
-      cursor pointer
-      transition-duration .1s
-      width $BUTTON_SIZE
-      height $BUTTON_SIZE
-      line-height $BUTTON_SIZE
-      text-align center
-      border-radius 50%
-      font-size 0
-      display inline-block
-      margin-left 12px
-      i
-        font-size .9rem
-        line-height $BUTTON_SIZE
-      &:hover
-        background-color var(--color-button-hover-background)
-        color rgba(255, 255, 255, .9)
-  .left
-    a
-      transition-duration .1s
-      margin-right 10px
-      color var(--color-blur)
-      font-size 0
-      &:hover
-        color var(--color)
-      &:last-child
-        margin-right 0
-      i
-        &.fa-github
-          font-size 1.25rem
-        &.fa-npm
-          font-size 1.6rem
-          position relative
-          top:2px
-@media screen and (max-width: 1200px)
-  #bottom
-    display none
+    &.fa-npm {
+      @apply text-2xl relative top-0.5
+    }
+  }
+}
 </style>

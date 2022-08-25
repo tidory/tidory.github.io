@@ -1,13 +1,13 @@
 <template lang="pug">
-  aside#sidebar
-    .__
-      nuxt-link.logo(to="/")
+  aside#sidebar(class="fixed w-64 h-full box-border z-10 overflow-hidden bg-gray-300 hidden xl:block")
+    div(class="overflow-x-hidden overflow-y-scroll h-full w-80 absolute z-10")
+      nuxt-link.logo(to="/" class="absolute left-12 top-9 text-[0] invert")
         | 홈
         img(src="/images/logo.png" alt="티스토리 로고" width="24" height="24")
-      nav
+      nav(class="absolute top-28 left-12 list-none box-border pb-12")
         ul(v-for="menuItem in menuItems")
-          li.category {{ menuItem.category }}
-          li.item(v-for="item in menuItem.items")
+          li.category(class="font-semibold text-gray-50 py-6")  {{ menuItem.category }}
+          li.item(v-for="item in menuItem.items" class="py-3 font-normal text-base")
             .title
               nuxt-link(:to="item.path" v-if="item.path.startsWith('/')")
                 | {{ item.title }}
@@ -55,54 +55,10 @@ export default {
 }
 </script>
 
-<style lang="stylus">
-#sidebar
-  position fixed
-  width 260px
-  height 100%
-  border-right 1px solid rgba(0, 0, 0, .1)
-  box-sizing border-box
-  z-index 9999
-  overflow hidden
-  background-color var(--color-sidebar-background)
-  > .__
-    overflow-x hidden
-    overflow-y scroll
-    height 100%
-    width 300px
-    position absolute
-    z-index 9998
-  .logo
-    position absolute
-    left 50px
-    top 35px
-    font-size 0 !important
-    filter var(--color-filter-invert)
-  nav
-    position absolute
-    top 110px
-    left 50px
-    box-sizing border-box
-    list-style none
-    padding-bottom 45px
-    .category
-      font-weight 600
-      color var(--color)
-      padding 25px 0
-    .item
-      padding 12px 0
-      font-weight 400
-      font-size .96rem
-      a
-        color var(--color-blur)
-        transition-duration unset
-        text-decoration none
-        &.nuxt-link-active
-          color var(--color)
-          font-weight 500
-        &:hover
-          color var(--color)
-@media all and (max-width: 1200px)
-  #sidebar
-    display none
+<style>
+#sidebar {
+  .nuxt-link-active {
+    @apply text-gray-50 font-medium
+  }
+}
 </style>

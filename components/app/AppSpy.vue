@@ -1,8 +1,8 @@
 <template lang="pug">
-  aside#spy
-    ul
-      li(v-for="link of toc" :key="link.id" :class="{ 'h2': link.depth === 2, 'h3': link.depth === 3 }")
-        a(:href="`#${(link.id)}`") {{ link.text }}
+  aside#spy(class="absolute top-0 list-none text-left z-0 ml-[calc(620px+110px)] h-full hidden xl:block")
+    ul(class="sticky top-9 box-border w-44")
+      li(v-for="link of toc" :key="link.id" :class="{ 'pl-5': link.depth === 2, 'pl-9': link.depth === 3 }" class="pl-5 my-2 box-border max-w-44")
+        a(:href="`#${(link.id)}`" class="text-sm") {{ link.text }}
 </template>
 
 <script>
@@ -12,36 +12,3 @@ export default {
   }
 }
 </script>
-
-<style lang="stylus">
-$WIDTH = 180px
-
-#spy
-  position absolute
-  top 0
-  list-style none
-  text-align left
-  font-weight 400
-  z-index 0
-  margin-left calc(620px + 110px) !important
-  height 100%
-  ul
-    position sticky
-    top 35px
-    border-left 1px dashed
-    border-left-color var(--color-border)
-    box-sizing border-box
-    width $WIDTH
-    li
-      padding-left 20px
-      margin 8px 0
-      box-sizing border-box
-      max-width $WIDTH
-      a
-        font-size .82rem
-      &.h3
-        padding-left 35px
-@media screen and (max-width: 1200px)
-  #spy
-    display none !important
-</style>

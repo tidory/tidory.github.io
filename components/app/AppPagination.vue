@@ -1,13 +1,13 @@
 <template lang="pug">
-  #pagination
-    .prev(v-if="prev")
+  #pagination(class='mt-12 overflow-hidden text-base')
+    div(v-if="prev" class="float-left")
       nuxt-link(:to="{ params: { slug: prev.slug } }")
-        i.fas.fa-angle-left
+        i.fas.fa-angle-left(class='mr-2')
         | {{ prev.title }}
-    .next(v-if="next")
+    div(v-if="next" class="float-right")
       nuxt-link(:to="{ params: { slug: next.slug } }")
         | {{ next.title }}
-        i.fas.fa-angle-right
+        i.fas.fa-angle-right(class='ml-2')
 </template>
 
 <script>
@@ -18,20 +18,3 @@ export default {
   }
 }
 </script>
-
-<style lang="stylus">
-#pagination
-  margin-top 50px
-  overflow hidden
-  a
-    text-decoration none !important
-    color var(--color)
-  .prev
-    float left
-    i
-      margin-right 8px
-  .next
-    float right
-    i
-      margin-left 8px
-</style>
