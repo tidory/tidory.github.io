@@ -5,7 +5,7 @@
         | 홈
         img(src="~/assets/images/logo.png" alt="티스토리 로고" width="24" height="24")
       nav(class="absolute top-28 left-12 list-none box-border pb-12")
-        ul(v-for="menuItem in menuItems")
+        ul(v-for="menuItem in menu")
           li.category(class="font-semibold text-gray-50 py-6")  {{ menuItem.category }}
           li.item(v-for="item in menuItem.items" class="py-3 font-normal text-base")
             .title
@@ -19,38 +19,57 @@
 export default {
   data () {
     return {
-      menuItems: []
+      docs: [],
+      docsCategories: ['튜토리얼', '스케일링 업'],
+      links: [
+        {
+          category: '티스토리 API',
+          items: [
+            { title: 'Open API', path: 'https://github.com/search?q=user%3Atistory-projects+tistory-api&type=public' },
+            { title: 'Tistory Skin API', path: 'https://github.com/tidory/tistory-skin' }
+          ]
+        },
+        {
+          category: '메타',
+          items: [
+            { title: '패치노트', path: 'https://github.com/tidory/cli/blob/master/CHANGELOG.md' },
+            { title: '티스토리 스킨 가이드', path: 'https://tistory.github.io/document-tistory-skin' }
+          ]
+        }
+      ]
     }
   },
   async fetch () {
-    const docs = await this.$content('docs')
+    this.docs = await this.$content('docs')
       .only(['category', 'title', 'path'])
       .sortBy('index', 'asc')
       .fetch()
+  },
+  computed: {
+    menu () {
+      return [
+        ...this.makeDocsMenu(this.docs, this.docsCategories),
+        ...this.links
+      ]
+    }
+  },
+  methods: {
+    /**
+     * Add categories in Menu
+     *
+     * @param {object[]} docs
+     * @param {string[]} categories
+     */
+    makeDocsMenu (docs, categories) {
+      const docsMenu = []
 
-    const categories = ['튜토리얼', '스케일링 업']
+      categories.forEach((category) => {
+        const items = docs.filter(doc => doc.category === category)
+        docsMenu.push({ category, items })
+      })
 
-    categories.forEach((category) => {
-      const items = docs.filter(doc => doc.category === category)
-      this.menuItems.push({ category, items })
-    })
-
-    this.menuItems.push(
-      {
-        category: '티스토리 API',
-        items: [
-          { title: 'Open API', path: 'https://github.com/search?q=user%3Atistory-projects+tistory-api&type=public' },
-          { title: 'Tistory Skin API', path: 'https://github.com/tidory/tistory-skin' }
-        ]
-      },
-      {
-        category: '메타',
-        items: [
-          { title: '패치노트', path: 'https://github.com/tidory/cli/blob/master/CHANGELOG.md' },
-          { title: '티스토리 스킨 가이드', path: 'https://tistory.github.io/document-tistory-skin' }
-        ]
-      }
-    )
+      return docsMenu
+    }
   }
 }
 </script>

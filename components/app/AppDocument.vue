@@ -34,7 +34,7 @@ export default {
     h2 {
       @apply text-xl;
       .icon.icon-link {
-        @apply bg-[url('~/assets/images/icon-hashtag.png')] bg-[length:20px_20px] inline-block w-5 h-5 mr-1.5 relative top-[3px]
+        @apply bg-[url('~/assets/images/icon-hashtag.png')] bg-[length:20px_20px] inline-block w-5 h-5 mr-1.5 relative top-0.5
       }
     }
 
