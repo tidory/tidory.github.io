@@ -29,6 +29,6 @@
     "pug": "^3.0.2",
     "pug-plain-loader": "^1.1.0",
     "tailwindcss": "^3.1.8",
-    "webpack": "^4.46.0"
+    "webpack": "^5.74.0"
   }
 }
