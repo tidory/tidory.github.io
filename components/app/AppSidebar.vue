@@ -48,27 +48,22 @@ export default {
   computed: {
     menu () {
       return [
-        ...this.makeDocsMenu(this.docs, this.docsCategories),
+        ...this.makeDocsMenu(),
         ...this.links
       ]
     }
   },
   methods: {
     /**
-     * Add categories in Menu
-     *
-     * @param {object[]} docs
-     * @param {string[]} categories
+     * @returns {array<{category: string, items: object[]}>}
      */
-    makeDocsMenu (docs, categories) {
-      const docsMenu = []
+    makeDocsMenu () {
+      return this.docsCategories.reduce((docs, category) => {
+        const items = this.docs.filter(doc => doc.category === category)
+        docs.push({ category, items })
 
-      categories.forEach((category) => {
-        const items = docs.filter(doc => doc.category === category)
-        docsMenu.push({ category, items })
-      })
-
-      return docsMenu
+        return docs
+      }, [])
     }
   }
 }
