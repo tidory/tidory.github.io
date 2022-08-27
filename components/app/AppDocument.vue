@@ -43,7 +43,7 @@ export default {
     }
 
     h4 {
-      @apply text-base
+      @apply text-base font-semibold
     }
 
     p {

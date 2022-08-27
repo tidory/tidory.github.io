@@ -21,14 +21,12 @@ title: 티스토리 예제
 
 현재 **views/Header.pug** 파일이 포함되어 있습니다. 해당 템플릿은 **부모 템플릿**이 됩니다. `style` 태그는 빌드하면 **style.css** 파일로, `script` 태그를 사용하면 **images/script.js** 파일로 분리됩니다.
 
-만약 **스킨 옵션**을 구현해야 할 때처럼, 분리가 되면 안 되는 상황이라면 어떨까요? `style, script` 태그에 `scoped` 속성을 부여하면 해당 태그는 **style.css, images/script.js** 로 분리되지 않습니다. 그 말은 즉, **skin.html** 에 남는다는 이야기가 됩니다.
-
 ```pug
 extends app
 
 block TIDORY
   s_t3
-    div#__tidory
+    #__tidory
       include views/Header
 
   style.
@@ -41,20 +39,35 @@ block TIDORY
     }
 ```
 
-`8.2` 버전부터는 [PostCSS](https://postcss.org), [Tailwind CSS](https://tailwindcss.com/) 가 기본 템플릿에 포함됩니다. 따라서 스타일 태그로 따로 분리하지 않아도 사용할 수 있습니다.
+`8.2.1` 버전부터는 [PostCSS](https://postcss.org), [TailwindCSS](https://tailwindcss.com/) 가 기본 템플릿에 포함됩니다. 따라서 스타일 태그로 따로 분리하지 않아도 사용할 수 있습니다. 스타일이 대부분의 코드를 차지하는 티스토리 스킨의 특성상 TailwindCSS 와 함께 사용하면 생산성에서 큰 이점을 볼 수 있습니다.
 
 ```pug
-extends app
+#__tidory(class="h-screen flex justify-center text-center items-center")
+```
 
-block TIDORY
-  s_t3
-    #__tidory(class="h-screen flex justify-center text-center items-center")
-      include views/Header
+`style` 에서 TailwindCSS 의 `@apply` 를 사용할 수도 있습니다.
+
+```pug
+style.
+  #__tidory {
+    @apply h-screen flex justify-center text-center items-center
+  }
+```
+
+#### scoped
+
+만약 **스킨 옵션**을 구현해야 할 때처럼, 분리가 되면 안 되는 상황이라면 어떨까요? `style`, `script` 태그에 `scoped` 속성을 부여하면 해당 태그는 **style.css**, **images/script.js** 로 분리되지 않습니다. 그 말은 즉, **skin.html** 에 남는다는 이야기가 됩니다.
+
+```pug
+script(scoped).
+  window.skinOptions = {
+    example: '[##_var_example_##]'
+  }
 ```
 
 ### views/Header.pug
 
-이번에는 **Header/Title.pug** 과 **Header/Navigation.pug** 를 포함하고 있습니다. 각각 **블로그 제목** 과 **블로그 메뉴**입니다. 이 둘은 **자식 템플릿**입니다.
+이번에는 **Header/Title.pug**, **Header/Navigation.pug** 를 포함하고 있습니다. 각각 **블로그 제목** 과 **블로그 메뉴**입니다. 이 둘은 **자식 템플릿**입니다.
 
 ```pug
 header
