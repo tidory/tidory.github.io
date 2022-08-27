@@ -41,6 +41,17 @@ block TIDORY
     }
 ```
 
+`8.2` 버전부터는 [PostCSS](https://postcss.org), [Tailwind CSS](https://tailwindcss.com/) 가 기본 템플릿에 포함됩니다. 따라서 스타일 태그로 따로 분리하지 않아도 사용할 수 있습니다.
+
+```pug
+extends app
+
+block TIDORY
+  s_t3
+    #__tidory(class="h-screen flex justify-center text-center items-center")
+      include views/Header
+```
+
 ### views/Header.pug
 
 이번에는 **Header/Title.pug** 과 **Header/Navigation.pug** 를 포함하고 있습니다. 각각 **블로그 제목** 과 **블로그 메뉴**입니다. 이 둘은 **자식 템플릿**입니다.

@@ -141,10 +141,8 @@ const app = new App({
 
 ```vue
 <template>
-  //- PUBLIC_PATH/favicon.png
-  <img src="./images/favicon.png">
-  //- PUBLIC_PATH/__WEBPACK_CHANGED__.png
-  <img v-bind:src='require("../images/favicon.png")'>
+  <img src="../images/logo.png">
+  <img v-bind:src='require("../images/logo.png").default'>
 </template>
 ```
 
