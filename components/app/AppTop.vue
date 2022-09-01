@@ -1,6 +1,6 @@
 <template lang="pug">
-  #top
-    .notice(class="absolute top-9 left-72 text-sm text-normal hidden xl:block")
+  #top(class="hidden xl:block")
+    .notice(class="absolute top-9 left-72 text-sm text-normal")
       i(class="fas fa-volume-up mr-2.5")
       a.text(
         href="https://pronist.tistory.com/5"
