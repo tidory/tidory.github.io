@@ -1,78 +1,28 @@
 <template lang="pug">
-  aside#sidebar(class="fixed w-64 h-full box-border z-10 overflow-hidden bg-gray-300 hidden xl:block")
-    div(class="overflow-x-hidden overflow-y-scroll h-full w-80 absolute z-10")
-      nuxt-link.logo(to="/" class="absolute left-12 top-9 text-[0]")
+  aside(class="sticky top-0 z-10")
+    div(class="box-border w-full h-12 bg-black/30 backdrop-blur-sm flex justify-between items-center text-gray-50 px-4 xl:hidden")
+      div(class="cursor-pointer" v-on:click="show=!show")
+        i(class="fas fa-bars")
+      div
+        | {{ title }}
+      nuxt-link.logo(to="/" class="text-[0]")
         | 홈
-        img(src="~/assets/images/logo.png" alt="티스토리 로고" width="24" height="24")
-      nav(class="absolute top-28 left-12 list-none box-border pb-12")
-        ul(v-for="menuItem in menu")
-          li.category(class="font-semibold text-gray-50 py-6")  {{ menuItem.category }}
-          li.item(v-for="item in menuItem.items" class="py-3 font-normal text-base")
-            .title
-              nuxt-link(:to="item.path" v-if="item.path.startsWith('/')")
-                | {{ item.title }}
-              a(:href="item.path" target='_blank' rel='noreferrer' v-else)
-                | {{ item.title }}
+        img(src="~/assets/images/logo.png" alt="티스토리 로고" width="20" height="20")
+    app-overlay(key="overlay" v-if="show")
+    app-nav(key="nav" :show="show")
 </template>
 
 <script>
 export default {
   data () {
     return {
-      docs: [],
-      docsCategories: ['튜토리얼', '스케일링 업'],
-      links: [
-        {
-          category: '티스토리 API',
-          items: [
-            { title: 'Open API', path: 'https://github.com/search?q=user%3Atistory-projects+tistory-api&type=public' },
-            { title: 'Tistory Skin API', path: 'https://github.com/tidory/tistory-skin' }
-          ]
-        },
-        {
-          category: '메타',
-          items: [
-            { title: '패치노트', path: 'https://github.com/tidory/cli/blob/master/CHANGELOG.md' },
-            { title: '티스토리 스킨 가이드', path: 'https://tistory.github.io/document-tistory-skin' }
-          ]
-        }
-      ]
+      show: false,
+      title: ''
     }
   },
-  async fetch () {
-    this.docs = await this.$content('docs')
-      .only(['category', 'title', 'path'])
-      .sortBy('index', 'asc')
-      .fetch()
-  },
-  computed: {
-    menu () {
-      return [
-        ...this.makeDocsMenu(),
-        ...this.links
-      ]
-    }
-  },
-  methods: {
-    /**
-     * @returns {array<{category: string, items: object[]}>}
-     */
-    makeDocsMenu () {
-      return this.docsCategories.reduce((docs, category) => {
-        const items = this.docs.filter(doc => doc.category === category)
-        docs.push({ category, items })
-
-        return docs
-      }, [])
-    }
+  created () {
+    this.$nuxt.$on('show', () => { this.show = false })
+    this.$nuxt.$on('load', (title) => { this.title = title })
   }
 }
 </script>
-
-<style>
-#sidebar {
-  .nuxt-link-active {
-    @apply text-gray-50 font-medium
-  }
-}
-</style>
