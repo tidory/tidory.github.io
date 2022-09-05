@@ -76,10 +76,10 @@ export default {
 <style>
 #nav {
   .item > a {
-    @apply font-normal text-base block w-[90%] py-2.5 xl:w-full xl:py-3;
+    @apply font-normal py-2.5 inline-block xl:py-3;
 
     &.nuxt-link-active {
-      @apply text-gray-50 font-medium block px-4 bg-gray-400 rounded-md
+      @apply text-gray-50 font-medium
     }
   }
 }

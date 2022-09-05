@@ -22,7 +22,7 @@ export default {
   },
   created () {
     this.$nuxt.$on('exit', () => { this.show = false })
-    this.$nuxt.$on('load', (title) => { this.title = title })
+    this.$nuxt.$on('load', (doc) => { this.title = doc.category + ' ― ' + doc.title })
   }
 }
 </script>

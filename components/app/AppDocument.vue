@@ -20,13 +20,8 @@ export default {
       title: this.document.title
     }
   },
-  computed: {
-    title () {
-      return this.document.category + ' ― ' + this.document.title
-    }
-  },
   created () {
-    this.$nuxt.$emit('load', this.title)
+    this.$nuxt.$emit('load', this.document)
   }
 }
 </script>
