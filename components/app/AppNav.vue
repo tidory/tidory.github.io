@@ -4,8 +4,8 @@
       nuxt-link.logo(to="/" class="text-[0] hidden xl:block xl:pl-8 xl:pt-10 xl:pb-16")
         | 홈
         img(src="~/assets/images/logo.png" alt="티스토리 로고" width="24" height="24")
-      nav(class="list-none box-border w-full xl:w-56 xl:pl-8 pb-5")
-        ul(v-for="menuItem in menu" class="py-3 px-10 first:pt-8 xl:px-0 xl:py-4 xl:first:pt-0")
+      nav(class="list-none box-border w-full xl:w-56 xl:pl-8 xl:pb-8")
+        ul(v-for="menuItem in menu" class="py-3 px-10 first:pt-8 last:pb-0 xl:px-0 xl:py-4 xl:first:pt-0")
           li.category(class="font-semibold text-gray-50")
             | {{ menuItem.category }}
             ul(class="grid grid-cols-2 py-4 xl:block xl:py-0")
