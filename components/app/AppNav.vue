@@ -1,6 +1,6 @@
 <template lang="pug">
-  #nav(:class="[show ? 'block' : 'hidden']" class="fixed box-border z-30 overflow-hidden bg-gray-300 w-full bottom-0 rounded-t-3xl xl:rounded-none xl:top-0 xl:w-64 xl:h-full xl:block")
-    div(class="overflow-hidden w-full xl:overflow-y-scroll xl:h-full xl:w-80 xl:absolute")
+  #nav(:class="[show ? 'block' : 'hidden']" class="fixed box-border z-30 overflow-hidden bg-gray-300 w-full h-[90%] bottom-0 rounded-t-3xl xl:rounded-none xl:top-0 xl:w-64 xl:h-full xl:block")
+    div(class="overflow-hidden overflow-y-auto w-full h-[90%] xl:overflow-y-scroll xl:h-full xl:w-80 xl:absolute")
       nuxt-link.logo(to="/" class="text-[0] hidden xl:block xl:pl-8 xl:pt-10 xl:pb-16")
         | 홈
         img(src="~/assets/images/logo.png" alt="티스토리 로고" width="24" height="24")
