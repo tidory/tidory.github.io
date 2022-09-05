@@ -1,6 +1,6 @@
 <template lang="pug">
   aside(class="sticky top-0 z-10")
-    div(class="box-border w-full h-12 bg-black/30 backdrop-blur-sm flex justify-between items-center text-gray-50 px-4 xl:hidden")
+    div(class="box-border w-full h-12 bg-black/50 flex justify-between items-center text-gray-50 px-4 xl:hidden")
       div(class="cursor-pointer" v-on:click="show=!show")
         i(class="fas fa-bars")
       div
@@ -21,7 +21,7 @@ export default {
     }
   },
   created () {
-    this.$nuxt.$on('show', () => { this.show = false })
+    this.$nuxt.$on('exit', () => { this.show = false })
     this.$nuxt.$on('load', (title) => { this.title = title })
   }
 }
