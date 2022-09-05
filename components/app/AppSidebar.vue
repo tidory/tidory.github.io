@@ -1,6 +1,6 @@
 <template lang="pug">
   aside(class="sticky top-0 z-10")
-    div(class="box-border w-full h-12 bg-black/50 flex justify-between items-center text-gray-50 px-4 xl:hidden")
+    div(class="box-border w-full h-12 bg-black/70 flex justify-between items-center text-gray-50 px-4 xl:hidden")
       div(class="cursor-pointer" v-on:click="show=!show")
         i(class="fas fa-bars")
       div
