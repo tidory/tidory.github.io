@@ -7,7 +7,7 @@
         | {{ title }}
       nuxt-link.logo(to="/" class="text-[0]")
         | 홈
-        img(src="~/assets/images/logo.png" alt="티스토리 로고" width="20" height="20")
+        img(src="~/assets/images/logo.png" alt="티스토리 로고" width="16" height="16")
     app-overlay(key="overlay" v-if="show")
     app-nav(key="nav" :show="show")
 </template>
