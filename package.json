@@ -24,7 +24,7 @@
     "autoprefixer": "^10.4.8",
     "eslint": "^7.29.0",
     "eslint-plugin-nuxt": "^2.0.0",
-    "eslint-plugin-vue": "^7.12.1",
+    "eslint-plugin-vue": "^9.5.1",
     "postcss": "^8.4.16",
     "pug": "^3.0.2",
     "pug-plain-loader": "^1.1.0",
