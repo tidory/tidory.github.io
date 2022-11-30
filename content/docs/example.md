@@ -19,7 +19,7 @@ title: 티스토리 예제
 
 ### index.pug
 
-현재 **views/Header.pug** 파일이 포함되어 있습니다. 해당 템플릿은 **부모 템플릿**이 됩니다. `style` 태그는 빌드하면 **style.css** 파일로, `script` 태그를 사용하면 **images/script.js** 파일로 분리됩니다.
+현재 **views/Header.pug** 파일이 포함되어 있습니다. 해당 템플릿은 **부모 템플릿**이 됩니다. `style` 태그는 빌드하면 **style.css** 파일로, `script` 태그를 사용하면 **images/script.js** 파일로 분리됩니다. 이러한 일은 [tidory-webpack-plugin](https://github.com/tidory/tidory-webpack-plugin) 에서 처리합니다.
 
 ```pug
 extends app
@@ -39,7 +39,7 @@ block TIDORY
     }
 ```
 
-또한 CSS 작업시 유용하게 사용할 수 있는 [PostCSS](https://postcss.org), [TailwindCSS](https://tailwindcss.com/) 가 기본 템플릿에 포함되어 있습니다. 따라서 스타일 태그로 따로 분리하지 않아도 사용할 수 있습니다. 스타일이 대부분의 코드를 차지하는 티스토리 스킨의 특성상 TailwindCSS 와 함께 사용하면 생산성에서 큰 이점을 볼 수 있습니다. TailwindCSS 를 사용하기 위해서는 `@tailiwnd base`, `@tailiwnd components`, `@tailiwnd utilities` 를 포함해야 하는데, 기본 템플릿에서 asserts/app.css 를 살펴보면 다음과 같은 코드가 있습니다.
+또한 [PostCSS](https://postcss.org), [TailwindCSS](https://tailwindcss.com/) 가 기본 템플릿에 포함되어 있습니다. 따라서 스타일 태그로 따로 분리하지 않아도 사용할 수 있습니다. 스타일이 대부분의 코드를 차지하는 티스토리 스킨의 특성상 TailwindCSS 와 함께 사용하면 생산성에서 큰 이점을 볼 수 있습니다. TailwindCSS 를 사용하기 위해서는 `@tailiwnd base`, `@tailiwnd components`, `@tailiwnd utilities` 를 포함해야 하는데, 기본 템플릿에서 asserts/app.css 를 살펴보면 다음과 같은 코드가 있습니다.
 
 ```css
 @tailwind base;
