@@ -63,18 +63,16 @@ TailwindCSS 를 사용하기 위해서는 `@tailiwnd base`, `@tailiwnd component
 @tailwind utilities;
 ```
 
-app.css 는 index.pug 에서 `postcss` 필터를 사용하고 있습니다. [postcss-pug-filter](https://github.com/tidory/postcss-pug-filter) 는 티도리 프레임워크에 내장되어 있으며 다음과 같이 사용되어 있습니다.
+app.css 는 index.pug 에서 `postcss` 필터를 사용하고 있습니다. [postcss-pug-filter](https://github.com/tidory/postcss-pug-filter) 는 티도리 프레임워크에 내장되어 있으며 다음과 같이 사용되어 있습니다. PostCSS, TailwindCSS 는 프레임워크에서 사용이 강제되지 않습니다. 사용하고 싶지 않다면 `postcss` 필터를 사용하지 않으면 그만입니다.
 
 ```pug
 style
   include:postcss @/app.css
 ```
 
-> PostCSS, TailwindCSS 는 프레임워크에서 사용이 강제되지 않습니다. 사용하고 싶지 않다면 `postcss` 필터를 사용하지 않으면 그만입니다. 
-
 #### fixed
 
-만약 **스킨 옵션**을 구현해야 할 때처럼, 분리가 되면 안 되는 상황이라면 어떨까요? `style`, `script` 태그에 `fixed` 속성을 부여하면 해당 태그는 **style.css**, **images/script.js** 로 분리되지 않습니다. 그 말은 즉, **skin.html** 에 남는다는 이야기가 됩니다.
+만약 **스킨 옵션**을 구현해야 할 때처럼, 분리하면 안 되는 상황이라면 어떨까요? `style`, `script` 태그에 `fixed` 속성을 부여하면 해당 태그는 **style.css**, **images/script.js** 로 분리되지 않습니다. 그 말은 즉, **skin.html** 에 남는다는 이야기가 됩니다.
 
 ```pug
 script(fixed).
