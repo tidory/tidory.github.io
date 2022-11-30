@@ -41,6 +41,7 @@ block TIDORY
 
 `8.2.1` 버전부터는 [PostCSS](https://postcss.org), [TailwindCSS](https://tailwindcss.com/) 가 기본 템플릿에 포함됩니다. 따라서 스타일 태그로 따로 분리하지 않아도 사용할 수 있습니다. 스타일이 대부분의 코드를 차지하는 티스토리 스킨의 특성상 TailwindCSS 와 함께 사용하면 생산성에서 큰 이점을 볼 수 있습니다.
 
+
 ```pug
 #__tidory(class="h-screen flex justify-center text-center items-center")
 ```
@@ -54,12 +55,29 @@ style.
   }
 ```
 
-#### scoped
+TailwindCSS 를 사용하기 위해서는 `@tailiwnd base`, `@tailiwnd components`, `@tailiwnd utilities` 를 포함해야 하는데, 기본 템플릿에서 asserts/app.css 를 살펴보면 다음과 같은 코드가 있습니다.
 
-만약 **스킨 옵션**을 구현해야 할 때처럼, 분리가 되면 안 되는 상황이라면 어떨까요? `style`, `script` 태그에 `scoped` 속성을 부여하면 해당 태그는 **style.css**, **images/script.js** 로 분리되지 않습니다. 그 말은 즉, **skin.html** 에 남는다는 이야기가 됩니다.
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+app.css 는 index.pug 에서 `postcss` 필터를 사용하고 있습니다. [postcss-pug-filter](https://github.com/tidory/postcss-pug-filter) 는 티도리 프레임워크에 내장되어 있으며 다음과 같이 사용되어 있습니다.
 
 ```pug
-script(scoped).
+style
+  include:postcss @/app.css
+```
+
+> PostCSS, TailwindCSS 는 프레임워크에서 사용이 강제되지 않습니다. 사용하고 싶지 않다면 `postcss` 필터를 사용하지 않으면 그만입니다. 
+
+#### fixed
+
+만약 **스킨 옵션**을 구현해야 할 때처럼, 분리가 되면 안 되는 상황이라면 어떨까요? `style`, `script` 태그에 `fixed` 속성을 부여하면 해당 태그는 **style.css**, **images/script.js** 로 분리되지 않습니다. 그 말은 즉, **skin.html** 에 남는다는 이야기가 됩니다.
+
+```pug
+script(fixed).
   window.skinOptions = {
     example: '[##_var_example_##]'
   }
