@@ -1,5 +1,5 @@
 <template lang="pug">
-  #top(class="w-[calc(100%-260px)] px-5 box-border absolute right-0 top-7 justify-between hidden xl:flex")
+  #top(class="w-[calc(100%-230px)] px-5 box-border absolute right-0 top-7 justify-between hidden xl:flex")
     .notice(class="text-sm text-normal")
       i(class="fas fa-volume-up mr-2.5")
       a.text(

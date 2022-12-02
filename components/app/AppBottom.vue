@@ -1,5 +1,5 @@
 <template lang="pug">
-  #bottom(class='w-[calc(100%-260px)] px-5 box-border fixed right-0 bottom-5 text-base z-10 justify-between hidden xl:flex')
+  #bottom(class='w-[calc(100%-230px)] px-5 box-border fixed right-0 bottom-5 text-base z-10 justify-between hidden xl:flex')
     div
       a(v-for="community in communities" :href="community.path" target='_blank' rel='noreferrer' class="duration-100 mr-2.5 text-[0] last:mr-0")
         | {{ community.title }}
