@@ -17,48 +17,52 @@ export default {
     return {
       show: false,
       className: 'active',
+      on: {
+        headings: 'h2, h3',
+        nav: '#spy ul',
+        content: '#document > article',
+        links: 'li > a'
+      },
       offset: 128
     }
   },
   computed: {
+    links () {
+      return this.nav.querySelectorAll(this.on.links)
+    },
     headings () {
-      return this.content.querySelectorAll('h2, h3')
+      return this.content.querySelectorAll(this.on.headings)
     },
     nav () {
-      return document.querySelector('#spy ul')
+      return document.querySelector(this.on.nav)
     },
     content () {
-      return document.querySelector('#document > article')
+      return document.querySelector(this.on.content)
     }
   },
   created () {
     this.$nuxt.$on('toc', () => { this.show = false })
   },
   mounted () {
-    window.addEventListener('scroll', () => this.spy(this.headings))
+    window.addEventListener('scroll', this.spy)
   },
   methods: {
-    /**
-     * @param {HTMLCollection} $headings
-     */
-    spy ($headings) {
-      for (const $heading of $headings) {
+    spy () {
+      for (const $heading of this.headings) {
         if (this.in($heading)) {
           this.init()
           this.active($heading)
         }
       }
 
-      const $heading = $headings.item(0)
+      const $heading = this.headings.item(0)
 
       if (this.out($heading)) {
         this.init()
       }
     },
     init () {
-      const $links = this.nav.querySelectorAll('li > a')
-
-      for (const $link of $links) {
+      for (const $link of this.links) {
         $link.classList.remove(this.className)
       }
     },
