@@ -47,7 +47,7 @@ block TIDORY
 @tailwind utilities;
 ```
 
-app.css 는 index.pug 에서 `postcss` 필터를 사용하고 있습니다. [postcss-pug-filter](https://github.com/tidory/postcss-pug-filter) 는 티도리 프레임워크에 내장되어 있으며 다음과 같이 사용되어 있습니다. PostCSS, TailwindCSS 는 프레임워크에서 사용이 강제되지 않습니다. 사용하고 싶지 않다면 `postcss` 필터를 사용하지 않으면 그만입니다.
+app.css 는 index.pug 에서 `postcss` 필터를 사용하고 있습니다. PostCSS, TailwindCSS 는 프레임워크에서 사용이 강제되지 않습니다. 사용하고 싶지 않다면 `postcss` 필터를 사용하지 않으면 그만입니다.
 
 ```pug
 style

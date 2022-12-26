@@ -204,7 +204,7 @@ https://tistory1.daumcdn.net/tistory/2710108/skin/images
 
 ### alias: object
 
-**템플릿 별칭**을 설정합니다. 문자열로 지정을 해줄 수도 있고 함수형태로 사용할 수도 있습니다. 이는 [alias-pug-plugin](https://github.com/tidory/alias-pug-plugin) 으로 처리됩니다. 함수의 파라매터는 해당 별칭이 사용된 자원의 **파일 이름**입니다. 템플릿에서는 다음과 같이 사용하는 것이 가능합니다.
+**템플릿 별칭**을 설정합니다. 문자열로 지정을 해줄 수도 있고 함수형태로 사용할 수도 있습니다. 함수의 파라매터는 해당 별칭이 사용된 자원의 **파일 이름**입니다. 템플릿에서는 다음과 같이 사용하는 것이 가능합니다.
 
 ```pug
 //- assets/styl/app.styl
