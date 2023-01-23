@@ -4,7 +4,7 @@ category: 튜토리얼
 title: 시작하기
 ---
 
-## Tidory CLI
+## 설치
 
 **Tidory CLI** 는 티도리 프레임워크의 템플릿과 상호작용하기 위한 **CLI(Command Line Interface)** 환경에서 실행하는 **NPM(Node Package Manager)** 패키지입니다. 개발 서버를 켜거나, 빌드 및 배포를 할 때 사용합니다. 다음과 같은 명령을 사용하여 템플릿을 받아온 뒤, 프로젝트 구동을 위한 **NPM** 패키지들을 설치하십시오.
 
@@ -21,7 +21,7 @@ cd tistory-skin
 npm install
 ```
 
-## 라이브(Live) 서버
+## 라이브 서버
 
 데모로 작성되어있는 앱을 어떻게 실행시키면 될까요? 간단하게 알아보도록 하겠습니다. `npm start` 명령을 사용하면 **http://localhost:8080** 주소로 **webpack-dev-server** 를 실행시킬 수 있습니다. 기본적으로 라이브 서버를 비롯한 티도리 프레임워크에서 사용하는 명령어들은 [cli](https://github.com/tidory/cli) 에서 구현되었습니다.
 
@@ -29,7 +29,7 @@ npm install
 npm start
 ```
 
-## 프리뷰(Preview) 서버
+## 프리뷰 서버
 
 **프리뷰 서버**는 `npm run preview` 로 시작할 수 있으며 **http://localhost:3000** 에서 시작합니다. 티스토리에 직접 요청을 보내고 **치환자가 해석된 모습**을 렌더링합니다. 홈, 글, 카테고리 등 프리뷰 모드를 지정하여 티스토리 서버에 올라갔을 때의 모습을 볼 수 있습니다. 프리뷰 서버에서는 기본적으로 티스토리 서버에 치환자 처리를 위한 요청을 보내야 하는데, 이러한 일은 [tidory-skin](https://github.com/tistory-projects/tistory-skin) 를 사용하여 처리하게 됩니다.
 

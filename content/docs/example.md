@@ -19,7 +19,7 @@ title: 티스토리 예제
 
 ### index.pug
 
-현재 **views/Header.pug** 파일이 포함되어 있습니다. 해당 템플릿은 **부모 템플릿**이 됩니다. `style` 태그는 빌드하면 **style.css** 파일로, `script` 태그를 사용하면 **images/script.js** 파일로 분리됩니다. 이러한 일은 [tidory-webpack-plugin](https://github.com/tidory/tidory-webpack-plugin) 에서 처리합니다.
+현재 **views/Header.pug** 파일이 포함되어 있습니다. 해당 템플릿은 **부모 템플릿**이 됩니다. `style` 태그는 빌드하면 **style.css** 파일로, `script` 태그를 사용하면 **images/script.js** 파일로 분리됩니다.
 
 ```pug
 extends app
@@ -37,44 +37,6 @@ block TIDORY
       justify-content: center;
       text-align: center;
     }
-```
-
-또한 [PostCSS](https://postcss.org), [TailwindCSS](https://tailwindcss.com/) 가 기본 템플릿에 포함되어 있습니다. 따라서 스타일 태그로 따로 분리하지 않아도 사용할 수 있습니다. 스타일이 대부분의 코드를 차지하는 티스토리 스킨의 특성상 TailwindCSS 와 함께 사용하면 생산성에서 큰 이점을 볼 수 있습니다. TailwindCSS 를 사용하기 위해서는 `@tailiwnd base`, `@tailiwnd components`, `@tailiwnd utilities` 를 포함해야 하는데, 기본 템플릿에서 asserts/app.css 를 살펴보면 다음과 같은 코드가 있습니다.
-
-```css
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
-
-app.css 는 index.pug 에서 `postcss` 필터를 사용하고 있습니다. PostCSS, TailwindCSS 는 프레임워크에서 사용이 강제되지 않습니다. 사용하고 싶지 않다면 `postcss` 필터를 사용하지 않으면 그만입니다.
-
-```pug
-style
-  include:postcss @/app.css
-```
-
-`class` 에 TailwindCSS 의 클래스를 나열할 수도 있고, `style` 에서 TailwindCSS 의 `@apply` 를 사용할 수도 있습니다. `style` 에서 사용할 때는 `postcss` 필터를 사용하는 것을 잊지마세요!
-
-```pug
-#__tidory(class="h-screen flex justify-center text-center items-center")
-
-style
-  :postcss
-    #__tidory {
-      @apply h-screen flex justify-center text-center items-center
-    }
-```
-
-#### fixed
-
-만약 **스킨 옵션**을 구현해야 할 때처럼, 분리하면 안 되는 상황이라면 어떨까요? `style`, `script` 에 `fixed` 속성을 부여하면 해당 태그는 **style.css**, **images/script.js** 로 분리되지 않습니다. 그 말은 즉, **skin.html** 에 남는다는 이야기가 됩니다.
-
-```pug
-script(fixed).
-  window.skinOptions = {
-    example: '[##_var_example_##]'
-  }
 ```
 
 ### views/Header.pug
@@ -99,7 +61,7 @@ h1 [##_title_##]
 nav [##_blog_menu_##]
 ```
 
-## 프로덕션 코드
+## 프로덕트
 
 우리가 만든 스킨을 이제 **사용자에게 배포**하거나 **자신의 블로그에 적용**하기 위해 [빌드 및 배포](/docs/deployment)를 하면 다음과 같은 코드로 나뉘어집니다.
 
@@ -107,10 +69,12 @@ nav [##_blog_menu_##]
 
 ```html
 <div id="__tidory">
-  <header>
-    <h1>[##_title_##]</h1>
-    <nav>[##_blog_menu_##]</nav>
-  </header>
+  <s_t3>
+    <header>
+      <h1>[##_title_##]</h1>
+      <nav>[##_blog_menu_##]</nav>
+    </header>
+  </s_t3>
 </div>
 ```
 
