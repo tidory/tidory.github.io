@@ -1,15 +1,15 @@
 <template lang="pug">
   #nav(:class="[show ? 'left-0' : '-left-56']" class="fixed box-border z-30 overflow-hidden bg-gray-300 top-0 w-56 h-full transition-all xl:left-0")
     div(class="overflow-hidden overflow-y-auto overflow-y-scroll h-full w-64 absolute")
-      nuxt-link.logo(to="/" class="text-[0] block pl-8 pt-10 pb-16")
+      nuxt-link.logo(to="/" class="block pl-8 mt-10 mb-16 text-[0]")
         | 홈
         img(src="~/assets/images/logo.png" alt="티스토리 로고" width="24" height="24")
-      nav(class="list-none box-border w-56 pl-8 pb-8")
-        ul(v-for="menuItem in menu" class="py-3 px-10 first:pt-8 last:pb-0 px-0 py-4 first:pt-0")
-          li.category(class="font-semibold text-gray-50")
-            | {{ menuItem.category }}
-            ul(class="block py-0")
-              li.item(v-for="item in menuItem.items" class="first:pt-5")
+      nav(class="flex flex-col gap-y-8 list-none box-border w-56 pl-8 pb-8")
+        ul(v-for="menuItem in menu" class="flex flex-col gap-y-4 px-0")
+          li.category(class="text-gray-50")
+            div(class='font-semibold mb-8') {{ menuItem.category }}
+            ul(class="block flex flex-col gap-y-6")
+              li.item(v-for="item in menuItem.items" class="[&>a.nuxt-link-active]:text-gray-50")
                 nuxt-link(:to="item.path" v-if="item.path.startsWith('/')")
                   | {{ item.title }}
                 a(:href="item.path" target='_blank' rel='noreferrer' v-else)
@@ -58,9 +58,6 @@ export default {
     }
   },
   methods: {
-    /**
-     * @returns {array<{category: string, items: object[]}>}
-     */
     makeDocsMenu () {
       return this.docsCategories.reduce((docs, category) => {
         const items = this.docs.filter(doc => doc.category === category)
@@ -72,15 +69,3 @@ export default {
   }
 }
 </script>
-
-<style>
-#nav {
-  .item > a {
-    @apply font-normal inline-block py-3;
-
-    &.nuxt-link-active {
-      @apply text-gray-50 font-medium
-    }
-  }
-}
-</style>
