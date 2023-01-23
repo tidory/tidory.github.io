@@ -6,8 +6,8 @@
         img(src="~/assets/images/logo.png" alt="티스토리 로고" width="24" height="24")
       nav(class="flex flex-col gap-y-8 list-none box-border w-56 pl-8 pb-8")
         ul(v-for="menuItem in menu" class="flex flex-col gap-y-4 px-0")
-          li.category(class="text-gray-50")
-            div(class='font-semibold mb-8') {{ menuItem.category }}
+          li.category(class="flex flex-col gap-y-8 text-gray-50")
+            div(class='font-semibold') {{ menuItem.category }}
             ul(class="block flex flex-col gap-y-6")
               li.item(v-for="item in menuItem.items" class="[&>a.nuxt-link-active]:text-gray-50")
                 nuxt-link(:to="item.path" v-if="item.path.startsWith('/')")
