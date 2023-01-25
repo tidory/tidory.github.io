@@ -6,7 +6,7 @@ title: 시작하기
 
 ## 설치
 
-**Tidory CLI** 는 티도리 프레임워크의 템플릿과 상호작용하기 위한 **CLI(Command Line Interface)** 환경에서 실행하는 **NPM(Node Package Manager)** 패키지입니다. 개발 서버를 켜거나, 빌드 및 배포를 할 때 사용합니다. 다음과 같은 명령을 사용하여 템플릿을 받아온 뒤, 프로젝트 구동을 위한 **NPM** 패키지들을 설치하십시오.
+다음과 같은 명령을 사용하여 [티도리 프레임워크 템플릿](https://github.com/tidory/tidory)을 받아온 뒤, 프로젝트 구동을 위한 **NPM** 패키지들을 설치하십시오.
 
 ```bash
 git clone https://github.com/tidory/tidory tistory-skin
