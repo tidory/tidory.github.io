@@ -51,7 +51,7 @@ export default {
     }
 
     p {
-      @apply my-6 leading-7;
+      @apply my-6 leading-loose;
       a {
         @apply underline
       }
@@ -78,7 +78,7 @@ export default {
     }
 
     pre[class*="language-"] {
-      @apply rounded-sm border-0 bg-gray-300
+      @apply rounded-md border-0 bg-gray-300
     }
 
     b,
@@ -86,7 +86,7 @@ export default {
     p,
     blockquote {
       code {
-        @apply rounded-sm text-gray-50 bg-gray-300 py-0.5 px-2 text-sm
+        @apply rounded-md text-gray-50 bg-gray-300 py-0.5 px-2 text-sm
       }
     }
 
