@@ -1,8 +1,8 @@
 <template lang="pug">
   #nav(:class="[show ? 'left-0' : '-left-56']" class="fixed box-border z-30 overflow-hidden bg-gray-300 top-0 w-56 h-full transition-all xl:left-0")
     div(class="overflow-hidden overflow-y-auto overflow-y-scroll h-full w-64 absolute")
-      nuxt-link.logo(to="/" class="block pl-8 mt-10 mb-16 text-[0]")
-        | 홈
+      nuxt-link.logo(to="/" class="block pl-8 mt-10 mb-16")
+        span(class='text-hidden') 홈
         img(src="~/assets/images/logo.png" alt="티스토리 로고" width="24" height="24")
       nav(class="flex flex-col gap-y-8 list-none box-border w-56 pl-8 pb-8")
         ul(v-for="menuItem in menu" class="flex flex-col gap-y-4 px-0")

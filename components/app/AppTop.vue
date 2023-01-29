@@ -9,9 +9,9 @@
       )
         | hELLO 티스토리 스킨을 소개합니다.
     ul.menu(class="overflow-hidden list-none")
-      li(v-for="icon in icons" class="mx-2.5 float-left text-[0] last:mr-0")
+      li(v-for="icon in icons" class="mx-2.5 float-left last:mr-0")
         a(:href="icon.href" target='_blank' rel='noreferrer')
-          | {{ icon.title }}
+          span(class="text-hidden") {{ icon.title }}
           i(:class="icon.class" class="text-sm")
 </template>
 

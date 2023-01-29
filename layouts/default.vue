@@ -6,3 +6,9 @@
       nuxt
     app-bottom
 </template>
+
+<style>
+.text-hidden {
+  @apply absolute w-px h-px -m-px overflow-hidden;
+}
+</style>

@@ -30,10 +30,8 @@ export default {
       { rel: 'preconnect', href: '//fonts.gstatic.com' },
       { rel: 'preconnect', href: '//ka-f.fontawesome.com' },
       { rel: 'stylesheet', href: '//fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap' },
-      { rel: 'stylesheet', href: '//cdn.jsdelivr.net/gh/wan2land/d2coding/d2coding-ligature-full.css' }
-    ],
-    script: [
-      { src: '//kit.fontawesome.com/65f7e05682.js', async: true }
+      { rel: 'stylesheet', href: '//cdn.jsdelivr.net/gh/wan2land/d2coding/d2coding-ligature-full.css' },
+      { rel: 'stylesheet', href: '//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css' }
     ]
   },
 

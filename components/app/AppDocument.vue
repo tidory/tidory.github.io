@@ -32,7 +32,7 @@ export default {
     h2,
     h3,
     h4 {
-      @apply font-normal my-6
+      @apply font-normal my-6 scroll-mt-16;
     }
 
     h2 {
