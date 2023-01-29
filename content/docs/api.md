@@ -1,14 +1,10 @@
 ---
-index: 7
+index: 8
 category: 스케일링 업
 title: API
 ---
 
-## API
-
-티도리 프레임워크에서 사용할 수 있는 API 로는 태그에서 사용가능한 `fixed`, `once` 디렉티브를 제공합니다.
-
-### fixed
+## fixed
 
 만약 **스킨 옵션**을 구현해야 할 때처럼, `style`, `script` 가 분리되면 안 되는 상황이라면 어떨까요? `fixed` 속성을 부여하면 해당 태그는 **style.css**, **images/script.js** 로 분리되지 않습니다. 그 말은 즉, **skin.html** 에 남는다는 이야기가 됩니다.
 
@@ -24,7 +20,7 @@ script(fixed).
   }
 ```
 
-### once
+## once
 
 때때로 공통 템플릿을 여러 번 포함하고 싶은데 특정 태그는 한 번만 포함하길 원하는 경우가 있습니다. 예를 들어서 **Parmalink** 템플릿에 **TOC(Table Of Contents)** 가 포함된다고 가정하였을 때, **Permalink** 템플릿의 마크업을 믹스인으로 묶었다고 가정해보죠.
 

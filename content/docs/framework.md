@@ -1,5 +1,5 @@
 ---
-index: 8
+index: 9
 category: 스케일링 업
 title: 프레임워크
 ---
@@ -33,6 +33,7 @@ style
     }
 ```
 
+
 ## Alpine
 
 [알파인(Alpine)](https://alpinejs.dev)은 티도리 프레임워크와 궁합이 잘 맞는 경량급 자바스크립트 프레임워크입니다. 널리 사용되는 자바스크립트 프레임워크인 뷰, 리액트와 같은 프레임워크를 티도리 프레임워크에서 사용할 때 가질 수 있는 한계를 명확하게 극복합니다. 배우기도 쉽기 때문에 제이쿼리보다 더 더 나은 선택이 될 수 있습니다. 티도리 프레임워크 템플릿에는 **app.js** 에 이미 알파인을 사용하기 위한 준비가 되어 있습니다.
@@ -65,7 +66,7 @@ document.addEventListener('alpine:init', () => {
 })
 ```
 
-## SPA(Single Page Application)
+## SPA
 
 티도리 프레임워크에서는 모던 자바스크립트 프레임워크인 뷰(Vue.js)와 리액트(React), 스벨트(Svelte)를 지원합니다. 컴포넌트(Component)를 만들고 포함시켜 템플릿에서 사용할 수 있습니다. 컴포넌트는 사용하고 싶을 때 사용하면 되지만 한계가 분명하게 있습니다.
 
@@ -187,18 +188,3 @@ const app = new App({
   target: document.getElementById('app')
 })
 ```
-
-## Assets
-
-**컴포넌트**에서 에셋을 포함하려면 **속성 바인딩** 기능을 사용하거나, 정적파일처럼 포함시키면 됩니다. 우리가 일반적으로 **skin.html** 에 **./images/logo.png** 와 같은 형식으로 포함하면 티스토리는 자동으로 에셋의 경로를 CDN(Content Delivery Network)으로 변경합니다.
-
-컴포넌트에서 정적파일 또는 에셋을 불러오는 경우 자바스크립트를 통한 포함이므로 **스킨 내부에서 별도로 경로 변환을 하지 않습니다.** 따라서 따로 `public_path` 설정을 해줄 필요가 있습니다.
-
-```vue
-<template>
-  <img src="../images/logo.png">
-  <img v-bind:src='require("../images/logo.png").default'>
-</template>
-```
-
-> **public_path** 설정은 [환경설정](/docs/configuration)에서 알아볼 수 있습니다.
