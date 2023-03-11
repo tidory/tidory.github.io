@@ -1,6 +1,5 @@
 <template lang="pug">
   #document(class='relative')
-    app-spy(:toc="document.toc")
     article(class='text-gray-50' @click="$nuxt.$emit('toc')")
       h1(class='text-center mb-12 font-medium text-4xl')
         | {{ document.title }}
