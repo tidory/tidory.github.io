@@ -29,8 +29,7 @@ export default {
         {
           category: '티스토리 API',
           items: [
-            { title: 'Open API', path: 'https://github.com/search?q=user%3Atistory-projects+tistory-api&type=public' },
-            { title: 'Tistory Skin API', path: 'https://github.com/tistory-projects/tistory-skin' }
+            { title: 'Tistory Skin API', path: 'https://github.com/tidory/tistory-skin' }
           ]
         },
         {
