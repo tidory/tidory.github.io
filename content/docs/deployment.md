@@ -6,7 +6,7 @@ title: 빌드 및 배포
 
 ## 빌드
 
-**빌드**는 티도리 프로젝트를 티스토리 또는 유저에게 배포하기 위해 **배포 파일을 만드는 과정**입니다. 소스코드가 **skin.html, style.css** 로 분리되며 **images/app.js, images/script.js** 가 생성됩니다. 또한 **docs** 의 내부와 **images** 가 복사됩니다. 빌드 및 배포에서 직접 티스토리 서버에 업로드하는 것이 가능한 이유는 [tistory-skin](https://github.com/tidory/tistory-skin) 이 사용되었기 때문입니다.
+**빌드**는 티도리 프로젝트를 티스토리 또는 유저에게 배포하기 위해 **배포 파일을 만드는 과정**입니다. 소스코드가 **skin.html, style.css** 로 분리되며 **images/app.js, images/script.js** 가 생성됩니다. 또한 **docs** 의 내부와 **images** 가 복사됩니다. 빌드 및 배포에서 직접 티스토리 서버에 업로드하는 것이 가능한 이유는 [tistory-skin](https://github.com/pronist/tistory-skin) 이 사용되었기 때문입니다.
 
 ```bash
 npm run production
@@ -27,7 +27,7 @@ dist/
 
 ### images/*
 
-**images** 폴더는 템플릿 또는 컴포넌트에 포함된 리소스들이 모여있는 파일이며, 추가적으로 템플릿 내부에서 작성한 `fixed` 가 사용되지 않은 `script` 의 집합인 **script.js**, **assets/app.js** 에서 포함한 에셋들의 집합인 **app.js** 가 있습니다.
+**images** 폴더는 템플릿 또는 컴포넌트에 포함된 리소스들이 모여있는 파일이며, `fixed` 가 사용되지 않은 `script` 의 집합인 **script.js**, 또한 **assets/app.js** 에서 포함한 에셋들의 집합인 **app.js** 가 있습니다.
 
 ### skin.html
 
@@ -35,7 +35,7 @@ dist/
 
 ### style.css
 
-템플릿에 있는 `fixed` 가 사용되지 않은 `style` 의 집합 파일입니다.
+`fixed` 가 사용되지 않은 `style` 의 집합 파일입니다.
 
 ### preview*.jpg
 

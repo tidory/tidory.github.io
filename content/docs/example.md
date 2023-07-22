@@ -19,7 +19,7 @@ title: 티스토리 예제
 
 ### index.pug
 
-현재 **views/Header.pug** 파일이 포함되어 있습니다. 해당 템플릿은 **부모 템플릿**이 됩니다. `style` 태그는 빌드하면 **style.css** 파일로, `script` 태그를 사용하면 **images/script.js** 파일로 분리됩니다.
+현재 **views/Header.pug** 파일이 포함되어 있습니다. 해당 템플릿은 **부모 템플릿**이 됩니다. 프로덕트를 위해 빌드하게 되면 `style` 는 **style.css** 파일로, `script` 를 사용하면 **images/script.js** 파일로 분리됩니다.
 
 ```pug
 extends app
