@@ -5,7 +5,7 @@
         span(class='text-hidden') {{ community.title }}
         i(:class="community.class")
     div
-      a(href='#__nuxt' class="bg-gray-300 text-gray-50 rounded-full border-0 cursor-pointer duration-100 w-9 h-9 text-center inline-block ml-3 hover:bg-gray-200")
+      nuxt-link(to='#__tidory' class="bg-gray-300 text-gray-50 rounded-full border-0 cursor-pointer duration-100 w-9 h-9 text-center inline-block ml-3 hover:bg-gray-200")
         span(class='text-hidden') 제일 위로
         i(class='fa fa-chevron-up text-sm leading-9')
 </template>
