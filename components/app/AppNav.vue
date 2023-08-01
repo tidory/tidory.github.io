@@ -29,13 +29,12 @@ export default {
         {
           category: '티스토리 API',
           items: [
-            { title: 'Tistory Skin API', path: 'https://github.com/tidory/tistory-skin' }
+            { title: 'Tistory Skin API', path: 'https://github.com/pronist/tistory-skin' }
           ]
         },
         {
           category: '메타',
           items: [
-            { title: '패치노트', path: 'https://github.com/tidory/cli/blob/master/CHANGELOG.md' },
             { title: '티스토리 스킨 가이드', path: 'https://tistory.github.io/document-tistory-skin' }
           ]
         }

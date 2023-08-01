@@ -94,6 +94,25 @@ export default class HelloWorld extends React.Component {
 }
 ```
 
+#### *.pug
+
+```pug
+//- Rendering React Component
+#app
+```
+
+#### assets/app.js
+
+```js
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+import App from './components/App'
+
+const rootElement = document.getElementById('app')
+ReactDOM.render(<App />, rootElement)
+```
+
 ### Vue
 
 ```bash
@@ -135,25 +154,6 @@ const app = createApp({
 })
 
 app.mount('#app')
-```
-
-#### *.pug
-
-```pug
-//- Rendering React Component
-#app
-```
-
-#### assets/app.js
-
-```js
-import React from 'react'
-import ReactDOM from 'react-dom'
-
-import App from './components/App'
-
-const rootElement = document.getElementById('app')
-ReactDOM.render(<App />, rootElement)
 ```
 
 ### Svelte
