@@ -29,7 +29,7 @@ export default {
         {
           category: '티스토리 API',
           items: [
-            { title: 'Tistory Skin API', path: 'https://github.com/pronist/tistory-skin' }
+            { title: 'Tistory Skin API', path: 'https://github.com/tidory/skin' }
           ]
         },
         {
