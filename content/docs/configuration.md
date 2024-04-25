@@ -25,9 +25,7 @@ module.exports = {
      * index
      * entry
      * category
-     * tag,
-     * location
-     * media,
+     * tag
      * guestbook
      */
     mode: 'index',
@@ -72,17 +70,12 @@ module.exports = {
 
     /**
      * Skin Settings
+     * 
+     * @see https://tistory.github.io/document-tistory-skin/common/index.xml.html
      */ 
     skinSettings: {
       entriesOnPage: "5",
-      entriesOnList: "5",
-      entriesOnPage: "5",
-      expandComment: "0",
-      liststyle: "list",
-      showListLock: "0",
-      showListOnCategory: "1",
-      showListOnHome: "1",
-      tagpageAlign: "1"
+      entriesOnList: "5"
     },
 
     /**
@@ -142,7 +135,7 @@ module.exports = {
 
 ### preview.mode: string
 
-**프리뷰 모드**입니다. **프리뷰 서버**를 사용할 때 어느 페이지를 기점으로 프리뷰 할 지 설정합니다. **홈, 글, 카테고리, 태그, 위치로그, 미디어로그, 방명록** 모드가 있으며 각각 `index. entry, category, tag, location, media, guestbook` 에 대응합니다.
+**프리뷰 모드**입니다. **프리뷰 서버**를 사용할 때 어느 페이지를 기점으로 프리뷰 할 지 설정합니다. **홈, 글, 카테고리, 태그, 방명록** 모드가 있으며 각각 `index, entry, category, tag, guestbook` 에 대응합니다.
 
 ### preview.homeType: string
 
@@ -169,7 +162,7 @@ module.exports = {
 
 ### preview.skinSettings: object
 
-스킨 **기본 설정**을 변경하여 프리뷰할 수 있습니다.
+스킨 **기본 설정**을 변경하여 프리뷰할 수 있습니다. 스킨 설정의 경우 **index.xml** 과 관련이 있으므로 <https://tistory.github.io/document-tistory-skin/common/index.xml.html> 를 참고하면 더 많은 내용을 보실 수 있습니다.
 
 ### preview.variableSettings: object
 
