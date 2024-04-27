@@ -27,23 +27,23 @@ dist/
 
 ### images/*
 
-**images** 폴더는 템플릿 또는 컴포넌트에 포함된 리소스들이 모여있는 파일이며, `fixed` 가 사용되지 않은 `script` 의 집합인 **script.js**, 또한 **assets/app.js** 에서 포함한 에셋들의 집합인 **app.js** 가 있습니다.
+**images** 폴더는 템플릿 또는 컴포넌트에 포함된 리소스들이 모여있는 파일이며, [fixed](/docs/api#fixed) 가 사용되지 않은 `script` 의 집합인 **script.js**, 또한 **assets/app.js** 에서 포함한 에셋들의 집합인 **app.js** 가 있습니다.
 
 ### skin.html
 
-티스토리 스킨으로 업로드할 최종 **html** 파일입니다.
+티스토리 스킨으로 사용하게 되는 **html** 파일입니다.
 
 ### style.css
 
-`fixed` 가 사용되지 않은 `style` 의 집합 파일입니다.
+티스토리 스킨으로 사용하게 되는 **css** 파일입니다. [fixed](/docs/api#fixed) 가 사용되지 않은 `style` 의 집합 파일입니다.
 
 ### preview*.jpg
 
-**docs** 폴더에 있던 미리보기 파일이며 **preview256.jpg, preview560.jpg, preview1600.jpg** 파일이 존재합니다. 사용자에게 스킨 미리보기로써 제공됩니다.
+**docs** 에 있던 미리보기 파일이며 **preview256.jpg, preview560.jpg, preview1600.jpg** 파일이 존재합니다. 사용자에게 스킨 미리보기로써 제공됩니다.
 
 ### index.xml
 
-**docs** 폴더에 있던 **티스토리 스킨 설정**파일입니다.
+**docs** 에 있던 **티스토리 스킨 설정**파일입니다.
 
 ## 배포
 
@@ -62,6 +62,8 @@ npm run store
 ### tidory deploy
 
 현재 환경설정에 `url` 에 지정된 블로그에 **skin.html, style.css, index.xml** 파일을 적용시키고 업로드 되어 있는 모든 파일을 삭제하고 **images** 폴더에 있는 파일을 다시 업로드합니다. 주로 유저에게 배포하기 전에 블로그에 미리 적용시켜보기 위해 사용합니다.
+
+> 티스토리 서버에서 잠시 뒤에 다시 시도하라는 에러를 던지기도 하는데, 이 경우 에러 메시지에 따라 잠시 뒤에 실행해보시기 바랍니다.
 
 ```bash
 npm run deploy

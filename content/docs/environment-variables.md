@@ -15,7 +15,7 @@ TISTORY_CLIENT_ID=dc08305218d22fb1af479b044d4707d0
 TISTORY_CALLBACK=http://localhost:8080
 ```
 
-이제 이렇게 정의된 환경변수는 **템플릿 내부**와 **컴포넌트**에서 사용할 수 있습니다. 환경변수는 **컴파일 타임**에 `process.env` 객체 아래에 정의됩니다. 다음과 같이 말이죠!
+이제 이렇게 정의된 환경변수는 **템플릿 내부**와 **컴포넌트**에서 사용할 수 있습니다. 환경변수는 **컴파일 타임**에 `process.env` 에 정의됩니다.
 
 ```pug
 form(method="GET" action="https://www.tistory.com/oauth/authorize/")
