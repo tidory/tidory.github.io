@@ -1,5 +1,6 @@
 <template lang="pug">
-  app-document(:document="article")
+div
+  app-content(:article="article")
 </template>
 
 <script>

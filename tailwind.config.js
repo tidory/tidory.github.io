@@ -25,10 +25,18 @@ module.exports = {
       }
     },
     extend: {
+      spacing: {
+        c: '620px',
+        s: defaultTheme.spacing['56']
+      },
       fontFamily: {
         sans: [
-          'Noto Sans KR',
+          'SUIT',
           ...defaultTheme.fontFamily.sans
+        ],
+        mono: [
+          'Source Code Pro',
+          ...defaultTheme.fontFamily.mono
         ]
       }
     }

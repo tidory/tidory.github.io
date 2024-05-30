@@ -29,8 +29,8 @@ export default {
       { rel: 'apple-touch-icon', sizes: '152x152', href: '/images/152x152.png' },
       { rel: 'preconnect', href: '//fonts.gstatic.com' },
       { rel: 'preconnect', href: '//ka-f.fontawesome.com' },
-      { rel: 'stylesheet', href: '//fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap' },
-      { rel: 'stylesheet', href: '//cdn.jsdelivr.net/gh/wan2land/d2coding/d2coding-ligature-full.css' },
+      { rel: 'stylesheet', href: '//cdn.jsdelivr.net/gh/sun-typeface/SUIT/fonts/static/woff2/SUIT.css' },
+      { rel: 'stylesheet', href: '//fonts.googleapis.com/css2?family=Source+Code+Pro:ital@0;1&display=swap' },
       { rel: 'stylesheet', href: '//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css' }
     ]
   },

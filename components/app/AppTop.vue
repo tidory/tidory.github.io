@@ -1,28 +1,10 @@
 <template lang="pug">
-  #top(class="w-[calc(100%-230px)] px-5 box-border absolute right-0 top-7 justify-between hidden xl:flex")
-    .notice(class="text-sm text-normal")
-      i(class="fas fa-volume-up mr-2.5")
-      a.text(
-        href="https://pronist.tistory.com/5"
-        target='_blank'
-        rel='noreferrer'
-      )
-        | hELLO 티스토리 스킨을 소개합니다.
-    ul.menu(class="overflow-hidden list-none")
-      li(v-for="icon in icons" class="mx-2.5 float-left last:mr-0")
-        a(:href="icon.href" target='_blank' rel='noreferrer')
-          span(class="text-hidden") {{ icon.title }}
-          i(:class="icon.class" class="text-sm")
+aside(class="w-full fixed top-0 right-0 z-10 xl:hidden")
+  div(class="box-border w-full h-12 bg-gray-500/70 backdrop-blur flex justify-between items-center text-gray-50 px-4")
+    div(class="cursor-pointer" @click="$store.commit('toggleShow')")
+      i(class="fas fa-bars")
+    div {{ $store.getters.getArticle.title }}
+    nuxt-link(to="/")
+      span(class="text-hidden") 홈
+      img(src="~/assets/images/logo.png" alt="티스토리 로고" width="16" height="16")
 </template>
-
-<script>
-export default {
-  data () {
-    return {
-      icons: [
-        { class: 'fas fa-book-open', href: 'https://tistory.github.io/document-tistory-skin/', title: '티스토리 스킨 가이드' }
-      ]
-    }
-  }
-}
-</script>

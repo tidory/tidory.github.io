@@ -1,26 +1,23 @@
 <template lang="pug">
-  #nav(:class="[show ? 'left-0' : '-left-56']" class="fixed box-border z-30 overflow-hidden bg-gray-300 top-0 w-56 h-full transition-all xl:left-0")
-    div(class="overflow-hidden overflow-y-auto overflow-y-scroll h-full w-64 absolute")
-      nuxt-link.logo(to="/" class="block pl-8 mt-10 mb-16")
-        span(class='text-hidden') 홈
-        img(src="~/assets/images/logo.png" alt="티스토리 로고" width="24" height="24")
-      nav(class="flex flex-col gap-y-8 list-none box-border w-56 pl-8 pb-8")
-        ul(v-for="menuItem in menu" class="flex flex-col gap-y-4 px-0")
-          li.category(class="flex flex-col gap-y-8 text-gray-50")
-            div(class='font-semibold') {{ menuItem.category }}
-            ul(class="block flex flex-col gap-y-6")
-              li.item(v-for="item in menuItem.items" class="[&>a.nuxt-link-active]:text-gray-50")
-                nuxt-link(:to="item.path" v-if="item.path.startsWith('/')")
-                  | {{ item.title }}
-                a(:href="item.path" target='_blank' rel='noreferrer' v-else)
-                  | {{ item.title }}
+div(:class="[$store.getters.getShow ? 'left-0' : '-left-s']" class="fixed box-border z-30 overflow-hidden bg-gray-300 top-0 w-s h-full transition-all xl:left-0")
+  div(class="overflow-hidden overflow-y-scroll h-full w-[calc(theme(spacing.s)+theme(spacing.8))] absolute")
+    nuxt-link(to="/" class="block pl-8 mt-10 mb-16")
+      span(class='text-hidden') 홈
+      img(src="~/assets/images/logo.png" alt="티스토리 로고" width="24" height="24")
+    nav(class="flex flex-col gap-y-8 list-none box-border w-s pl-8 pb-8")
+      ul(v-for="menuItem in menu" class="flex flex-col gap-y-4 px-0")
+        li(class="flex flex-col gap-y-8 text-gray-50")
+          div(class='font-semibold') {{ menuItem.category }}
+          ul(class="flex flex-col gap-y-6")
+            li(v-for="item in menuItem.items")
+              nuxt-link(:to="item.path" v-if="item.path.startsWith('/')")
+                | {{ item.title }}
+              a(:href="item.path" target='_blank' rel='noreferrer' v-else)
+                | {{ item.title }}
 </template>
 
 <script>
 export default {
-  props: {
-    show: { type: Boolean, required: true }
-  },
   data () {
     return {
       docs: [],
@@ -67,3 +64,15 @@ export default {
   }
 }
 </script>
+
+<style>
+nav {
+  a {
+    @apply text-gray-100 hover:text-gray-50;
+
+    &.nuxt-link-active {
+      @apply text-gray-50;
+    }
+  }
+}
+</style>

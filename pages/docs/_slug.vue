@@ -1,5 +1,7 @@
 <template lang="pug">
-  app-document(:document="article" :next="next" :prev="prev")
+div
+  app-content(:article="article")
+  app-pagination(:prev="prev" :next="next")
 </template>
 
 <script>

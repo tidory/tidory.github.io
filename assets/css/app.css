@@ -3,23 +3,13 @@
 @tailwind utilities;
 
 @layer base {
-  html {
+  body {
     @apply bg-gray-400;
   }
+}
 
-  *:not(i),
-  *:not(i)::before,
-  *:not(i)::after {
-    @apply font-sans
-  }
-
-  a,
-  i {
-    @apply decoration-0 text-gray-100 duration-200 hover:text-gray-50
-  }
-
-  ol,
-  ul {
-    @apply list-none
+@layer utilities {
+  .text-hidden {
+    @apply absolute w-px h-px -m-px overflow-hidden;
   }
 }

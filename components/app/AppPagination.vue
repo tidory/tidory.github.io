@@ -1,13 +1,11 @@
 <template lang="pug">
-  #pagination(class='mt-12 overflow-hidden text-base')
-    div(v-if="prev" class="float-left")
-      nuxt-link(:to="{ params: { slug: prev.slug } }")
-        i.fas.fa-angle-left(class='mr-2')
-        | {{ prev.title }}
-    div(v-if="next" class="float-right")
-      nuxt-link(:to="{ params: { slug: next.slug } }")
-        | {{ next.title }}
-        i.fas.fa-angle-right(class='ml-2')
+div(class='flex justify-end mt-12')
+  nuxt-link(v-if="prev" :to="{ params: { slug: prev.slug } }" class="grow text-gray-100")
+    i(class='mr-2 fas fa-angle-left')
+    | {{ prev.title }}
+  nuxt-link(v-if="next" :to="{ params: { slug: next.slug } }" class="text-gray-100")
+    | {{ next.title }}
+    i(class='ml-2 fas fa-angle-right')
 </template>
 
 <script>
