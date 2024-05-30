@@ -1,5 +1,5 @@
 ---
-index: 8
+index: 6
 category: 스케일링 업
 title: API
 ---

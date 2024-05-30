@@ -1,5 +1,5 @@
 ---
-index: 7
+index: 5
 category: 스케일링 업
 title: 환경변수
 ---
