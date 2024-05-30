@@ -1,12 +1,14 @@
 ---
-index: 5
+index: 3
 category: 튜토리얼
-title: 환경설정
+title: 설정
 ---
 
-**tidory.config.js** 파일은 티도리 프레임워크를 위한 환경설정 파일입니다. 템플릿에서 쓰이는 변수가 아닌, **오직 프레임워크의 동작**만을 위해 사용되는 환경변수만 선언되는 파일입니다. 예를 들어 빌드 및 배포를 위한 **티스토리 세션** 값이나 프리뷰를 보기위한 모드 설정 등이 해당됩니다.
+## tidory.config.js
 
-또한 티도리로 만든 프로젝트를 오픈소스로 공개할 때 `ts_session, url` 등의 민감한 정보가 포함되면 곤란한 경우가 있으므로 만약 **tidory.config.js** 가 존재하지 않는 경우, **tidory.config.example.js** 가 포함됩니다. 이렇게 하면 소스를 오픈하여 배포할 때에도 민감한 정보를 보호할 수 있습니다.
+**tidory.config.js** 은 티도리 프레임워크를 위한 설정파일입니다. 템플릿에서 쓰이는 변수가 아닌, **프레임워크의 동작**만을 위해 사용되는 설정만 정의됩니다. 예를 들어 빌드 및 배포를 위한 **티스토리 세션** 값이나 프리뷰를 보기위한 모드 등이 해당됩니다.
+
+또한 티도리로 만든 프로젝트를 오픈소스로 공개할 때 `ts_session`, `url` 등의 민감한 정보가 포함되면 곤란한 경우가 있으므로 만약 **tidory.config.js** 가 존재하지 않는 경우, **tidory.config.example.js** 가 포함됩니다. 이렇게 하면 소스를 오픈하여 배포할 때에도 민감한 정보를 보호할 수 있습니다.
 
 ```js
 module.exports = {
@@ -133,30 +135,15 @@ module.exports = {
 
 ### preview.mode: string
 
-**프리뷰 모드**입니다. **프리뷰 서버**를 사용할 때 어느 페이지를 프리뷰 할 지 설정합니다. **홈, 글, 카테고리, 태그, 방명록** 모드가 있으며 각각 `index, entry, category, tag, guestbook` 에 대응합니다.
+**프리뷰 모드**입니다. **프리뷰 서버**를 사용할 때 어느 페이지를 프리뷰 할 지 설정합니다. **홈, 글, 카테고리, 태그, 방명록** 모드가 있으며 각각 `index`, `entry`, `category`, `tag`, `guestbook` 에 대응합니다.
 
 ### preview.homeType: string
 
-[홈 커버](https://tistory.github.io/document-tistory-skin/common/cover.html)를 프리뷰할 때 사용합니다. `NONE` 은 최신 글이며, 커버를 개발할 때는 `COVER` 로 설정하여 사용합니다.
+[홈 커버](https://tistory.github.io/document-tistory-skin/common/cover.html)를 프리뷰할 때 사용합니다. `NONE` 은 최신 글, 커버를 개발할 때는 `COVER` 로 설정하여 사용합니다.
 
 ### preview.coverSettings: array[object]
 
-[홈 커버](https://tistory.github.io/document-tistory-skin/common/cover.html)를 프리뷰할 때 사용합니다. **스킨 편집**에서 커버를 세팅할 필요 없이, 커버의 컨텐츠, 인덱스, 제목 등을 지정하여 프리뷰할 수 있습니다.
-
-```xml
-<cover>
-  <item>
-    <name>list</name>
-    <label><![CDATA[ 리스트 ]]></label>
-    <description><![CDATA[ 글 리스트를 표시합니다. ]]></description>
-  </item>
-  <item>
-    <name>gallery</name>
-    <label><![CDATA[ 갤러리 ]]></label>
-    <description><![CDATA[ 글 갤러리를 표시합니다. ]]></description>
-  </item>
-</cover>
-```
+`preview.homeType` 을 `COVER` 로 설정한 상태에서 [홈 커버](https://tistory.github.io/document-tistory-skin/common/cover.html)를 프리뷰할 때 사용합니다. **스킨 편집**에서 커버를 세팅할 필요 없이, 컨텐츠, 인덱스, 제목 등을 지정하여 프리뷰할 수 있습니다. [공식문서](https://tistory.github.io/document-tistory-skin/common/cover.html)에서 **기본값** 항목을 참고하시기 바랍니다.
 
 ### preview.skinSettings: object
 
@@ -166,20 +153,6 @@ module.exports = {
 
 [스킨 옵션](https://tistory.github.io/document-tistory-skin/common/variable.html)을 프리뷰할 때 사용합니다.
 
-```xml
-<variables>
-  <variablegroup>
-    <variable>
-      <name>tidory</name>
-      <label><![CDATA[ TIDORY ]]></label>
-      <default><![CDATA[ TIDORY ]]></default>
-      <type>STRING</type>
-      <description><![CDATA[ 티스토리 스킨 프레임워크, 티도리 ]]></description>
-    </variable>
-  </variablegroup>
-</variables>
-```
-
 ### build.public_path: string
 
 **컴포넌트 자원 공개경로**를 설정합니다. 뷰, 리액트와 같은 컴포넌트에서 같이 자바스크립트를 통해 이미지와 같은 리소스를 사용하면 티스토리에 의해 경로가 자동으로 변환되지 않아 올바르게 로드될 수 없습니다. 따라서 `public_path` 를 설정해주어야 합니다. 해당 주소는 블로그마다 다릅니다. 공개 경로는 다음과 같이 생겼습니다.
@@ -188,10 +161,9 @@ module.exports = {
 https://tistory1.daumcdn.net/tistory/2710108/skin/images
 ```
 
-**공개 경로**를 찾기위해서는, 적용시키려는 티스토리 블로그에 접속하여 브라우저에 내장된 **개발자 도구**를 열고 직접 경로를 알아내야 합니다. `script, link` 에 쓰여있는 리소스 경로를 주의깊게 살펴보십시오.
+**공개 경로**를 찾기위해서는, 적용시키려는 티스토리 블로그에 접속하여 브라우저에 내장된 **개발자 도구**를 열고 직접 경로를 알아내야 합니다. `script`, `link` 에 쓰여있는 리소스 경로를 주의깊게 살펴보십시오.
 
 > 공개 경로는 `tidory production` 을 사용한 빌드과정 중, `ts_session` 의 설정 여부에 따라 **자동 주입**됩니다. 따라서 특별한 경우가 아니라면 직접 설정할 필요는 없습니다.
-> 티스토리 스킨의 공개 경로에는 **tistory_admin** 이 포함되어 있지 않습니다.
 
 ### alias: object
 

@@ -1,12 +1,12 @@
 ---
-index: 6
+index: 4
 category: 튜토리얼
 title: 빌드 및 배포
 ---
 
 ## 빌드
 
-**빌드**는 티도리 프로젝트를 티스토리 또는 유저에게 배포하기 위해 **배포 파일을 만드는 과정**입니다. 소스코드가 **skin.html, style.css** 로 분리되며 **images/app.js, images/script.js** 가 생성됩니다. 또한 **docs** 의 내부와 **images** 가 복사됩니다. 빌드 및 배포에서 직접 티스토리 서버에 업로드하는 것이 가능한 이유는 [skin](https://github.com/tidory/skin) 이 사용되었기 때문입니다.
+**빌드**는 티도리 프로젝트를 티스토리 또는 유저에게 배포하기 위해 **배포 파일을 만드는 과정**입니다. 마크업과 스타일이 **skin.html, style.css** 로 분리되며 **images/app.js, images/script.js** 가 생성됩니다. 또한 스킨 설정 및 미리보기가 있는 **docs** 및 정적 에셋이 있는 **images** 내부가 복사됩니다.
 
 ```bash
 npm run production
@@ -27,27 +27,29 @@ dist/
 
 ### images/*
 
-**images** 폴더는 템플릿 또는 컴포넌트에 포함된 리소스들이 모여있는 파일이며, [fixed](/docs/api#fixed) 가 사용되지 않은 `script` 의 집합인 **script.js**, 또한 **assets/app.js** 에서 포함한 에셋들의 집합인 **app.js** 가 있습니다.
-
-### skin.html
-
-티스토리 스킨으로 사용하게 되는 **html** 파일입니다.
-
-### style.css
-
-티스토리 스킨으로 사용하게 되는 **css** 파일입니다. [fixed](/docs/api#fixed) 가 사용되지 않은 `style` 의 집합 파일입니다.
+**images** 에는 정적 에셋과 [fixed](/docs/api#fixed) 가 사용되지 않은 `script` 의 집합인 **script.js**, 웹팩의 엔트리(Entry)에 해당하는 **assets/app.js** 를 번들링한 **app.js** 가 있습니다.
 
 ### preview*.jpg
 
-**docs** 에 있던 미리보기 파일이며 **preview256.jpg, preview560.jpg, preview1600.jpg** 파일이 존재합니다. 사용자에게 스킨 미리보기로써 제공됩니다.
+스킨 미리보기입니다. **preview256.jpg, preview560.jpg, preview1600.jpg** 가 있습니다.
 
 ### index.xml
 
-**docs** 에 있던 **티스토리 스킨 설정**파일입니다.
+**티스토리 스킨 설정**입니다.
+
+### skin.html
+
+티스토리 스킨으로 사용하게 되는 **html** 입니다.
+
+### style.css
+
+티스토리 스킨으로 사용하게 되는 **css** 입니다. [fixed](/docs/api#fixed) 가 사용되지 않은 `style` 의 집합입니다.
 
 ## 배포
 
-**배포**는 **현재 사용 중인 스킨을 덮어쓰는 모드**가 있고, **스킨저장소에 저장하는 모드**가 있습니다. 배포를 사용하려면 [환경설정](/docs/configuration)에서 `ts_session, url` 가 설정되어 있어야합니다. 또한 배포를 하기 전에 먼저 빌드해야 합니다. **dist** 디렉토리를 대상으로 배포하기 때문이죠.
+**배포**는 **현재 사용 중인 스킨을 덮어쓰는 모드**가 있고, **스킨저장소에 저장하는 모드**가 있습니다. 배포를 사용하려면 [환경설정](/docs/configuration)에서 `ts_session`, `url` 가 설정되어 있어야합니다. 또한 배포를 하기 전에 먼저 빌드해야 합니다. **dist** 를 배포하기 때문이죠.
+
+>  배포에서 직접 티스토리 서버에 업로드하는 것이 가능한 이유는 [skin](https://github.com/tidory/skin) 이 사용되었기 때문입니다.
 
 ### tidory store
 
@@ -75,7 +77,7 @@ npm run deploy
 
 ### push-dir
 
-**push-dir** 은 코드 저장소에 특정 디렉토리를 특정 브랜치에 푸쉬할 수 있도록 해주는 패키지입니다. 해당 패키지가 있으면 스킨을 빌드하면 나오는 **dist** 디렉토리만을 독립적으로 다른 브랜치에 올릴 수 있습니다.
+**push-dir** 은 코드 저장소에 특정 디렉토리를 특정 브랜치에 푸쉬할 수 있도록 해주는 패키지입니다. 해당 패키지가 있으면 스킨을 빌드하면 나오는 **dist** 만을 독립적으로 다른 브랜치에 올릴 수 있습니다.
 
 ```bash
 npm install --save-dev push-dir
@@ -99,4 +101,4 @@ npm install --save-dev push-dir
 }
 ```
 
-위와 같이 명령어를 구성하면 빌드(Build) - 코드 저장소 배포(Push) - 스킨 적용(Deploy)의 순서로 배포를 자동화할 수 있습니다. 코드 저장소에 **tistory-skin** 브랜치가 별도로 생성되어 개발코드가 아닌, 오직 스킨의 코드만 푸쉬됩니다.
+위와 같이 명령어를 구성하면 빌드(Build) - 코드 저장소 배포(Push) - 스킨 적용(Deploy)의 순서로 배포를 자동화할 수 있습니다. 코드 저장소에 **tistory-skin** 브랜치가 별도로 생성됩니다.

@@ -21,14 +21,14 @@ style
   include:postcss @/app.css
 ```
 
-`class` 에 Tailwind CSS 의 클래스를 나열할 수도 있고, `style` 에서 `@apply` 를 사용할 수도 있습니다. `style` 에서 사용할 때는 `postcss` 필터를 사용하는 것을 잊지마세요!
+`class` 에 TailwindCSS 클래스를 나열할 수도 있고, `style` 에서 `@apply` 를 사용할 수도 있습니다. `style` 에서 사용할 때는 `postcss` 필터를 사용하는 것을 잊지마세요!
 
 ```pug
-#__tidory(class="h-screen flex justify-center text-center items-center")
+#container(class="h-screen flex justify-center text-center items-center")
 
 style
   :postcss
-    #__tidory {
+    #container {
       @apply h-screen flex justify-center text-center items-center
     }
 ```
@@ -58,7 +58,7 @@ html(
 button(@click="dark = ! dark")
 ```
 
-알파인은 **런타임**에 동작하지만, 기본적으로는 다른 자바스크립트 프레임워크와는 달리 알파인 컴포넌트는 별도의 자바스크립트 파일로 번들링하지 않아도 됩니다. 즉, 제이쿼리와 비슷합니다. **app.js** 에서 알파인 컴포넌트를 포함하는 일도 물론 가능은 하지만, 태그에 인라인으로 사용하거나 템플릿에서 `script` 내부에 `alpine:init` [이벤트](https://alpinejs.dev/essentials/lifecycle#alpine-initialization)를 받아서 알파인 컴포넌트를 정의하는 것이 더 간단한 방법입니다.
+알파인은 **런타임**에 동작하지만, 기본적으로는 다른 자바스크립트 프레임워크와는 달리 알파인 컴포넌트는 별도의 자바스크립트 파일로 번들링하지 않아도 됩니다. 즉, 제이쿼리와 비슷합니다. **app.js** 에서 알파인 컴포넌트를 포함하는 일도 물론 가능은 하지만, 태그에 인라인으로 사용하거나 템플릿에서 `alpine:init` [이벤트](https://alpinejs.dev/essentials/lifecycle#alpine-initialization)를 받아서 알파인 컴포넌트를 정의하는 것이 더 간단한 방법입니다.
 
 ```js
 document.addEventListener('alpine:init', () => {
