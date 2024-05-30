@@ -14,7 +14,7 @@ title: 프레임워크
 @tailwind utilities;
 ```
 
-**app.css** 는 `postcss` 필터를 사용하고 있습니다. PostCSS, TailwindCSS 는 프레임워크에서 사용이 강제되지 않습니다. 사용하고 싶지 않다면 `postcss` 필터를 사용하지 않으면 그만입니다. `postcss` 필터가 기본적으로 참고하는 설정파일은 `postcss.config.js` 입니다.
+**app.css** 는 `postcss` 필터를 사용하고 있습니다. PostCSS, TailwindCSS 는 프레임워크에서 사용이 강제되지 않습니다. 사용하고 싶지 않다면 `postcss` 필터를 사용하지 않으면 그만입니다. `postcss` 필터가 기본적으로 참고하는 설정파일은 **postcss.config.js** 입니다.
 
 ```pug
 style
@@ -58,7 +58,7 @@ html(
 button(@click="dark = ! dark")
 ```
 
-알파인은 **런타임**에 동작하지만, 기본적으로는 다른 자바스크립트 프레임워크와는 달리 알파인 컴포넌트는 별도의 자바스크립트 파일로 번들링하지 않아도 됩니다. 즉, 제이쿼리와 비슷합니다. **app.js** 에서 알파인 컴포넌트를 포함하는 일도 물론 가능은 하지만, 태그에 인라인으로 사용하거나 템플릿에서 `script` 태그 내부에 `alpine:init` [이벤트](https://alpinejs.dev/essentials/lifecycle#alpine-initialization)를 받아서 알파인 컴포넌트를 정의하는 것이 더 간단한 방법입니다.
+알파인은 **런타임**에 동작하지만, 기본적으로는 다른 자바스크립트 프레임워크와는 달리 알파인 컴포넌트는 별도의 자바스크립트 파일로 번들링하지 않아도 됩니다. 즉, 제이쿼리와 비슷합니다. **app.js** 에서 알파인 컴포넌트를 포함하는 일도 물론 가능은 하지만, 태그에 인라인으로 사용하거나 템플릿에서 `script` 내부에 `alpine:init` [이벤트](https://alpinejs.dev/essentials/lifecycle#alpine-initialization)를 받아서 알파인 컴포넌트를 정의하는 것이 더 간단한 방법입니다.
 
 ```js
 document.addEventListener('alpine:init', () => {
