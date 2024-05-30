@@ -4,8 +4,6 @@ category: 튜토리얼
 title: 환경설정
 ---
 
-## tidory.config.js
-
 **tidory.config.js** 파일은 티도리 프레임워크를 위한 환경설정 파일입니다. 템플릿에서 쓰이는 변수가 아닌, **오직 프레임워크의 동작**만을 위해 사용되는 환경변수만 선언되는 파일입니다. 예를 들어 빌드 및 배포를 위한 **티스토리 세션** 값이나 프리뷰를 보기위한 모드 설정 등이 해당됩니다.
 
 또한 티도리로 만든 프로젝트를 오픈소스로 공개할 때 `ts_session, url` 등의 민감한 정보가 포함되면 곤란한 경우가 있으므로 만약 **tidory.config.js** 가 존재하지 않는 경우, **tidory.config.example.js** 가 포함됩니다. 이렇게 하면 소스를 오픈하여 배포할 때에도 민감한 정보를 보호할 수 있습니다.
@@ -127,7 +125,7 @@ module.exports = {
 
 ### ts_session: string
 
-**티스토리 세션** 값입니다. 티스토리에 로그인 한 이후 **쿠키 저장소**에 보면 **TSSESSION** 이라는 값이 있는데, 그것을 넣으면 됩니다. 해당 변수는 세션 값이기에 절대 외부로 노출되어서는 안 되며 해당 프레임워크에는 스킨을 **프리뷰**하거나 **빌드 및 배포**하기 위한 용도로만 사용됩니다.
+**티스토리 세션** 값입니다. 티스토리에 로그인 한 이후 **쿠키 저장소**에 보면 **TSSESSION** 이라는 값이 있는데, 그것을 넣으면 됩니다. 해당 변수는 세션 값이기에 절대 외부로 노출되어서는 안 되며 스킨을 **프리뷰**하거나 **빌드 및 배포**하기 위한 용도로만 사용됩니다.
 
 ### url: string
 
@@ -135,15 +133,15 @@ module.exports = {
 
 ### preview.mode: string
 
-**프리뷰 모드**입니다. **프리뷰 서버**를 사용할 때 어느 페이지를 기점으로 프리뷰 할 지 설정합니다. **홈, 글, 카테고리, 태그, 방명록** 모드가 있으며 각각 `index, entry, category, tag, guestbook` 에 대응합니다.
+**프리뷰 모드**입니다. **프리뷰 서버**를 사용할 때 어느 페이지를 프리뷰 할 지 설정합니다. **홈, 글, 카테고리, 태그, 방명록** 모드가 있으며 각각 `index, entry, category, tag, guestbook` 에 대응합니다.
 
 ### preview.homeType: string
 
-**홈 타입**은 [홈 커버](https://tistory.github.io/document-tistory-skin/common/cover.html)를 개발할 때 주로 씁니다. `NONE` 은 최신 글이며, 커버를 개발할 때는 `COVER` 로 설정하여 사용합니다.
+[홈 커버](https://tistory.github.io/document-tistory-skin/common/cover.html)를 프리뷰할 때 사용합니다. `NONE` 은 최신 글이며, 커버를 개발할 때는 `COVER` 로 설정하여 사용합니다.
 
 ### preview.coverSettings: array[object]
 
-**index.xml** 에 정의된 **홈 커버**를 시뮬레이션할 때 사용합니다. **스킨 편집**에서 커버를 세팅할 필요 없이, 커버의 컨텐츠, 인덱스, 제목 등을 지정하여 프리뷰할 수 있습니다.
+[홈 커버](https://tistory.github.io/document-tistory-skin/common/cover.html)를 프리뷰할 때 사용합니다. **스킨 편집**에서 커버를 세팅할 필요 없이, 커버의 컨텐츠, 인덱스, 제목 등을 지정하여 프리뷰할 수 있습니다.
 
 ```xml
 <cover>
@@ -162,11 +160,11 @@ module.exports = {
 
 ### preview.skinSettings: object
 
-스킨 **기본 설정**을 변경하여 프리뷰할 수 있습니다. 스킨 설정의 경우 **index.xml** 과 관련이 있으므로 <https://tistory.github.io/document-tistory-skin/common/index.xml.html> 를 참고하면 더 많은 내용을 보실 수 있습니다.
+[설정 기본값](https://tistory.github.io/document-tistory-skin/common/index.xml.html)을 프리뷰할 때 사용합니다.
 
 ### preview.variableSettings: object
 
-**index.xml** 에 정의된 **스킨 옵션**에 해당하는 값을 시뮬레이션할 때 사용합니다. 다음과 같이 스킨의 옵션이 설정되어 있는 경우입니다.
+[스킨 옵션](https://tistory.github.io/document-tistory-skin/common/variable.html)을 프리뷰할 때 사용합니다.
 
 ```xml
 <variables>
@@ -190,7 +188,7 @@ module.exports = {
 https://tistory1.daumcdn.net/tistory/2710108/skin/images
 ```
 
-**공개 경로**를 찾기위해서는, 적용시키려는 티스토리 블로그에 접속하여 브라우저에 내장된 **개발자 도구**를 열고 직접 경로를 알아내야 합니다. `script, link` 태그에 쓰여있는 경로(src, href)를 주의깊게 살펴보십시오.
+**공개 경로**를 찾기위해서는, 적용시키려는 티스토리 블로그에 접속하여 브라우저에 내장된 **개발자 도구**를 열고 직접 경로를 알아내야 합니다. `script, link` 에 쓰여있는 리소스 경로를 주의깊게 살펴보십시오.
 
 > 공개 경로는 `tidory production` 을 사용한 빌드과정 중, `ts_session` 의 설정 여부에 따라 **자동 주입**됩니다. 따라서 특별한 경우가 아니라면 직접 설정할 필요는 없습니다.
 > 티스토리 스킨의 공개 경로에는 **tistory_admin** 이 포함되어 있지 않습니다.
