@@ -61,7 +61,7 @@ nav [##_blog_menu_##]
 
 ## 프로덕트
 
-우리가 만든 스킨을 이제 **사용자에게 배포**하거나 **자신의 블로그에 적용**하기 위해 [빌드 및 배포](/docs/deployment)하면 다음과 같이 분리됩니다. `style` 은 **style.css**, `script` 는, **images/script.js** 로 분리됩니다. 만약 스타일 및 스크립트가 분리되지 않길 원한다면 [fixed](/docs/api#fixed) 속성을 부여할 수 있습니다.
+우리가 만든 스킨을 이제 **사용자에게 배포**하거나 **자신의 블로그에 적용**하기 위해 [빌드 및 배포](/docs/deployment)하면 다음과 같이 분리됩니다. `style, script` 는 각각 **style.css**, **images/script.js** 로 분리됩니다. 만약 스타일 및 스크립트가 분리되지 않길 원한다면 [fixed](/docs/api#fixed) 속성을 부여할 수 있습니다.
 
 ### skin.html
 
