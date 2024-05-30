@@ -35,11 +35,8 @@ mixin permalink(pageType, type)
 
 ```pug
 #toc
-  ol
-    each item in toc
-      li
-        a(href=`#${item.id}`)= item.text
-        
+  //-
+
 style.
   #toc { ... }
 ```

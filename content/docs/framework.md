@@ -4,7 +4,7 @@ category: 스케일링 업
 title: 프레임워크
 ---
 
-## Tailwind CSS
+## TailwindCSS
 
 [PostCSS](https://postcss.org), [TailwindCSS](https://tailwindcss.com/) 가 티도리 프레임워크 템플릿에 포함되어 있습니다. 따라서 스타일 태그로 따로 분리하지 않아도 사용할 수 있습니다. 스타일이 대부분의 코드를 차지하는 티스토리 스킨의 특성상 TailwindCSS 와 함께 사용하면 생산성에서 큰 이점을 볼 수 있습니다. TailwindCSS 를 사용하기 위해서는 `@tailiwnd base, @tailiwnd components, @tailiwnd utilities` 를 포함해야 하는데, 기본 템플릿에서 **asserts/app.css** 를 살펴보면 다음과 같은 코드가 있습니다.
 
