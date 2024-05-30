@@ -43,10 +43,6 @@ article {
 
   p {
     @apply my-6 leading-loose;
-
-    a {
-      @apply underline;
-    }
   }
 
   ol,
@@ -68,7 +64,7 @@ article {
   }
 
   a {
-    @apply decoration-0 text-blue;
+    @apply underline text-blue;
   }
 
   pre[class*="language-"] {
