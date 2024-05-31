@@ -6,11 +6,13 @@ title: 빌드 및 배포
 
 ## 빌드
 
-**빌드**는 티도리 프로젝트를 티스토리 또는 유저에게 배포하기 위해 **배포 파일을 만드는 과정**입니다. 마크업과 스타일이 **skin.html, style.css** 로 분리되며 **images/app.js, images/script.js** 가 생성됩니다. 또한 스킨 설정 및 미리보기가 있는 **docs** 및 정적 에셋이 있는 **images** 내부가 복사됩니다.
+**빌드**는 사용자에게 배포하기 위해 **배포 파일을 만드는 과정**입니다. `npm run production` 을 사용하여 빌드할 수 있습니다.
 
 ```bash
 npm run production
 ```
+
+마크업, 스타일, 스크립트가 **skin.html**, **style.css**, **images/script.js** 로 분리되며 웹팩의 엔트리(Entry)인 **assets/app.js** 를 번들링한 **images/app.js** 가 생성됩니다. 또한 **index.xml**, **preview.jpg** 가 있는 **docs** 및 정적 에셋이 있는 **images** 의 내부가 복사됩니다.
 
 ```plaintext
 dist/
@@ -25,35 +27,15 @@ dist/
 └── style.css
 ```
 
-### images/*
-
-**images** 에는 정적 에셋과 [fixed](/docs/api#fixed) 가 사용되지 않은 `script` 의 집합인 **script.js**, 웹팩의 엔트리(Entry)에 해당하는 **assets/app.js** 를 번들링한 **app.js** 가 있습니다.
-
-### preview*.jpg
-
-스킨 미리보기입니다. **preview256.jpg, preview560.jpg, preview1600.jpg** 가 있습니다.
-
-### index.xml
-
-**티스토리 스킨 설정**입니다.
-
-### skin.html
-
-티스토리 스킨으로 사용하게 되는 **html** 입니다.
-
-### style.css
-
-티스토리 스킨으로 사용하게 되는 **css** 입니다. [fixed](/docs/api#fixed) 가 사용되지 않은 `style` 의 집합입니다.
-
 ## 배포
 
-**배포**는 **현재 사용 중인 스킨을 덮어쓰는 모드**가 있고, **스킨저장소에 저장하는 모드**가 있습니다. 배포를 사용하려면 [환경설정](/docs/configuration)에서 `ts_session`, `url` 가 설정되어 있어야합니다. 또한 배포를 하기 전에 먼저 빌드해야 합니다. **dist** 를 배포하기 때문이죠.
+**배포**는 **빌드**된 결과물을 **현재 사용 중인 스킨을 덮어쓰거나**, **스킨저장소에 저장할 수** 있게합니다.
 
->  배포에서 직접 티스토리 서버에 업로드하는 것이 가능한 이유는 [skin](https://github.com/tidory/skin) 이 사용되었기 때문입니다.
+> [환경설정](/docs/configuration)에서 `ts_session`, `url` 가 설정되어 있어야합니다.
 
 ### tidory store
 
-빌드 결과를 티스토리 스킨 저장소에 저장합니다. 스킨의 **이름**은 **index.xml** 에 있는 `name` 값에 따라 자동적으로 주입됩니다.
+티스토리 스킨 저장소에 저장합니다. 스킨의 **이름**은 **index.xml** 에 있는 `name` 값에 따라 자동적으로 주입됩니다.
 
 ```bash
 npm run store
@@ -61,44 +43,10 @@ npm run store
 
 ### tidory deploy
 
-`url` 에 설정된 블로그에 **skin.html, style.css, index.xml** 을 업로드 및 전에 이미 업로드 되어 있던 모든 파일을 삭제하고 **images** 디렉토리에 있는 파일을 다시 업로드합니다. 주로 유저에게 배포하기 전에 블로그에 미리 적용시켜보기 위해 사용합니다.
+전에 이미 배포되어 있던 모든 파일을 삭제하고 다시 배포합니다. 주로 유저에게 배포하기 전에 블로그에 미리 적용시켜보기 위해 사용합니다.
 
 > 티스토리 서버에서 잠시 뒤에 다시 시도하라는 에러를 던지기도 하는데, 이 경우 에러 메시지에 따라 잠시 뒤에 실행해보시기 바랍니다.
 
 ```bash
 npm run deploy
 ```
-
-## 코드 저장소
-
-**깃허브**와 같은 코드 저장소와 스킨 코드를 연동하려면 어떻게 하면 좋을까요? 티스토리 스킨은 FTP(File Transfer Protocol)을 지원하는 것도 아니며 그렇다고 공식적으로 코드 저장소와의 코드 공유를 지원하지도 않습니다.
-
-하지만, 한 가지 해결책이 있습니다. 티도리 프레임워크를 통해 빌드된 소스코드를 코드 저장소에 배포하면서 동시에 티스토리 스킨에 코드를 적용시킨다면 가능합니다. **빌드 - 코드 저장소 배포 - 스킨 적용**의 과정을 통해 코드 저장소와 스킨 코드를 동일하게 구성할 수 있습니다.
-
-### push-dir
-
-**push-dir** 은 코드 저장소에 특정 디렉토리를 특정 브랜치에 푸쉬할 수 있도록 해주는 패키지입니다. 해당 패키지가 있으면 스킨을 빌드하면 나오는 **dist** 만을 독립적으로 다른 브랜치에 올릴 수 있습니다.
-
-```bash
-npm install --save-dev push-dir
-```
-
-### package.json
-
-[티도리 프로젝트 템플릿](https://github.com/tidory/tidory)에 있는 **package.json** 에 보면 아래와 같이 나와있는 것을 볼 수 있습니다. `npm run deploy` 명령어는 빌드된 티스토리 스킨을 현재 스킨에 적용시키는 명령어입니다.
-
-```json
-"scripts": {
-  "deploy": "tidory deploy"
-}
-```
-
-`npm run dist` 명령을 따로 만들고, 배포 순서에 따라 빌드를 하고, **push-dir** 을 먼저 하는 것으로 코드 저장소에 푸쉬한 다음, 스킨에 적용시키도록 바꿔주면 코드 저장소와 스킨 코드를 동일하게 만들 수 있습니다.
-
-```json
-"scripts": {
-  "dist": "tidory production && push-dir --dir=dist --branch=tistory-skin --cleanup && tidory deploy"
-}
-```
-
-위와 같이 명령어를 구성하면 빌드(Build) - 코드 저장소 배포(Push) - 스킨 적용(Deploy)의 순서로 배포를 자동화할 수 있습니다. 코드 저장소에 **tistory-skin** 브랜치가 별도로 생성됩니다.

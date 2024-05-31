@@ -24,7 +24,7 @@ title: 패키지
 }
 ```
 
-**티도리 프로젝트 템플릿**에는 **env, tidory.config.js** 등 개발을 위한 파일이 포함되어 있는데, 실질적으로 어플리케이션에서 포함할 때는 의미가 없으므로 `files` 배열에 포함시킬 필요가 없습니다. 위의 설정이 필수적인 것은 아니며, 필요에 따라 변경할 수 있습니다. 예를 들면 리액트, 뷰 컴포넌트가 있는 경우 해당 폴더를 포함시킬 수도 있겠죠.
+**티도리 프로젝트 템플릿**에는 **env**, **tidory.config.js** 등 개발을 위한 파일이 포함되어 있는데, 실질적으로 어플리케이션에서 포함할 때는 의미가 없으므로 `files` 배열에 포함시킬 필요가 없습니다. 위의 설정이 필수적인 것은 아니며, 필요에 따라 변경할 수 있습니다. 예를 들면 리액트, 뷰 컴포넌트가 있는 경우 해당 폴더를 포함시킬 수도 있겠죠.
 
 ## 패키지 사용하기
 
@@ -60,7 +60,7 @@ include node_modules/@tidory/example/index
 
 ### @tidory
 
-`@tidory` 별칭은 미리 정의된 템플릿 별칭입니다. `@tidory/package` 형식으로 사용하면 `node_modules/@tidory/package/index.pug` 를 포함하며 만약 같은 패키지에 속한 다른 템플릿을 포함시키고 싶다면 `@tidory/package/HelloWorld` 와 같은 방식으로 포함시킬 수 있습니다.
+`@tidory` 별칭은 미리 정의된 템플릿 별칭입니다. `@tidory/package` 형식으로 사용하면 **node_modules/@tidory/package/index.pug** 를 포함하며 만약 같은 패키지에 속한 다른 템플릿을 포함시키고 싶다면 `@tidory/package/HelloWorld` 와 같은 방식으로 포함시킬 수 있습니다.
 
 ```pug
 //- node_modules/@tidory/example/index

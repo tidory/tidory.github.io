@@ -135,7 +135,7 @@ module.exports = {
 
 ### preview.mode: string
 
-**프리뷰 모드**입니다. **프리뷰 서버**를 사용할 때 어느 페이지를 프리뷰 할 지 설정합니다. **홈, 글, 카테고리, 태그, 방명록** 모드가 있으며 각각 `index`, `entry`, `category`, `tag`, `guestbook` 에 대응합니다.
+**프리뷰 모드**입니다. **프리뷰 서버**를 사용할 때 어느 페이지를 프리뷰 할 지 설정합니다. **홈**, **글**, **카테고리**, **태그**, **방명록**을 프리뷰할 수 있습니다.
 
 ### preview.homeType: string
 
@@ -143,7 +143,9 @@ module.exports = {
 
 ### preview.coverSettings: array[object]
 
-`preview.homeType` 을 `COVER` 로 설정한 상태에서 [홈 커버](https://tistory.github.io/document-tistory-skin/common/cover.html)를 프리뷰할 때 사용합니다. **스킨 편집**에서 커버를 세팅할 필요 없이, 컨텐츠, 인덱스, 제목 등을 지정하여 프리뷰할 수 있습니다. [공식문서](https://tistory.github.io/document-tistory-skin/common/cover.html)에서 **기본값** 항목을 참고하시기 바랍니다.
+[홈 커버](https://tistory.github.io/document-tistory-skin/common/cover.html)를 프리뷰할 때 사용합니다. **스킨 편집**에서 커버를 세팅할 필요 없이, 컨텐츠, 인덱스, 제목 등을 지정하여 프리뷰할 수 있습니다. [공식문서](https://tistory.github.io/document-tistory-skin/common/cover.html)에서 **기본값** 항목을 참고하시기 바랍니다.
+
+> `preview.homeType` 이 `COVER` 로 설정되어 있어야 합니다.
 
 ### preview.skinSettings: object
 
