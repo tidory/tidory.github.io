@@ -31,7 +31,7 @@ dist/
 
 **배포**는 **빌드**된 결과물을 **현재 사용 중인 스킨을 덮어쓰거나**, **스킨저장소에 저장할 수** 있게합니다.
 
-> [환경설정](/docs/configuration)에서 `ts_session`, `url` 가 설정되어 있어야합니다.
+> [설정](/docs/configuration)에서 `ts_session`, `url` 가 설정되어 있어야합니다.
 
 ### tidory store
 

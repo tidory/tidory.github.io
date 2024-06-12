@@ -31,7 +31,7 @@ npm start
 
 **프리뷰 서버**는 `npm run preview` 로 시작할 수 있으며 **http://localhost:3000** 에서 시작합니다. 티스토리에 직접 요청을 보내고 **치환자가 해석된 모습**을 렌더링합니다. 티스토리 스킨 편집에서 볼 수 있는 홈, 글, 카테고리 등 프리뷰 모드를 지정하여 티스토리 서버에 올라갔을 때의 모습을 볼 수 있습니다.
 
->[환경설정](/docs/configuration)에서 `ts_session`, `url`, `mode` 가 설정되어 있어야 합니다.
+>[설정](/docs/configuration)에서 `ts_session`, `url`, `mode` 가 설정되어 있어야 합니다.
 
 ```bash
 npm run preview
